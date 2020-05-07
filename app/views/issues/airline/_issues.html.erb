@@ -1,0 +1,37 @@
+<div class="issues">
+  <% @faults.each do |fault| %>
+    <% cache fault do %>
+      <div class="issue-container">
+        <div class="issue-header">
+          <span class="aircraft-title"><%= fault.aircraft.registration %></span>
+        </div>
+
+        <div class="issue-content">
+          <p><%= fault.mcc_description %></p>
+
+          <table>
+            <tr>
+              <td>Seats Impacted</td>
+              <td><%= fault.seats_impacted %></td>
+            </tr>
+
+            <tr>
+              <td>Status</td>
+              <td><%= fault.approval_state %></td>
+              <% if !fault.approved? %>
+                <%= link_to "Approve", approve_issue_path(fault), method: :put %>
+                <br>
+                <%= link_to "Edit", edit_issue_path(fault, redirect_to: airline_issues_path, airline_id: @airline) %>
+              <% end %>
+            </tr>
+
+            <tr>
+              <td>Originator</td>
+              <td><%= fault.user.full_name %></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

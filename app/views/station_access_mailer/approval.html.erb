@@ -1,0 +1,29 @@
+<div style="font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif; max-width: 800px; background-color: #f8f7fc; padding: 40px;">
+
+  <h4 style="text-align: center; font-size: 32px; color: #2ab27b; margin: 0;">Servo</h4>
+
+  <h1 style="color: #2ab27b; line-height: 26px; margin-bottom: 12px;">Hello <%= @approver.first_name %>,</h1>
+
+  <p style="color: #5e5e5e; font-size:17px; line-height:24px;"><b><%= @requestee.full_name %></b> is requesting access to <b><%= @approvable.station.name.upcase %></b> station.</p>
+
+  <p style="color: #5e5e5e; font-size:17px; line-height:24px;">Upon approval, <%= @requestee.first_name %> will be able to record his work performed for <%= @approvable.station.name.upcase %> station in Servo.</p>
+
+  <p style="color: #5e5e5e; font-size:17px; line-height:24px;"> To proceed, click the button below.</p>
+
+  <br>
+
+  <%= link_to "Approve",  edit_approval_url(id: @approval_token, :state_selected => :approved), style: "
+      padding: 10px 15px;
+      background-color: #2ab27b;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      text-align: center;
+      border: 2px solid #4ac698;
+      border-radius: 4px;
+      font-size: 16px;
+  "%>
+
+  <p style="color: #929292; font-size: 12px; margin-top: 15px;">This link will expire in <%= @expiry.inspect %>.</p>
+
+</div>

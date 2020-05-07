@@ -1,0 +1,14 @@
+one:
+  vendor_subscription_id: 123456
+  aircraft: gstba
+  state: subscribed
+
+subscribed:
+  vendor_subscription_id: 27070186
+  aircraft: N70020
+  state: subscribed
+
+pending:
+  vendor_subscription_id:
+  aircraft: gstbb
+  state: pending_subscription

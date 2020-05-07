@@ -1,0 +1,29 @@
+<%= breadcrumb do %>
+  <%= breadcrumb_jump @airline.name, airlines_path %>
+  <%= breadcrumb_active_item "Issues" %>
+
+  <%= render 'shared/airline_jump_menu' %>
+<% end %>
+
+<section class="panel area-main">
+  <%= render "shared/flash" %>
+
+  <h1 class="header">
+    <span class="header__name">Troubleshooting Requests</span>
+  </h1>
+
+  <%= render "shared/airline_nav", station: @airline %>
+
+  <%= link_to 'New TSR', new_airline_issue_path(@airline), class: "button centered" %>
+
+  <% if @faults.empty? %>
+    <div class="blank-state-caption text-centered">
+      <p>There are no open troubleshooting requests for <%= @airline.name %>.</p>
+      <p>Try <%= link_to "creating one", new_airline_issue_path(@airline) %></p>
+    </div>
+  <% end %>
+
+  <% if @faults.any? %>
+    <%= render "issues/airline/issues", faults: @faults, cached: true %>
+  <% end %>
+</section>

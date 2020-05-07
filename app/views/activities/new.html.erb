@@ -1,0 +1,43 @@
+<section class="area-main" data-controller="turbolinks activity">
+
+  <%= render "shared/flash" %>
+
+  <h2 class="header--underlined mt-10">Tail</h2>
+
+  <%= form_with url: new_station_activity_path(@station), method: :get do |form| %>
+    <%= form.grouped_collection_select :aircraft_id, Current.user.airlines.ordered_by_icao_code, :ordered_aircrafts_by_tail, :icao_code, :id, :tail, {selected: @aircraft.try(:id), prompt: '--Select Inbound Aircraft--'}, { class: "form-select select-filter", data: { action: "change->turbolinks#changed" } } %>
+  <% end %>
+
+  <% if @activities.present? %>
+
+    <h2 class="header--underlined mt-10">Open Work Packs</h2>
+    <div class="">
+
+      <div class="table" data-controller="table">
+        <div class="table-head hidden lg:table-row">
+          <div class="table-head__checkbox-cell hidden"><input type="checkbox" class="form-checkbox" data-action="change->table#toggleAllCheckboxes" data-target="table.tableCheckbox"></div>
+          <div class="table-head__cell">Aircraft</div>
+          <div class="table-head__cell">Airline</div>
+          <div class="table-head__cell">Flight Status</div>
+          <div class="table-head__cell">Lands</div>
+          <div class="table-head__cell">Departs</div>
+          <div class="table-head__cell">Ground Time</div>
+          <div class="table-head__cell">Work Items</div>
+          <div class="table-head__cell">Activity ID</div>
+          <div class="table-head__cell text-right">Work Status</div>
+        </div>
+
+        <%= render(partial: 'activity', collection: @activities, cached: true) if @activities.present? %>
+      </div>
+    </div>
+
+  <% end %>
+
+  <% if @aircraft %>
+    <div class="mt-10">
+      <h2 class="header--underlined">Create New Work Pack</h2>
+      <%= render 'form', activity: @activity %>
+    </div>
+  <% end %>
+
+</section>

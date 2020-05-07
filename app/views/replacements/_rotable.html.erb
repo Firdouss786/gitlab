@@ -1,0 +1,20 @@
+<h3>Rotable</h3>
+
+<%= form.fields_for :replacement do |replacement_form| %>
+  <%= replacement_form.hidden_field :category, value: "rotable" %>
+
+  <div class="field">
+    <%= replacement_form.label :on_wing_position %>
+    <%= replacement_form.text_field :on_wing_position %>
+  </div>
+
+  <div class="field">
+    <%= replacement_form.label :installed_stock_item_id %>
+    <%= replacement_form.collection_select :installed_stock_item_id, StockItem.serviceable, :id, :serial_number %>
+  </div>
+
+  <div class="field">
+    <%= replacement_form.label :removed_stock_item_id %>
+    <%= replacement_form.collection_select :removed_stock_item_id, StockItem.installed, :id, :serial_number %>
+  </div>
+<% end %>

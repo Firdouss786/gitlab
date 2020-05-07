@@ -1,0 +1,32 @@
+<div class="flex flex-wrap form-grid--span" data-target="corrective-action.consumableContainer">
+
+  <div class="min-w-md mr-2 flex-1 mt-4 p-4 shadow-md xl:shadow rounded border-gray-700 border-t-8">
+    <div class="mt-2 flex items-center">
+      <svg class="h-6 w-6 fill-current text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+        <path d="M3.5 13H12v5l6-6-6-6v5H4V2H2v11z"/>
+      </svg>
+      <h2 class="ml-2 font-semibold text-gray-700">Consumed Batch</h2>
+    </div>
+
+    <div id="cProduct" class="form-grid--span" data-target="corrective-action.consumablePartNumber"
+      data-url="<%= consumable_products_activity_fault_corrective_actions_path(activity, fault) %>"
+      data-consumable_product_id="<%= corrective_action.replacement.installed_product_id %>">
+      <%= replacement_form.label :installed_product_id, 'Part no.' %>
+      <%= replacement_form.select :installed_product_id, options_for_select([]), {prompt: '-- Loading Part Numbers --'}, data: { target: "corrective-action.consumablePartNumberSelect", action: "corrective-action#consumablePartNumberSelectChange" }, class: "form-select select-filter" %>
+    </div>
+
+    <div id="cBatchNumber" data-target="corrective-action.batchNumber"
+      data-url="<%= consumable_batches_activity_fault_corrective_actions_path(activity, fault) %>"
+      data-consumable_stock_id="<%= corrective_action.replacement.installed_stock_item_id %>">
+      <%= replacement_form.label :installed_stock_item_id, 'Batch no.' %>
+      <%= replacement_form.select :installed_stock_item_id, options_for_select([]), {prompt: '-- Loading Batch Numbers --'}, data: { target: "corrective-action.batchNumberSelect", action: "corrective-action#consumableBatchNumberSelectChange" }, class: "form-select select-filter" %>
+    </div>
+
+    <div id="cInstallQuantity" data-target="corrective-action.quantityInstalled"
+      data-url="<%= consumable_install_quantity_activity_fault_corrective_actions_path(activity, fault) %>">
+      <%= replacement_form.label :install_quantity, "Quantity installed" %>
+      <%= replacement_form.number_field :install_quantity, in: 1..1, data: { target: "corrective-action.quantityInstalledField" }, class: "form-input" %>
+    </div>
+  </div>
+
+</div>

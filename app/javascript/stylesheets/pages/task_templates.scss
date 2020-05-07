@@ -1,0 +1,27 @@
+.software {
+    display: flex;
+}
+
+.left {
+    width: 100px;
+    text-align: left;
+    padding: 5px;
+    flex: none;
+}
+
+.right {
+    padding: 5px;
+}
+
+.aircraft_pill {
+    background: #f3ebe4;
+    border-radius: 3px;
+    padding: 5px;
+    display: inline-block;
+    margin-bottom: 7px;
+    margin-right: 3px;
+}
+
+.border_bottom {
+    border-bottom: 1px solid #e2e2e2;
+} 

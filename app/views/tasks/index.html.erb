@@ -1,0 +1,19 @@
+<%= breadcrumb do %>
+  <%= breadcrumb_jump @airline.name, airlines_path %>
+  <%= breadcrumb_active_item "Tasks" %>
+
+  <%= render 'shared/airline_jump_menu' %>
+<% end %>
+
+<section class="panel area-main">
+  <%= render "shared/flash" %>
+
+  <h1 class="header">
+    <span class="header__name">Task Schedule</span>
+  </h1>
+
+  <%= render "shared/airline_nav", station: @airline %>
+
+  <%= link_to 'Configure Tasks', airline_task_templates_path(@airline), class: "button centered" %>
+  <%= render "tasks/tasks", tasks: @tasks, cached: true %>
+</section>

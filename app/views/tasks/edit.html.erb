@@ -1,0 +1,34 @@
+<% content_for :breadcrumb do %>
+  <%= link_to "Stations", station_activities_path(@activity.station), class: "breadcrumb__leaf" %>
+  <%= link_to "Workload", activity_path(@activity), class: "breadcrumb__leaf" %>
+  <%= link_to "Edit Task", edit_activity_task_path(@activity, @task), class: "breadcrumb__leaf" %>
+<% end %>
+
+<section class="activity-grid--left hidden md:block panel">
+  <%= render "activities/items", activity: @activity %>
+</section>
+
+<section class="activity-grid--right panel">
+  <%= render "shared/flash" %>
+
+  <div class="flex mb-6">
+    <div class="md:hidden">
+      <%= render "shared/back_link", link_text: "Back", link_route: @activity, truncate: false %>
+    </div>
+
+    <div class="flex-grow flex justify-end">
+      <% if @task.task_actions.blank? %>
+        <%= link_to activity_task_path(@activity, @task), method: :delete, data: { confirm: 'This cannot be undone. Are you sure you wish to delete this task?' }, remote: true do %>
+          <span class="ml-4 flex text-sm text-gray-600 font-semibold items-center">
+            <svg class="h-4 w-4 mr-1 fill-current text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path d="M6 2l2-2h4l2 2h4v2H2V2h4zM3 6h14l-1 14H4L3 6zm5 2v10h1V8H8zm3 0v10h1V8h-1z"/>
+            </svg>
+            <%= t :delete %>
+          </span>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= render 'form', task: @task, activity: @activity %>
+</section>

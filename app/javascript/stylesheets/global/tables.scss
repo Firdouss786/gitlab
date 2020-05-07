@@ -1,0 +1,39 @@
+.table {
+  @apply w-full;
+}
+
+.table-head {
+  @apply table-row p-20 whitespace-no-wrap
+}
+
+.table-head__cell {
+  @apply table-cell align-middle text-gray-900 px-4 py-4 text-xs font-bold border-b-2 uppercase;
+}
+
+.table-head__checkbox-cell {
+  @apply table-cell align-middle px-4 py-4 border-b-2;
+}
+
+.table-body {
+  @apply table-row text-gray-700 p-10 whitespace-no-wrap;
+}
+
+.table-body__cell {
+  @apply table-cell align-middle px-4 py-4 text-sm;
+}
+
+.table-body__checkbox-cell {
+  @apply table-cell align-middle px-4 py-4 text-sm;
+}
+
+.table-body:hover {
+  @apply bg-gray-200;
+}
+
+.table-body:active {
+  @apply outline-none bg-thales-light-blue text-white;
+}
+
+.active {
+  @apply outline-none bg-thales-light-blue text-white;
+}

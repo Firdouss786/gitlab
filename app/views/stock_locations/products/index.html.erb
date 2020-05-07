@@ -1,0 +1,40 @@
+<%= render "shared/stock_location_nav", stock_location: @stock_location %>
+
+<section class="panel area-main">
+  <h1>Products for stock location <%= @stock_location.name %></h1>
+
+  <table>
+    <tr>
+      <th>Product Type</th>
+      <th>Product Name</th>
+      <th>Part Number</th>
+      <th>In-transit In</th>
+      <th>To Inspect</th>
+      <th>Serviceable</th>
+      <th>Quarantine</th>
+      <th>Turn In</th>
+      <th>Unserviceable</th>
+      <th>In-transit Out</th>
+      <th>In Repair</th>
+      <th>Total</th>
+    </tr>
+    <% @products.each do |product| %>
+      <% cache product do %>
+        <tr>
+          <td><%= product.product_category.product_type %></td>
+          <td><%= product.name %></td>
+          <td><%= product.part_number %></td>
+          <td><%= product.stock_items.transiting.count %></td>
+          <td><%= product.stock_items.inspecting.count %></td>
+          <td><%= product.stock_items.serviceable.count %></td>
+          <td><%= product.stock_items.quarantined.count %></td>
+          <td><%= product.stock_items.removed.count %></td>
+          <td><%= product.stock_items.unserviceable.count %></td>
+          <td><%= product.stock_items.transiting.count %></td>
+          <td><%= product.stock_items.repaired.count %></td>
+          <td><%= product.stock_items.count %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</section>

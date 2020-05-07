@@ -1,0 +1,11 @@
+boeing:
+  name: Boeing
+  description: Boeing
+
+airbus:
+  name: Airbus
+  description: Airbus
+
+manufacturer_delete:
+  name: manufacturer_delete_check
+  description: Description of Manufacturer which will be deleted.

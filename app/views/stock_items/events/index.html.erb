@@ -1,0 +1,18 @@
+<section class="panel area-main">
+  <%= render "shared/flash" %>
+
+  <h1 class="header">
+    <span class="header__name">Stock Item Events (<%= @stock_item.name %> x<%= @stock_item.quantity %> )</span>
+  </h1>
+
+  <ul>
+    <% @events.each do |event| %>
+      <li>
+        <%= date event.created_at %>
+        <br>
+        <%= render event.eventable, eventable: event.eventable %>
+      </li>
+    <% end %>
+  </ul>
+
+</section>

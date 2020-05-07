@@ -1,0 +1,16 @@
+.breadcrumb__leaf:hover {
+  @apply text-gray-500;
+}
+
+.breadcrumb__leaf:focus {
+  @apply text-thales-light-blue;
+}
+
+.breadcrumb__leaf::after {
+  content: "›";
+  @apply mx-2;
+}
+
+.breadcrumb__leaf:last-child::after {
+  content: "";
+}

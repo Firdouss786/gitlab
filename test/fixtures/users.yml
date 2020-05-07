@@ -1,0 +1,194 @@
+chris:
+  home_station: lhr
+  first_name: Chris
+  last_name: Swann
+  job_title: Programmer
+  locked: false
+  active: false
+  email: chris.swann@thalesinflight.com
+  password_digest: <%= BCrypt::Password.create("foobar") %>
+  secondary_email: chris.swann@thalesinflight.com
+  profile: thales_servo_admin
+  password_expires_at: <%= DateTime.now + 1.year %>
+  requires_verification: false
+  phone_number: 123-456-7890
+  country_code: GBR
+  default_airline: baw
+  archival:
+
+maaz:
+  home_station: lax
+  first_name: Maaz
+  last_name: Siddiqui
+  job_title: Station Manager
+  locked: false
+  active: false
+  email: maaz.siddiqui@thalesinflight.com
+  password_digest: <%= BCrypt::Password.create("foobar") %>
+  secondary_email: maaz.siddiqui@us.thalesgroup.com
+  profile: manager
+  password_expires_at: <%= DateTime.now + 1.year %>
+  requires_verification: false
+  phone_number: 123-456-7890
+  country_code: GBR
+  default_airline: baw
+  archival:
+
+john:
+  home_station:
+  first_name: John
+  last_name: Doe
+  job_title: Admin
+  locked: false
+  active: false
+  email: john.doe@thalesinflight.com
+  password_digest: <%= BCrypt::Password.create("foobar") %>
+  secondary_email: john.doe@thalesinflight.com
+  profile: thales_servo_admin
+  password_expires_at: <%= DateTime.now + 1.year %>
+  requires_verification: false
+  phone_number: 123-456-7890
+  country_code: GBR
+  token: 8B10E399EAD6167552B30F982C0626
+  default_airline: baw
+  archival:
+
+albert:
+  home_station: lax
+  first_name: Albert
+  last_name: Einstein
+  job_title: Theoretical Physicist
+  locked: false
+  active: false
+  email: albert@thalesinflight.com
+  password_digest: <%= BCrypt::Password.create("foobar") %>
+  secondary_email: therealalbert@thalesinflight.com
+  profile: thales_servo_admin
+  password_expires_at: <%= DateTime.now + 1.year %>
+  requires_verification: false
+  phone_number: 123-456-7890
+  country_code: GBR
+  default_airline: baw
+  archival:
+
+george:
+  home_station: lax
+  first_name: George
+  last_name: Benson
+  job_title: Atomic Physicist
+  locked: true
+  active: false
+  email: georger@thalesinflight.com
+  password_digest: <%= BCrypt::Password.create("foobar") %>
+  secondary_email: therealgeorger@thalesinflight.com
+  profile: technician
+  password_expires_at: <%= DateTime.now + 1.year %>
+  requires_verification: false
+  phone_number: 123-456-7890
+  country_code: GBR
+  default_airline: baw
+  archival: george_is_archived
+
+kathrine:
+  first_name: Katherine
+  last_name: Goble
+  job_title: NASA Mathematician
+  locked: false
+  active: true
+  email: katherine@thalesinflight.com
+  password_digest: <%= BCrypt::Password.create("foobar") %>
+  secondary_email: katherine@thalesinflight.com
+  profile: technician
+  password_expires_at: <%= DateTime.now + 1.year %>
+  requires_verification: false
+  phone_number: 123-456-7890
+  country_code: GBR
+  archival:
+
+expired_password_user:
+  home_station: lhr
+  first_name: Tim
+  last_name: Berners-Lee
+  job_title: Engineer
+  locked: false
+  active: false
+  email: tim.b@thalesinflight.com
+  password_digest: <%= BCrypt::Password.create("foobar") %>
+  secondary_email: tim.b@thalesinflight.com
+  profile: thales_servo_admin
+  password_expires_at: <%= DateTime.now - 2.days %>
+  requires_verification: false
+  phone_number: 123-456-7890
+  country_code: GBR
+  default_airline: baw
+  archival:
+
+user_requiring_verification:
+  home_station: lhr
+  first_name: Bob
+  last_name: Dylan
+  job_title: American singer-songwriter
+  locked: false
+  active: false
+  email: bob.dylan@thalesinflight.com
+  password_digest: <%= BCrypt::Password.create("foobar") %>
+  secondary_email: bob.dylan@thalesinflight.com
+  profile: thales_servo_admin
+  password_expires_at: <%= DateTime.now + 1.year %>
+  requires_verification: true
+  phone_number: 123-456-7890
+  country_code: GBR
+  default_airline: baw
+  archival:
+
+user_with_no_secondary:
+  home_station: lhr
+  first_name: Bernie
+  last_name: Sanders
+  job_title: United States Senator
+  locked: false
+  active: false
+  email: bernie.sanders@thalesinflight.com
+  password_digest: <%= BCrypt::Password.create("foobar") %>
+  profile: thales_servo_admin
+  password_expires_at: <%= DateTime.now + 1.year %>
+  requires_verification: true
+  phone_number: 123-456-7890
+  country_code: GBR
+  default_airline: baw
+  archival:
+
+locked:
+  home_station: lhr
+  first_name: Scott
+  last_name: Adams
+  job_title: Comic strip creator
+  locked: true
+  active: false
+  email: Scott.Adams@thalesinflight.com
+  password_digest: <%= BCrypt::Password.create("foobar") %>
+  profile: thales_servo_admin
+  password_expires_at: <%= DateTime.now + 1.year %>
+  requires_verification: true
+  phone_number: 123-456-7890
+  country_code: GBR
+  default_airline: baw
+  archival:
+
+user_with_no_manager:
+  home_station: lhr
+  first_name: Veda
+  last_name: Ramaiah
+  job_title: Programmer
+  locked: false
+  active: false
+  email: veda.ramaiah@us.thalesgroup.com
+  password_digest: <%= BCrypt::Password.create("foobar") %>
+  secondary_email: veda.ramaiah@us.thalesgroup.com
+  profile: thales_servo_admin
+  password_expires_at: <%= DateTime.now + 1.year %>
+  requires_verification: false
+  phone_number: 123-456-7890
+  country_code: GBR
+  default_airline: baw
+  archival:

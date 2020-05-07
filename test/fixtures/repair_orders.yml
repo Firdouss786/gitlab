@@ -1,0 +1,4 @@
+simple_repair_order:
+  user: chris
+  origin_stock_location: lhr
+  destination_stock_location: cdg

@@ -1,0 +1,115 @@
+<% content_for :breadcrumb do %>
+  <%= link_to "Stations", station_activities_path(@activity.station), class: "breadcrumb__leaf" %>
+  <%= link_to "Workload", activity_path(@activity), class: "breadcrumb__leaf" %>
+  <%= link_to "Sign Off", new_activity_sign_off_path(@activity), class: "breadcrumb__leaf" %>
+<% end %>
+
+<section class="panel area-main">
+  <%= render "shared/flash" %>
+
+  <h1 class="header">
+    <span class="header__name">Close Workpack (Sign-off)</span>
+  </h1>
+
+  <%= form_with(model: @sign_off.activity, url: activity_sign_offs_path, method: :post, local: true) do |form| %>
+
+    <% if @sign_off.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@sign_off.errors.count, "error") %> prohibited this activity from being saved:</h2>
+        <ul>
+          <% @sign_off.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-grid">
+
+      <div class="field form-grid--left datepicker-container">
+        <%= form.label :boarded_at %>
+        <%= form.text_field :boarded_at, class: "form-input block w-full form_datetime", placeholder: "Boarded at", required: true %>
+      </div>
+
+      <div class="field form-grid--right datepicker-container">
+        <%= form.label :unboarded_at %>
+        <%= form.text_field :unboarded_at, class: "form-input block w-full form_datetime", placeholder: "Unboarded at", required: true %>
+      </div>
+
+    </div>
+
+    <!-- ============= Deferrals ============= -->
+
+    <div>
+      <h3>Deferrals</h3>
+
+      <% @activity.deferrals.each do |deferral| %>
+        <p><%= link_to "##{deferral.id} - #{deferral.raised_at} - #{deferral.state.upcase}", activity_fault_path(@activity, deferral) %></p>
+      <% end %>
+
+    </div>
+
+    <hr>
+
+    <!-- ============= Tasks ============= -->
+
+    <div>
+      <h3>Tasks</h3>
+      <% @activity.tasks.each do |task| %>
+        <p><%= link_to "##{task.id} - #{task.started_at} - #{task.state.upcase}", activity_task_path(@activity, task) %></p>
+      <% end %>
+    </div>
+
+    <hr>
+
+    <!-- ============= Logbook ============= -->
+
+    <div>
+      <h3>Logbook</h3>
+
+      <% @activity.faults.each do |fault| %>
+        <p><%= link_to "##{fault.id} - #{fault.raised_at} - #{fault.state.upcase}", activity_fault_path(@activity, fault) %></p>
+      <% end %>
+
+    </div>
+
+    <hr>
+
+    <!-- ============= Rotable Parts Off ============= -->
+
+    <div>
+      <h3>Rotable Parts Off</h3>
+
+      <% @activity.corrective_actions.replaced_lru.each do |ca| %>
+        <p><%= "#{ca.replacement.removed_product.part_number} / #{ca.replacement.installed_product.part_number}
+           - #{ca.replacement.removed_stock_item.serial_number} / #{ca.replacement.installed_stock_item.serial_number}
+            - #{ca.replacement.removed_revision} / #{ca.replacement.installed_stock_item.revision}
+            - #{ca.replacement.removed_model_numbers} / #{ca.replacement.installed_stock_item.model_numbers}"%></p>
+      <% end %>
+
+    </div>
+
+    <hr>
+
+    <!-- ============= Consumable Parts Off ============= -->
+
+    <div>
+      <h3>Consumable Parts Off</h3>
+
+      <% @activity.corrective_actions.replaced_consumable.each do |ca| %>
+        <p><%= "#{ca.replacement.installed_product.part_number} - #{ca.replacement.installed_stock_item.batch_number} - #{ca.replacement.install_quantity}"%></p>
+      <% end %>
+
+    </div>
+
+    <div class="actions">
+      <%= form.submit 'Close Workpack' %>
+    </div>
+
+  <% end %>
+
+  <hr>
+
+  <%= link_to 'Back', @activity %>
+
+</section>

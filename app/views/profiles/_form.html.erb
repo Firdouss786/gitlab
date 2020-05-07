@@ -1,0 +1,43 @@
+<%= form_with(model: profile, local: true) do |form| %>
+  <%= render "shared/form_errors", obj: profile %>
+
+  <div class="form-grid">
+
+    <div class="field form-grid--span">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--span">
+      <%= form.label :description %>
+      <%= form.text_area :description, class: "form-input block w-full" %>
+    </div>
+
+    <div class="form-grid--span">
+      <h2 class="header--underlined mb-0">Permissions</h2>
+    </div>
+
+    <div class="field form-grid--span">
+      <%= form.collection_check_boxes(:permission_ids, Permission.all.order(:name), :id, :name) do |b| %>
+        <div class="flex items-center block mb-4 p-5 border rounded">
+          <div><%= b.check_box(class: "form-checkbox h-5 w-5 mr-6") %></div>
+          <div>
+            <%= b.label(class: "font-semibold text-base text-gray-800") %>
+            <span class="text-gray-600 text-sm block"><%= b.object.description %></span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="form-grid--span">
+      <br>
+    </div>
+
+    <div class="flex justify-end content-center form-grid--right">
+      <%= link_to "Cancel", profiles_path, { class: "btn btn-secondary mr-4" } %>
+      <%= form.submit class: "btn" %>
+    </div>
+
+  </div>
+
+<% end %>

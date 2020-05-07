@@ -1,0 +1,26 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_fleet, label: @fleet.name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= link_to 'Airlines', airlines_path, class: "breadcrumb__leaf" %>
+  <%= link_to @fleet.airline.name.titleize, airline_flights_path(@fleet.airline), class: "breadcrumb__leaf" %>
+  <%= link_to "Fleet", airline_fleets_path(@fleet.airline), class: "breadcrumb__leaf" %>
+  <%= link_to "LOPA", seats_path(@fleet), class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <%= link_to "Aircraft", aircrafts_path(@fleet), class: "nav__leaf #{'nav__leaf--active' if request.path.include?('aircrafts')}" %>
+  <%= link_to "LOPA", seats_path(@fleet), class: "nav__leaf #{'nav__leaf--active' if request.path.include?('seats')}" %>
+  <%= link_to "BOM", product_allotments_path(@fleet), class: "nav__leaf #{'nav__leaf--active' if request.path.include?('product_allotments')}" %>
+<% end %>
+
+<section class="area-main">
+  <%= render "shared/flash" %>
+
+  <%= render "seats/seats", fleet: @fleet %>
+</section>
+
+<% content_for :buttons do %>
+  <%= render 'layouts/footer_button', icon: :icon_add_outline, label: "Upload LOPA", action: new_seat_path(@fleet) %>
+<% end %>

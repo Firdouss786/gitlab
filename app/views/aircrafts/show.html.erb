@@ -1,0 +1,74 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label:  @aircraft.tail %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= render 'breadcrumb' %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/airline_nav', airline: @aircraft.airline %>
+<% end %>
+
+<section class="panel area-main area-main--half">
+
+  <%= render "shared/flash" %>
+
+  <p>
+    <strong>Tail:</strong>
+    <%= @aircraft.tail %>
+  </p>
+
+  <p>
+    <strong>Msn:</strong>
+    <%= @aircraft.msn %>
+  </p>
+
+  <p>
+    <strong>Fin:</strong>
+    <%= @aircraft.fin %>
+  </p>
+
+  <p>
+    <strong>Registration:</strong>
+    <%= @aircraft.registration %>
+  </p>
+
+  <p>
+    <strong>Eis:</strong>
+    <%= @aircraft.eis %>
+  </p>
+
+  <p>
+    <strong>Tot:</strong>
+    <%= @aircraft.tot %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @aircraft.description %>
+  </p>
+
+  <p>
+    <strong>Configuration:</strong>
+    <%= @aircraft.fleet.name %>
+  </p>
+
+  <p>
+    <strong>Airline:</strong>
+    <%= @aircraft.airline.name %>
+  </p>
+
+  <p>
+    <strong>Locked:</strong>
+    <%= @aircraft.locked ? "Yes" : "No" %>
+  </p>
+
+  <p>
+    <strong>Active:</strong>
+    <%= @aircraft.active ? "Yes" : "No" %>
+  </p>
+
+  <%= link_to 'Edit', edit_aircraft_path(@fleet, @aircraft) %>
+
+</section>

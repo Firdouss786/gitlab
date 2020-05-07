@@ -1,0 +1,21 @@
+
+<span class="flex-grow"></span>
+
+  <%= link_to "Export as CSV", polymorphic_url([parent, :deferrals], q: params[:q], direction: params[:direction], sort: params[:sort], format: :csv), class: "btn btn-sm" if @deferrals.present? %>
+
+<div class="table" data-controller="table">
+  <div class="table-head">
+    <div class="hidden table-head__checkbox-cell"><input type="checkbox" class="form-checkbox" data-action="change->table#toggleAllCheckboxes" data-target="table.tableCheckbox"></div>
+    <div class="table-head__cell"><%= sortable 'raised_at', 'Days Open' %></div>
+    <div class="hidden xl:table-cell table-head__cell"><%= sortable 'id' %></div>
+    <div class="hidden xl:table-cell table-head__cell"><%= sortable 'icao_code', 'Airline' %></div>
+    <div class="table-cell table-head__cell"><%= sortable 'tail', 'Tail' %></div>
+    <div class="hidden xl:table-cell table-head__cell"><%= sortable 'raised_at', 'Raised' %></div>
+    <div class="hidden md:table-cell table-head__cell"><%= sortable 'impacted_seat_count', 'Seats #' %></div>
+    <div class="hidden lg:table-cell table-head__cell">Seats</div>
+    <div class="hidden sm:table-cell table-head__cell"><%= sortable 'logbook_reference', 'Reference' %></div>
+    <div class="table-cell table-head__cell">Description</div>
+  </div>
+
+  <%= render partial: 'deferrals/deferral_item', collection: @deferrals, as: :deferral, locals: { parent: parent } if @deferrals.present? %>
+</div>

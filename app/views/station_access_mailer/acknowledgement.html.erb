@@ -1,0 +1,13 @@
+<div style="font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif; max-width: 800px; background-color: #f8f7fc; padding: 40px;">
+
+  <h4 style="text-align: center; font-size: 32px; color: #2ab27b; margin: 0;">Servo</h4>
+
+  <h1 style="color: #2ab27b; line-height: 26px; margin-bottom: 12px;">Hello <%= @requestee.first_name %>,</h1>
+
+  <p style="color: #5e5e5e; font-size:17px; line-height:24px;">Good news, <b><%= @approver.full_name %></b> has approved your <b><%= @approvable.station.name.upcase %></b> station access request.</p>
+
+  <p style="color: #5e5e5e; font-size:17px; line-height:24px;">You now have the option to switch your home station to <%= @approvable.station.name.upcase %>. Home station can be switched easily via user dropdown menu.</p>
+
+  <p style="color: #5e5e5e; font-size:17px; line-height:24px;">Have a good day.</p>
+
+</div>

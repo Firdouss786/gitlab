@@ -1,0 +1,330 @@
+<p id="notice" class="white-80 tc"><%= notice %></p>
+
+<!-- Page Title -->
+<div class="tc pa3 mt4">
+  <% if @stock_item.product.rotable? %>
+    <span class="dib v-top ttu f7 fw1 mv1 white-40">Serial /</span>
+    <span class="dib v-top ttu f2 fw5 white-90 tracked"><%= @stock_item.serial_number %></span>
+  <% else %>
+    <span class="dib v-top ttu f7 fw1 mv1 white-40">Batch /</span>
+    <span class="dib v-top ttu f2 fw5 white-90 tracked"><%= @stock_item.batch_number %></span>
+  <% end %>
+  <div class="dib bg-aether-dark-blue pv1 ph3 br2 mt2">
+    <span class="f7 fw4 ttu tracked tl white-90 v-mid">Move</span>
+  </div>
+</div>
+<!-- End Page Title -->
+
+<!-- Top Stats -->
+<div class="w-100 tc pb4">
+
+  <div class="dib tl">
+    <div class="dib ph4">
+      <div class="dib v-top mv1">
+        <%= image_tag "warn-icon.png", width: "26px", alt: "warning", class: "o-90" %>
+      </div>
+      <div class="dib ph1">
+        <span class="db f6 fw4 tracked tl white-90">5 Replacements</span>
+        <span class="f7 fw3 ttu tracked tl white-40">In 6 months</span>
+      </div>
+    </div>
+
+   <div class="dib ph4">
+      <div class="dib ph1">
+        <span class="db f6 fw4 tracked tl white-90">300 Hrs On-Wing</span>
+        <span class="f7 fw3 ttu tracked tl white-40">Avg over 12 months</span>
+      </div>
+    </div>
+
+    <div class="dib ph4">
+      <div class="dib v-top mv1">
+      <%= image_tag "location-icon.png", width: "26px", alt: "location", class: "o-90" %>
+      </div>
+      <div class="dib ph1">
+        <span class="db f6 fw4 tracked tl white-90"><%= @stock_item.stock_location.name.upcase %> <%= @stock_item.state.humanize %></span>
+        <span class="f7 fw3 ttu tracked tl white-40">Since DATE</span>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<!-- End Top Stats -->
+
+<!-- Top Boxes -->
+<div class="fl w-100">
+  <div class="fl w-33">
+    <div class="bb pv2 b--aether-dark-blue mr5">
+      <span class="ttu tracked f6 fw4 white-90 dib">Part Info</span>
+    </div>
+    <div>
+      <table class="collapse mt3">
+          <% if @stock_item.product.rotable? %>
+            <tr>
+              <td class="f7 fw3 ttu tracked tl white-40 pt2">Serial Number</td>
+              <td class="f7 fw4 ttu tracked tl white-90 pt2 pl2"><%= @stock_item.serial_number %></td>
+            </tr>
+          <% else %>
+            <tr>
+              <td class="f7 fw3 ttu tracked tl white-40 pt2">Batch Number</td>
+              <td class="f7 fw4 ttu tracked tl white-90 pt2 pl2"><%= @stock_item.batch_number %></td>
+            </tr>
+            <tr>
+              <td class="f7 fw3 ttu tracked tl white-40 pt2">Quantity</td>
+              <td class="f7 fw4 ttu tracked tl white-90 pt2 pl2"><%= @stock_item.quantity %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <td class="f7 fw3 ttu tracked tl white-40 pt2">Part Name</td>
+            <td class="f7 fw4 ttu tracked tl white-90 pt2 pl2"><%= @stock_item.product.name %></td>
+          </tr>
+          <tr>
+            <td class="f7 fw3 ttu tracked tl white-40 pt2">Part Number</td>
+            <td class="f7 fw4 ttu tracked tl white-90 pt2 pl2"><%= @stock_item.product.part_number %></td>
+          </tr>
+          <tr>
+            <td class="f7 fw3 ttu tracked tl white-40 pt2">Category</td>
+            <td class="f7 fw4 ttu tracked tl white-90 pt2 pl2"><%= @stock_item.product.classification %></td>
+          </tr>
+          <tr>
+            <td class="f7 fw3 ttu tracked tl white-40 pt2">Mod</td>
+            <td class="f7 fw4 ttu tracked tl white-90 pt2 pl2"><%= @stock_item.model_numbers %></td>
+          </tr>
+          <tr>
+            <td class="f7 fw3 ttu tracked tl white-40 pt2">Rev</td>
+            <td class="f7 fw4 ttu tracked tl white-90 pt2 pl2"><%= @stock_item.revision %></td>
+          </tr>
+<!--           <tr>
+            <td class="f7 fw3 ttu tracked tl white-90 pt2 more-link">More...</td>
+          </tr> -->
+          <tr>
+            <td class="f7 fw3 ttu tracked tl white-40 pt2">Shelved On</td>
+            <td class="f7 fw4 ttu tracked tl white-90 pt2 pl2"><%= @stock_item.shelved_at %></td>
+          </tr>
+          <tr>
+            <td class="f7 fw3 ttu tracked tl white-40 pt2">Shelf Life Duration</td>
+            <td class="f7 fw4 ttu tracked tl white-90 pt2 pl2"><%= @stock_item.shelf_life_expiration %> days</td>
+          </tr>
+      </table>
+
+      <%= link_to edit_stock_item_path(@stock_item) do %>
+        <div class="dib bg-aether-dark-blue pv1 ph3 br2 mt2">
+          <span class="f7 fw4 ttu tracked tl white-90 v-mid no-underline">Edit</span>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+  <div class="fl w-33">
+    <div class="bb pv2 b--aether-dark-blue mr5">
+      <span class="ttu tracked f6 fw4 white-90 dib">Certs</span>
+    </div>
+
+    <div class="mt3">
+      <div class="dib mr2">
+        <!-- SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="139.972" height="57.868" viewBox="0 0 283 117">
+          <defs>
+                <style>
+                  .cls-1 {
+                    fill: #35bec3;
+                    fill-rule: evenodd;
+                    opacity: 0.59;
+                  }
+
+                  .cls-2, .cls-3 {
+                    font-size: 24px;
+                    font-family: Roboto;
+                    font-weight: 500;
+                  }
+
+                  .cls-2 {
+                    fill: #fff;
+                  }
+
+                  .cls-3 {
+                    fill: #d1d1d1;
+                    text-anchor: end;
+                  }
+                </style>
+          </defs>
+          <g>
+            <path id="Cert_Box" data-name="Cert Box" class="cls-1" d="M2,105.817V42c0-1.038,2.3-6.347,5-9,7.9-7.422,21.608-21.169,30.287-28.9A13.527,13.527,0,0,1,43.213,2H268.777c9,0,12.223,3.339,12.223,8.952v94.924c0,4.9-4.675,9.124-10.271,9.124H11.645C4.933,115,2,111.15,2,105.817Z"/>
+            <text id="FAA" class="cls-2" x="217.813" y="36.877">FAA</text>
+            <text id="F8130_13-C4339" data-name="F8130 # 13-C4339" class="cls-3" x="261.813" y="77.876"><tspan x="261.813">F8130 # 13-C4339</tspan></text>
+          </g>
+        </svg>
+        <!-- END SVG -->
+      </div>
+
+      <div class="dib">
+        <!-- SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="139.972" height="57.868" viewBox="0 0 283 117">
+          <defs>
+                <style>
+                  .cls-1 {
+                    fill: #35bec3;
+                    fill-rule: evenodd;
+                    opacity: 0.59;
+                  }
+
+                  .cls-2, .cls-3 {
+                    font-size: 24px;
+                    font-family: Roboto;
+                    font-weight: 500;
+                  }
+
+                  .cls-2 {
+                    fill: #fff;
+                  }
+
+                  .cls-3 {
+                    fill: #d1d1d1;
+                    text-anchor: end;
+                  }
+                </style>
+          </defs>
+          <g>
+            <path id="Cert_Box" data-name="Cert Box" class="cls-1" d="M2,105.817V42c0-1.038,2.3-6.347,5-9,7.9-7.422,21.608-21.169,30.287-28.9A13.527,13.527,0,0,1,43.213,2H268.777c9,0,12.223,3.339,12.223,8.952v94.924c0,4.9-4.675,9.124-10.271,9.124H11.645C4.933,115,2,111.15,2,105.817Z"/>
+            <text id="FAA" class="cls-2" x="217.813" y="36.877">FAA</text>
+            <text id="F8130_13-C4339" data-name="F8130 # 13-C4339" class="cls-3" x="261.813" y="77.876"><tspan x="261.813">F8130 # 13-C4339</tspan></text>
+          </g>
+        </svg>
+        <!-- END SVG -->
+      </div>
+    </div>
+
+  </div>
+  <div class="fl w-33">
+    <div class="bb pv2 b--aether-dark-blue mr5">
+      <span class="ttu tracked f6 fw4 white-90">Tags</span>
+    </div>
+    <div class="mt3">
+<!--       <div class="bg-purple dib br4 pv1 ph3 mr2"><span class="f7 fw5 ttu tracked white-90 v-mid">Terminal C</span></div>
+      <div class="bg-green dib br4 pv1 ph3 mr2"><span class="f7 fw5 ttu tracked white-90 v-mid">BAW Stock</span></div>
+ -->
+
+
+
+
+    </div>
+  </div>
+</div>
+<!-- End Top Boxes -->
+
+<!-- Timeline start -->
+<div class="w-100">
+  <span class="ttu tracked f6 fw4 white-90 dib mt5 mr2">Timeline</span>
+  <div class="dib bg-aether-dark-blue pv1 ph3 br2 mt2">
+    <span class="f7 fw4 ttu tracked tl white-90 v-mid mr3">6 Months</span>
+    <span class="f7 fw4 ttu tracked tl white-50 v-mid">12 Months</span>
+  </div>
+  <div class="fl w-100 mt4">
+    <div class="fl w-10 pa2">
+      <span class="db bb bw1 b--aether-dark-blue mb2"></span>
+      <span class="f7 fw4 ttu tracked white-90 fr cb">BITE Events</span>
+      <span class="f7 fw4 ttu tracked white-40 fr cb">1,340</span>
+    </div>
+    <div class="fl w-90 pa2 relative">
+      <div class="bg-blue dib br4 absolute ml2" style="top: 6px; width: 6px; height:6px;"></div>
+      <span class="db bb b--aether-dark-blue" style=""></span>
+    </div>
+  </div>
+
+  <div class="fl w-100">
+    <div class="fl w-10 pa2">
+      <span class="db bb bw1 b--aether-dark-blue mb2"></span>
+      <span class="f7 fw4 ttu tracked white-90 fr cb">Departures</span>
+      <span class="f7 fw4 ttu tracked white-40 fr cb">1,340</span>
+    </div>
+    <div class="fl w-90 pa2 relative">
+      <div class="bg-orange dib br4 absolute ml2" style="top: 6px; width: 6px; height:6px;"></div>
+      <span class="db bb b--aether-dark-blue" style=""></span>
+    </div>
+  </div>
+
+  <div class="fl w-100">
+    <div class="fl w-10 pa2">
+      <span class="db bb bw1 b--aether-dark-blue mb2"></span>
+      <span class="f7 fw4 ttu tracked white-90 fr cb">On-Wing</span>
+      <span class="f7 fw4 ttu tracked white-40 fr cb">1</span>
+    </div>
+    <div class="fl w-90 pa2 relative">
+      <div class="bg-green dib br4 absolute ml2" style="top: 6px; width: 500px; height:6px;"></div>
+      <span class="db bb b--aether-dark-blue" style=""></span>
+    </div>
+  </div>
+</div>
+<!-- Timeline end -->
+
+
+<!-- Events Start -->
+<div class="w-100">
+  <span class="ttu tracked f6 fw4 white-90 dib mt5">History</span>
+  <div class="fl w-100 mt4">
+    <div class="fl w-5 pr3 br bw1 b--aether-dark-blue">
+      <span class="f7 fw4 ttu tracked white-90 fr cb">June 12</span>
+      <span class="f7 fw4 ttu tracked white-40 fr cb">2017</span>
+      <span class="f7 fw4 ttu tracked white-40 fr cb">20:21 UTC</span>
+      <!-- Small break -->
+      <br><br>&#8203;
+    </div>
+    <div class="fl w-40 pl3">
+      <span class="f7 fw4 ttu tracked tl white-90 v-top">Chris Swann attached certificate</span>
+    </div>
+    <div class="fl w-40">
+      <div class="dib bg-aether-dark-blue pv1 ph3 br2">
+        <span class="f7 fw4 ttu tracked tl white-90 v-mid">Undo</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="fl w-100 mt4">
+    <div class="fl w-5 pr3 br bw1 b--aether-dark-blue">
+      <span class="f7 fw4 ttu tracked white-90 fr cb">June 12</span>
+      <span class="f7 fw4 ttu tracked white-40 fr cb">2017</span>
+      <span class="f7 fw4 ttu tracked white-40 fr cb">20:21 UTC</span>
+      <!-- Small break -->
+      <br><br>&#8203;
+    </div>
+    <div class="fl w-40 pl3">
+      <span class="f7 fw4 ttu tracked tl white-90 v-top">Chris Swann attached certificate</span>
+    </div>
+    <div class="fl w-40">
+      <div class="dib bg-aether-dark-blue pv1 ph3 br2">
+        <span class="f7 fw4 ttu tracked tl white-90 v-mid">Undo</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="fl w-100 mt4">
+    <div class="fl w-5 pr3 br bw1 b--aether-dark-blue">
+      <span class="f7 fw4 ttu tracked white-90 fr cb">June 12</span>
+      <span class="f7 fw4 ttu tracked white-40 fr cb">2017</span>
+      <span class="f7 fw4 ttu tracked white-40 fr cb">20:21 UTC</span>
+      <!-- Small break -->
+      <br><br>&#8203;
+    </div>
+    <div class="fl w-40 pl3">
+      <span class="f7 fw4 ttu tracked tl white-90 v-top">Chris Swann attached certificate</span>
+    </div>
+    <div class="fl w-40">
+      <div class="dib bg-aether-dark-blue pv1 ph3 br2">
+        <span class="f7 fw4 ttu tracked tl white-90 v-mid">Undo</span>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<!-- Events End -->
+
+<!-- <div class="actions tc">
+  <div class="cb pt6">
+    <%= link_to 'Decomission Part', @stock_item, method: :delete, data: { confirm: 'Are you sure?' }, class: "red f5 tracked fw3 button-overide ph4 pv3 ba br1 b--red dib no-underline" %>
+  </div>
+</div> -->
+
+
+
+<!-- <%= link_to 'Back', stock_items_path %> -->

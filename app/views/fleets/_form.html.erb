@@ -1,0 +1,42 @@
+<%= form_with(model: [@airline, fleet], local: true) do |form| %>
+  <%= render "shared/form_errors", obj: fleet %>
+
+  <div class="form-grid">
+
+    <div class="field form-grid--left">
+      <%= form.label :name, "Fleet Name" %>
+      <%= form.text_field :name, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--right">
+      <%= form.label :aircraft_type_id %>
+      <%= form.collection_select :aircraft_type_id, AircraftType.all, :id, :name, { prompt: '-- Select Aircraft Type --' }, { class: "form-select select-filter", required: true } %>
+    </div>
+
+    <div class="field form-grid--left">
+      <%= form.label :software_platform_id %>
+      <%= form.collection_select :software_platform_id, SoftwarePlatform.all, :id, :name, { prompt: '-- Select IFE Platform --' }, { class: "form-select select-filter", required: true } %>
+    </div>
+
+    <div class="field form-grid--right">
+      <%= form.label :install_type %>
+      <%= form.select :install_type, InstallType.all, { prompt: '-- Select Install Type --' }, { class: "form-select select-filter", required: true } %>
+    </div>
+
+    <div class="field">
+      <%= form.label :description, "Optional Notes" %>
+      <%= form.text_area :description, class: "form-input block w-full" %>
+    </div>
+
+    <div class="form-grid--span">
+      <br>
+    </div>
+
+    <div class="flex justify-end content-center form-grid--right">
+      <%= link_to "Cancel", airline_fleets_path(fleet.airline), { class: "btn btn-secondary mr-4" } %>
+      <%= form.submit class: "btn" %>
+    </div>
+
+  </div>
+
+<% end %>

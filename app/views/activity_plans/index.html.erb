@@ -1,0 +1,92 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_aircraft, label: @station.name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= render 'stations/breadcrumb' %>
+  <%= link_to "Workload", station_activity_plans_path(@station), class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/station_nav', station: @station %>
+<% end %>
+
+<section class="panel area-main">
+  <%= render "shared/flash" %>
+
+  <% cache @activity_plans do %>
+    <% @activity_plans.each do |plan| %>
+      <% cache plan do %>
+        <%= link_to activity_link plan do %>
+          <div class="mt-4 px-4 py-6 border-b-2 border-gray-200">
+
+            <div class="flex items-start">
+              <h2 class="mb-4 font-semibold text-lg text-thales-dark-blue-gray tracking-tight"><%= plan.aircraft.reg_and_nose %></h2>
+
+              <div class="ml-2 rounded bg-orange-200">
+                <span class="py-2 px-3 font-semibold text-orange-500"><%= plan.flight.event_code %></span>
+              </div>
+
+              <% if plan.activity %>
+                <div class="ml-2 rounded bg-orange-200">
+                  <span class="py-2 px-3 font-semibold text-orange-500">In Work</span>
+                </div>
+              <% end %>
+
+              <div class="flex-grow text-right text-sm font-semibold leading-tight">
+                <div class="text-thales-dark-blue-gray"><%= time_diff_to_time plan.flight.ground_time %><span class="ml-1 font-normal">Hrs</span></div>
+                <div class="text-gray-500">work time</div>
+              </div>
+            </div>
+
+            <div class="mb-4 flex items-center">
+              <svg class="h-5 w-5 fill-current text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M1.586 16.164H18.45V18H1.586v-1.836zm15.978-2.699c.243-.717-.134-1.488-.84-1.705l-4.663-1.473L10.14 2l-1.691-.54-.502 7.521L3.58 7.602l-.697-2.138-1.275-.4-.225 3.313-.091 1.396 1.405.443 4.663 1.473 3.818 1.211 4.663 1.473a1.402 1.402 0 001.72-.907h.002z" />
+              </svg>
+
+              <p class="ml-2 text-sm text-gray-600 font-semibold">ARR <%= datetime plan.flight.runway_arrival %> - <%= plan.flight.flight_number %></p>
+            </div>
+
+            <div class="mb-4 flex items-center">
+              <svg class="h-5 w-5 fill-current text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M1.586 16.164H18.45V18H1.586v-1.836zm17.37-8.592c-.186-.734-.923-1.175-1.633-.973L12.61 7.903 6.484 2l-1.712.468L8.447 9.05l-4.412 1.22-1.748-1.413L1 9.216l1.615 2.9.684 1.222 1.42-.395L9.43 11.64l3.862-1.064 4.713-1.304a1.402 1.402 0 00.95-1.698v-.001z" />
+              </svg>
+
+              <% if plan.flight.next_flight %>
+                <p class="ml-2 text-sm text-gray-600 font-semibold">DEP <%= datetime plan.flight.next_flight.runway_departure %> - <%= plan.flight.next_flight.flight_number %></p>
+              <% end %>
+            </div>
+
+            <div class="md:flex md:items-start">
+              <div class="mt-1 flex-grow flex flex-wrap">
+                <% plan.aircraft.tasks.eligible_for_work.each do |task| %>
+                  <div class="mr-2 my-1 py-1 px-4 rounded bg-thales-light-blue-light font-bold text-thales-light-blue"><%= short_name task %></div>
+                <% end %>
+                <div class="mr-2 my-1 py-1 px-4 rounded bg-red-200 font-semibold text-red-800">Deferral x<%= plan.aircraft.faults.deferred.count %></div>
+              </div>
+            </div>
+
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <% if @activity_plans.any? %>
+    <div class="mt-6 text-gray-600">
+      Select from above aircraft, or <%= link_to "Add Workpack Manually", new_activity_path(station_id: @station), class: "underline text-thales-light-blue" %>
+    </div>
+  <% else %>
+    <div class="text-center text-gray-600 leading-loose p-10">
+      <div class="bg-thales-light-blue rounded-full inline-block">
+        <svg class="h-6 w-6 fill-current text-white m-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M22 17.115v-2.2L13.49 9.98V4.3S13.49 1 12 1s-1.49 3.3-1.49 3.3v5.68L2 14.914v2.2l8.51-2.736v3.946L8.384 20.8V23L12 21.24 15.617 23v-2.2l-2.128-2.475v-3.946L22 17.115z" />
+        </svg>
+      </div>
+      <h2 class="text-xl font-bold">There aren't any aicraft inbound yet.</h2>
+      <p class="">But you can <%= link_to "create a work pack manually", new_activity_path(station_id: @station), class: "underline text-thales-light-blue font-semibold" %></p>
+    </div>
+
+  <% end %>
+
+</section>

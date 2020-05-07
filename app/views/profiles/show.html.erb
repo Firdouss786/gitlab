@@ -1,0 +1,59 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label:  @profile.name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= link_to 'Profiles', profiles_path, class: "breadcrumb__leaf" %>
+  <%= link_to @profile.name, profile_path(@profile), class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/config_nav' %>
+<% end %>
+
+<section class="panel area-main area-main--half">
+
+  <%= render "shared/flash" %>
+
+  <div>
+    <h2 class="font-bold uppercase tracking-tight text-thales-dark-blue-gray pb-1 mb-0"><%= @profile.name %></h2>
+    <p class="border-gray-300 border-b text-sm text-gray-600 pb-3 mb-6"><%= @profile.description %></p>
+  </div>
+
+  <div>
+    <h2 class="header--underlined mb-0">Permissions</h2>
+  </div>
+
+  <div class="flex flex-col sm:flex-row flex-wrap sm:items-center mt-4">
+    <%= render partial: "profile_permission", collection: @profile.permissions.order(:name), as: :profile, cached: true %>
+  </div>
+
+
+  <div class="form-grid--span mt-6">
+    <h2 class="header--underlined mb-0">Users</h2>
+  </div>
+
+  <div class="table" data-controller="table">
+    <div class="table-head">
+      <div class="table-head__checkbox-cell hidden"><input type="checkbox" class="form-checkbox" data-action="change->table#toggleAllCheckboxes" data-target="table.tableCheckbox"></div>
+      <div class="table-head__cell"><%= 'name' %></div>
+      <div class="table-head__cell hidden lg:table-cell"><%= 'Job Title' %></div>
+      <div class="table-head__cell hidden lg:table-cell"><%= 'Station' %></div>
+      <div class="table-head__cell hidden lg:table-cell"><%= 'Active' %></div>
+      <div class="table-head__cell text-right"><%= "Actions" %></div>
+    </div>
+
+    <%= render(partial: 'profile_user', collection: @users, as: :user, cached: true) if @users.present? %>
+
+  </div>
+
+  <%= render('shared/empty_table_state', msg: "Found no users in this profile.", helper: "#{link_to 'Try adding new user', new_user_path(profile: @profile), class: 'underline text-thales-light-blue font-semibold'}".html_safe) if @users.empty? %>
+
+  <%= will_paginate @users, class: "pagination"%>
+
+</section>
+
+<% content_for :buttons do %>
+<%= render 'layouts/footer_button', icon: :icon_add_outline, label: "Add User", action: new_user_path(profile: @profile) %>
+  <%= render 'layouts/footer_button', icon: :icon_edit_pencil, label: "Edit Profile", action: edit_profile_path %>
+<% end %>

@@ -1,0 +1,11 @@
+<label for="<%= user.id %>" class="table-body">
+  <div class="table-body__cell hidden"><input type="checkbox" id="<%= user.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+  <div class="table-body__cell"><%= user.full_name %></div>
+  <div class="table-body__cell hidden lg:table-cell"><%= user.job_title %></div>
+  <div class="table-body__cell hidden lg:table-cell"><%= user.home_station.try(:name) || "Not Assigned" %></div>
+  <div class="table-body__cell hidden lg:table-cell"><%= user.active ? "Yes" : "No" %></div>
+  <div class="table-body__cell">
+    <%= link_to((inline_svg :icon_edit_pencil, class: "h-5 w-5 float-right text-thales-light-blue active:text-white"), edit_user_path(user), title: 'Edit') %>
+  </div>
+
+</label>

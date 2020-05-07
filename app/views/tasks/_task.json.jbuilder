@@ -1,0 +1,2 @@
+json.extract! task, :id, :created_by_id, :started_at, :completed_at, :logbook_text, :completion_percentage, :started_in_activity_id, :completed_in_activity_id, :task_template_id, :state, :aircraft_id, :logbook_reference, :user_id, :applicable_content, :applicable_software, :applicability_type, :applicability_id, :repeat_interval, :due_at, :created_at, :updated_at
+json.url task_url(task, format: :json)

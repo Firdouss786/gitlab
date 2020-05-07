@@ -1,0 +1,3 @@
+<%= link_to @airline.name, airlines_path, class: "breadcrumb__leaf" %>
+<%= link_to @fleet.name, airline_fleets_path(@airline), class: "breadcrumb__leaf" %>
+<span class="breadcrumb__leaf">Aircrafts</span>

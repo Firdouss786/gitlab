@@ -1,0 +1,32 @@
+<%= form_with(model: removal_reason, local: true) do |form| %>
+  <% if removal_reason.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(removal_reason.errors.count, "error") %> prohibited this removal_reason from being saved:</h2>
+
+      <ul>
+      <% removal_reason.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_category_id %>
+    <%= form.text_field :product_category_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

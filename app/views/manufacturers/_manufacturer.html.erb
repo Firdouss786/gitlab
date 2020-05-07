@@ -1,0 +1,8 @@
+<label for="<%= manufacturer.id %>" class="table-body">
+  <div class="table-body__cell hidden"><input type="checkbox" id="<%= manufacturer.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+  <div class="table-body__cell"><%= manufacturer.name %></div>
+  <div class="table-body__cell"><%= manufacturer.description %></div>
+  <div class="table-body__cell">
+    <%= link_to((inline_svg :icon_edit_pencil, class: "h-5 w-5 float-right text-thales-light-blue active:text-white"), edit_manufacturer_path(manufacturer), title: 'Edit') %>
+  </div>
+</label>

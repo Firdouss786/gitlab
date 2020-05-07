@@ -1,0 +1,189 @@
+// .nav {
+//   display: flex;
+//   background-color: $thales-carbon-2;
+//   z-index: 5;
+//   margin-bottom: 6px;
+// }
+//
+// .nav__home {
+//   flex: 1;
+// }
+//
+// #menu {
+//   display: none;
+// }
+//
+// .mobile-nav {
+//   width: 100%;
+//   padding-top: 1.5rem;
+// }
+//
+// .nav__content {
+//   padding-top: 10px;
+// }
+//
+// .nav__item {
+//   margin-bottom: 10px;
+//   list-style-type: none;
+// }
+//
+// .nav__item.active>a {
+//   color: #86d4e6;
+// }
+//
+// .nav__toggle {
+//   color: white;
+//   display: initial;
+//   align-self: flex-start;
+//   position: absolute;
+//   padding: 6px 0 6px 10px;
+//   font-size: 24px;
+// }
+//
+// .body-overlay {
+//   display: none;
+// }
+//
+// input[type=checkbox].nav__toggle {
+//   display: none;
+// }
+//
+// input[type=checkbox]:checked~#menu {
+//   display: block;
+//   height: auto;
+//   bottom-border-radius: 3px;
+// }
+//
+// input[type=checkbox]:checked~#menu+.body-overlay {
+//   display: block;
+//   position: fixed;
+//   height: 100vh;
+//   width: 100vh;
+//   opacity: .4;
+//   background-color: rgba(0, 0, 0, 0.4);
+//   top: 235px;
+//   left: 0;
+//   right: 0;
+// }
+//
+// input[type=checkbox]:checked~#menu+.nav__user {
+//   display: none;
+// }
+//
+// .nav__links {
+//   flex: 4;
+//   justify-content: flex-start;
+//   margin-left: -5px;
+//   height: auto;
+// }
+//
+// .nav__item {
+//   display: block;
+//   font-size: 18px;
+//   padding-bottom: 10px;
+// }
+//
+// .nav__item>a {
+//   margin: 6px;
+//   color: white;
+//   letter-spacing: .5px;
+// }
+//
+//
+// .nav__user {
+//   flex: 1;
+//   margin: 5px;
+//
+//   .avatar-circle {
+//     @include avatar(31px);
+//     margin-left: auto;
+//   }
+// }
+//
+// .breadcrumb_station_list {
+//   display: none;
+//   background: #eaeae1;
+//   text-align: center;
+//   margin-bottom: 15px;
+//   font-size: 0.9em;
+//
+//   li {
+//     display: inline-block;
+//     margin: 15px 10px;
+//   }
+//
+//   li a {
+//     padding: 10px 20px;
+//   }
+//
+//   li a:hover {
+//     color: #ffffff;
+//     background-color: #aed2e1;
+//   }
+//
+//   #more_button {
+//     font-weight: bold;
+//   }
+// }
+//
+// .jump-expanded {
+//   height: 1.5em;
+// }
+//
+// .nav__remove-overlap {
+//   height: 31px;
+// }
+//
+// @media (min-width: 66em) {
+//
+//   .nav {
+//     align-items: center;
+//     margin-bottom: 0;
+//   }
+//
+//   input[type=checkbox]:checked~#menu+.body-overlay {
+//     display: none;
+//   }
+//
+//   #menu {
+//     display: inline-block;
+//   }
+//
+//   .nav__content {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+//     margin-bottom: 1px;
+//   }
+//
+//   .nav__item {
+//     text-align: center;
+//     text-decoration: none;
+//     font-size: inherit;
+//     padding-bottom: 0;
+//   }
+//
+//   .nav__item.active>a {
+//   color: #ffffff;
+//   text-align: center;
+//   padding-bottom: 5px;
+//   text-decoration: none;
+//   border-bottom: 2px solid #86d4e6;
+// }
+//
+//   .mobile-nav {
+//     padding-top: 0px;
+//   }
+//
+//   .show-menu {
+//     display: none;
+//   }
+//
+//   input[type=checkbox].nav__toggle {
+//     display: none;
+//   }
+//
+//   input[type=checkbox]:checked~#menu {
+//     display: block;
+//   }
+// }

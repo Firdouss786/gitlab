@@ -1,0 +1,12 @@
+<label for="<%= airport.id %>" class="table-body">
+  <div class="table-body__cell hidden"><input type="checkbox" id="<%= airport.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+  <div class="table-body__cell"><%= airport.iata_code %></div>
+  <div class="table-body__cell hidden lg:table-cell"><%= airport.icao_code %></div>
+  <div class="table-body__cell"><%= airport.name %></div>
+  <div class="table-body__cell hidden lg:table-cell"><%= airport.country %></div>
+  <div class="table-body__cell hidden lg:table-cell"><%= airport.city %></div>
+  <div class="table-body__cell">
+    <%= link_to((inline_svg :icon_edit_pencil, class: "h-5 w-5 float-right text-thales-light-blue active:text-white"), edit_airport_path(airport), title: 'Edit') %>
+  </div>
+
+</label>

@@ -1,0 +1,39 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th></th>
+        <% @task_templates.each do |template| %>
+          <% cache template do %>
+            <th>
+              <%= template.name %>
+              <p class="sub-heading">
+                <% if template.recurring? %>
+                    <i class="fa fa-repeat"></i>
+                    <%= pluralize template.repeat_interval, "days" %>
+                <% elsif template.campaign? %>
+                  <%= link_to "Campaign", airline_campaign_path(@airline, template.campaign) %> <%= template.campaign.completion_percentage %>% Complete
+                <% end %>
+              </p>
+            </th>
+          <% end %>
+        <% end %>
+    </tr>
+  </thead>
+
+  <tbody data-controller="task">
+    <% @aircrafts.each do |aircraft| %>
+      <% cache aircraft do %>
+        <tr>
+          <td><%= aircraft.tail %></td>
+          <% @task_templates.each do |template| %>
+            <% if template.recurring? %>
+              <%= render partial: 'recurring_task', locals: { aircraft: aircraft, template: template } %>
+            <% elsif template.campaign? %>
+              <%= render partial: 'campaign_task', locals: { aircraft: aircraft, template: template } %>
+            <% end %>
+          <% end %>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

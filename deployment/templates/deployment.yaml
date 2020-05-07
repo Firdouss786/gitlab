@@ -1,0 +1,78 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: {{ include "deployment.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "deployment.name" . }}
+    helm.sh/chart: {{ include "deployment.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "deployment.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "deployment.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: firefly-app
+          image: "{{ .Values.app.image.repository }}:{{ .Values.app.image.tag }}"
+          imagePullPolicy: {{ .Values.app.image.pullPolicy }}
+          env:
+            - name: DB_USERNAME
+              value: "{{ .Values.environments.DB_USERNAME }}"
+            - name: DB_PASSWORD
+              value: "{{ .Values.environments.DB_PASSWORD }}"
+            - name: DB_PORT
+              value: "{{ .Values.environments.DB_PORT }}"
+            - name: DB_HOST
+              value: "{{ .Values.environments.DB_HOST }}"
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+      imagePullSecrets:
+        - name: firefly
+          
+#          resources: {}
+#{{ toYaml .Values.resources | indent 12 }}
+#    {{- with .Values.nodeSelector }}
+#      nodeSelector:
+#{{ toYaml . | indent 8 }}
+#    {{- end }}
+#    {{- with .Values.affinity }}
+#      affinity:
+#{{ toYaml . | indent 8 }}
+#    {{- end }}
+#    {{- with .Values.tolerations }}
+#      tolerations:
+#{{ toYaml . | indent 8 }}
+#    {{- end }}
+
+        - name: firefly-web
+          image: "{{ .Values.web.image.repository }}:{{ .Values.web.image.tag }}"
+          imagePullPolicy: {{ .Values.web.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+      imagePullSecrets:
+        - name: firefly
+#{{ toYaml .Values.resources | indent 12 }}
+#    {{- with .Values.nodeSelector }}
+#      nodeSelector:
+#{{ toYaml . | indent 8 }}
+#    {{- end }}
+#    {{- with .Values.affinity }}
+#      affinity:
+#{{ toYaml . | indent 8 }}
+#    {{- end }}
+#    {{- with .Values.tolerations }}
+##      tolerations:
+#{{ toYaml . | indent 8 }}
+#    {{- end }}

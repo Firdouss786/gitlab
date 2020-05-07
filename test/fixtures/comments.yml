@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+comment_by_chris:
+  user: chris
+  description: This comment is from Chris Swann.
+  commentable: closed_fault (Fault)
+
+comment_by_maaz:
+  user: maaz
+  description: Maaz Siddiqui made this comment.
+  commentable: closed_fault (Fault)
+
+comment_by_chris_again:
+  user: chris
+  description: Another comment by Chris Swann.
+  commentable: closed_fault (Fault)

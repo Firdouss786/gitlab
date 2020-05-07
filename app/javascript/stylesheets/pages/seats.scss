@@ -1,0 +1,69 @@
+.lopa {
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	grid-row-gap: .2em;
+}
+
+.lopa__seat {
+	background-color: #e8e8e8;
+	min-width: 24px;
+	min-height: 24px;
+	text-align: center;
+	padding: 4px;
+	font-size: 12px;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.lopa__seat:hover {
+	background-color: #989995;
+	cursor: pointer;
+}
+
+#lopa_container .lopa_deck {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 30px;
+}
+
+#lopa_container .lopa__seat.select {	
+	background-color:  #5dbfd4 !important;
+	opacity: 1;
+}
+
+#lopa_container .lopa__seat.active {
+	background-color: #8899BB !important;
+	opacity: 1;
+}
+
+#lopa_container .selection {
+	position: absolute;
+	border: 1px solid #89B;
+	background: #BCE;
+	background-color: #BEC;
+	border-color: #8B9;
+}
+
+.lopa_center {
+	text-align: center;
+}
+
+@media (min-width: 66em) {
+	.lopa__seat {
+		min-width: 24px;
+		min-height: 24px;
+		padding: 3px;
+		font-size: 10px;
+	}
+}
+@media (max-width: 767px) {
+	.lopa__seat {
+		min-width: 20px;
+		min-height: 20px;
+		padding: 3px;
+		font-size: 8px;		
+	}
+}

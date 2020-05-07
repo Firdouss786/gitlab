@@ -1,0 +1,32 @@
+<%= form_with(model: level_recommendation, local: true) do |form| %>
+  <% if level_recommendation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(level_recommendation.errors.count, "error") %> prohibited this level_recommendation from being saved:</h2>
+
+      <ul>
+      <% level_recommendation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :product_id %>
+    <%= form.text_field :product_id, id: :level_recommendation_product_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :recommended_quantity %>
+    <%= form.number_field :recommended_quantity, id: :level_recommendation_recommended_quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stock_location_id %>
+    <%= form.text_field :stock_location_id, id: :level_recommendation_stock_location_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

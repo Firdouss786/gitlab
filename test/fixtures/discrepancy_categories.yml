@@ -1,0 +1,62 @@
+avod:
+  category: AVOD
+
+ife_system_inoperative:
+  category: IFE System Inoperative
+
+ethernet_failure:
+  category: Ethernet Failure
+
+pax_seat_failure:
+  category: PAX Seat Failure
+
+passenger_announcement_pa_failure:
+  category: Passenger Announcement (PA) Failure
+
+pdl_failure:
+  category: PDL Failure
+
+power_failure:
+  category: Power Failure
+
+pss_failure:
+  category: PSS Failure
+
+moving_map:
+  category: Moving Map
+
+ped_power:
+  category: PED Power
+
+video_announcement_va_failure:
+  category: Video Announcement (VA) Failure
+
+cabin_furnishings:
+  category: Cabin Furnishings
+
+icmt_failure:
+  category: ICMT FAILURE
+
+cosmetic_damage:
+  category: COSMETIC DAMAGE
+
+missing_buttons:
+  category: MISSING BUTTON(S)
+
+flight_script:
+  category: Flight Script
+
+connectivity:
+  category: Connectivity
+
+content:
+  category: CONTENT
+
+camera:
+  category: CAMERA
+
+aircraft_modification_or_update:
+  category: AIRCRAFT MODIFICATION/UPDATE
+
+ife_component_not_reporting:
+  category: IFE Component not reporting

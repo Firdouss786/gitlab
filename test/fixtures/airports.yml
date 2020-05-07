@@ -1,0 +1,164 @@
+heathrow:
+  iata_code: LHR
+  icao_code: EGLL
+  name:      Heathrow
+  country:   United Kingdom
+  city:      London
+  latitude:  51.4775
+  longitude: -0.461389
+  dst:       E
+  timezone:  0
+
+jfk:
+  iata_code: JFK
+  icao_code: KJFK
+  name:      John F Kennedy Intl
+  country:   United States
+  city:      New York
+  latitude:  40.639751
+  longitude: -73.778925
+  dst:       E
+  timezone:  0
+
+cdg:
+  iata_code: CDG
+  icao_code: LFPG
+  name:      Charles De Gaulle
+  country:   France
+  city:      Paris
+  latitude:  50.123456
+  longitude: -50.123456
+  dst:       E
+  timezone:  0
+
+lga:
+  iata_code: LGA
+  icao_code: KLGA
+  name:      LaGuardia Airport
+  country:   United States
+  city:      New York
+  latitude:  60.123456
+  longitude: -60.123456
+  dst:       E
+  timezone:  0
+
+lax:
+  iata_code: LAX
+  icao_code: KLAX
+  name:      Los Angeles International Airport
+  country:   United States
+  city:      Los Angeles
+  latitude:  70.123456
+  longitude: -70.123456
+  dst:       E
+  timezone:  0
+
+khi:
+  iata_code: KHI
+  icao_code: KKHI
+  name:      Jinnah International Airport
+  country:   United States
+  city:      Karachi
+  latitude:  80.123456
+  longitude: -80.123456
+  dst:       E
+  timezone:  0
+
+smf:
+  iata_code: SMF
+  icao_code: KSMF
+  name: Sacramento Intl
+  country: United States
+  city: Sacramento
+  latitude: 38.695417
+  longitude: -121.590778
+  dst: A
+  timezone: -8.0
+
+ord:
+  iata_code: ORD
+  icao_code: KORD
+  name: Chicago Ohare Intl
+  country: United States
+  city: Chicago
+  latitude: 41.978603
+  longitude: -87.904842
+  dst: A
+  timezone: -6.0
+
+gla:
+  iata_code: GLA
+  icao_code: KLGA
+  name: La Guardia
+  country: United States
+  city: New York
+  latitude: 40.777245
+  longitude: -73.872608
+  dst: A
+  timezone: -5.0
+
+clt:
+  iata_code: CLT
+  icao_code: KCLT
+  name: Charlotte Douglas Intl
+  country: United States
+  city: Charlotte
+  latitude: 35.214
+  longitude: -80.943139
+  dst: A
+  timezone: -5.0
+
+mia:
+  iata_code: MIA
+  icao_code: KMIA
+  name: Miami Intl
+  country: United States
+  city: Miami
+  latitude: 25.79325
+  longitude: -80.290556
+  dst: A
+  timezone: -5.0
+
+dfw:
+  iata_code: DFW
+  icao_code: KDFW
+  name: Dallas Fort Worth Intl
+  country: United States
+  city: Dallas-Fort Worth
+  latitude: 32.896828
+  longitude: -97.037997
+  dst: A
+  timezone: -6.0
+
+iah:
+  iata_code: IAH
+  icao_code: KIAH
+  name: George Bush Intercontinental
+  country: United States
+  city: Houston
+  latitude: 29.984433
+  longitude: -95.341442
+  dst: A
+  timezone: -6.0
+
+yyz:
+  iata_code: YYZ
+  icao_code: CYYZ
+  name: Lester B Pearson Intl
+  country: Canada
+  city: Toronto
+  latitude: 43.677223
+  longitude: -79.630556
+  dst: A
+  timezone: -5
+
+rov:
+  iata_code: ROV
+  icao_code: URRR
+  name: Rostov Na Donu
+  country: Russia
+  city: Rostov
+  latitude: 47.258208
+  longitude: 39.818089
+  dst: N
+  timezone: 4

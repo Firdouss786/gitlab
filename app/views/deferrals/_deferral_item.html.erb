@@ -1,0 +1,20 @@
+<% cache [ deferral, parent, deferral.aircraft.airline ] do %>
+
+  <%= link_to polymorphic_url([parent, :deferral], id: deferral.id), class: "table-body" do %>
+    <div class="table-cell table-body__cell">
+      <div class="flex items-center justify-start" data-target="deferral-report.daysPassed" data-info="<%= deferral.raised_at.to_date %>">
+        <span id="statusColor" class="h-3 w-3 rounded-full mr-4"></span>
+        <span id="daysPassed"></span>
+      </div>
+    </div>
+    <div class="hidden xl:table-cell table-body__cell"><%= deferral.id %></div>
+    <div class="hidden xl:table-cell table-body__cell"><%= deferral.aircraft.airline.icao_code %></div>
+    <div class="table-cell table-body__cell"><%= deferral.aircraft.tail %></div>
+    <div class="hidden xl:table-cell table-body__cell"><%= date deferral.raised_at %></div>
+    <div class="hidden md:table-cell table-body__cell"><%= deferral.impacted_seat_count %></div>
+    <div class="hidden lg:table-cell table-body__cell whitespace-normal"><%= truncate(deferral.seats_impacted, length: 30) %></div>
+    <div class="hidden sm:table-cell table-body__cell"><%= deferral.logbook_reference %></div>
+    <div class="table-cell table-body__cell whitespace-normal"><%= truncate(deferral.logbook_text, length: 100) %></div>
+  <% end %>
+
+<% end %>

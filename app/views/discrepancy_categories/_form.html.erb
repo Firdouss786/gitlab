@@ -1,0 +1,16 @@
+<%= form_with(model: discrepancy_category, local: true) do |form| %>
+  <%= render "shared/form_errors", obj: discrepancy_category %>
+
+  <div class="form-grid">
+
+    <div class="field form-grid--span">
+      <%= form.label :category %>
+      <%= form.text_field :category, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="flex justify-end content-center form-grid--right">
+      <%= link_to "Cancel", discrepancy_categories_path, { class: "btn btn-secondary mr-4" } %>
+      <%= form.submit class: "btn" %>
+    </div>
+  </div>
+<% end %>

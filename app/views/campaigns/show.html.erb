@@ -1,0 +1,33 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: @task_template.name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= render 'airlines/breadcrumb' %>
+  <%= link_to 'Tasks', airline_task_templates_path(@task_template.airline), class: "breadcrumb__leaf" %>
+  <%= link_to @task_template.name, airline_campaign_path(@task_template.airline, @task_template.campaign), class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/airline_nav', airline: @task_template.airline %>
+<% end %>
+
+<section class="panel area-main area-main--half">
+
+  <p>Campaign started on <%= date @task_template.created_at %>, targeted for completion on <%= date @task_template.campaign.scheduled_end %>.</p>
+  <p class="mb-4"><%= @task_template.tasks.active.count %> out of <%= @task_template.tasks.count %> aircraft remaining.</p>
+
+  <div class="table" data-controller="table">
+    <div class="table-head">
+      <div class="table-head__checkbox-cell hidden"><input type="checkbox" class="form-checkbox" data-action="change->table#toggleAllCheckboxes" data-target="table.tableCheckbox"></div>
+      <div class="table-head__cell"><%= sortable 'aircraft.tail', 'Aircraft' %></div>
+      <div class="table-head__cell"><%= sortable 'state' %></div>
+      <div class="table-head__cell"><%= sortable 'completed_at', 'Loaded On' %></div>
+      <div class="table-head__cell text-right"><%= "Loaded By" %></div>
+    </div>
+
+    <%= render(partial: 'campaign', collection: @task_template.tasks, cached: true) %>
+
+  </div>
+
+</section>

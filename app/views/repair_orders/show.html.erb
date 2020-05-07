@@ -1,0 +1,24 @@
+<%= render "shared/flash" %>
+
+<p>
+  <strong>User:</strong>
+  <%= @repair_order.user_id %>
+</p>
+
+<p>
+  <strong>Origin stock location:</strong>
+  <%= @repair_order.origin_stock_location_id %>
+</p>
+
+<p>
+  <strong>Destination stock location:</strong>
+  <%= @repair_order.destination_stock_location_id %>
+</p>
+
+<p>
+  <strong>Part transaction:</strong>
+  <%= @repair_order.part_transaction_id %>
+</p>
+
+<%= link_to 'Edit', edit_repair_order_path(@repair_order) %> |
+<%= link_to 'Back', repair_orders_path %>

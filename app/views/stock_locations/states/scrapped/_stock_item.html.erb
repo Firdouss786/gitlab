@@ -1,0 +1,12 @@
+<label for="<%= stock_item.id %>" class="table-body">
+  <div class="table-body__cell"><input type="checkbox" id="<%= stock_item.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+  <div class="table-body__cell"><%= stock_item.id %></div>
+  <div class="table-body__cell"><%= stock_item.product.name %></div>
+  <div class="table-body__cell"><%= stock_item.product.part_number %></div>
+  <div class="table-body__cell"><%= stock_item.serial_number %></div>
+  <div class="table-body__cell"><%= stock_item.revision %></div>
+  <div class="table-body__cell"><%= stock_item.model_numbers %></div>
+  <div class="table-body__cell"><%= stock_item.shelved_at %></div>
+  <div class="table-body__cell"><%= certificate_string(stock_item.certificates) %></div>
+  <div class="table-body__cell"></div>
+</label>

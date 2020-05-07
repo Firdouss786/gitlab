@@ -1,0 +1,9 @@
+<label for="<%= product_allotment.id %>" class="table-body">
+  <div class="table-body__cell hidden"><input type="checkbox" id="<%= product_allotment.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+  <div class="table-body__cell"><%= product_allotment.product.name %></div>
+  <div class="table-body__cell"><%= product_allotment.product.part_number %></div>
+  <div class="table-body__cell"><%= product_allotment.quantity || '--' %></div>
+  <div class="table-body__cell flex justify-end">
+    <%= link_to((inline_svg :icon_edit_pencil, class: "h-5 w-5 text-thales-light-blue active:text-white"), edit_product_allotment_path(@fleet, product_allotment), title: 'Edit Product Allotment') %>
+  </div>
+</label>

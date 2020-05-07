@@ -1,0 +1,23 @@
+<% content_for :breadcrumb do %>
+  <%= link_to "Stations", station_activities_path(@activity.station), class: "breadcrumb__leaf" %>
+  <%= link_to "Workload", activity_path(@activity), class: "breadcrumb__leaf" %>
+  <%= link_to "Task", activity_task_path(@activity, @task_action.task), class: "breadcrumb__leaf" %>
+  <%= link_to "Task Action", activity_task_action_path(@activity, @task_action), class: "breadcrumb__leaf" %>
+  <%= link_to "Edit Task Action", edit_activity_task_action_path(@activity, @task_action), class: "breadcrumb__leaf" %>
+<% end %>
+
+<section class="activity-grid--left hide-on-mobile panel">
+  <%= render "activities/items", activity: @activity %>
+</section>
+
+<section class="activity-grid--right panel">
+  <%= render "shared/flash" %>
+
+  <h1 class="header">
+    <span class="header__name">Edit Task Action</span>
+  </h1>
+
+  <%= render 'form', activity: @activity, task_action: @task_action %>
+  <%= link_to "Back", activity_task_path(@task_action.activity, @task_action.task) %>
+
+</section>

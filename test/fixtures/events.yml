@@ -1,0 +1,19 @@
+one:
+  eventable: usb_adjustment (Adjustment)
+  stock_item: consumable
+
+two:
+  eventable: usb_adjustment_2 (Adjustment)
+  stock_item: consumable
+
+three:
+  eventable: replacement_consumable_two_adjustment (Adjustment)
+  stock_item: consumable
+
+four:
+  eventable: replacement_consumable_two_2_adjustment (Adjustment)
+  stock_item: consumable
+
+initial_batch_creation:
+  eventable: creation_of_consumable_batch (Transfer)
+  stock_item: consumable_with_no_history

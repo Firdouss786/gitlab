@@ -1,0 +1,13 @@
+<% cache document do %>
+  <%= link_to station_path(document) do %>
+    <div class="search-result">
+      <div class="search-result__icon">
+        <%= image_tag "icons/address_icon.png" %>
+      </div>
+      <div class="search-result__content">
+        <span class="search-result__heading"><%= document.name %></span>
+        <span class="search-result__data"><%= document.full_address %></span>
+      </div>
+    </div>
+  <% end %>
+<% end %>

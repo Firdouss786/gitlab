@@ -1,0 +1,67 @@
+stages:
+- build 
+- deploy
+
+
+cache:
+  key: ${CI_JOB_NAME}
+  paths:
+  - node_modules/
+  
+  
+variables:
+  KUBECONFIG: ${CI_PROJECT_DIR}/kube_config
+  #GIT_STRATEGY: fetch
+
+build:image:
+  stage: build
+  image: docker
+  script:
+  - docker login -u "$CI_REGISTRY_USER" -p "$CI_JOB_TOKEN" "$CI_REGISTRY"
+  - echo $ENV_NAME
+  - docker build -f rails_app/Dockerfile --build-arg ENV_NAME=$ENV_NAME -t "$CI_REGISTRY_IMAGE/firefly-app:$CI_COMMIT_SHA" .
+  - docker push "$CI_REGISTRY_IMAGE/firefly-app:$CI_COMMIT_SHA"
+  - docker build -f nginx/Dockerfile --build-arg ENV_NAME=$ENV_NAME -t "$CI_REGISTRY_IMAGE/firefly-web:$CI_COMMIT_SHA" .
+  - docker push "$CI_REGISTRY_IMAGE/firefly-web:$CI_COMMIT_SHA"
+  
+  only:
+    - staging
+    - master
+    - development
+    - merge_requests
+    
+    
+deploy:Development:
+  stage: deploy
+  image: dtzar/helm-kubectl:3.1.1
+  #only: [branches,tags,api,external,pipelines,pushes,schedules,triggers,web,merge_requests]
+  before_script:
+    - export GIT_BRANCH_PREV=$CI_COMMIT_REF_NAME
+    - echo ${KUBE_CONFIG_SHRDAKS_DEV} | base64 -d > ${KUBECONFIG}
+    - export KUBECONFIG=${KUBECONFIG}
+    - cd deployment/
+  script:
+    - export KUBECONFIG=${KUBECONFIG}
+    - echo " >>>>>>>>>> Deploy in progress for $CI_PROJECT_NAME <<<<<<<<<< "
+    - >
+      helm upgrade --force
+      --install firefly
+      --set app.image.repository="$CI_REGISTRY_IMAGE/firefly-app"
+      --set app.image.tag="$CI_COMMIT_SHA"
+      --set web.image.repository="$CI_REGISTRY_IMAGE/firefly-web"
+      --set web.image.tag="$CI_COMMIT_SHA"
+      --set environments.springDataMongodbUri="$SPRING_DATA_MONGODB_URI_DEV"
+      --set environments.springDataMongodbconnectivity="$SPRING_DATA_MONGODB_CONNECTIVITY_URI_DEV"
+      --set environments.springDataSourcePassword="$SPRING_DATASOURCE_PASSWORD_DEV"
+      --set environments.springDataSourceUrl="$SPRING_DATASOURCE_URL_DEV"
+      --set environments.springDataSourceUsername="$SPRING_DATASOURCE_USERNAME_DEV"
+      --set environments.SpringKalogsUrl="$SPRING_KALOGS_URL_DEV"
+      --set environments.OktaClientOrgUrl="$OKTA_CLIENT_ORGURL_DEV"
+      --set environments.OktaOauthClient="$OKTA_OAUTH2_CLIENTID_DEV"
+      --set environments.OktaClientUrl="$OKTA_OAUTH2_ISSUER_DEV"
+      --set environments.SpringCloudServiceBus="$SPRING_CLOUD_AZURE_SERVICEBUS_CONNECTION_STRING_DEV"
+      --set environments.OktaClientToken="$OKTA_CLIENT_TOKEN_DEV"
+      --set environments.PortalUrl="$PORTAL_URL_DEV"
+      --set environments.sendgridapi="$SENDGRID_API_KEY"
+      --set ingress.enabled=true,ingress.hosts[0]=firefly.inflytanalytics.com,ingress.tls[0].secretName=inflytanalytics,ingress.tls[0].hosts[0]=firefly.inflytanalytics.com
+      --namespace servo .

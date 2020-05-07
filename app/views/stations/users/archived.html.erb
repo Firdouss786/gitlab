@@ -1,0 +1,41 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_aircraft, label: @station.name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= render 'stations/breadcrumb' %>
+  <%= link_to "Users", archived_station_users_path(@station), class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/station_nav', station: @station %>
+<% end %>
+
+<section class="area-main" data-controller="turbolinks">
+  <%= render "shared/flash" %>
+
+  <div class="table" data-controller="table">
+    <div class="table-head">
+      <div class="table-head__checkbox-cell hidden"><input type="checkbox" class="form-checkbox" data-action="change->table#toggleAllCheckboxes" data-target="table.tableCheckbox"></div>
+      <div class="table-head__cell"><%= sortable 'user.full_name', 'name' %></div>
+      <div class="table-head__cell"><%= sortable 'job_title' %></div>
+      <div class="table-head__cell hidden lg:table-cell"><%= sortable 'email' %></div>
+      <div class="table-head__cell hidden lg:table-cell"><%= 'phone' %></div>
+      <div class="table-head__cell text-right"><%= "Actions" %></div>
+    </div>
+
+    <%= render(partial: :user, collection: @users, cached: true) if @users.present? %>
+
+  </div>
+
+  <%= render('shared/empty_table_state', msg: "Found no users.", helper: "#{link_to 'Try searching globally', search_index_path, class: 'underline text-thales-light-blue font-semibold'}".html_safe) if @users.blank? %>
+
+  <%= will_paginate @users, class: "pagination"%>
+
+</section>
+
+<% content_for :search_action, archived_station_users_path(@station) %>
+
+<% content_for :buttons do %>
+  <%= render 'layouts/footer_button', icon: :icon_user, label: "Active Users", action: station_users_path(@station) %>
+<% end %>

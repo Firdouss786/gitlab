@@ -1,0 +1,32 @@
+<%= form_with(model: product_category, local: true) do |form| %>
+  <%= render "shared/form_errors", obj: product_category %>
+
+  <div class="form-grid">
+
+    <div class="field form-grid--left">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--right">
+      <%= form.label :product_type %>
+      <%= form.select :product_type, options_for_select(ProductCategory.product_types), { prompt: "Select product type ..." }, { required: true, class: "form-select select-filter" } %>
+    </div>
+
+    <div class="field form-grid--span">
+      <%= form.label :description %>
+      <%= form.text_field :description, class: "form-input block w-full" %>
+    </div>
+
+    <div class="form-grid--span">
+      <br>
+    </div>
+
+    <div class="flex justify-end content-center form-grid--right">
+      <%= link_to "Cancel", product_categories_path, { class: "btn btn-secondary mr-4" } %>
+      <%= form.submit class: "btn" %>
+    </div>
+
+  </div>
+
+<% end %>

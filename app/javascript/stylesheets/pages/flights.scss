@@ -1,0 +1,74 @@
+.content_tile {
+  border: none;
+}
+
+.filters {
+  position: sticky;
+  z-index: 1;
+}
+
+.filter-form {
+  .field {
+    display: inline-block;
+  }
+}
+
+.align-right {
+  float: right;
+}
+
+
+.schedule-container {
+  margin-top: 5px;
+  display: none;
+  padding: 0 10px 10px;
+
+  dt {
+    // TODO: There is already CSS for this
+    color: #bbbbbb;
+    font-size: 12px;
+  }
+
+  dl {
+    flex: 1;
+
+  }
+}
+
+.flight-container,
+.schedule-container {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+
+  dt {
+    // TODO: There is already CSS for this
+    color: #bbbbbb;
+    font-size: 12px;
+  }
+
+  dl {
+    flex: 1;
+
+  }
+
+}
+
+// dl {
+//   margin: 0;
+//
+//   dd {
+//     margin: 0;
+//   }
+// }
+
+/* Time */
+.local_display {
+  position: relative;
+  float: right;
+
+}
+
+[type="checkbox"]+span:not(.lever) {
+  padding-left: 25px !important;
+}

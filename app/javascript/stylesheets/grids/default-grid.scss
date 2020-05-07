@@ -1,0 +1,77 @@
+body {
+  background-color: white;
+}
+
+footer {
+  @apply hidden;
+}
+
+.panel {
+  padding: 0.5em;
+}
+
+.panel--micro {
+  min-width: 30em;
+  margin: auto;
+}
+
+.area-main {
+  grid-area: main;
+  justify-self: center;
+  @apply w-full;
+}
+
+.nav {
+  grid-area: header;
+}
+
+@screen sm {
+  .default-grid {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1em 1fr 1em;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+    "header header header"
+    ". main ."
+    "footer footer footer";
+  }
+
+  .grid--main {
+    grid-area: main;
+  }
+
+  html {
+    height: 100%;
+  }
+
+  body {
+  	background-color: white;
+    min-height: 100vh;
+  }
+
+  .panel {
+    padding: 0;
+    transition: box-shadow 0.25s;
+    padding: 24px;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 0 0 1px rgba(89, 105, 128, 0.1), 0 1px 3px 0 rgba(89, 105, 128, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  footer {
+    grid-area: footer;
+  }
+}
+
+@screen lg {
+  .default-grid {
+    grid-template-columns: 4em 1fr 4em;
+  }
+}
+
+@screen 2xl {
+  .area-main--half {
+    @apply w-1/2;
+  }
+}

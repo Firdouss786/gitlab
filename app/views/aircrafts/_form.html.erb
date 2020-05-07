@@ -1,0 +1,74 @@
+<%= form_with(model: aircraft, local: true) do |form| %>
+  <%= render "shared/form_errors", obj: aircraft %>
+
+  <div class="form-grid">
+
+    <div class="field form-grid--left">
+      <%= form.label :tail %>
+      <%= form.text_field :tail, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--right">
+      <%= form.label :registration %>
+      <%= form.text_field :registration, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--left">
+      <%= form.label :msn %>
+      <%= form.text_field :msn, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--right">
+      <%= form.label :fin %>
+      <%= form.text_field :fin, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--left datepicker-container">
+      <%= form.label :tot, 'TRANSFER OF TITLE' %>
+      <%= form.text_field :tot, class: "form-input block w-full form_datetime", readonly: true %>
+    </div>
+
+    <div class="field form-grid--right datepicker-container">
+      <%= form.label :eis, 'ENTRY INTO SERVICE' %>
+      <%= form.text_field :eis, class: "form-input block w-full form_datetime", readonly: true %>
+    </div>
+
+    <div class="field form-grid--left">
+      <%= form.label :locked %><br />
+      <div class="mt-1">
+        <%= form.radio_button :locked, true, class: "form-radio h-5 w-5"  %>
+        <%= form.label :locked, "YES", class: "mr-4"%>
+
+        <%= form.radio_button :locked, false, class: "form-radio h-5 w-5" %>
+        <%= form.label :locked, "NO" %>
+      </div>
+    </div>
+
+    <div class="field form-grid--right">
+      <%= form.label :active %><br />
+      <div class="mt-1">
+        <%= form.radio_button :active, true, class: "form-radio h-5 w-5"  %>
+        <%= form.label :active, "YES", class: "mr-4"%>
+
+        <%= form.radio_button :active, false, class: "form-radio h-5 w-5" %>
+        <%= form.label :active, "NO" %>
+      </div>
+    </div>
+
+    <div class="field form-grid--span">
+      <%= form.label :description %>
+      <%= form.text_area :description, class: "form-input block w-full" %>
+    </div>
+
+    <div class="form-grid--span">
+      <br>
+    </div>
+
+    <div class="flex justify-end content-center form-grid--right">
+      <%= link_to "Cancel", aircrafts_path(@fleet), { class: "btn btn-secondary mr-4" } %>
+      <%= form.submit class: "btn" %>
+    </div>
+
+  </div>
+
+<% end %>

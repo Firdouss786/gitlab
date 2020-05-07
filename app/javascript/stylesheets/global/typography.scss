@@ -1,0 +1,8 @@
+.header--underlined {
+  @apply font-bold uppercase tracking-tight text-thales-dark-blue-gray pb-3 mb-6 border-gray-300 border-b;
+}
+
+// Changelog Styles
+.changelog h4 {
+  @apply font-bold uppercase tracking-tight text-thales-dark-blue-gray pb-3 mb-6 border-gray-300 border-b mt-10;
+}

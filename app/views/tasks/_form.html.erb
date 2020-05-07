@@ -1,0 +1,30 @@
+<%= form_with(model: [activity, task], local: true) do |form| %>
+  <%= render "shared/form_errors", obj: task %>
+
+  <div class="form-grid">
+    <div class="field form-grid--span datepicker-container">
+      <%= form.label :started_at %>
+      <%= form.text_field :started_at, class: "form-input block w-full form_datetime", readonly: true, required: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :task_template_id, "Task Card" %>
+      <%= form.collection_select :task_template_id, activity.aircraft.fleet.task_templates.where(archival: nil).order('name ASC'), :id, :name, { prompt: '-- Select Task Card --' }, { disabled: task.scheduled_task?, required: true, class: "form-select select-filter" } %>
+    </div>
+
+    <div class="field">
+      <%= form.label :logbook_reference %>
+      <%= form.text_field :logbook_reference, class: "form-input", required: true %>
+    </div>
+
+    <div class="field form-grid--span">
+      <%= form.label :logbook_text %>
+      <%= form.text_area :logbook_text, class: "form-textarea", required: true %>
+    </div>
+
+    <div class="form-grid--span text-right">
+      <%= form.submit ("Add to workpack" if task.created? && task.scheduled_task?), class: "btn" %>
+    </div>
+  </div>
+
+<% end %>

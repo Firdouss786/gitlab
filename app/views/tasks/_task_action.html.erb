@@ -1,0 +1,18 @@
+<%= link_to activity_task_action_path(@activity, task_action) do %>
+  <div class="flex items-center border-b py-2 no-underline hover:bg-gray-100 text-gray-500">
+    <div class="text-sm">
+      <span class="block text-gray-800"><%= shortdate task_action.completed_at %></span>
+      <span class="block"><%= task_action.users.map(&:full_name).join(", ") %></span>
+    </div>
+
+    <div class="ml-2 pl-2 flex-grow flex items-center flex-wrap xl:flex-no-wrap">
+      <div class="flex-grow w-full xl:w-auto text-gray-700"><%= task_action.logbook_text %></div>
+    </div>
+
+    <div>
+      <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z" fill-rule="evenodd"/>
+      </svg>
+    </div>
+  </div>
+<% end %>

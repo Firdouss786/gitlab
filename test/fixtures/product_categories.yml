@@ -1,0 +1,9 @@
+other:
+  name: OTHER
+  product_type: CONSUMABLE
+  description: OTHER
+
+display:
+  name: DISPLAY
+  product_type: ROTABLE
+  description: DISPLAY

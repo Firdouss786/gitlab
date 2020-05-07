@@ -1,0 +1,53 @@
+no_access:
+  name: NO ACCESS
+  description: Access to aircraft or parts not allowed
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+insufficient_manpower:
+  name: INSUFFICIENT MANPOWER
+  description: Insufficient manpower
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+no_parts:
+  name: NO PARTS
+  description: Parts not available
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+insufficient_time:
+  name: INSUFFICIENT TIME
+  description: Insufficient time to accomplish task
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+engreq:
+  name: ENGREQ
+  description: Engineering action required
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+customer_supplied_parts_not_available:
+  name: CUSTOMER SUPPLIED PARTS NOT AVAILABLE
+  description: Check completion are the responsibility of the customer and not stocked at local station
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+corrective_action_verification:
+  name: CORRECTIVE ACTION VERIFICATION
+  description: Fault intermitant and remains open for future LMT to verify if the previous Corrective Action was successful
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+awaiting_customer_response:
+  name: AWAITING CUSTOMER RESPONSE
+  description: Request sent to customer for repair approval, e.g. CID
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+defer_reason_delete:
+  name: DEFER REASON DELETE
+  description: Defer Reason used for delete operation.
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>

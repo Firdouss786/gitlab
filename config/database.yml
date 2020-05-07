@@ -1,0 +1,68 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  #pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: ife-pdg-dev-uset2-ifh-001-servo-2-mysqlserver.mysql.database.azure.com 
+  port: 3306
+  username: mysql-ifh-admin@ife-pdg-dev-uset2-ifh-001-servo-2-mysqlserver
+  password: F%5mYPWxbqF!bN7Q
+
+
+
+development:
+  <<: *default
+  database: firefly_development
+  adapter: mysql2
+  encoding: utf8
+  #pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: ife-pdg-dev-uset2-ifh-001-servo-2-mysqlserver.mysql.database.azure.com 
+  port: 3306
+  username: mysql-ifh-admin@ife-pdg-dev-uset2-ifh-001-servo-2-mysqlserver
+  password: F%5mYPWxbqF!bN7Q
+
+
+test:
+  <<: *default
+  database: firefly_test
+  adapter: mysql2
+  encoding: utf8
+  #pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: servo-test-mysql.mysql.database.azure.com
+  port: 3306
+  username: myservo@servo-test-mysql
+  password: RtxtbQ2h2LXv4wpk
+
+
+staging:
+  <<: *default
+  database: firefly_development
+  adapter: mysql2
+  encoding: utf8
+  #pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: servo-test-mysql.mysql.database.azure.com
+  port: 3306
+  username: myservo@servo-test-mysql
+  password: RtxtbQ2h2LXv4wpk
+
+  
+qa:
+  <<: *default
+  adapter: mysql2
+  encoding: utf8
+  database: firefly_qa
+  username: root
+  host: firefly-staging.cqp2xwflcgyi.eu-west-2.rds.amazonaws.com
+  port: 3306
+  password: <%= Rails.application.credentials.firefly_staging_database_password %>
+
+production:
+  <<: *default
+  database: firefly_development
+  adapter: mysql2
+  encoding: utf8
+  #pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: servo-test-mysql.mysql.database.azure.com
+  port: 3306
+  username: myservo@servo-test-mysql
+  password: RtxtbQ2h2LXv4wpk
+

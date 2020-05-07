@@ -1,0 +1,8 @@
+british_airways:
+  airline: baw
+  mcc_email: chris.swann@thalesinflight.com
+  repair_order_note: Inspect & Repair in accordance with Original Equipment Manufacturers Component Maintenance Manual.
+  airport: heathrow
+  mailing_group_1:
+  mailing_group_2:
+  mailing_group_3:

@@ -1,0 +1,32 @@
+baw:
+  iata_code: BA
+  icao_code: BAW
+  name: British Airways
+  alias:
+  callsign: SPEEDBIRD
+  country: United Kingdom
+  customer: true
+  description:
+  state: active
+
+aal:
+  iata_code: AA
+  icao_code: AAL
+  name: American Airlines
+  alias:
+  callsign: American Airlines
+  country: United States
+  customer: true
+  description:
+  state: active
+
+jbu:
+  iata_code: JB
+  icao_code: JBU
+  name: Jet Blue
+  alias:
+  callsign: Jet Blue
+  country: United States
+  customer: true
+  description:
+  state: active

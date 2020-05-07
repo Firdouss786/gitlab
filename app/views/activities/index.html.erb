@@ -1,0 +1,45 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_aircraft, label: @station.name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= render 'stations/breadcrumb' %>
+  <%= link_to "Workload", station_activities_path(@station), class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/station_nav', station: @station %>
+<% end %>
+
+<section class="area-main">
+  <%= render "shared/flash" %>
+
+  <div class="flex items-center mb-4">
+    <span class="mr-2 text-gray-600">Filter:</span>
+    <%= link_to "Now", nil, class: "text-gray-700 mr-2 btn btn-secondary btn-sm" %>
+    <%= link_to "Arriving", station_activities_path(station_id: @station, filter: "arriving"), class: "text-gray-700 mr-2 btn btn-secondary btn-sm" %>
+    <%= link_to "Landed", station_activities_path(station_id: @station, filter: "landed"), class: "text-gray-700 mr-2 btn btn-secondary btn-sm" %>
+    <span class="flex-grow"></span>
+    <%= link_to "Add Workpack Manually", new_station_activity_path(station_id: @station), class: "btn btn-sm" %>
+  </div>
+
+  <div class="table" data-controller="table">
+    <div class="table-head hidden sm:table-row">
+      <div class="table-head__checkbox-cell hidden"><input type="checkbox" class="form-checkbox" data-action="change->table#toggleAllCheckboxes" data-target="table.tableCheckbox"></div>
+      <div class="table-head__cell">Aircraft</div>
+      <div class="hidden lg:table-cell table-head__cell">Airline</div>
+      <div class="table-head__cell">Flight Status</div>
+      <div class="table-head__cell">Lands</div>
+      <div class="table-head__cell">Departs</div>
+      <div class="table-head__cell">Ground Time</div>
+      <div class="table-head__cell">Work Items</div>
+      <div class="hidden lg:table-cell table-head__cell text-right">Work Status</div>
+    </div>
+
+    <%= render(partial: 'activity', collection: @activities, cached: true) if @activities.present? %>
+
+  </div>
+
+</section>
+
+<% content_for :search_action, station_activities_path %>

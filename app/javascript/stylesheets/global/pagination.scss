@@ -1,0 +1,37 @@
+.pagination {
+  @apply bg-white cursor-default float-right my-6 mr-4;
+}
+
+.pagination a, .pagination span, .pagination em {
+  @apply float-left block py-1 px-2 mr-px;
+}
+
+.pagination .disabled {
+  @apply text-gray-500 border border-gray-400;
+}
+
+.pagination .current {
+  @apply border border-gray-500 bg-gray-500 text-white font-semibold not-italic;
+}
+
+.pagination a {
+  @apply no-underline text-thales-blue-gray border border-gray-400;
+}
+
+.pagination a:hover, .pagination a:focus {
+  @apply bg-gray-500 text-white border border-gray-500;
+}
+
+.pagination:after {
+  @apply block h-0 invisible;
+  content: ".";
+  clear: both;
+}
+
+* html .pagination {
+  height: 1%;
+}
+
+*:first-child + html .pagination {
+  @apply overflow-hidden;
+}

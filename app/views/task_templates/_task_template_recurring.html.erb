@@ -1,0 +1,9 @@
+<label for="<%= task_template_recurring.id %>" class="table-body">
+  <div class="table-body__cell hidden"><input type="checkbox" id="<%= task_template_recurring.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+  <div class="table-body__cell"><%= task_template_recurring.name %></div>
+  <div class="table-body__cell"><%= repeat_interval task_template_recurring.repeat_interval %></div>
+  <div class="table-body__cell"><%= date task_template_recurring.created_at %></div>
+  <div class="table-body__cell">
+    <%= link_to((inline_svg :icon_search, class: "h-5 w-5 float-right text-thales-light-blue active:text-white"), airline_task_template_path(@airline, task_template_recurring), title: 'Show') %>
+  </div>
+</label>

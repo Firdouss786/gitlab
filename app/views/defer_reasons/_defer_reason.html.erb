@@ -1,0 +1,8 @@
+<label for="<%= defer_reason.id %>" class="table-body">
+  <div class="table-body__cell hidden"><input type="checkbox" id="<%= defer_reason.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+  <div class="table-body__cell"><%= defer_reason.name %></div>
+  <div class="table-body__cell"><%= defer_reason.description %></div>
+  <div class="table-body__cell">
+    <%= link_to((inline_svg :icon_edit_pencil, class: "h-5 w-5 float-right text-thales-light-blue active:text-white"), edit_defer_reason_path(defer_reason), title: 'Edit') %>
+  </div>
+</label>

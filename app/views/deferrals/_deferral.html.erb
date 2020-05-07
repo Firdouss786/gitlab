@@ -1,0 +1,60 @@
+<% cache [ @corrective_action, parent ] do %>
+
+  <section class="area area-main panel area-main--half">
+    <%= render "shared/flash" %>
+    <%= render "shared/back_link", link_text: "Back to fault", link_route: polymorphic_url([parent, :deferral], id: @corrective_action.fault.id), truncate: true %>
+
+    <div class="flex items-start">
+
+      <div class="align-text-top text-gray-800">
+        <span class="text-xl font-semibold block leading-none"><%= @corrective_action.logbook_text %></span>
+        <span class="text-sm text-gray-500"><%= @corrective_action.job_started_at %></span>
+      </div>
+
+      <div class="pl-2 align-text-top flex-grow text-right">
+        <span class="text-sm whitespace-no-wrap"><%= @corrective_action.logbook_reference %></span>
+        <span class="text-sm block leading-none text-gray-500 whitespace-no-wrap"><%= @corrective_action.id %></span>
+      </div>
+    </div>
+
+    <table class="mt-6 w-full text-sm border-gray-200 border-t-2">
+      <tr class="border-none">
+        <td class="py-2 pr-6 text-gray-600">Deferred By:</td>
+        <td class="py-2 pr-6"><%= @corrective_action.performed_by.full_name %></td>
+      </tr>
+
+      <tr class="border-none">
+        <td class="py-2 pr-6 text-gray-600">MEL Category:</td>
+        <td class="py-2 pr-6"><%= 'A' %></td>
+      </tr>
+
+      <tr class="border-none">
+        <td class="py-2 pr-6 text-gray-600">Operational Deficiency:</td>
+        <td class="py-2 pr-6"><%= boolean_checkmark @corrective_action.opdef %></td>
+      </tr>
+
+      <tr class="border-none">
+        <td class="py-2 pr-6 text-gray-600">Reason for Deferral:</td>
+        <td class="py-2 pr-6"><%= @corrective_action.defer_reason.name %></td>
+      </tr>
+
+      <tr class="border-none">
+        <td class="py-2 pr-6 text-gray-600">Required Part:</td>
+        <td class="py-2 pr-6">
+          <% if @corrective_action.defer_reason.name == 'no parts'.upcase && @corrective_action.product.present? %>
+            <%= "#{@corrective_action.product.part_number} - #{@corrective_action.product.name}"  %>
+          <% else %>
+            N/A
+          <% end %>
+        </td>
+      </tr>
+
+      <tr class="border-none">
+        <td class="py-2 pr-6 text-gray-600">Document Reference:</td>
+        <td class="py-2 pr-6"><%= @corrective_action.document_reference %></td>
+      </tr>
+    </table>
+
+  </section>
+
+<% end %>

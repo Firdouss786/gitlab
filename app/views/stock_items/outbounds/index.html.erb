@@ -1,0 +1,18 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th class=""><input id="checkBox" type="checkbox"></th>
+			<th class="">Sent At</th>
+			<th class="">Transfer ID</th>
+			<th class="">Sent From</th>
+			<th class="">Sent To</th>
+			<th class="">Part Name</th>
+			<th class="">Part Number</th>
+			<th class="">Serial Number</th>
+			<th class=""></th>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render partial: 'stock_item', collection: @stock_items, cached: true %>
+	</tbody>
+</table>

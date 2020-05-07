@@ -1,0 +1,39 @@
+<%= render "shared/flash" %>
+
+<p>
+  <strong>Expired:</strong>
+  <%= @certificate.expired %>
+</p>
+
+<p>
+  <strong>Filename:</strong>
+  <%= @certificate.filename %>
+</p>
+
+<p>
+  <strong>Reference:</strong>
+  <%= @certificate.reference %>
+</p>
+
+<p>
+  <strong>Governance:</strong>
+  <%= @certificate.governance %>
+</p>
+
+<p>
+  <strong>Stock item:</strong>
+  <%= @certificate.stock_item %>
+</p>
+
+<p>
+  <strong>Hdfs filename:</strong>
+  <%= @certificate.hdfs_filename %>
+</p>
+
+<p>
+  <strong>Expired at:</strong>
+  <%= @certificate.expired_at %>
+</p>
+
+<%= link_to 'Edit', edit_certificate_path(@certificate) %> |
+<%= link_to 'Back', certificates_path %>

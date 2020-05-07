@@ -1,0 +1,11 @@
+content_load:
+  task_template: content_load
+  state: created
+  scheduled_start: 2018-04-09 16:32:43
+  scheduled_end: 2018-04-09 16:32:43
+
+content_load_two:
+  task_template: campaign_with_one_config
+  state: created
+  scheduled_start: 2018-04-09 16:32:43
+  scheduled_end: 2018-04-09 16:32:43

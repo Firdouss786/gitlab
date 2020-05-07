@@ -1,0 +1,19 @@
+<%= render "shared/flash" %>
+
+<p>
+  <strong>Product:</strong>
+  <%= @level_recommendation.product %>
+</p>
+
+<p>
+  <strong>Recommended quantity:</strong>
+  <%= @level_recommendation.recommended_quantity %>
+</p>
+
+<p>
+  <strong>Stock location:</strong>
+  <%= @level_recommendation.stock_location %>
+</p>
+
+<%= link_to 'Edit', edit_level_recommendation_path(@level_recommendation) %> |
+<%= link_to 'Back', level_recommendations_path %>

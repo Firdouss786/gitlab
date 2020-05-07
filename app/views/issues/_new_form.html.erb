@@ -1,0 +1,39 @@
+<div class="panel" data-controller="">
+  <%= form_with model: fault, url: airline_issues_path, local: true do |form| %>
+    <% if fault.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(fault.errors.count, "error") %> prohibited this issue from being saved:</h2>
+
+        <ul>
+        <% fault.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="issues-container">
+      <div class="issues-item">
+        <%= form.label :aircraft_id, {class: "form-group-label"} %>
+        <%= form.collection_select :aircraft_id, @airline.aircrafts.all, :id, :tail, {}, {class: ""} %>
+      </div>
+
+      <div class="issues-item">
+        <%= form.label :mcc_description, {class: "form-group-label"} %>
+        <%= form.text_area :mcc_description, required: true %>
+      </div>
+
+      <div class="issues-item">
+        <%= form.label :seats_impacted, {class: "form-group-label"} %>
+        <%= form.text_area :seats_impacted %>
+      </div>
+
+      <div class="issues-item">
+        <div class="btn-submit">
+          <%= form.submit %>
+        </div>
+        <a href="#" class="btn">Cancel</a>
+      </div>
+    </div>
+  <% end %>
+</div>

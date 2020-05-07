@@ -1,0 +1,33 @@
+<section class="panel area-main">
+
+  <%= render "shared/flash" %>
+
+  <h1>Feature Flags</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Enabled</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @feature_flags.each do |feature_flag| %>
+        <tr>
+          <td><%= feature_flag.name %></td>
+          <td><%= feature_flag.enabled %></td>
+          <td><%= link_to 'Show', feature_flag %></td>
+          <td><%= link_to 'Edit', edit_feature_flag_path(feature_flag) %></td>
+          <td><%= link_to 'Destroy', feature_flag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Feature Flag', new_feature_flag_path %>
+
+</section>

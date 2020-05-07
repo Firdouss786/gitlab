@@ -1,0 +1,92 @@
+<%= form_with(model: transfer, local: true) do |form| %>
+  <% if transfer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(transfer.errors.count, "error") %> prohibited this transfer from being saved:</h2>
+
+      <ul>
+      <% transfer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state, id: :transfer_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.text_field :category, id: :transfer_category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_field :comment, id: :transfer_comment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :airway_bill %>
+    <%= form.text_field :airway_bill, id: :transfer_airway_bill %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sent_by_id %>
+    <%= form.text_field :sent_by_id, id: :transfer_sent_by_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :received_by_id %>
+    <%= form.text_field :received_by_id, id: :transfer_received_by_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stock_item_id %>
+    <%= form.text_field :stock_item_id, id: :transfer_stock_item_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :source_stock_location_id %>
+    <%= form.text_field :source_stock_location_id, id: :transfer_source_stock_location_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :destination_stock_location_id %>
+    <%= form.text_field :destination_stock_location_id, id: :transfer_destination_stock_location_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :filename %>
+    <%= form.text_field :filename, id: :transfer_filename %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sent_at %>
+    <%= form.datetime_select :sent_at, id: :transfer_sent_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :received_at %>
+    <%= form.datetime_select :received_at, id: :transfer_received_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :created_by_id %>
+    <%= form.text_field :created_by_id, id: :transfer_created_by_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :from_state %>
+    <%= form.text_field :from_state, id: :transfer_from_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :to_state %>
+    <%= form.text_field :to_state, id: :transfer_to_state %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,79 @@
+<div class="flex items-start">
+  <div class="h-10 w-10 bg-thales-light-blue rounded-full flex items-center justify-center">
+    <%= inline_svg :icon_aircraft, class: "h-6 w-6 text-white" %>
+  </div>
+
+  <div class="ml-2 text-gray-800 align-text-top">
+    <span class="text-2xl font-semibold block leading-none" data-test-id='aircraft_reg_and_nose'><%= @activity.aircraft.airline.icao_code %> <%= @activity.aircraft.reg_and_nose %></span>
+    <span class="text-sm text-gray-500">ID: <%= @activity.id %> - <%= @activity.state.humanize %></span>
+  </div>
+
+  <% if @activity.enabled_for_state(:close_activity_button) %>
+    <div class="align-text-top flex-grow text-right">
+      <span class="text-sm block leading-none text-gray-500">Boarded</span>
+      <span><%= datetime @activity.boarded_at %></span>
+    </div>
+  <% end %>
+</div>
+
+<div id="activity_errors" class="mt-6">
+  <%= render "shared/form_errors", obj: @activity %>
+</div>
+
+<div id="activity__deferrals">
+  <h2 class="font-semibold flex mt-8 pb-2 items-bottom">Deferrals</h2>
+
+  <% activity.deferrals.each do |deferral| %>
+    <%= link_to activity_fault_path(activity, deferral) do %>
+      <%= render "activities/line_item", description: deferral.logbook_text, pill: "Seats x#{deferral.impacted_seat_count}", reference: deferral.logbook_reference %>
+    <% end %>
+  <% end %>
+
+  <% unless activity.deferrals.any? %>
+    <p class="h-12 flex items-center border-b py-2 no-underline hover:bg-gray-100 text-gray-500">There are no deferrals on this aircraft</p>
+  <% end %>
+</div>
+
+
+
+<div id="activity__tasks">
+  <h2 class="font-semibold flex mt-8 pb-2 items-bottom">Tasks</h2>
+
+  <% activity.scheduled_tasks.each do |task| %>
+    <%= link_to edit_activity_task_path(activity, task) do %>
+      <%= render "activities/line_item", description: task.task_template.name, pill: "#{task.completion_percentage}% complete", reference: 'Scheduled Task' %>
+    <% end %>
+  <% end %>
+
+  <% if @activity.enabled_for_state(:editable) %>
+    <% activity.tasks.each do |task| %>
+      <%= link_to activity_task_path(activity, task) do %>
+        <%= render "activities/line_item", description: task.task_template.name, pill: "#{task.completion_percentage}% complete", reference: task.logbook_reference %>
+      <% end %>
+    <% end %>
+    <%= link_to "+ Add Task", new_activity_task_path(activity), class: "h-12 flex items-center border-b py-2 no-underline hover:bg-gray-100 text-gray-500" %>
+  <% end %>
+
+</div>
+
+
+<div id="activity__faults">
+  <% if @activity.enabled_for_state(:editable) %>
+    <h2 class="font-semibold flex mt-8 pb-2 items-bottom">Faults</h2>
+
+    <% activity.faults.each do |fault| %>
+      <%= link_to activity_fault_path(activity, fault) do %>
+        <%= render "activities/line_item", description: fault.logbook_text, pill: "Seats x#{fault.impacted_seat_count}", reference: fault.logbook_reference %>
+      <% end %>
+    <% end %>
+
+    <%= link_to "+ Add Logbook Item", new_activity_fault_path(activity), class: "h-12 flex items-center border-b py-2 no-underline hover:bg-gray-100 text-gray-500" %>
+  <% end %>
+</div>
+
+<div class="flex mt-8 mb-1 items-bottom">
+  <%= link_to 'Open Work Package', open_activity_path(activity), class: "btn" if @activity.enabled_for_state(:can_open) %>
+  <%= link_to 'Close Work Package', new_activity_sign_off_path(activity), class: "btn" if @activity.enabled_for_state(:can_close) %>
+  <span class="flex-grow"></span>
+  <%= link_to 'Edit Work Package', edit_activity_path(activity), class: "btn" if @activity.enabled_for_state(:editable) %>
+</div>

@@ -1,0 +1,37 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cog, label: "Settings" %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+
+  <span class="breadcrumb__leaf--active">Failure Modes</span>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/config_nav' %>
+<% end %>
+
+<section class="area-main area-main--half panel">
+  <%= render "shared/flash" %>
+
+  <div class="table" data-controller="table">
+    <div class="table-head">
+      <div class="table-head__checkbox-cell hidden"><input type="checkbox" class="form-checkbox" data-action="change->table#toggleAllCheckboxes" data-target="table.tableCheckbox"></div>
+      <div class="table-head__cell"><%= sortable 'category', 'Category' %></div>
+      <div class="table-head__cell text-right"><%= "Actions" %></div>
+    </div>
+
+    <%= render(partial: :discrepancy_category, collection: @discrepancy_categories, cached: true) if @discrepancy_categories.present? %>
+
+  </div>
+
+  <%= render('shared/empty_table_state', msg: "Found no discrepancy categories.", helper: "#{link_to 'Try adding new failure mode', new_discrepancy_category_path, class: 'underline text-thales-light-blue font-semibold'}".html_safe) if @discrepancy_categories.blank? %>
+
+  <%= will_paginate @discrepancy_categories, class: "pagination"%>
+</section>
+
+<% content_for :search_action, discrepancy_categories_path %>
+
+<% content_for :buttons do %>
+  <%= render 'layouts/footer_button', icon: :icon_add_outline, label: "New Failure Mode", action: new_discrepancy_category_path %>
+<% end %>

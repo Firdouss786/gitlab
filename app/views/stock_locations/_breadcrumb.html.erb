@@ -1,0 +1,3 @@
+<%= link_to "Stations", stations_path, class: "breadcrumb__leaf" %>
+<%= link_to @stock_location.parent.name, station_stock_location_state_path(@stock_location.parent, @stock_location.parent, :inspecting), class: "breadcrumb__leaf" %>
+<%= link_to "Stock Location", station_stock_locations_path(@stock_location.parent), class: "breadcrumb__leaf" %>

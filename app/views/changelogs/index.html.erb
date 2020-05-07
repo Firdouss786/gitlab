@@ -1,0 +1,13 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cog, label: "Changelog" %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <span class="breadcrumb__leaf--active">Changelog</span>
+<% end %>
+
+<section class="area-main area-main--half changelog mb-20">
+  <%= render "shared/flash" %>
+
+  <%= @changelog %>
+</section>

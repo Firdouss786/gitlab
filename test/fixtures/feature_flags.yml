@@ -1,0 +1,11 @@
+one:
+  name: email_two_step_verification
+  enabled: true
+
+two:
+  name: my-feature_2
+  enabled: false
+
+three:
+  name: flight_data
+  enabled: true

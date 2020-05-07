@@ -1,0 +1,19 @@
+
+<label for="<%= user.id %>" class="table-body" data-test-id="user-row">
+  <div class="table-body__cell hidden"><input type="checkbox" id="<%= user.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+  <div class="table-body__cell"><%= user.full_name %></div>
+  <div class="table-body__cell"><%= user.job_title || "-" %></div>
+  <div class="table-body__cell hidden lg:table-cell"><%= user.email %></div>
+  <div class="table-body__cell hidden lg:table-cell"><%= user.full_phone_number || "-" %></div>
+  <div class="table-body__cell flex justify-end">
+
+    <%= link_to((inline_svg :icon_phone, class: "h-5 w-5 mr-4 text-thales-light-blue active:text-white"), "tel:#{user.full_phone_number}", title: 'Call', "data-test-id": "user-phone", class: "lg:hidden") if user.full_phone_number.present? %>
+
+    <%= mail_to user.email, target: '_blank' do %>
+      <%= inline_svg :icon_email, class: "h-5 w-5 mr-4 text-thales-light-blue active:text-white" %>
+     <% end %>
+
+    <%= link_to((inline_svg :icon_edit_pencil, class: "h-5 w-5 text-thales-light-blue active:text-white"), edit_user_path(user), title: 'Edit') %>
+  </div>
+
+</label>

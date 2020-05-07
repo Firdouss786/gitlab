@@ -1,0 +1,434 @@
+confirmed_on_ground:
+  logbook_reference: E108569/1
+  discovered: ON GROUND
+  discrepancy: no_avod_at_seat
+  user: chris
+  recorded_by: chris
+  technician_comment:
+  action_carried:
+  logbook_text: ON LEVEL CHECK FOUND SEAT 28G USB-RCA SHORTED PIN INSIDE/BROKEN
+  raised_on_flight: 132
+  confirmed: true
+  inbound_deferred: false
+  cid: false
+  attachment_filename:
+  attachment:
+  state: CLOSED
+  impacted_seat_count: 1
+  seats_impacted: 28G
+  raised_at: 2018-07-06 03:00:00
+  deferral_reference:
+  controller_comment:
+  aircraft: gstba
+  activity: standard
+  mel_cetegory:
+  alert_raised: false
+  fmr:
+  pirep:
+  mcc_status:
+  resolved_at: 2018-07-06 03:00:00
+  defer_quantity:
+  mcc_description:
+  resolving_corrective_action: usb_replacement_ca
+  defer_reason:
+
+erroneous_fault:
+  logbook_reference: E108569/2
+  discovered: ON GROUND
+  discrepancy: no_avod_at_seat
+  user: chris
+  recorded_by: chris
+  technician_comment:
+  action_carried:
+  logbook_text: ON LEVEL CHECK FOUND SEAT 28G USB-RCA SHORTED PIN INSIDE/BROKEN
+  raised_on_flight: 132
+  confirmed: true
+  inbound_deferred: false
+  cid: false
+  attachment_filename:
+  attachment:
+  state: ERROR
+  impacted_seat_count: 1
+  seats_impacted: 28G
+  raised_at: 2018-07-06 03:00:00
+  deferral_reference:
+  controller_comment:
+  aircraft: gstba
+  activity: standard
+  mel_cetegory:
+  alert_raised: false
+  fmr:
+  pirep:
+  mcc_status:
+  resolved_at: 2018-07-06 03:00:00
+  defer_quantity:
+  mcc_description:
+  resolving_corrective_action:
+  defer_reason:
+  deferral: true
+
+# tsr:
+#   user: chris
+#   seats_impacted: 22G
+#   aircraft: gstba
+#   state: active
+#   mcc_description: HANDSET HAS ERROR
+#   approval_state: approved
+#   activity: standard
+
+closed_fault:
+  logbook_reference: E123623/3
+  discovered: IN FLIGHT
+  discrepancy: no_avod_at_seat
+  user: chris
+  recorded_by: chris
+  technician_comment: NFF ON GND TPMU OPS CHK SATIS.
+  action_carried: CHECKSATISFACTORY
+  logbook_text: 3F REMOTE IS NOT WORKING. RESET ONCE
+  raised_on_flight: 248
+  confirmed: 0
+  inbound_deferred: 0
+  cid: 0
+  attachment_filename:
+  attachment:
+  state: CLOSED
+  impacted_seat_count: 1
+  seats_impacted: 3F
+  raised_at: 2019-01-29 21:15:00
+  deferral_reference:
+  controller_comment:
+  aircraft: gstba
+  activity: standard
+  mel_cetegory:
+  alert_raised: 0
+  fmr:
+  pirep:
+  mcc_status:
+  resolved_at:
+  defer_quantity: 0
+  mcc_description:
+  resolving_corrective_action:
+  defer_reason:
+  created_at: 2019-01-30 00:00:00
+  updated_at: 2019-01-29 15:51:00
+  approval_state:
+
+requires_part_replacement:
+  logbook_reference: NH009891
+  discovered: ON GROUND
+  discrepancy: no_avod_at_seat
+  user: chris
+  recorded_by: chris
+  technician_comment:
+  action_carried:
+  logbook_text: ON LEVEL CHECK FOUND SEAT 22G SCREEN BLANK
+  raised_on_flight:
+  confirmed:
+  inbound_deferred:
+  cid:
+  attachment_filename:
+  attachment:
+  state: CLOSED
+  impacted_seat_count: 1
+  seats_impacted: 22G
+  raised_at: 2018-07-06 03:00:00
+  deferral_reference:
+  controller_comment:
+  aircraft: gstba
+  activity: standard
+  mel_cetegory:
+  alert_raised: false
+  fmr:
+  pirep:
+  mcc_status:
+  resolved_at: 2018-07-06 03:00:00
+  defer_quantity:
+  mcc_description:
+  defer_reason:
+
+fault_opened_in_wp:
+  logbook_reference: NF9974227
+  discovered: ON GROUND
+  discrepancy: no_avod_at_seat
+  user: chris
+  recorded_by: chris
+  logbook_text: Display blank at seat 1A
+  raised_on_flight:
+  confirmed: true
+  inbound_deferred: false
+  cid: false
+  state: ACTIVE
+  impacted_seat_count: 1
+  seats_impacted: 1A
+  raised_at: 2018-07-07 03:00:00
+  aircraft: gstbc
+  activity: open_wp
+  resolved_at:
+
+fault_deferral:
+  logbook_reference: NF8972942
+  discovered: ON GROUND
+  discrepancy: no_avod_at_seat
+  user: chris
+  recorded_by: chris
+  logbook_text: Found seats 1A, 2A, 13B blank on Level 1 Check
+  raised_on_flight:
+  confirmed:
+  inbound_deferred:
+  cid: false
+  state: ACTIVE
+  impacted_seat_count: 3
+  seats_impacted: 1A, 2A, 13B
+  raised_at: 2018-09-09 03:00:00
+  aircraft: gstbc
+  activity: open_wp
+  resolved_at:
+  deferral: true
+
+fault_deferral_two:
+  logbook_reference: NF1968165
+  discovered: ON GROUND
+  discrepancy: no_avod_at_seat
+  user: chris
+  recorded_by: chris
+  logbook_text: Screens at 1A, 10E, 13D, 14A, 29E flickering
+  raised_on_flight:
+  confirmed:
+  inbound_deferred:
+  cid: false
+  state: ACTIVE
+  impacted_seat_count: 5
+  seats_impacted: 1A, 10E, 13D, 14A, 29E
+  raised_at: 2018-09-10 03:00:00
+  aircraft: gstbc
+  activity: closed_wp
+  resolved_at:
+  deferral: true
+
+fault_deferral_three:
+  logbook_reference: NF19623876
+  discovered: ON GROUND
+  discrepancy: no_avod_at_seat
+  user: chris
+  recorded_by: chris
+  logbook_text: Screens flickering
+  raised_on_flight:
+  confirmed:
+  inbound_deferred:
+  cid: false
+  state: ACTIVE
+  impacted_seat_count: 5
+  seats_impacted: 1A, 10E, 13D, 14A, 29E
+  raised_at: 2018-09-10 03:00:00
+  aircraft: gstbe
+  activity: closed_wp_gstbe
+  resolved_at:
+  deferral: true
+
+fault_actioned_but_not_raised_in_wp:
+  logbook_reference: NF009146-1
+  discovered: ON GROUND
+  discrepancy: no_avod_at_seat
+  user: chris
+  recorded_by: chris
+  logbook_text: I didnt raise this fault in a workpack, but I did action this fault in this workpack.
+  raised_on_flight:
+  confirmed: true
+  inbound_deferred: false
+  cid: false
+  state: ACTIVE
+  impacted_seat_count: 1
+  seats_impacted: 1A
+  raised_at: 2018-02-02 03:00:00
+  aircraft: gstba
+  activity: standard
+  resolved_at:
+  deferral: true
+
+fault_actioned_and_raised_in_wp:
+  logbook_reference: NF8633976
+  discovered: ON GROUND
+  discrepancy: no_avod_at_seat
+  user: chris
+  recorded_by: chris
+  logbook_text: I raised and actioned this fault in the workpack
+  raised_on_flight:
+  confirmed: true
+  inbound_deferred: false
+  cid: false
+  state: ACTIVE
+  impacted_seat_count: 1
+  seats_impacted: 1A
+  raised_at: 2018-08-08 03:00:00
+  aircraft: gstbc
+  activity: open_wp
+  resolved_at:
+
+requires_part_replacement_closed:
+  logbook_reference: NH04637
+  discovered: ON GROUND
+  discrepancy: no_avod_at_seat
+  user: chris
+  recorded_by: chris
+  technician_comment:
+  action_carried:
+  logbook_text: ON LEVEL CHECK FOUND SEAT 22G SCREEN BLANK
+  raised_on_flight:
+  confirmed:
+  inbound_deferred:
+  cid:
+  attachment_filename:
+  attachment:
+  state: CLOSED
+  impacted_seat_count: 1
+  seats_impacted: 22G
+  raised_at: 2018-07-06 03:00:00
+  deferral_reference:
+  controller_comment:
+  aircraft: gstbb
+  activity: to_be_closed
+  mel_cetegory:
+  alert_raised: false
+  fmr:
+  pirep:
+  mcc_status:
+  resolving_corrective_action:
+  resolved_at: 2018-07-06 03:00:00
+  defer_quantity:
+  mcc_description:
+  defer_reason:
+
+requires_part_replacement_deferred:
+  logbook_reference: NH0463734324
+  discovered: ON GROUND
+  discrepancy: no_avod_at_seat
+  user: chris
+  recorded_by: chris
+  technician_comment:
+  action_carried:
+  logbook_text: ON LEVEL CHECK FOUND SEAT 22G SCREEN BLANK
+  raised_on_flight:
+  confirmed:
+  inbound_deferred:
+  cid:
+  attachment_filename:
+  attachment:
+  state: ACTIVE
+  impacted_seat_count: 1
+  seats_impacted: 28G
+  raised_at: 2017-07-06 03:00:00
+  deferral_reference:
+  controller_comment:
+  aircraft: gstbb
+  activity: before_closed
+  mel_cetegory:
+  alert_raised: false
+  fmr:
+  pirep:
+  mcc_status:
+  resolving_corrective_action:
+  resolved_at: 2017-07-06 03:00:00
+  defer_quantity:
+  mcc_description:
+  defer_reason:
+  deferral: true
+
+fault_deferral_for_aal:
+  logbook_reference: NF62487125
+  discovered: ON GROUND
+  discrepancy: no_avod_at_seat
+  user: chris
+  recorded_by: chris
+  logbook_text: Screens flickering
+  raised_on_flight:
+  confirmed:
+  inbound_deferred:
+  cid: false
+  state: ACTIVE
+  impacted_seat_count: 5
+  seats_impacted: 1A, 10E, 13D, 14A, 29E
+  raised_at: 2018-09-10 03:00:00
+  aircraft: N70020
+  activity: aal_wp
+  resolved_at:
+  deferral: true
+
+fault_deferral_color_status_green:
+  logbook_reference: NF91745238
+  discovered: ON GROUND
+  discrepancy: no_avod_at_seat
+  user: chris
+  recorded_by: chris
+  logbook_text: Screens flickering
+  raised_on_flight:
+  confirmed:
+  inbound_deferred:
+  cid: false
+  state: ACTIVE
+  impacted_seat_count: 3
+  seats_impacted: 1A, 10E, 13D
+  raised_at: <%= Time.parse("10:30", 1.day.ago) %>
+  aircraft: gstbb
+  activity: to_be_closed
+  resolved_at:
+  deferral: true
+
+fault_deferral_color_status_yellow:
+  logbook_reference: NF91745238
+  discovered: ON GROUND
+  discrepancy: no_avod_at_seat
+  user: chris
+  recorded_by: chris
+  logbook_text: Screens flickering
+  raised_on_flight:
+  confirmed:
+  inbound_deferred:
+  cid: false
+  state: ACTIVE
+  impacted_seat_count: 7
+  seats_impacted: 1A, 10E, 13D, 14A, 29E, 1B, 10F
+  raised_at: <%= Time.parse("10:30", 2.day.ago) %>
+  aircraft: gstbb
+  activity: to_be_closed
+  resolved_at:
+  deferral: true
+
+fault_deferral_color_status_red:
+  logbook_reference: NF91745238
+  discovered: ON GROUND
+  discrepancy: no_avod_at_seat
+  user: chris
+  recorded_by: chris
+  logbook_text: Screens flickering
+  raised_on_flight:
+  confirmed:
+  inbound_deferred:
+  cid: false
+  state: ACTIVE
+  impacted_seat_count: 12
+  seats_impacted: 1A, 10E, 13D, 14A, 29E, 1B, 10F, 2A, 2B, 4F, 5A, 7B
+  raised_at: <%= Time.parse("10:30", 5.day.ago) %>
+  aircraft: gstbb
+  activity: to_be_closed
+  resolved_at:
+  deferral: true
+
+fault_deferral_to_be_closed:
+  logbook_reference: NF24568413
+  discovered: ON GROUND
+  discrepancy: no_avod_at_seat
+  user: chris
+  recorded_by: chris
+  logbook_text: Found seats 1B, 2C, 13A blank on Level 2 Check
+  raised_on_flight:
+  confirmed:
+  inbound_deferred:
+  cid: false
+  state: ACTIVE
+  impacted_seat_count: 3
+  seats_impacted: 1A, 2A, 13B
+  raised_at: 2018-09-09 03:00:00
+  aircraft: gstbc
+  activity: open_wp
+  resolved_at:
+  deferral: true

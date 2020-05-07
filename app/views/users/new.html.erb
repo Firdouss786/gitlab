@@ -1,0 +1,16 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: "New User" %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= link_to "Stations", "#", class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+<% end %>
+
+<section class="area-main area-main--half panel">
+  <%= render "shared/flash" %>
+
+  <%= render 'form', user: @user %>
+</section>

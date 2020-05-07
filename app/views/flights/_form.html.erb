@@ -1,0 +1,177 @@
+<%= form_with(model: flight, local: true) do |form| %>
+  <% if flight.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(flight.errors.count, "error") %> prohibited this flight from being saved:</h2>
+
+      <ul>
+      <% flight.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :vendor_id %>
+    <%= form.text_field :vendor_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :flight_number %>
+    <%= form.text_field :flight_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :airline_code %>
+    <%= form.text_field :airline_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :airline_name %>
+    <%= form.text_field :airline_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :aircraft_type %>
+    <%= form.text_field :aircraft_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tail_number %>
+    <%= form.text_field :tail_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :flight_status %>
+    <%= form.text_field :flight_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :departure_airport_code %>
+    <%= form.text_field :departure_airport_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :departure_airport_name %>
+    <%= form.text_field :departure_airport_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :departure_city_name %>
+    <%= form.text_field :departure_city_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :departure_country %>
+    <%= form.text_field :departure_country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :departure_terminal %>
+    <%= form.text_field :departure_terminal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :departure_gate %>
+    <%= form.text_field :departure_gate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :departure_gate_scheduled_at %>
+    <%= form.datetime_select :departure_gate_scheduled_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :departure_gate_actual_at %>
+    <%= form.datetime_select :departure_gate_actual_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :departure_runway_actual_at %>
+    <%= form.datetime_select :departure_runway_actual_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :departure_checkin_counter %>
+    <%= form.text_field :departure_checkin_counter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :departure_delay_reason %>
+    <%= form.number_field :departure_delay_reason %>
+  </div>
+
+  <div class="field">
+    <%= form.label :arrival_airport_code %>
+    <%= form.text_field :arrival_airport_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :arrival_airport_name %>
+    <%= form.text_field :arrival_airport_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :arrival_city_name %>
+    <%= form.text_field :arrival_city_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :arrival_country %>
+    <%= form.text_field :arrival_country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :arrival_terminal %>
+    <%= form.text_field :arrival_terminal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :arrival_baggage %>
+    <%= form.text_field :arrival_baggage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :arrival_gate %>
+    <%= form.text_field :arrival_gate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :arrival_gate_scheduled_at %>
+    <%= form.datetime_select :arrival_gate_scheduled_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :arrival_gate_actual_at %>
+    <%= form.datetime_select :arrival_gate_actual_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :arrival_runway_actual_at %>
+    <%= form.datetime_select :arrival_runway_actual_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :arrival_delay_reason %>
+    <%= form.number_field :arrival_delay_reason %>
+  </div>
+
+  <div class="field">
+    <%= form.label :seq_number %>
+    <%= form.number_field :seq_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number_legs %>
+    <%= form.number_field :number_legs %>
+  </div>
+
+  <div class="field">
+    <%= form.label :flight_time_remaining %>
+    <%= form.time_select :flight_time_remaining %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

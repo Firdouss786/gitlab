@@ -1,0 +1,51 @@
+<% cache [ @corrective_action, parent ] do %>
+
+  <section class="area area-main panel area-main--half">
+
+    <%= render "shared/flash" %>
+    <%= render "shared/back_link", link_text: "Back to fault", link_route: polymorphic_url([parent, :deferral], id: @corrective_action.fault.id), truncate: true %>
+
+    <div class="flex items-start">
+      <div class="align-text-top text-gray-800">
+        <span class="text-xl font-semibold block leading-none"><%= @corrective_action.logbook_text %></span>
+        <span class="text-sm text-gray-500"><%= @corrective_action.job_started_at %></span>
+      </div>
+
+      <div class="pl-2 align-text-top flex-grow text-right">
+        <span class="text-sm whitespace-no-wrap"><%= @corrective_action.logbook_reference %></span>
+        <span class="text-sm block leading-none text-gray-500 whitespace-no-wrap"><%= @corrective_action.id %></span>
+      </div>
+    </div>
+
+    <table class="mt-6 w-full text-sm border-gray-200 border-t-2">
+      <tr class="border-none">
+        <td class="py-2 pr-6 text-gray-600">Performed By:</td>
+        <td class="py-2 pr-6"><%= @corrective_action.performed_by.full_name %></td>
+      </tr>
+      <tr class="border-none">
+        <td class="py-2 pr-6 text-gray-600">Action:</td>
+        <td class="py-2 pr-6"><%= @corrective_action.maintenance_action.name %></td>
+      </tr>
+      <% if @corrective_action.replaced_consumable? %>
+        <tr class="border-none">
+          <td class="py-2 pr-6 text-gray-600">On Wing Position:</td>
+          <td class="py-2 pr-6"><%= @corrective_action.replacement.on_wing_position %></td>
+        </tr>
+      <% end %>
+      <tr class="border-none">
+        <td class="py-2 pr-6 text-gray-600">Document Reference:</td>
+        <td class="py-2 pr-6"><%= @corrective_action.document_reference %></td>
+      </tr>
+    </table>
+
+    <% if @corrective_action.replaced_consumable? %>
+      <%= render "corrective_actions/consumable_replacement", replacement: @corrective_action.replacement %>
+    <% end %>
+
+    <% if @corrective_action.replaced_lru? %>
+      <%= render "corrective_actions/rotable_replacement", replacement: @corrective_action.replacement %>
+    <% end %>
+
+  </section>
+
+<% end %>

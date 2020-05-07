@@ -1,0 +1,52 @@
+<%= form_with(model: program, local: true) do |form| %>
+  <% if program.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(program.errors.count, "error") %> prohibited this program from being saved:</h2>
+
+      <ul>
+      <% program.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group row">
+    <%= form.label :mcc_email, class: "col-sm-3 col-form-label text-right font-weight-bold align-top" do %>
+      MCC Email
+      <span class="label-required">Required</span>
+    <% end %>
+    <%= form.text_field :mcc_email, id: :program_mcc_email, class: "col-sm-9 form-control", placeholder: "The Thales maintenance control center email for #{program.airline.name}...", :required => true %>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :repair_order_note, class: "col-sm-3 col-form-label text-right font-weight-bold align-top" do %>
+      Repair Order Note
+      <span class="label-required">Required</span>
+    <% end %>
+    <%= form.text_area :repair_order_note, id: :program_repair_order_note, class: "col-sm-9 form-control", placeholder: "The note that will appear on all #{program.airline.name} repair orders...", :required => true %>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :mailing_group_1, class: "col-sm-3 col-form-label text-right font-weight-bold" %>
+    <%= form.text_area :mailing_group_1, id: :program_mailing_group_1, class: "col-sm-9 form-control" %>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :mailing_group_2, class: "col-sm-3 col-form-label text-right font-weight-bold" %>
+    <%= form.text_area :mailing_group_2, id: :program_mailing_group_2, class: "col-sm-9 form-control" %>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :mailing_group_3, class: "col-sm-3 col-form-label text-right font-weight-bold" %>
+    <%= form.text_area :mailing_group_3, id: :program_mailing_group_3, class: "col-sm-9 form-control" %>
+  </div>
+
+  <div class="form-group row no-gutters">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-9">
+      <%= form.submit "Save", class: "btn btn-success" %>
+      <%= link_to 'Cancel', airlines_path, class: "btn btn-secondary" %>
+    </div>
+  </div>
+<% end %>

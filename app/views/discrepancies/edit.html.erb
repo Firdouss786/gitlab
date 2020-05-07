@@ -1,0 +1,20 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: "Edit Item" %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+
+  <%= link_to "Failure Modes", discrepancy_categories_path, class: "breadcrumb__leaf" %>
+  <%= link_to "Items", discrepancy_category_discrepancies_path(@discrepancy_category), class: "breadcrumb__leaf" %>
+  <%= link_to "Edit Item", edit_discrepancy_category_discrepancy_path(@discrepancy), class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/config_nav' %>
+<% end %>
+
+<section class="panel area-main area-main--half">
+
+  <%= render 'form', discrepancy: @discrepancy, discrepancy_category: @discrepancy.discrepancy_category %>
+
+</section>

@@ -1,0 +1,37 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: @user.full_name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= link_to "Stations", "#", class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/user_nav' %>
+<% end %>
+
+<section class="area-main area-main--half panel">
+  <% @events.each do |event| %>
+    <div class="border-l-4 border-gray-200 pl-4 mt-5">
+      <h4 class="text-md text-gray-600 font-semibold"><%= event.klass %> <span class="text-gray-600 font-normal ml-1">(ID: <%= event.document_id %>)</span></h4>
+
+      <span class="text-gray-600 font-normal"><%= datetime Time.parse(event.logged_at) %></span>
+      <p class="text-lg mt-1"><%= event.message %></p>
+        <% event.details.each do |detail| %>
+          <p class="hidden"><%= detail.first %>: <%= detail.second %></p>
+        <% end %>
+    </div>
+  <% end %>
+
+  <% unless @events.any? %>
+    <div class="text-center text-gray-600 leading-loose p-10">
+      <div class="inline-block">
+        <div class="h-10 w-10 bg-thales-light-blue rounded-full flex items-center justify-center">
+          <%= inline_svg :icon_user, class: "h-6 w-6 text-white" %>
+        </div>
+      </div>
+      <h2 class="text-xl font-bold"><%= @user.first_name %> has no recorded events yet</h2>
+    </div>
+  <% end %>
+
+</section>

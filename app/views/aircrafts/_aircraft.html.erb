@@ -1,0 +1,15 @@
+<label for="<%= aircraft.id %>" class="table-body">
+  <div class="table-body__cell hidden"><input type="checkbox" id="<%= aircraft.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+  <div class="table-body__cell"><%= aircraft.tail %></div>
+  <div class="table-body__cell"><%= aircraft.msn %></div>
+  <div class="table-body__cell"><%= aircraft.fin %></div>
+  <div class="table-body__cell"><%= aircraft.registration %></div>
+  <div class="table-body__cell"><%= date(aircraft.eis) %></div>
+  <div class="table-body__cell"><%= date(aircraft.tot) %></div>
+  <div class="table-body__cell"><%= aircraft.description %></div>
+  <div class="table-body__cell"><%= aircraft.locked ? "YES" : "NO" %></div>
+  <div class="table-body__cell"><%= aircraft.active ? "YES" : "NO" %></div>
+  <div class="table-body__cell flex justify-end">
+    <%= link_to((inline_svg :icon_edit_pencil, class: "h-5 w-5 text-thales-light-blue active:text-white"), edit_aircraft_path(@fleet, aircraft), title: 'Edit airline') %>
+  </div>
+</label>

@@ -1,0 +1,67 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: @airport.name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+
+  <%= link_to "Airports", airports_path, class: "breadcrumb__leaf" %>
+  <%= link_to @airport.name, airport_path, class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/config_nav' %>
+<% end %>
+
+<section class="panel area-main area-main--half">
+
+  <%= render "shared/flash" %>
+
+  <p>
+    <strong>Iata code:</strong>
+    <%= @airport.iata_code %>
+  </p>
+
+  <p>
+    <strong>Icao code:</strong>
+    <%= @airport.icao_code %>
+  </p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @airport.name %>
+  </p>
+
+  <p>
+    <strong>Country:</strong>
+    <%= @airport.country %>
+  </p>
+
+  <p>
+    <strong>City:</strong>
+    <%= @airport.city %>
+  </p>
+
+  <p>
+    <strong>Latitude:</strong>
+    <%= @airport.latitude %>
+  </p>
+
+  <p>
+    <strong>Longitude:</strong>
+    <%= @airport.longitude %>
+  </p>
+
+  <p>
+    <strong>Dst:</strong>
+    <%= @airport.dst %>
+  </p>
+
+  <p>
+    <strong>Timezone:</strong>
+    <%= @airport.timezone %>
+  </p>
+
+  <%= link_to 'Edit', edit_airport_path(@airport) %> |
+  <%= link_to 'Back', airports_path %>
+
+</section>

@@ -1,0 +1,32 @@
+<%= form_with(model: aircraft_type, local: true) do |form| %>
+  <% if aircraft_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(aircraft_type.errors.count, "error") %> prohibited this aircraft_type from being saved:</h2>
+
+      <ul>
+      <% aircraft_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :aircraft_type_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :aircraft_type_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :manufacturer_id %>
+    <%= form.text_field :manufacturer_id, id: :aircraft_type_manufacturer_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

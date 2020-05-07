@@ -1,0 +1,30 @@
+.form-checkbox {
+  @apply w-5 h-5 rounded-none bg-thales-light-blue-light border-thales-light-blue-light;
+}
+
+.form-input, .form-textarea, .form-select {
+  @apply border-2;
+  @apply text-thales-blue-gray;
+  @apply border-thales-carbon-light;
+  @apply block w-full;
+  font-size: 16px;
+}
+
+.form-checkbox, .form-radio {
+  @apply border-2;
+  @apply text-thales-light-blue;
+}
+
+label {
+  @apply text-sm uppercase;
+  @apply text-gray-600;
+}
+
+.field {
+  @apply mb-4;
+}
+
+.required:after {
+  content:" *";
+  color: red;
+}

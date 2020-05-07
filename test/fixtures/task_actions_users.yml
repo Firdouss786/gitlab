@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one_chris:
+  task_action: inprogress_action
+  user: chris
+
+one_albert:
+  task_action: inprogress_action
+  user: albert
+
+two_chris:
+  task_action: inprogress_action_two
+  user: chris
+
+two_albert:
+  task_action: inprogress_action_two
+  user: albert
+
+two_john:
+  task_action: inprogress_action_two
+  user: john
+
+three_john:
+  task_action: task_actioned
+  user: john

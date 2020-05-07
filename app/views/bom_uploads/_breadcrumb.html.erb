@@ -1,0 +1,4 @@
+<%= link_to 'Airlines', airlines_path, class: "breadcrumb__leaf" %>
+<%= link_to @fleet.airline.name.titleize, airline_flights_path(@fleet.airline), class: "breadcrumb__leaf" %>
+<%= link_to 'Fleet', airline_fleets_path(@fleet.airline), class: "breadcrumb__leaf" %>
+<%= link_to "BOM Upload", new_bom_upload_path(@fleet), class: "breadcrumb__leaf" %>

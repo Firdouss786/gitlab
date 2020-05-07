@@ -1,0 +1,98 @@
+<div data-controller="fault">
+
+  <%= form_with(model: [@activity, fault.becomes(Fault)], local: true) do |form| %>
+    <%= render "shared/form_errors", obj: fault %>
+
+    <div class="form-grid">
+
+      <div class="field datepicker-container">
+        <%= form.label :raised_at %>
+        <%= form.text_field :raised_at, class: "form-input block w-full form_datetime", readonly: true, required: true %>
+      </div>
+
+      <div class="field">
+        <%= form.label :recorded_by_id, "Recorded By" %>
+        <%= form.collection_select :recorded_by_id, @activity.station.users.unlocked, :id, :full_name, {prompt: "-- Select Recorded by User --", selected: Current.user.id}, {required: true, class: "form-select block w-full select-filter"} %>
+      </div>
+
+      <div class="field">
+        <%= form.label :logbook_reference %>
+        <%= form.text_field :logbook_reference, class: "form-input block w-full", required: true %>
+      </div>
+
+      <div class="form-grid--span field discovered" data-target="fault.discovered">
+        <%= form.label :discovered %><br />
+
+        <%= form.radio_button :discovered, "IN FLIGHT", checked: true, required: true, data: { action: "click->fault#inFlight" }, class: "form-radio h-5 w-5"  %>
+        <%= form.label :discovered_in_flight, "In Flight" %>
+
+        <%= form.radio_button :discovered, "ON GROUND", data: { action: "click->fault#onGround" }, class: "form-radio h-5 w-5" %>
+        <%= form.label :discovered_on_ground, "On Ground" %>
+      </div>
+
+      <!-- ================ LOPA ================== -->
+
+      <div class="form-grid--span field" data-action="click->modal#expand">
+        <%= form.label :seats_impacted, data: { action: "click->fault#loadSeatsImpacted" } %>
+        <%= form.text_area :seats_impacted, placeholder: "Click to select seats ...", spellcheck: false, readonly: true, class: "form-textarea block w-full", data: { action: "click->fault#loadSeatsImpacted", target: "fault.seatsImpactedTextArea" } %>
+
+        <div class="modal seats_impacted_modal hidden" data-target="modal.content">
+          <button class="expand-to-fit skip_expand w-11/12 text-center block btn my-2 mx-auto" data-action="click->fault#seatsImpactedSubmitted click->modal#hide">Add Selected Seats</button>
+
+          <%= render "seats/seats", fleet: @activity.aircraft.fleet %>
+
+          <button class="expand-to-fit skip_expand w-11/12 text-center block btn my-2 mx-auto" data-action="click->fault#seatsImpactedSubmitted click->modal#hide">Add Selected Seats</button>
+        </div>
+      </div>
+
+      <!-- ================ LOPA ================== -->
+
+      <div class="form-grid--span field">
+        <%= form.label :logbook_text %>
+        <%= form.text_area :logbook_text, class: "form-textarea block w-full", required: true %>
+      </div>
+
+      <div class="field">
+        <%= form.label 'discrepancy_category', 'Category' %>
+        <%= form.select 'discrepancy_category', DiscrepancyCategory.order(:category).collect { |dc| [dc.category, dc.id] }, { prompt: "-- Select Discrepancy Category --", selected: fault.try(:discrepancy).try(:discrepancy_category_id) }, required: true, class: "form-select w-full select-filter", data: { target: "fault.discrepancyCategorySelect", action: "fault#discrepancyCategorySelectChanged" }%>
+      </div>
+
+      <div class="field" data-target="fault.discrepancyName" data-url="<%= discrepancy_names_activity_faults_path %>" data-discrepancy_name_id="<%= fault.discrepancy_id %>">
+        <%= form.label :discrepancy_id, 'Code' %>
+        <%= form.select :discrepancy_id, options_for_select([]), {prompt: '-- Select Discrepancy Item --'}, data: { target: "fault.discrepancyNameSelect" }, class: "form-select w-full select-filter" %>
+      </div>
+
+      <div class="form-grid--span field confirmed" data-target="fault.confirmed">
+        <%= form.check_box :confirmed, checked: fault.new_record? || form.object.confirmed?, data: { target: "fault.confirmedOption", action: "change->fault#confirmedChanged" }, class: "form-checkbox h-5 w-5 mr-2" %>
+        <%= form.label :confirmed, 'Confirmed', class: "text-base text-gray-800" %>
+      </div>
+
+      <div class="field form-grid--span actionCarried" data-target="fault.actionCarried">
+        <%= form.label :action_carried, "Action Carried" %>
+        <%= form.select :action_carried, Fault.action_carrieds.map { |k, v| [k.humanize, v] }, { prompt: "-- Action Carried --", selected: Fault.action_carrieds[fault.action_carried] }, data: { target: "fault.actionCarriedSelect" }, class: "form-select select-filter" %>
+      </div>
+
+      <div class="form-grid--span field cid" data-target="fault.cid">
+        <%= form.check_box :cid, data: { target: "fault.cidOption", "test-id": "cid"}, class: "form-checkbox h-5 w-5 mr-2" %>
+        <%= form.label :cid, 'Customer Induced', class: "text-base text-gray-800" %>
+      </div>
+
+      <div class="form-grid--span field inboundDeferred" data-target="fault.inboundDeferred">
+        <%= form.check_box :inbound_deferred, data: { target: "fault.inboundDeferredOption", action: "change->fault#inboundDeferredChanged" }, class: "form-checkbox h-5 w-5 mr-2" %>
+        <%= form.label :inbound_deferred, 'Inbound Deferred', class: "text-base text-gray-800" %>
+      </div>
+
+      <div class="field deferralReference" data-target="fault.deferralReference">
+        <%= form.label :deferral_reference %>
+        <%= form.text_field :deferral_reference, class: "form-input", data: { target: "fault.deferralReferenceText" } %>
+      </div>
+
+    </div>
+
+    <div class="float-right">
+      <%= form.submit class: "btn" %>
+    </div>
+
+  <% end %>
+
+</div>

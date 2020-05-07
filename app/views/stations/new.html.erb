@@ -1,0 +1,19 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: "New Station" %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+
+  <%= link_to "Stations", stations_path, class: "breadcrumb__leaf" %>
+  <%= link_to "New Station", new_station_path, class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/config_nav' %>
+<% end %>
+
+<section class="panel area-main area-main--half">
+
+  <%= render 'form', station: @station %>
+
+</section>

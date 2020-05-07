@@ -1,0 +1,64 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_fleet, label: @airline.name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+
+  <%= link_to "Airlines", airlines_path, class: "breadcrumb__leaf" %>
+  <%= link_to @airline.name, airline_path, class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/config_nav' %>
+<% end %>
+
+<section class="panel area-main area-main--half">
+
+  <%= render "shared/flash" %>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @airline.name %>
+  </p>
+
+  <p>
+    <strong>Country:</strong>
+    <%= @airline.country %>
+  </p>
+
+  <p>
+    <strong>Iata code:</strong>
+    <%= @airline.iata_code %>
+  </p>
+
+  <p>
+    <strong>Icao code:</strong>
+    <%= @airline.icao_code %>
+  </p>
+
+  <p>
+    <strong>Callsign:</strong>
+    <%= @airline.callsign %>
+  </p>
+
+  <p>
+    <strong>Alias:</strong>
+    <%= @airline.alias %>
+  </p>
+
+  <p>
+    <strong>Notes:</strong>
+    <%= @airline.description %>
+  </p>
+
+  <% if @airline.logo.attached? %>
+    <p>
+      <strong>Logo:</strong><br>
+      <%= image_tag @airline.logo, class: "h-24 w-auto" %>
+    </p>
+  <% end %>
+
+  <%= link_to 'Edit', edit_airline_path(@airline) %> |
+  <%= link_to 'Back', airlines_path %>
+
+</section>

@@ -1,0 +1,23 @@
+<%= form_with(model: software_platform, local: true) do |form| %>
+  <%= render "shared/form_errors", obj: software_platform %>
+
+  <div class="form-grid">
+
+    <div class="field form-grid--span">
+      <%= form.label :name %>
+      <%= form.text_field :name, id: :software_platform_name, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--span">
+      <%= form.label :description %>
+      <%= form.text_area :description, id: :software_platform_description, rows: "3", class: "form-input block w-full" %>
+    </div>
+
+    <div class="flex justify-end content-center form-grid--right">
+      <%= link_to "Cancel", software_platforms_path, { class: "btn btn-secondary mr-4" } %>
+      <%= form.submit class: "btn" %>
+    </div>
+
+  </div>
+
+<% end %>

@@ -1,0 +1,84 @@
+<% content_for :breadcrumb do %>
+  <%= link_to "Stations", station_activities_path(@activity.station), class: "breadcrumb__leaf" %>
+  <%= link_to "Workload", activity_path(@activity), class: "breadcrumb__leaf" %>
+  <%= link_to "Fault", activity_fault_path(@activity, @corrective_action.fault), class: "breadcrumb__leaf" %>
+  <%= link_to "Corrective Action", activity_fault_corrective_action_path(@activity, @fault, @corrective_action), class: "breadcrumb__leaf" %>
+<% end %>
+
+
+<section class="activity-grid--left hidden md:block panel">
+  <%= render "activities/items", activity: @activity %>
+</section>
+
+<% cache @corrective_action do %>
+  <section class="activity-grid--right h-screen panel" id="fault_section">
+
+    <%= render "shared/flash" %>
+
+    <div class="flex mb-6">
+      <div>
+        <%= render "shared/back_link", link_text: "Fault: #{@corrective_action.fault.logbook_text}", link_route: [@activity, @corrective_action.fault], truncate: true %>
+      </div>
+
+      <% if @activity.enabled_for_state(:editable) %>
+        <div class="flex-grow flex justify-end">
+          <%= link_to edit_activity_fault_corrective_action_path(@activity, @fault, @corrective_action) do %>
+            <span class="ml-4 flex text-sm text-gray-600 font-semibold items-center">
+              <%= inline_svg :icon_edit_pencil, class: "h-4 w-4 mr-1 text-gray-600" %>
+              <%= t :edit %>
+            </span>
+          <% end %>
+
+          <%= link_to activity_fault_corrective_action_path(@activity, @fault, @corrective_action), method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <span class="ml-4 flex text-sm text-gray-600 font-semibold items-center">
+              <%= inline_svg :icon_trash, class: "h-4 w-4 mr-1 text-gray-600" %>
+              <%= t :delete %>
+            </span>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="flex items-start">
+      <div class="align-text-top text-gray-800">
+        <span class="text-xl font-semibold block leading-none"><%= @corrective_action.logbook_text %></span>
+        <span class="text-sm text-gray-500"><%= @corrective_action.job_started_at %></span>
+      </div>
+
+      <div class="pl-2 align-text-top flex-grow text-right">
+        <span class="text-sm whitespace-no-wrap"><%= @corrective_action.logbook_reference %></span>
+        <span class="text-sm block leading-none text-gray-500 whitespace-no-wrap"><%= @corrective_action.id %></span>
+      </div>
+    </div>
+
+    <table class="mt-6 w-full text-sm border-gray-200 border-t-2">
+      <tr class="border-none">
+        <td class="py-2 pr-6 text-gray-600">Performed By:</td>
+        <td class="py-2 pr-6"><%= @corrective_action.performed_by.full_name %></td>
+      </tr>
+      <tr class="border-none">
+        <td class="py-2 pr-6 text-gray-600">Action:</td>
+        <td class="py-2 pr-6"><%= @corrective_action.maintenance_action.name %></td>
+      </tr>
+      <% if @corrective_action.replaced_consumable? %>
+        <tr class="border-none">
+          <td class="py-2 pr-6 text-gray-600">On Wing Position:</td>
+          <td class="py-2 pr-6"><%= @corrective_action.replacement.on_wing_position %></td>
+        </tr>
+      <% end %>
+      <tr class="border-none">
+        <td class="py-2 pr-6 text-gray-600">Document Reference:</td>
+        <td class="py-2 pr-6"><%= @corrective_action.document_reference %></td>
+      </tr>
+    </table>
+
+    <% if @corrective_action.replaced_consumable? %>
+      <%= render "consumable_replacement", replacement: @corrective_action.replacement %>
+    <% end %>
+
+    <% if @corrective_action.replaced_lru? %>
+      <%= render "rotable_replacement", replacement: @corrective_action.replacement %>
+    <% end %>
+
+  </section>
+<% end %>

@@ -1,0 +1,9 @@
+<label for="<%= discrepancy_category.id %>" class="table-body">
+  <div class="table-body__cell hidden"><input type="checkbox" id="<%= discrepancy_category.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+  <div class="table-body__cell"><%= discrepancy_category.category %></div>
+  <div class="table-body__cell flex justify-end">
+    <%= link_to((inline_svg :icon_category, class: "h-5 w-5 mr-4 text-thales-light-blue active:text-white"), discrepancy_category_discrepancies_path(discrepancy_category), title: 'Items') %>
+		<%= link_to((inline_svg :icon_edit_pencil, class: "h-5 w-5 text-thales-light-blue active:text-white"), edit_discrepancy_category_path(discrepancy_category), title: 'Edit') %>
+  </div>
+
+</label>

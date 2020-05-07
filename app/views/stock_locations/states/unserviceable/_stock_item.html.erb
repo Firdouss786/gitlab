@@ -1,0 +1,15 @@
+<label for="<%= stock_item.id %>" class="table-body">
+  <div class="table-body__cell"><input type="checkbox" id="<%= stock_item.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+  <div class="table-body__cell"><%= stock_item.id %></div>
+  <div class="table-body__cell"><%= stock_item.product.name %></div>
+  <div class="table-body__cell"><%= stock_item.product.part_number %></div>
+  <div class="table-body__cell"><%= stock_item.serial_number %></div>
+  <div class="table-body__cell"><%= stock_item.revision %></div>
+  <div class="table-body__cell"><%= stock_item.model_numbers %></div>
+  <div class="table-body__cell"><%= stock_item.shelved_at %></div>
+  <div class="table-body__cell"><%= certificate_string stock_item.certificates %></div>
+  <div class="table-body__cell flex">
+    <%= link_to (inline_svg :icon_thumbs_up, class: "h-5 w-5 mr-5 text-thales-light-blue active:text-white"), transfers_path( transfer: { stock_item_id: stock_item, destination_state: 'transiting',  destination_stock_location_id: stock_item.stock_location_id, redirect_to: station_stock_location_state_path(stock_item.stock_location_id)}), method: :post, title: "transiting"  %>
+    <%= link_to (inline_svg :icon_thumbs_down, class: "h-5 w-5 text-thales-light-blue active:text-white"), transfers_path( transfer: { stock_item_id: stock_item, destination_state: 'scrapped',  destination_stock_location_id: stock_item.stock_location_id, redirect_to: station_stock_location_state_path(stock_item.stock_location_id)}), method: :post, title: "Scrapped" %>
+  </div>
+</label>

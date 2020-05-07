@@ -1,0 +1,136 @@
+.field {
+  margin-bottom: 1em;
+}
+
+.field__label, label {
+  color: $text-dark;
+  text-align: left;
+  font-weight: 500;
+}
+
+.input--text, input[type="text"], input[type="email"] {
+  width: 100%;
+  border: solid 2px $form-input-border-empty;
+  border-radius: 3px;
+  padding: 8px;
+}
+
+input:focus, textarea:focus {
+  outline: none; // Remove styles applied by Chrome
+  border: solid 2px $form-input-border-active;
+}
+
+.input--text, textarea {
+  width: 100%;
+  border-radius: 3px;
+  border: solid 2px $form-input-border-empty;
+  border-radius: 3px;
+  padding: 13px;
+}
+
+select {
+  width: 100%;
+}
+
+.action-button {
+	display: inline-block;
+	width: 100%;
+	padding: 13px;
+	border: 1px solid #bfbfbf;
+	border-color: rgba(0, 0, 0, 0.15);
+	border-bottom-width: 2px;
+	border-radius: 3px;
+	background-color: #fff;
+	font-weight: bold;
+	font-size: 17px;
+	cursor: pointer;
+}
+
+.action-button:active {
+  background-color: #f0f0f0;
+}
+
+.button {
+  text-align: center;
+  padding: .5em .7em .5em .7em;
+  border-radius: 3em;
+  border: 1px solid #c6c6c6;
+  color: #333;
+}
+
+.button--primary {
+	background-color: #46ad40;
+	color: white;
+	border: 1px solid #46ad40;
+	display: inline-block;
+}
+
+.button-rounded--action {
+
+  .button {
+    background: #5dbfd4;
+    border: none;
+    font-weight: bold;
+    color: white;
+    padding: 0.5em 1.2em;
+    transition: 0.2s;
+  }
+
+  a:hover {
+    background: #465562;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.button-rounded--revert {
+
+	a {
+		background: #b0b0b0;
+		border-radius: 3em;
+		border: none;
+		font-weight: bold;
+		color: white;
+		padding: 0.3em 1em;
+		transition: 0.2s;
+	}
+
+	a:hover {
+		background: salmon;
+	}
+}
+
+#error_explanation.password_reset {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    margin: 1em 0;
+    padding: 1em;
+    border-radius: 0.3em;
+
+    h2 {
+      font-size: 1.2em;
+      margin: 0;
+    }
+
+    ul {
+      padding-left: 1.6em;
+      margin-bottom: 0;
+    }
+}
+
+.form-two-col-grid {
+  .form-grid--left {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .form-grid--right {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  .form-grid--span {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}

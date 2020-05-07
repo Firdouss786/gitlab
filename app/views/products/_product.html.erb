@@ -1,0 +1,12 @@
+<label for="<%= product.id %>" class="table-body">
+  <div class="table-body__cell hidden"><input type="checkbox" id="<%= product.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+  <div class="table-body__cell"><%= product.part_number %></div>
+  <div class="table-body__cell"><%= product.name %></div>
+  <div class="table-body__cell"><%= product.price %></div>
+  <div class="table-body__cell"><%= product.shelf_life %></div>
+  <div class="table-body__cell"><%= product.description %></div>
+  <div class="table-body__cell"><%= product.product_category.name %></div>
+  <div class="table-body__cell">
+    <%= link_to((inline_svg :icon_edit_pencil, class: "h-5 w-5 float-right text-thales-light-blue active:text-white"), edit_product_path(product), title: 'Edit') %>
+  </div>
+</label>

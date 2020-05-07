@@ -1,0 +1,55 @@
+<%= render "shared/flash" %>
+
+<h1>Transfers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>Category</th>
+      <th>Comment</th>
+      <th>Airway bill</th>
+      <th>Sent by</th>
+      <th>Received by</th>
+      <th>Stock item</th>
+      <th>Source stock location</th>
+      <th>Destination stock location</th>
+      <th>Filename</th>
+      <th>Sent at</th>
+      <th>Received at</th>
+      <th>Created by</th>
+      <th>From state</th>
+      <th>To state</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transfers.each do |transfer| %>
+      <tr>
+        <td><%= transfer.state %></td>
+        <td><%= transfer.category %></td>
+        <td><%= transfer.comment %></td>
+        <td><%= transfer.airway_bill %></td>
+        <td><%= transfer.sent_by %></td>
+        <td><%= transfer.received_by %></td>
+        <td><%= transfer.stock_item %></td>
+        <td><%= transfer.source_stock_location %></td>
+        <td><%= transfer.destination_stock_location %></td>
+        <td><%= transfer.filename %></td>
+        <td><%= transfer.sent_at %></td>
+        <td><%= transfer.received_at %></td>
+        <td><%= transfer.created_by %></td>
+        <td><%= transfer.from_state %></td>
+        <td><%= transfer.to_state %></td>
+        <td><%= link_to 'Show', transfer %></td>
+        <td><%= link_to 'Edit', edit_transfer_path(transfer) %></td>
+        <td><%= link_to 'Destroy', transfer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Transfer', new_transfer_path %>

@@ -1,0 +1,10 @@
+<% cache [aircraft, template] do %>
+  <% task = aircraft.recurring_for(template.id) %>
+
+  <% if task %>
+    <td id="<%= task.id %>">
+      <div class="pill hide-on-med-and-up" data-due="<%= ISOdate task.due_at %>" data-target="task.dueAt" data-recurring="<%= task.task_template.mode %>"><%= shortdate task.due_at %></div>
+      <div class="pill hide-on-small-only" data-due="<%= ISOdate task.due_at %>" data-target="task.dueAt" data-recurring="<%= task.task_template.mode %>"><%= date task.due_at %></div>
+    </td>
+  <% end %>
+<% end %>

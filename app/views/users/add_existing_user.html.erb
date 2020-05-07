@@ -1,0 +1,43 @@
+<section class="panel area-main">
+
+  <h1>Existing User</h1>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @user.full_name %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
+
+  <p>
+    <strong>Job title:</strong>
+    <%= @user.job_title %>
+  </p>
+
+  <p>
+    <strong>Home station:</strong>
+    <%= @user.home_station.name %>
+  </p>
+
+  <p>
+    <strong>Manager:</strong>
+    <%= @user.manager.full_name if @user.manager %>
+  </p>
+
+  <p>
+    <strong>Secondary email:</strong>
+    <%= @user.secondary_email %>
+  </p>
+
+  <div class="add_user_button">
+    <%= link_to "Add #{@user.full_name} to #{@station.name} station", add_station_access_station_users_path(:id => @user, :station_id => @station), method: :post, remote: true, class: "button" %>
+  </div>
+
+  <div class="cancel_button">
+    <%= link_to 'Cancel', station_users_path(:station_id => @station) %>
+  </div>
+
+</section>

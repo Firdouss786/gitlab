@@ -1,0 +1,12 @@
+<% content_for :breadcrumb do %>
+  <%= render 'airlines/breadcrumb' %>
+  <%= link_to "Deferrals", airline_deferrals_path(@airline), class: "breadcrumb__leaf" %>
+  <%= link_to "Fault", airline_deferral_path(@airline, @corrective_action.fault), class: "breadcrumb__leaf" %>
+  <%= link_to "Corrective Action", airline_corrective_action_path(@airline, @corrective_action), class: "breadcrumb__leaf" %>
+<% end %>
+
+<% if @corrective_action.deferral? %>
+  <%= render "deferrals/deferral", parent: @airline %>
+<% else %>
+  <%= render "deferrals/corrective_action", parent: @airline %>
+<% end %>

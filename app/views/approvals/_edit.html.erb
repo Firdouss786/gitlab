@@ -1,0 +1,8 @@
+<% if approval.approvable %>
+
+    <li><%= approval.requestee.full_name %> requests access to <%= approval.approvable.approvable_resource_name %></li>
+
+    <%= button_to "Approve", approval_path(approval), method: :patch %>
+    <%= button_to "Reject", approval_path(approval), method: :delete %>
+
+<% end %>

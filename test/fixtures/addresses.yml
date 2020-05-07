@@ -1,0 +1,53 @@
+heathrow:
+  zip:     TW4 6 ER
+  street1: UNIT A British Airways Distribution Centre
+  street2: GreenLane
+  city:    Hounslow
+  country: England
+  state:
+  phone:   +447747761498
+
+jfk:
+  zip:     11430
+  street1: Van Wyck
+  street2: JFK Expressway
+  city:    Jamaica
+  country: United States
+  state:   New York
+  phone:   +17182444444
+
+lga:
+  zip:     11371
+  street1: La Guardia Rd
+  street2: 94th St
+  city:    Elmhurst
+  country: United States
+  state:   New York
+  phone:   +17182444444
+
+cdg:
+  zip:     95711
+  street1: BP 20101
+  street2:
+  city:    Paris
+  country: France
+  state:   Roissy
+  phone:   +33(0)148622280
+
+lax:
+  zip:     90045
+  street1: 1 World Way
+  street2:
+  city:    Los Angeles
+  country: United States
+  state:   California
+  phone:   +18554635252
+
+khi:
+  zip:     54321
+  street1: Abc Street
+  street2:
+  city:    Karachi
+  country: Pakistan
+  state:   Sindh
+  phone:   +9200215467

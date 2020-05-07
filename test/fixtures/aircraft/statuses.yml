@@ -1,0 +1,19 @@
+in_flight_status_one:
+  aircraft: gstba
+  current_flight: in_air_one
+  state: "in_flight"
+
+in_flight_status_two:
+  aircraft: gstbb
+  current_flight: in_air_two
+  state: "in_flight"
+
+on_ground_status_one:
+  aircraft: gstbc
+  current_flight: on_ground_one
+  state: "arrived"
+
+on_ground_status_two:
+  aircraft: gstbe
+  current_flight: on_ground_two
+  state: "arrived"

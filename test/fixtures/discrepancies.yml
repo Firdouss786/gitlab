@@ -1,0 +1,324 @@
+no_avod_at_seat:
+  name: No AVOD at seat
+  discrepancy_category: avod
+  archival:
+
+no_avod_at_seat_group:
+  name: No AVOD at seat group
+  discrepancy_category: avod
+  archival:
+
+no_avod_at_seat_column:
+  name: No AVOD at seat column
+  discrepancy_category: avod
+  archival:
+
+no_avod_in_full_zone:
+  name: No AVOD in full zone
+  discrepancy_category: avod
+  archival:
+
+no_avod_in_cabin:
+  name: No AVOD in cabin
+  discrepancy_category: avod
+  archival:
+
+single_icmt_start_up_fail_single_icmt_configured:
+  name: Single iCMT Start-Up Fail (Single iCMT Configured)
+  discrepancy_category: ife_system_inoperative
+  archival:
+
+ife_system_start_up_fail_icmt_failure:
+  name: IFE System Start-Up Fail - iCMT Failure
+  discrepancy_category: ife_system_inoperative
+  archival:
+
+entire_cabin_network_fail:
+  name: Entire Cabin Network Fail
+  discrepancy_category: ethernet_failure
+  archival:
+
+usb_plug:
+  name: USB Plug
+  discrepancy_category: pax_seat_failure
+  archival:
+
+rf_video_malfunction:
+  name: RF Video Malfunction
+  discrepancy_category: pax_seat_failure
+  archival:
+
+digital_video_malfunction:
+  name: Digital Video Malfunction
+  discrepancy_category: pax_seat_failure
+  archival:
+
+pcu:
+  name: PCU
+  discrepancy_category: pax_seat_failure
+  archival:
+
+pa_unavailable_partial_cabin_single_pa_area:
+  name: PA Unavailable - Partial Cabin (Single PA Area)
+  discrepancy_category: passenger_announcement_pa_failure
+  archival:
+
+pa_unavailable_entire_cabin:
+  name: PA Unavailable - Entire Cabin
+  discrepancy_category: passenger_announcement_pa_failure
+  archival:
+
+pa_unavailable_single_seat:
+  name: PA Unavailable- Single Seat
+  discrepancy_category: passenger_announcement_pa_failure
+  archival:
+
+pcu_fail_single_seat:
+  name: PCU Fail - Single Seat
+  discrepancy_category: ethernet_failure
+  archival:
+
+partial_column_multiple_seat_group_fail:
+  name: Partial Column, Multiple Seat Group Fail
+  discrepancy_category: ethernet_failure
+  archival:
+
+partial_cabin_multiple_columns_network_fail:
+  name: Partial Cabin, Multiple Columns Network Fail
+  discrepancy_category: ethernet_failure
+  archival:
+
+entire_column_network_fail:
+  name: Entire Column Network Fail
+  discrepancy_category: ethernet_failure
+  archival:
+
+single_seat_group_fail:
+  name: Single Seat Group Fail
+  discrepancy_category: ethernet_failure
+  archival:
+
+broadcast_audio_malfunction:
+  name: Broadcast Audio Malfunction
+  discrepancy_category: pax_seat_failure
+  archival:
+
+digital_audio_malfunction:
+  name: Digital Audio Malfunction
+  discrepancy_category: pax_seat_failure
+  archival:
+
+fails_to_boot_please_wait_your_entertainment_will_start_shortly:
+  name: Fails to boot (Please wait - Your Entertainment will Start Shortly)
+  discrepancy_category: pax_seat_failure
+  archival:
+
+phase_1_software_download_fail:
+  name: Phase 1 Software Download Fail
+  discrepancy_category: pdl_failure
+  archival:
+
+unable_to_view_content_pages:
+  name: Unable to View Content Pages
+  discrepancy_category: pdl_failure
+  archival:
+
+connectivity_malfunction:
+  name: Connectivity Malfunction
+  discrepancy_category: pdl_failure
+  archival:
+
+no_power_entire_cabin:
+  name: No Power - Entire Cabin
+  discrepancy_category: power_failure
+  archival:
+
+no_power_entire_column_s:
+  name: No Power - Entire Column(s)
+  discrepancy_category: power_failure
+  archival:
+
+no_power_partial_column:
+  name: No Power - Partial Column
+  discrepancy_category: power_failure
+  archival:
+
+no_power_seat_group:
+  name: No Power - Seat Group
+  discrepancy_category: power_failure
+  archival:
+
+pss_unavailable_entire_cabin:
+  name: PSS Unavailable - Entire Cabin
+  discrepancy_category: pss_failure
+  archival:
+
+pss_unavailable_partial_cabin:
+  name: PSS Unavailable - Partial Cabin
+  discrepancy_category: pss_failure
+  archival:
+
+pss_unavailable_single_seat:
+  name: PSS Unavailable - Single Seat
+  discrepancy_category: pss_failure
+  archival:
+
+mmap_unavailable_single_seat:
+  name: MMap Unavailable - Single Seat
+  discrepancy_category: moving_map
+  archival:
+
+mmap_unavailable_partial_cabin:
+  name: MMap Unavailable - Partial cabin
+  discrepancy_category: moving_map
+  archival:
+
+mmap_unavailable_full_cabin:
+  name: MMap Unavailable - Full cabin
+  discrepancy_category: moving_map
+  archival:
+
+ped_power_unavailable_single_seat:
+  name: PED Power Unavailable - Single Seat
+  discrepancy_category: ped_power
+  archival:
+
+ped_power_unavailable_seat_group:
+  name: PED Power Unavailable - Seat Group
+  discrepancy_category: ped_power
+  archival:
+
+ped_power_unavailable_partial_cabin:
+  name: PED Power Unavailable - Partial Cabin
+  discrepancy_category: ped_power
+  archival:
+
+ped_power_unavailable_entire_cabin:
+  name: PED Power Unavailable - Entire Cabin
+  discrepancy_category: ped_power
+  archival:
+
+va_audio_unavailable_entire_cabin_cabin_speakers_and_in_seat_audio:
+  name: VA Audio Unavailable - Entire Cabin (Cabin Speakers and In-Seat Audio
+  discrepancy_category: video_announcement_va_failure
+  archival:
+
+va_audio_unavailable_partial_cabin_cabin_speakers_only:
+  name: VA Audio Unavailable - Partial Cabin (Cabin Speakers Only)
+  discrepancy_category: video_announcement_va_failure
+  archival:
+
+va_inoperative_icmt:
+  name: VA Inoperative - iCMT
+  discrepancy_category: video_announcement_va_failure
+  archival:
+
+va_unavailable_entire_cabin:
+  name: VA Unavailable -  Entire Cabin
+  discrepancy_category: video_announcement_va_failure
+  archival:
+
+va_unavailable_entire_seat_class:
+  name: VA Unavailable - Entire Seat Class
+  discrepancy_category: video_announcement_va_failure
+  archival:
+
+va_unavailable_entire_seat_column:
+  name: VA Unavailable - Entire Seat Column
+  discrepancy_category: video_announcement_va_failure
+  archival:
+
+va_unavailable_overhead_video_monitor_ovm_entire_group:
+  name: VA Unavailable - Overhead Video Monitor (OVM) - Entire Group
+  discrepancy_category: video_announcement_va_failure
+  archival:
+
+va_unavailable_overhead_video_monitor_ovm_partial_group:
+  name: VA Unavailable - Overhead Video Monitor (OVM) - Partial Group
+  discrepancy_category: video_announcement_va_failure
+  archival:
+
+va_unavailable_partial_seat_class_multiple_columns:
+  name: VA Unavailable - Partial Seat Class (Multiple Columns)
+  discrepancy_category: video_announcement_va_failure
+  archival:
+
+va_unavailable_partial_seat_column:
+  name: VA Unavailable - Partial Seat Column
+  discrepancy_category: video_announcement_va_failure
+  archival:
+
+va_unavailable_single_overhead_video_monitor_ovm:
+  name: VA Unavailable - Single Overhead Video Monitor (OVM)
+  discrepancy_category: video_announcement_va_failure
+  archival:
+
+va_unavailable_single_seat:
+  name: VA Unavailable - Single Seat
+  discrepancy_category: video_announcement_va_failure
+  archival:
+
+seat_actuator_failure:
+  name: Seat Actuator failure
+  discrepancy_category: cabin_furnishings
+  archival:
+
+icmt_failure:
+  name: ICMT FAILURE
+  discrepancy_category: icmt_failure
+  archival:
+
+cosmetic_damage:
+  name: COSMETIC DAMAGE
+  discrepancy_category: cosmetic_damage
+  archival:
+
+missing_button_s:
+  name: MISSING BUTTON(S)
+  discrepancy_category: missing_buttons
+  archival:
+
+fs_failure:
+  name: FS Failure
+  discrepancy_category: flight_script
+  archival:
+
+gsm_failure:
+  name: GSM Failure
+  discrepancy_category: connectivity
+  archival:
+
+wifi_failure:
+  name: WIFI Failure
+  discrepancy_category: connectivity
+  archival:
+
+gsm_wifi_failure:
+  name: GSM/WIFI Failure
+  discrepancy_category: connectivity
+  archival:
+
+content_outdated:
+  name: CONTENT OUTDATED
+  discrepancy_category: content
+  archival:
+
+camera_no_image:
+  name: Camera no Image
+  discrepancy_category: camera
+  archival:
+
+camera_inop:
+  name: Camera INOP
+  discrepancy_category: camera
+  archival:
+
+aircraft_modification_or_update_requiring_parts_change:
+  name: Aircraft modification or update requiring parts change.
+  discrepancy_category: aircraft_modification_or_update
+  archival:
+
+archived_discrepancy:
+  name: Component not reporting to the system
+  discrepancy_category: ife_component_not_reporting
+  archival: archived

@@ -1,0 +1,60 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_fleet, label: @airline.name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= render 'airlines/breadcrumb' %>
+  <%= link_to "Tasks" , airline_task_templates_path(@airline), class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/airline_nav', airline: @airline %>
+<% end %>
+
+<section class="area-main area-main--half">
+  <p id="notice" class="mb-4"><%= notice %></p>
+
+  <div class="table" data-controller="table">
+    <h3 class="text-centered">Recurring</h3>
+    <div class="table-head">
+      <div class="table-head__checkbox-cell hidden"><input type="checkbox" class="form-checkbox" data-action="change->table#toggleAllCheckboxes" data-target="table.tableCheckbox"></div>
+      <div class="table-head__cell"><%= sortable 'name', 'Template Name' %></div>
+      <div class="table-head__cell"><%= sortable 'repeat_interval' %></div>
+      <div class="table-head__cell"><%= sortable 'created_at', 'Running Since' %></div>
+      <div class="table-head__cell text-right"><%= "Actions" %></div>
+    </div>
+
+    <%= render(partial: 'task_template_recurring', collection: @task_templates.recurring, cached: true) if @task_templates.recurring.present? %>
+
+  </div>
+
+  <%= will_paginate @task_templates.recurring, class: "pagination"%>
+
+  <%= render('shared/empty_table_state', msg: "Found no task templates.", helper: "#{link_to 'Try adding new task template', new_airline_task_template_path(@airline), class: 'underline text-thales-light-blue font-semibold'}".html_safe) if @task_templates.recurring.blank? %>
+
+  <div class="table" data-controller="table">
+    <h3 class="text-centered">Campaigns</h3>
+    <div class="table-head">
+      <div class="table-head__checkbox-cell hidden"><input type="checkbox" class="form-checkbox" data-action="change->table#toggleAllCheckboxes" data-target="table.tableCheckbox"></div>
+      <div class="table-head__cell"><%= sortable 'name', 'Template Name' %></div>
+      <div class="table-head__cell"><%= 'Started On' %></div>
+      <div class="table-head__cell"><%= 'Target Completion' %></div>
+      <div class="table-head__cell text-right"></div>
+      <div class="table-head__cell text-right"><%= "Actions" %></div>
+    </div>
+
+    <%= render(partial: 'task_template_campaign', collection: @task_templates.campaign, cached: true) if @task_templates.campaign.present? %>
+
+  </div>
+
+  <%= will_paginate @task_templates.campaign, class: "pagination"%>
+
+  <%= render('shared/empty_table_state', msg: "Found no task templates.", helper: nil) if @task_templates.campaign.blank? %>
+
+</section>
+
+<% content_for :search_action, airline_task_templates_path(@airline) %>
+
+<% content_for :buttons do %>
+  <%= render 'layouts/footer_button', icon: :icon_add_outline, label: "New Task Template", action: new_airline_task_template_path(@airline) %>
+<% end %>

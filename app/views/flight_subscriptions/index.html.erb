@@ -1,0 +1,41 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_fleet, label: @airline.name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= render 'airlines/breadcrumb' %>
+  <%= link_to "Flight Subscriptions", airline_flight_subscriptions_path(@airline), class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/airline_nav', airline: @airline %>
+<% end %>
+
+<section class="area-main area-main--half panel">
+  <%= render "shared/flash" %>
+
+  <div class="table" data-controller="table">
+    <div class="table-head">
+      <div class="table-head__checkbox-cell hidden"><input type="checkbox" class="form-checkbox" data-action="change->table#toggleAllCheckboxes" data-target="table.tableCheckbox"></div>
+      <div class="table-head__cell"><%= sortable 'tail', 'Aircraft' %></div>
+      <div class="table-head__cell"><%= 'Servo Subscription ID' %></div>
+      <div class="table-head__cell"><%= 'Flight Aware ID' %></div>
+      <div class="table-head__cell"><%= 'State' %></div>
+      <div class="table-head__cell text-left"><%= "Actions" %></div>
+    </div>
+
+    <%= render(partial: 'flight_subscription', collection: @aircrafts, as: :aircraft) if @aircrafts.present? %>
+
+  </div>
+
+  <%= render('shared/empty_table_state', msg: "Found no flight subscriptions.", helper: "#{link_to 'Try subscribing all aircrafts', subscribe_all_aircrafts_path(@airline), class: 'underline text-thales-light-blue font-semibold'}".html_safe) if @aircrafts.blank? %>
+
+  <%= will_paginate @aircrafts, class: "pagination float-right my-6 mr-4"%>
+
+</section>
+
+<% content_for :search_action, airline_flight_subscriptions_path(@airline) %>
+
+<% content_for :buttons do %>
+  <%= render 'layouts/footer_button', icon: :icon_add_outline, label: "Subscribe All Aircraft", action: subscribe_all_aircrafts_airline_flight_subscriptions_path(@airline) %>
+<% end %>

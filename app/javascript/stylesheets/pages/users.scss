@@ -1,0 +1,81 @@
+.add_user_button {
+  .button {
+    background: #5dbfd4;
+    border: none;
+    font-weight: bold;
+    color: white;
+    padding: 0.5em 1.2em;
+    transition: 0.2s;
+  }
+
+  a:hover {
+    background: #465562;
+    color: white;
+  }
+}
+
+.cancel_button {
+  margin-top: 2em;
+
+  a {
+    background: #b0b0b0;
+    border-radius: 3em;
+    border: none;
+    font-weight: bold;
+    color: white;
+    padding: 0.3em 1em;
+    transition: 0.2s;
+  }
+
+  a:hover {
+    background: salmon;
+  }
+}
+
+.api-key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+
+  a {
+    background: #5dbfd4;
+    border-radius: 3em;
+    border: none;
+    font-weight: bold;
+    color: white;
+    padding: 0.5em 1.8em;
+  }
+}
+
+.api-info {
+  margin: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 30em;
+  border: 1px solid whitesmoke;
+  box-shadow: 7px 7px 8px 0 darkgrey;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  font-weight: bolder;
+  letter-spacing: 0.05em;
+
+  span {
+    margin: 0.5em;
+    text-align: justify;
+  }
+}
+
+.settings-links {
+  text-align: right;
+  padding-right: 20px;
+
+  li {
+    padding-top: 10px;
+  }
+}
+
+.default_access{
+  color: #5dbfd4;
+ }

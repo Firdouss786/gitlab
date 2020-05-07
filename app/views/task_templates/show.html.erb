@@ -1,0 +1,69 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: @task_template.name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= render 'airlines/breadcrumb' %>
+  <%= link_to "Tasks" , airline_task_templates_path(@airline), class: "breadcrumb__leaf" %>
+  <%= link_to @task_template.name , airline_task_template_path(@airline, @task_template), class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/airline_nav', airline: @task_template.airline %>
+<% end %>
+
+<section class="panel area-main area-main--half">
+
+  <p><%= @task_template.tasks.count == 1 ? "#{@task_template.tasks.count} Task has" : "#{@task_template.tasks.count} Tasks have" %>  been created for <%= @task_template.fleets.count == 1 ? "#{@task_template.fleets.count} configuration." : "#{@task_template.fleets.count} configurations." %></p>
+
+  <% if @task_template.campaign? %>
+    <p>This campaign is targeted for completion on <%= date @task_template.campaign.scheduled_end %>.</p>
+  <% end %>
+
+  <% if @task_template.recurring? %>
+    <p>This task will repeat every <%= @task_template.repeat_interval == 1 ? "#{@task_template.repeat_interval} day" : "#{@task_template.repeat_interval} days" %> </p>
+  <% end %>
+
+  <hr>
+
+  <% @task_template.config_applicabilities.each do |applicability| %>
+    <h4 class="w-full xl:w-auto font-semibold text-gray-700 mt-2"><%= applicability.fleet.name %></h4>
+
+    <% if applicability.applicable_content? %>
+      <div class="software">
+        <div class="left text-gray-700">
+          Content
+        </div>
+        <div class="right">
+          <%= applicability.applicable_content %>
+        </div>
+      </div>
+    <% end %>
+
+    <% if applicability.applicable_software? %>
+      <div class="software">
+        <div class="left text-gray-700">
+          Software
+        </div>
+        <div class="right">
+          <%= applicability.applicable_software %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="software border_bottom">
+      <div class="left text-gray-700">
+        <span>
+          Aircraft
+        </span>
+      </div>
+      <div class="right">
+        <% applicability.fleet.aircrafts.each do |aircraft| %>
+          <span class="aircraft_pill"><%= aircraft.tail %></span>
+        <% end %>
+      </div>
+    </div>
+
+  <% end %>
+
+</section>

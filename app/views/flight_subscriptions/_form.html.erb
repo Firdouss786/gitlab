@@ -1,0 +1,17 @@
+<%= form_with(model: flight_subscription, local: true) do |form| %>
+  <% if flight_subscription.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(flight_subscription.errors.count, "error") %> prohibited this flight_subscription from being saved:</h2>
+
+      <ul>
+      <% flight_subscription.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

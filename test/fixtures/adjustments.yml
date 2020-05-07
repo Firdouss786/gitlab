@@ -1,0 +1,19 @@
+usb_adjustment:
+  adjustable: usb_replacement (Replacement)
+  quantity: -2
+  state: created
+
+usb_adjustment_2:
+  adjustable: usb_replacement (Replacement)
+  quantity: -2
+  state: error
+
+replacement_consumable_two_adjustment:
+  adjustable: replacement_consumable_two (Replacement)
+  quantity: -2
+  state: created
+
+replacement_consumable_two_2_adjustment:
+  adjustable: replacement_consumable_two (Replacement)
+  quantity: -2
+  state: error

@@ -1,0 +1,31 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_aircraft, label: @station.name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= link_to "Stations", "#", class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/station_nav' %>
+<% end %>
+
+<section class="area-main area-main--half panel">
+  <%= render "shared/flash" %>
+
+  <h2 class="header--underlined">Invite User To <%= @station.name %></h2>
+
+  <%= form_with(model: @user, url: station_user_routings_path, local: true) do |form| %>
+    <%= render "shared/form_errors", obj: @user %>
+
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.email_field :email, id: :user_email, required: true, class: "form-input" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Invite User", class: "btn" %>
+    </div>
+
+  <% end %>
+</section>

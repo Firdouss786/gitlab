@@ -1,0 +1,14 @@
+<%= render "shared/flash" %>
+
+<p>
+  <strong>Task action:</strong>
+  <%= @task_actions_user.task_action %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @task_actions_user.user %>
+</p>
+
+<%= link_to 'Edit', edit_task_actions_user_path(@task_actions_user) %> |
+<%= link_to 'Back', task_actions_users_path %>

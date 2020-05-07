@@ -1,0 +1,86 @@
+<div data-controller='flight time turbolinks'>
+
+  <div class="filters">
+    <%= form_tag request.path, remote: true, method: :get, class: "filter-form" do %>
+
+      <div class="field">
+        <%= radio_button_tag(:state, :in_flight, params["state"]["in_flight"], data: { action: "change->turbolinks#changed" }) %>
+        <%= label_tag :state_in_flight, "In Flight" %>
+      </div>
+
+      <div class="field">
+        <%= radio_button_tag(:state, :arrived, params["state"]["arrived"], data: { action: "change->turbolinks#changed" }) %>
+        <%= label_tag :state_arrived, "Arrived" %>
+      </div>
+
+      <div class="field align-right">
+        <input type="checkbox" id="time_toggle" data-target="time.state" data-time-state="" data-action="click->time#toggle_timezones">
+        <%= label_tag :time_toggle, "My Time Zone" %>
+      </div>
+
+    <% end %>
+  </div>
+
+  <% if @aircraft_statuses.present? %>
+    <% @aircraft_statuses.each do |status| %>
+      <% cache status do %>
+        <div class="flights-container card">
+
+          <div class="flight-container">
+            <dl class="aircraft">
+              <dt><%= t :aircraft %></dt>
+              <dd class = "aircraft_number"><%= status.aircraft.reg_and_nose %></dd>
+            </dl>
+
+            <dl class="status">
+              <dt><%= t :arriving %></dt>
+              <dd><time data-utc="<%= utc status.current_flight.runway_arrival %>" data-target="time.output" /></dd>
+            </dl>
+
+            <dl class="route">
+              <dt><%= t :inb_route %></dt>
+              <dd><%= status.current_flight.origin_airport.iata_code %> <i class='fa fa-long-arrow-right'> </i>	<%= status.current_flight.destination_airport.iata_code %></dd>
+            </dl>
+
+            <dl class="flight">
+              <dt><%= t :inb_flight %></dt>
+              <dd><%= status.current_flight.flight_number %></dd>
+            </dl>
+
+          </div>
+
+          <% if status.current_flight.next_flight %>
+            <div id="schedule-container-<%= status.current_flight.id %>" class="schedule-container" data-target="flight.scheduleContainer">
+              <dl class="groundtime">
+                <dt><%= t :ground_time %></dt>
+                <dd><%= time_diff_to_time status.current_flight.ground_time %></dd>
+              </dl>
+
+              <dl class="gate">
+                <dt><%= t :gate %></dt>
+                <dd>Unknown</dd>
+              </dl>
+
+              <dl class="departingroute">
+                <dt><%= t :out_route %></dt>
+                <dd><%= status.current_flight.destination_airport.iata_code %>
+                  <i class='fa fa-long-arrow-right'></i>
+                  <%= status.next_flight.destination_airport.iata_code %>
+                </dd>
+              </dl>
+
+              <dl class="departureflight">
+                <dt><%= t :out_flight %></dt>
+                <dd><%= status.next_flight.flight_number %></dd>
+              </dl>
+            </div>
+          <% end %>
+
+        </div>
+      <% end %>
+    <% end %>
+  <% else %>
+    <%= render('shared/empty_table_state', msg: "Found no flight data.", helper: "#{link_to 'Try refreshing this page', request.fullpath, class: 'underline text-thales-light-blue font-semibold'}".html_safe) %>
+  <% end %>
+
+</div>

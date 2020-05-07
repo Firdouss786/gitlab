@@ -1,0 +1,39 @@
+B777:
+  name: BA B772R-A I5 CONFIG
+  description:
+  install_type: Retrofit
+  lopa_path:
+  aircraft_type: B777200
+  software_platform: one
+  airline: baw
+
+B777B:
+  name: BA B772R-B I5 CONFIG
+  description:
+  install_type: Retrofit
+  lopa_path:
+  aircraft_type: B777200
+  software_platform: one
+  airline: baw
+
+A380:
+  name: BA A380 I5 CFG
+  description:
+  install_type: Linefit
+  lopa_path:
+  aircraft_type: A380
+  software_platform: one
+  airline: baw
+
+JBA321:
+  name: JBA321
+  description:
+  install_type: Linefit
+  lopa_path:
+  first_class_seat_count: 0
+  business_class_seat_count: 0
+  premium_class_seat_count: 0
+  economy_class_seat_count: 0
+  aircraft_type: A321
+  software_platform: one
+  airline: jbu

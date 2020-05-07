@@ -1,0 +1,38 @@
+<%= render "shared/flash" %>
+
+<h1>Task Actions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Created by</th>
+      <th>Completed at</th>
+      <th>Completion percentage</th>
+      <th>Logbook text</th>
+      <th>Activity</th>
+      <th>Task</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @task_actions.each do |task_action| %>
+      <tr>
+        <td><%= task_action.created_by %></td>
+        <td><%= task_action.completed_at %></td>
+        <td><%= task_action.completion_percentage %></td>
+        <td><%= task_action.logbook_text %></td>
+        <td><%= task_action.activity %></td>
+        <td><%= task_action.task %></td>
+        <td><%= task_action.user %></td>
+        <td><%= link_to 'Show', task_action %></td>
+        <td><%= link_to 'Edit', edit_task_action_path(task_action) %></td>
+        <td><%= link_to 'Destroy', task_action, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

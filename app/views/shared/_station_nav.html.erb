@@ -1,0 +1,5 @@
+<%= link_to "Workload", station_activities_path(@station), class: leaf_active_if("activities") %>
+<%= link_to "Users", station_users_path(@station), class: leaf_active_if("users") %>
+<%= link_to "Deferrals", station_deferrals_path(@station), class: leaf_active_if("deferrals") %>
+<%= link_to "Campaigns", station_campaigns_path(@station), class: leaf_active_if("campaigns") %>
+<%= link_to "Stock", station_stock_locations_path(@station), class: leaf_active_if("stock_locations") %>

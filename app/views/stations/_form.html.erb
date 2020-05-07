@@ -1,0 +1,70 @@
+<%= form_with(model: station, local: true) do |form| %>
+  <%= render "shared/form_errors", obj: station %>
+
+  <div class="form-grid">
+
+    <div class="field form-grid--left">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--right">
+      <%= form.label :airport_id %>
+      <%= form.collection_select :airport_id, Airport.ordered_by_iata_code, :id, :iata_code, { prompt: '-- Select Airport --' }, { class: "form-select select-filter", required: true } %>
+    </div>
+
+    <div class="field form-grid--left">
+      <%= form.label :user_id %>
+      <%= form.collection_select :user_id, User.ordered_by_full_name, :id, :full_name, { prompt: '-- Select User --' }, { class: "form-select select-filter", required: true } %>
+    </div>
+
+    <%= form.fields_for :address do |f| %>
+
+      <div class="field form-grid--right">
+        <%= f.label :phone %>
+        <%= f.number_field :phone, class: "form-input block w-full", required: true %>
+      </div>
+
+      <div class="field form-grid--left">
+        <%= f.label :street1, 'address 1' %>
+        <%= f.text_field :street1, class: "form-input block w-full", required: true %>
+      </div>
+
+      <div class="field form-grid--right">
+        <%= f.label :street2, 'address 2' %>
+        <%= f.text_field :street2, class: "form-input block w-full" %>
+      </div>
+
+      <div class="field form-grid--left">
+        <%= f.label :city %>
+        <%= f.text_field :city, class: "form-input block w-full", required: true %>
+      </div>
+
+      <div class="field form-grid--right">
+        <%= f.label :state %>
+        <%= f.text_field :state, class: "form-input block w-full" %>
+      </div>
+
+      <div class="field form-grid--left">
+        <%= f.label :zip %>
+        <%= f.number_field :zip, class: "form-input block w-full", required: true %>
+      </div>
+
+      <div class="field form-grid--right">
+        <%= f.label :country %>
+        <%= f.text_field :country, class: "form-input block w-full", required: true %>
+      </div>
+
+    <% end %>
+
+    <div class="form-grid--span">
+      <br>
+    </div>
+
+    <div class="flex justify-end content-center form-grid--right">
+      <%= link_to "Cancel", stations_path, { class: "btn btn-secondary mr-4" } %>
+      <%= form.submit class: "btn" %>
+    </div>
+
+  </div>
+<% end %>

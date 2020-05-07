@@ -1,0 +1,32 @@
+<%= link_to activity, id: activity.id, class: "table-row text-gray-700 p-10 whitespace-no-wrap hover:bg-gray-200 active:outline-none active:bg-thales-light-blue active:text-white" do %>
+  <div class="text-xl sm:table-cell lg:align-middle lg:px-4 lg:py-4 sm:text-sm"><%= activity.aircraft.reg_and_nose %></div>
+  <div class="hidden lg:table-cell lg:align-middle lg:px-4 lg:py-4 text-sm"><%= activity.aircraft.airline.icao_code %></div>
+  <div class="sm:table-cell lg:align-middle lg:px-4 lg:py-4 text-sm hidden"><%= flight_status(activity).to_s.humanize %></div>
+  <div class="hidden sm:table-cell lg:align-middle lg:px-4 lg:py-4 text-sm">
+    <div class="font-bold"><%= arrival_time activity %></div>
+    <div class="text-gray-600"><%= arrival_date activity %></div>
+  </div>
+  <div class="hidden sm:table-cell lg:align-middle lg:px-4 lg:py-4 text-sm">
+    <div class="font-bold"><%= departure_time activity %></div>
+    <div class="text-gray-600"><%= departure_date activity %></div>
+  </div>
+  <% if activity.flight %>
+    <div class="lg:hidden lg:align-middle lg:px-4 lg:py-4 text-sm"><%= arrival_time activity %> - <%= departure_time activity %></div>
+  <% end %>
+  <div class="sm:table-cell lg:align-middle lg:px-4 lg:py-4 text-sm"><%= ground_time activity %></div>
+
+  <div class="mt-1 flex flex-wrap lg:px-4 lg:py-4">
+    <% if activity.deferrals.any? %>
+      <div class="mr-2 my-1 py-1 px-4 rounded bg-orange-400 font-bold text-white text-sm">Deferral x<%= activity.deferrals.count %></div>
+    <% end %>
+
+    <% if activity.scheduled_tasks.any? %>
+      <div class="mr-2 my-1 py-1 px-4 rounded bg-thales-light-blue-light font-bold text-thales-light-blue text-sm">Task x<%= activity.scheduled_tasks.count + activity.tasks.count %></div>
+    <% end %>
+  </div>
+
+  <div class="hidden lg:table-cell lg:align-middle lg:px-4 lg:py-4 text-sm hidden text-right">
+    <div><%= activity.state.humanize %></div>
+    <div class="text-gray-500"><%= activity.id %></div>
+  </div>
+<% end %>

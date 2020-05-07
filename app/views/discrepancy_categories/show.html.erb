@@ -1,0 +1,42 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: @discrepancy_category.category %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+
+  <%= link_to "Discrepancy Categories", discrepancy_categories_path, class: "breadcrumb__leaf" %>
+  <%= link_to @discrepancy_category.category, discrepancy_category_path, class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/config_nav' %>
+<% end %>
+
+<section class="panel area-main area-main--half">
+
+  <%= render "shared/flash" %>
+
+  <h1 class="header">
+    <span class="header__name">Show Failure Mode</span>
+  </h1>
+
+  <div class="comment discrepancies__list ">
+
+    <div class="discrepancies__category--header">
+      <h4><%= @discrepancy_category.category.upcase %></h4>
+    </div>
+
+    <hr>
+
+    <% @discrepancy_category.try(:discrepancies).each do |discrepancy| %>
+      <div class="discrepancies__item">
+        <%= discrepancy.name %>
+      </div>
+    <% end %>
+
+  </div>
+
+  <%= link_to 'Edit', edit_discrepancy_category_path(@discrepancy_category) %> |
+  <%= link_to 'Back', discrepancy_categories_path %>
+
+</section>

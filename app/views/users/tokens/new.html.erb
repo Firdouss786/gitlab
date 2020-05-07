@@ -1,0 +1,21 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: @user.full_name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= link_to "Stations", "#", class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/user_nav' %>
+<% end %>
+
+<section class="area-main area-main--half panel">
+  <p>Please let us know what you will use the API token for. This helps us better support API users.</p>
+  <p>If you already have an API token, you can generate a new one to overwrite the old one.</p>
+
+  <p id="notice" class="token__notice"><%= notice %></p>
+
+  <%= render 'form', user_token: @user_token %>
+
+</section>

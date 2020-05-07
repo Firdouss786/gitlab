@@ -1,0 +1,35 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_aircraft, label: @station.name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= render 'stations/breadcrumb' %>
+  <%= link_to "Campaigns", station_campaigns_path(@station), class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/station_nav', station: @station %>
+<% end %>
+
+<section class="area-main">
+
+	<%= render "shared/flash" %>
+
+  <div class="table" data-controller="table">
+		<div class="table-head">
+			<div class="hidden table-head__checkbox-cell"><input type="checkbox" class="form-checkbox" data-action="change->table#toggleAllCheckboxes" data-target="table.tableCheckbox"></div>
+			<div class="table-head__cell"><%= sortable 'name' %></div>
+			<div class="table-head__cell"><%= sortable 'icao_code', 'Airline' %></div>
+			<div class="table-head__cell"><%= sortable 'scheduled_start', 'Started On' %></div>
+			<div class="table-head__cell"><%= sortable 'scheduled_end', 'Target Completion' %></div>
+		</div>
+		 <%= render(partial: 'campaigns/campaign_item', collection: @campaigns, as: :campaign, locals: { parent: @station }) if @campaigns.present? %>
+	</div>
+
+  <%= render('shared/empty_table_state', msg: "Found no campaigns.", helper: "#{link_to 'Try adding new campaign', airline_task_templates_path(Current.user.default_airline), class: 'underline text-thales-light-blue font-semibold'}".html_safe) if @campaigns.blank? %>
+
+  <%= will_paginate @campaigns, class: "pagination"%>
+
+</section>
+
+<% content_for :search_action, station_campaigns_path(@station) %>

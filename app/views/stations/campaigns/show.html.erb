@@ -1,0 +1,30 @@
+<% content_for :breadcrumb do %>
+  <%= render 'stations/breadcrumb' %>
+  <%= link_to "Campaigns", station_campaigns_path(@station), class: "breadcrumb__leaf" %>
+<% end %>
+
+<section class="area area-main panel area-main--half">
+
+  <%= render "shared/flash" %>
+  <%= render "shared/back_link", link_text: "Back to campaigns", link_route: station_campaigns_path(@station), truncate: false %>
+
+  <div class="text-gray-800">
+    <span class="text-xl font-semibold block"><%= @campaign.task_template.name %></span>
+    <span class="text-sm text-gray-500 block">Started: <%= date @campaign.created_at %> | Completion: <%= date @campaign.scheduled_end %></span>
+    <span class="text-sm text-gray-500">Remanining: <%= @campaign.task_template.tasks.active.count %> out of <%= @campaign.task_template.tasks.count %> aircrafts</span>
+  </div>
+
+  <div class="table" data-controller="table">
+    <div class="table-head">
+      <div class="table-head__checkbox-cell hidden"><input type="checkbox" class="form-checkbox" data-action="change->table#toggleAllCheckboxes" data-target="table.tableCheckbox"></div>
+      <div class="table-head__cell"><%= 'aircraft' %></div>
+      <div class="table-head__cell"><%= 'state' %></div>
+      <div class="table-head__cell"><%= 'loaded on' %></div>
+      <div class="table-head__cell"><%= 'loaded by' %></div>
+    </div>
+
+    <%= render(partial: 'campaigns/campaign', collection: @campaign.task_template.tasks, as: :campaign) %>
+
+  </div>
+
+</section>

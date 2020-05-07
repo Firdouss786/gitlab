@@ -1,0 +1,26 @@
+<section class="panel area-main">
+  <%= render "shared/flash" %>
+
+  <div class="title_container">
+    <%= breadcrumb do %>
+      <%= breadcrumb_item @station.name, stations_path %>
+      <%= breadcrumb_active_item "TSR's" %>
+    <% end %>
+  </div>
+
+  <%= render "shared/station_nav", station: @station %>
+
+
+      <% if @faults.empty? %>
+        <div class="blank-state-caption text-centered">
+          <p>Everything is done!</p>
+          <p>You have no troubleshooting requests</p>
+        </div>
+      <% end %>
+
+      <% if @faults.any? %>
+        <%= render "issues/station/issues", faults: @faults, cached: true %>
+      <% end %>
+
+
+</section>

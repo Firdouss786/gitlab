@@ -1,0 +1,44 @@
+<%= form_with(model: [@station, activity], local: true) do |form| %>
+  <%= render "shared/form_errors", obj: activity %>
+
+  <section class="panel area-main area-main--half form-grid">
+
+    <div class="field datepicker-container">
+      <%= form.label :boarded_at %>
+      <%= form.text_field :boarded_at, class: "form-input block w-full form_datetime", readonly: true, required: true %>
+    </div>
+
+    <div class="form-grid--left">
+      <div class="field">
+        <%= form.label :inbound_airport_id %>
+        <%= form.collection_select :inbound_airport_id, Airport.all.ordered_by_iata_code, :id, :iata_code, {prompt: '-- Select Inbound Airport --'}, {required: true, class: "form-input form-select block w-full select-filter" } %>
+      </div>
+
+      <div class="field">
+        <%= form.label :inbound_flight_number %>
+        <%= form.text_field :inbound_flight_number, class: "form-input block w-full", required: true %>
+      </div>
+
+    </div>
+
+    <div class="form-grid--right">
+      <div class="field">
+        <%= form.label :outbound_airport_id %>
+        <%= form.collection_select :outbound_airport_id, Airport.all.ordered_by_iata_code, :id, :iata_code, {prompt: '-- Select Outbound Airport --'}, { class: "form-input form-select block w-full select-filter" } %>
+      </div>
+
+      <div class="field">
+        <%= form.label :outbound_flight_number %>
+        <%= form.text_field :outbound_flight_number, class: "form-input block w-full" %>
+      </div>
+
+    </div>
+
+    <div class="form-grid--right text-right">
+      <%= form.hidden_field :aircraft_id, value: @aircraft.id %>
+      <%= form.submit class: "btn" %>
+    </div>
+
+  </section>
+
+<% end %>

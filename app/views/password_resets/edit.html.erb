@@ -1,0 +1,25 @@
+<section class="area-main">
+
+  <div class="text-sm mt-6 mb-6 text-gray-800 text-center w-full">
+    <h1 class="text-3xl sm:text-4xl">Change your password</h1>
+  </div>
+
+  <div class="login-form panel m-4 sm:py-10 sm:px-8">
+    <%= render "shared/flash" %>
+
+    <%= form_for @user, url: password_reset_path(@user) do |form| %>
+      <%= render "shared/form_errors", obj: @user %>
+
+      <div class="field">
+        <%= form.label :email, "Enter your new password", class: "field__label" %>
+        <%= form.password_field :password, class: "form-input", required: true, autofocus: true %>
+      </div>
+
+      <%= form.submit "Change Password", class: "btn btn-lg text-center" %>
+    <% end %>
+  </div>
+
+  <div class="text-sm mt-4 text-gray-800 text-center w-full">
+    <%= link_to "Back to login screen", login_path %>
+  </div>
+</section>

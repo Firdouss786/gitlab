@@ -1,0 +1,31 @@
+<%= render "shared/flash" %>
+
+<h1>Removal Reasons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Product category</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @removal_reasons.each do |removal_reason| %>
+      <tr>
+        <td><%= removal_reason.name %></td>
+        <td><%= removal_reason.product_category %></td>
+        <td><%= removal_reason.description %></td>
+        <td><%= link_to 'Show', removal_reason %></td>
+        <td><%= link_to 'Edit', edit_removal_reason_path(removal_reason) %></td>
+        <td><%= link_to 'Destroy', removal_reason, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Removal Reason', new_removal_reason_path %>

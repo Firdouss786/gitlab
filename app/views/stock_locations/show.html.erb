@@ -1,0 +1,92 @@
+<%= render "shared/flash" %>
+
+<p class="dn-m dtc-l">Large</p>
+
+<div class="tc">
+  <h1 class="tc white"><%= @stock_location.name %> Logistics</h1>
+
+  <div class="w-30 br2 dib bg-white">
+    <p class="v-mid fw3 tl ml3">Jump to a <span class="fw6">Part, Station</span> or <span class="fw6">Page</span>...</p>
+  </div>
+
+
+  <h3 class="white mt5">To Do</h3>
+
+    <%= link_to stock_location_inbound_transfers_path(@stock_location) do %>
+      <div class="dib mr2 w5 v-top bg-white pa3 br2" style="height: 150px;">
+        <h3 class="black v-top dib">Receive In</h3>
+        <h1 class="v-btm db"><%= @inbound_transfers_count %></h1>
+      </div>
+    <% end %>
+
+    <%= link_to logistics_stock_location_turnin_transfers_path(@stock_location) do %>
+    <div class="dib mr2 w5 v-top bg-white pa3 br2" style="height: 150px;">
+      <h3 class="black v-top dib">Turn-In</h3>
+      <h1 class="v-btm db"><%= @turnin_transfers_count %></h1>
+    </div>
+    <% end %>
+
+    <%= link_to logistics_stock_location_unserviceable_transfers_path(@stock_location) do %>
+      <div class="dib mr2 w5 v-top bg-white pa3 br2" style="height: 150px;">
+        <h3 class="black v-top dib">Ship Unserviceable</h3>
+        <h1 class="v-btm db"><%= @unserviceable_transfers_count %></h1>
+      </div>
+    <% end %>
+
+
+    <p class="white db mt3">See other <span class="underline">serviceable and unserviceable parts</span></p>
+
+  <h3 class="white mt5">Part Orders</h3>
+
+    <div class="dib mr2 w5 v-top bg-white pa3 br2" style="height: 150px;">
+      <h3 class="black v-top dib">High Priority Inbound</h3>
+      <h1 class="v-btm db">1</h1>
+    </div>
+
+    <div class="dib mr2 w5 v-top bg-white pa3 br2" style="height: 150px;">
+      <h3 class="black v-top dib">Repair</h3>
+      <!-- <h1 class="v-btm db">1</h1> -->
+    </div>
+
+    <div class="dib mr2 w5 v-top bg-white pa3 br2" style="height: 150px;">
+      <h3 class="black v-top dib">Purchase</h3>
+      <!-- <h1 class="v-btm db">1</h1> -->
+    </div>
+
+    <!-- <div class="dib mr2 w5 v-top bg-white pa3 br2" style="height: 150px;">
+      <h3 class="black v-top dib">Purchase Orders</h3>
+      <h1 class="v-btm db">3</h1>
+    </div> -->
+
+  <h3 class="white mt5">Reports</h3>
+
+    <div class="dib mr2 w5 v-top bg-white pa3 br2" style="height: 150px;">
+      <h3 class="black v-top dib">Consumption</h3>
+      <!-- <h1 class="v-btm db">3</h1> -->
+    </div>
+
+    <div class="dib mr2 w5 v-top bg-white pa3 br2" style="height: 150px;">
+      <h3 class="black v-top dib">Stock Levels</h3>
+      <!-- <h1 class="v-btm db">3</h1> -->
+    </div>
+</div>
+
+<!--
+
+<p>
+  <strong>Name:</strong>
+  <%= @stock_location.name %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @stock_location.category %>
+</p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @stock_location.parent %>
+</p>
+
+<%= link_to 'Edit', edit_stock_location_path(@stock_location) %> |
+<%= link_to 'Back', stock_locations_path %> -->

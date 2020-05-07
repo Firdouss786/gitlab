@@ -1,0 +1,17 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: "Edit Fleet" %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= link_to "Airlines", airlines_path, class: "breadcrumb__leaf" %>
+  <%= link_to @airline.name, airline_fleets_path(@airline), class: "breadcrumb__leaf" %>
+  <%= link_to "Edit Fleet", edit_airline_fleet_path(@airline, @fleet), class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/airline_nav', airline: @airline %>
+<% end %>
+
+<section class="panel area-main area-main--half">
+  <%= render 'form', fleet: @fleet %>
+</section>

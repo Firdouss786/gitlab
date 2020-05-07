@@ -1,0 +1,54 @@
+
+closing_action:
+  created_by: albert
+  completed_at: 2018-02-06 16:31:21
+  completion_percentage: 100
+  logbook_text: "Completed task IAW AMM"
+  activity: standard
+  task: two
+  user: albert
+
+task_actioned:
+  created_by: chris
+  completed_at: 2018-02-06 16:31:21
+  completion_percentage: 10
+  logbook_text: Performed 10% of the transit check, more manpower required
+  activity: open_wp
+  task: transit_check
+  user: chris
+
+inprogress_action:
+  created_by: chris
+  completed_at: 2018-02-08 16:31:21
+  completion_percentage: 30
+  logbook_text: Carried out software load in First Class cabin
+  activity: open_wp
+  task: software_load_v_2_1
+  user: chris
+
+inprogress_action_two:
+  created_by: chris
+  completed_at: 2018-02-07 16:31:21
+  completion_percentage: 30
+  logbook_text: Carried out software load in Business Class cabin
+  activity: closed_wp
+  task: level_three_outside
+  user: chris
+
+completed_action:
+  created_by: chris
+  completed_at: 2016-02-06 16:30:21
+  completion_percentage: 100
+  logbook_text: "Completed task IAW AMM"
+  activity: to_be_closed
+  task: one
+  user: chris
+
+completed_action_two:
+  created_by: chris
+  completed_at: 2016-02-06 16:30:21
+  completion_percentage: 100
+  logbook_text: "Completed task"
+  activity: to_be_closed
+  task: completed
+  user: chris

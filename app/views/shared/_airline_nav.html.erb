@@ -1,0 +1,5 @@
+<%= link_to "Tasks", airline_task_templates_path(airline), class: leaf_active_if("task_templates") %>
+<%= link_to "Flights", airline_flights_path(airline, status: "in_air"), class: leaf_active_if("flights") %>
+<%= link_to "Fleets", airline_fleets_path(airline), class: leaf_active_if("fleets") %>
+<%= link_to "Flight Subscriptions", airline_flight_subscriptions_path(airline), class: leaf_active_if("flight_subscriptions") %>
+<%= link_to "Deferrals", airline_deferrals_path(airline), class: leaf_active_if("deferrals") %>

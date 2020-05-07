@@ -1,0 +1,13 @@
+<% if flash.alert %>
+  <div class="flex items-center mb-2">
+    <%= inline_svg :icon_close_outline, class: "flex-none mr-2 h-6 w-6 text-orange-300" %>
+    <span data-test-id="error_explanation" class="text-orange-600"><%= flash.alert %></span>
+  </div>
+<% end %>
+
+<% if flash.notice %>
+  <div class="flex items-center mb-2">
+    <%= inline_svg :icon_checkmark_outline, class: "flex-none mr-2 h-6 w-6 text-green-300" %>
+    <span data-test-id="error_explanation" class="text-green-600"><%= flash.notice %></span>
+  </div>
+<% end %>

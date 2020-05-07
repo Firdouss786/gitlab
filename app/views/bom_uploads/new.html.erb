@@ -1,0 +1,19 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_fleet, label: "Upload BOM" %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= render 'breadcrumb' %>
+<% end %>
+
+<% content_for :nav do %>
+  <%= link_to "Aircraft", aircrafts_path(@fleet), class: "nav__leaf #{'nav__leaf--active' if request.path.include?('aircrafts')}" %>
+  <%= link_to "LOPA", seats_path(@fleet), class: "nav__leaf #{'nav__leaf--active' if request.path.include?('seats')}" %>
+  <%= link_to "BOM", product_allotments_path(@fleet), class: "nav__leaf #{'nav__leaf--active' if request.path.include?('product_allotments')}" %>
+<% end %>
+
+<section class="panel area-main area-main--half">
+  <h2 class="header--underlined"><%= @fleet.name %></h2>
+  <%= render "shared/flash" %>
+  <%= render 'form' %>
+</section>

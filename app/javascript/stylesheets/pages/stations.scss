@@ -1,0 +1,57 @@
+
+#home_station {
+  color: #253746;
+  font-size: 0.9em;
+}
+
+.station_box {
+  display: flex;
+  height: 50px;
+  margin-bottom: 12px;
+  padding: 0 20px 0 15px;
+  border: 1px solid #d2d2d2;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3px;
+  font-weight: bold;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    padding: 3px 10px;
+  }
+
+  .remove_station, .request_access, .pending_station {
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 3px;
+  }
+
+  .remove_station {
+    color: #FF5722;
+    border: solid 1px #FF5722;
+  }
+
+  .request_access {
+    color: #0097A7;
+    border: solid 1px #00BCD4;
+  }
+
+  .pending_station {
+    color: #78909c;
+    border: solid 1px #BDBDBD;
+  }
+}
+
+.station_box a:hover {
+  color: #465561;
+  font-weight: bold;
+  background-color: #EEEEEE;
+}
+
+.request_access:hover, .remove_station:hover {
+  border: solid 1px #9E9E9E;
+}

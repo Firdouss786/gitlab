@@ -1,0 +1,164 @@
+<%= render "shared/flash" %>
+
+<p>
+  <strong>Vendor:</strong>
+  <%= @flight.vendor_id %>
+</p>
+
+<p>
+  <strong>Flight number:</strong>
+  <%= @flight.flight_number %>
+</p>
+
+<p>
+  <strong>Airline code:</strong>
+  <%= @flight.airline_code %>
+</p>
+
+<p>
+  <strong>Airline name:</strong>
+  <%= @flight.airline_name %>
+</p>
+
+<p>
+  <strong>Aircraft type:</strong>
+  <%= @flight.aircraft_type %>
+</p>
+
+<p>
+  <strong>Tail number:</strong>
+  <%= @flight.tail_number %>
+</p>
+
+<p>
+  <strong>Flight status:</strong>
+  <%= @flight.flight_status %>
+</p>
+
+<p>
+  <strong>Departure airport code:</strong>
+  <%= @flight.departure_airport_code %>
+</p>
+
+<p>
+  <strong>Departure airport name:</strong>
+  <%= @flight.departure_airport_name %>
+</p>
+
+<p>
+  <strong>Departure city name:</strong>
+  <%= @flight.departure_city_name %>
+</p>
+
+<p>
+  <strong>Departure country:</strong>
+  <%= @flight.departure_country %>
+</p>
+
+<p>
+  <strong>Departure terminal:</strong>
+  <%= @flight.departure_terminal %>
+</p>
+
+<p>
+  <strong>Departure gate:</strong>
+  <%= @flight.departure_gate %>
+</p>
+
+<p>
+  <strong>Departure gate scheduled at:</strong>
+  <%= @flight.departure_gate_scheduled_at %>
+</p>
+
+<p>
+  <strong>Departure gate actual at:</strong>
+  <%= @flight.departure_gate_actual_at %>
+</p>
+
+<p>
+  <strong>Departure runway actual at:</strong>
+  <%= @flight.departure_runway_actual_at %>
+</p>
+
+<p>
+  <strong>Departure checkin counter:</strong>
+  <%= @flight.departure_checkin_counter %>
+</p>
+
+<p>
+  <strong>Departure delay reason:</strong>
+  <%= @flight.departure_delay_reason %>
+</p>
+
+<p>
+  <strong>Arrival airport code:</strong>
+  <%= @flight.arrival_airport_code %>
+</p>
+
+<p>
+  <strong>Arrival airport name:</strong>
+  <%= @flight.arrival_airport_name %>
+</p>
+
+<p>
+  <strong>Arrival city name:</strong>
+  <%= @flight.arrival_city_name %>
+</p>
+
+<p>
+  <strong>Arrival country:</strong>
+  <%= @flight.arrival_country %>
+</p>
+
+<p>
+  <strong>Arrival terminal:</strong>
+  <%= @flight.arrival_terminal %>
+</p>
+
+<p>
+  <strong>Arrival baggage:</strong>
+  <%= @flight.arrival_baggage %>
+</p>
+
+<p>
+  <strong>Arrival gate:</strong>
+  <%= @flight.arrival_gate %>
+</p>
+
+<p>
+  <strong>Arrival gate scheduled at:</strong>
+  <%= @flight.arrival_gate_scheduled_at %>
+</p>
+
+<p>
+  <strong>Arrival gate actual at:</strong>
+  <%= @flight.arrival_gate_actual_at %>
+</p>
+
+<p>
+  <strong>Arrival runway actual at:</strong>
+  <%= @flight.arrival_runway_actual_at %>
+</p>
+
+<p>
+  <strong>Arrival delay reason:</strong>
+  <%= @flight.arrival_delay_reason %>
+</p>
+
+<p>
+  <strong>Seq number:</strong>
+  <%= @flight.seq_number %>
+</p>
+
+<p>
+  <strong>Number legs:</strong>
+  <%= @flight.number_legs %>
+</p>
+
+<p>
+  <strong>Flight time remaining:</strong>
+  <%= @flight.flight_time_remaining %>
+</p>
+
+<%= link_to 'Edit', edit_flight_path(@flight) %> |
+<%= link_to 'Back', flights_path %>

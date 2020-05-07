@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Firefly</title>
+    <%= csrf_meta_tags %>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google" content="notranslate">
+
+    <%= stylesheet_pack_tag     'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag     'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag  'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('servo-logo.png') %>
+  </head>
+
+
+  <body class="default-grid antialiased" data-controller="modal asterisk">
+    <%= render partial: 'layouts/header', cached: true %>
+    <span class="modal-backdrop hidden" data-target="modal.backdrop" data-action="click->modal#hide"></span>
+    <%= yield %>
+  </body>
+
+  <%= render partial: 'layouts/footer', cached: true %>
+
+</html>

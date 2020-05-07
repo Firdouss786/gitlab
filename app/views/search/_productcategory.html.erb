@@ -1,0 +1,13 @@
+<% cache document do %>
+  <%= link_to product_category_path(document) do %>
+    <div class="search-result">
+      <div class="search-result__icon">
+        <%= image_tag "icons/maint_icon.png" %>
+      </div>
+      <div class="search-result__content">
+        <span class="search-result__heading"><%= document.name %></span>
+        <span class="search-result__data"><%= document.description %></span>
+      </div>
+    </div>
+  <% end %>
+<% end %>

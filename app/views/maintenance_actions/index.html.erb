@@ -1,0 +1,38 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cog, label: "Settings" %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+
+  <%= link_to "Maintenance Actions", maintenance_actions_path, class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/config_nav' %>
+<% end %>
+
+<section class="area-main area-main--half panel">
+  <%= render "shared/flash" %>
+
+  <div class="table" data-controller="table">
+    <div class="table-head">
+      <div class="table-head__checkbox-cell hidden"><input type="checkbox" class="form-checkbox" data-action="change->table#toggleAllCheckboxes" data-target="table.tableCheckbox"></div>
+      <div class="table-head__cell"><%= sortable 'name' %></div>
+      <div class="table-head__cell"><%= sortable 'description' %></div>
+      <div class="table-head__cell text-right"><%= "Actions" %></div>
+    </div>
+
+    <%= render(partial: :maintenance_action, collection: @maintenance_actions, cached: true) if @maintenance_actions.present? %>
+  </div>
+
+  <%= render('shared/empty_table_state', msg: "Found no maintenance actions.", helper: "#{link_to 'Try adding new maintenance action', new_maintenance_action_path, class: 'underline text-thales-light-blue font-semibold'}".html_safe) if @maintenance_actions.blank? %>
+
+  <%= will_paginate @maintenance_actions, class: "pagination"%>
+
+</section>
+
+<% content_for :search_action, maintenance_actions_path %>
+
+<% content_for :buttons do %>
+  <%= render 'layouts/footer_button', icon: :icon_add_outline, label: "New Maintenance Action", action: new_maintenance_action_path %>
+<% end %>

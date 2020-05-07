@@ -1,0 +1,21 @@
+<div class="comments" data-controller="comment" data-comment-user="<%= Current.user.id %>" >
+  <% cache [commentable, commentable.comments.exists?] do%>
+    <div class="comments__header">
+      <h3><%= commentable.comments.exists? ? "Comments" : "No comments yet" %></h3>
+      <div class="comments__button--add button-rounded--action" >
+        <%= link_to '+ ADD COMMENT', "", "data-target": "comment.toggle_button", "data-action": "click->comment#toggle_comment_form", class: "button" %>
+      </div>
+    </div>
+
+    <div class="comments__form" data-target="comment.comment_form_container">
+      <%= render "comments/form", comment: Comment.new, commentable: commentable %>
+      <hr>
+    </div>
+  <% end %>
+
+  <% cache [commentable, commentable.comments.count, commentable.comments.maximum(:updated_at)] do%>
+    <div class="comments__list">
+      <%= render partial: 'comments/comment', collection: commentable.comments.desc, as: :comment, cached: true %>
+    </div>
+  <% end %>
+</div>

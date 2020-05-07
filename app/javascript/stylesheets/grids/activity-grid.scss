@@ -1,0 +1,55 @@
+@screen md {
+  .activity-grid {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+    "header header"
+    "left right";
+  }
+
+  .activity-grid--left {
+    overflow: auto;
+    grid-area: left;
+    margin: .5em;
+  }
+
+  .activity-grid--right {
+    overflow: auto;
+    grid-area: right;
+    margin: .5em;
+  }
+
+  .area-main {
+    grid-area: main;
+  }
+}
+
+@screen 2xl {
+  .activity-grid {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 12em 1fr 1fr 12em;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+    "header header header header"
+    ". left right .";
+  }
+
+  .activity-grid--left {
+    overflow: auto;
+    grid-area: left;
+    margin: .5em;
+  }
+
+  .activity-grid--right {
+    overflow: auto;
+    grid-area: right;
+    margin: .5em;
+  }
+
+  .area-main {
+    grid-area: main;
+  }
+}

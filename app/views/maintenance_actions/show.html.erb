@@ -1,0 +1,32 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: @maintenance_action.name.titleize %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+
+  <%= link_to "Maintenance Actions", maintenance_actions_path, class: "breadcrumb__leaf" %>
+  <%= link_to @maintenance_action.name.titleize, maintenance_action_path(@maintenance_action), class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/config_nav' %>
+<% end %>
+
+<section class="panel area-main area-main--half">
+
+  <%= render "shared/flash" %>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @maintenance_action.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @maintenance_action.description %>
+  </p>
+
+  <%= link_to 'Edit', edit_maintenance_action_path(@maintenance_action) %> |
+  <%= link_to 'Back', maintenance_actions_path %>
+
+</section>

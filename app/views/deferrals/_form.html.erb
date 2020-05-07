@@ -1,0 +1,65 @@
+<div data-controller="deferral">
+
+  <%= form_with model: deferral, url: (deferral.persisted? ? activity_deferral_path(activity, deferral) : activity_deferrals_path), scope: :deferral, local: true do |form| %>
+    <%= render "shared/form_errors", obj: deferral %>
+
+    <div class="form-grid">
+
+      <div class="form-grid--span datepicker-container">
+        <%= form.label :job_started_at %>
+        <%= form.text_field :job_started_at, class: "form-input block w-full form_datetime", start_year: activity.try(:boarded_at).try(:year), readonly: true, required: true %>
+      </div>
+
+      <div class="field">
+        <%= form.label :performed_by_id, "Deferred By" %>
+        <%= form.collection_select :performed_by_id, activity.station.users.unlocked, :id, :full_name, {prompt: '-- Choose Tech --', selected: Current.user.id}, {required: true, class: "form-select block w-full select-filter"} %>
+      </div>
+
+      <!-- add defer category to CA form then revist this block ======================== -->
+      <div class="field">
+        <%= label_tag 'Defer Category' %>
+        <%= select_tag 'Defer Category', options_for_select( ("A".."D").map { |i| [i, i] }), {prompt: '-- Choose Defer Category --', class: "form-select block w-full select-filter"} %>
+      </div>
+
+      <div class="form-grid--span field discovered">
+        <%= form.label :opdef, 'Operational Deficiency' %> <br />
+
+        <%= form.radio_button :opdef, true, value: true, class: "form-radio h-5 w-5" %>
+        <%= label :opdef, "Yes", value: true %>
+
+        <%= form.radio_button :opdef, false, value: false, checked: true, required: true, class: "form-radio h-5 w-5" %>
+        <%= label :opdef, "No", value: false %>
+      </div>
+
+      <div class="form-grid--span field">
+        <%= form.label :document_reference %>
+        <%= form.text_field :document_reference, required: true, class: "form-input block w-full" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :defer_reason_id, "Defer Reason" %>
+        <%= form.collection_select :defer_reason_id, DeferReason.all, :id, :name, {prompt: '-- Choose Defer Reason --'}, {required: true, class: "form-select block w-full select-filter", data: { target: "deferral.deferReasonSelect", action: "deferral#deferReasonSelectChanged" } } %>
+      </div>
+
+      <div class="field" data-target="deferral.product" data-url="<%= parts_required_activity_deferrals_path %>" data-product_id="<%= deferral.product_id %>">
+        <%= form.label :product_id, "PN Needed" %>
+        <%= form.select :product_id, options_for_select([]), {prompt: '-- Select Part Number --'}, class: "form-select block w-full select-filter", data: { target: "deferral.productSelect" } %>
+      </div>
+
+      <div class="form-grid--span field">
+        <%= form.label :logbook_text %>
+        <%= form.text_area :logbook_text, required: true, class: "form-textarea block w-full" %>
+      </div>
+
+      <%= form.hidden_field :maintenance_action_id, value: MaintenanceAction.find_by_name("defer".upcase).id %>
+      <%= form.hidden_field :fault_id, value: deferral.fault_id || fault.id %>
+
+    </div>
+
+    <div class="float-right">
+      <%= form.submit 'Submit', class: "px-5 py-2 rounded bg-thales-light-blue text-white font-semibold" %>
+    </div>
+
+  <% end %>
+
+</div>

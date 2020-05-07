@@ -1,0 +1,47 @@
+<%= breadcrumb do %>
+  <%= breadcrumb_jump @airline.name, airlines_path %>
+  <%= breadcrumb_active_item "Faults" %>
+
+  <%= render 'shared/airline_jump_menu' %>
+<% end %>
+
+<section class="panel area-main">
+  <%= render "shared/flash" %>
+
+  <h1 class="header">
+    <span class="header__name">Faults</span>
+  </h1>
+
+  <%= render "shared/airline_nav", station: @airline %>
+  <%= link_to 'Raise Fault', new_fault_path , class: "button"%>
+
+  <table>
+    <thead>
+      <tr>
+        <th><%= t :tail %></th>
+        <th><%= t :logbook_reference %></th>
+        <th><%= t :discrepancy_name %></th>
+        <th><%= t :logbook_text %></th>
+        <th><%= t :fault_state %></th>
+        <th><%= t :impacted_seat_count %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @faults.each do |fault| %>
+        <%= link_to fault do %>
+          <tr>
+            <td><%= fault.aircraft.tail %></td>
+            <td><%= fault.logbook_reference %></td>
+            <td><%= fault.discrepancy.name if fault.discrepancy %></td>
+            <td><%= fault.logbook_text %></td>
+            <td><%= fault.state %></td>
+            <td><%= fault.impacted_seat_count %></td>
+            <td><%= link_to "Open", fault %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+</section>

@@ -1,0 +1,37 @@
+<nav class="nav" data-controller="nav" data-turbolinks-permanent>
+  <div class="nav__home">
+  </div>
+
+  <div class="nav__toggle" data-action="click->nav#hide_user_modal">
+    <label for="expand-menu" class="show-menu collapsable-content">
+      <i class="fa fa-bars"></i>
+    </label>
+  </div>
+
+  <input type="checkbox" id="expand-menu" class="nav__toggle" role="button">
+
+  <div id="menu" class="mobile-nav">
+    <div class="nav__links">
+      <ul class="nav__content">
+        <li class="nav__item" data-target="airline"><%= link_to "My Airline", airline_flights_path(Current.user.default_airline) %></li>
+        <li class="nav__item" data-target="station"><%= link_to "My Station", station_activity_plans_path(Current.user.home_station) %></li>
+        <li class="nav__item" data-target="search"><%= link_to "Search", search_index_path %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="body-overlay" data-action="click->nav#hide_menu"></div>
+
+  <div class="nav__user">
+    <div class="avatar-circle" data-action="click->modal#expand click->nav#hide_menu">
+      <span class="initials"><%= Current.user.try(:initials) %></span>
+
+      <div class="rounded-lg py-5 px-3 shadow modal hidden" data-target="modal.content">
+        <%= render "users/contact_card", user: Current.user %>
+        <%= link_to logout_path, method: :delete, class: "btn block mx-3 mt-5" do %>
+          <i class="fa fa-power-off"></i> Log Out
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</nav>

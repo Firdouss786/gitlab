@@ -1,0 +1,31 @@
+dual_usb:
+  part_number: 181313-E01
+  name: DUAL USB
+  price: 61.84
+  shelf_life: 0
+  description: MODULE, DUAL USB-RCA
+  product_category: other
+
+single_usb:
+  part_number: 181313-E02
+  name: SINGLE USB
+  price: 61.84
+  shelf_life: 0
+  description: MODULE, SINGLE USB-RCA
+  product_category: other
+
+screen:
+  part_number: 180771-403
+  name: SVDU-III
+  price: 0
+  shelf_life: 0
+  description: SVDU SB Gen3 8.9
+  product_category: display
+
+screen_two:
+  part_number: LV10-120201-101
+  name: SVDU-IIII
+  price: 0
+  shelf_life: 0
+  description: SVDU SB Gen3 8.9
+  product_category: display

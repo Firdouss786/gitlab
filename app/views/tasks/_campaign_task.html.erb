@@ -1,0 +1,9 @@
+<% cache [aircraft, template] do %>
+  <% task = aircraft.campaign_for(template.id) %>
+
+  <% if task %>
+    <td id="<%= task.id %>">
+      <div class="pill"><%= task.state.humanize %></div>
+    </td>
+  <% end %>
+<% end %>

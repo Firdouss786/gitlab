@@ -1,0 +1,19 @@
+<% cache [aircraft, aircraft.flight_subscription] do %>
+
+  <label for="<%= aircraft.id %>" class="table-body">
+    <div class="table-body__cell hidden"><input type="checkbox" id="<%= aircraft.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+    <div class="table-body__cell"><%= aircraft.tail %></div>
+    <div class="table-body__cell"><%= aircraft.flight_subscription.id if aircraft.flight_subscription %></div>
+    <div class="table-body__cell"><%= aircraft.flight_subscription.vendor_subscription_id if aircraft.flight_subscription %></div>
+    <div class="table-body__cell"><%= aircraft.flight_subscription.state if aircraft.flight_subscription %></div>
+    <div class="table-body__cell">
+      <% unless aircraft.flight_subscription %>
+        <%= link_to 'Subscribe Aircraft', airline_flight_subscriptions_path(aircraft.airline, aircraft_id: aircraft.id), method: :post, class: "btn" %>
+      <% end %>
+      <% if aircraft.flight_subscription && aircraft.flight_subscription.subscribed? %>
+        <%= link_to 'Unsubscribe Aircraft', airline_flight_subscription_path(aircraft.airline, aircraft.flight_subscription), method: :delete, class: "btn btn-warn" %>
+      <% end %>
+    </div>
+  </label>
+
+<% end %>

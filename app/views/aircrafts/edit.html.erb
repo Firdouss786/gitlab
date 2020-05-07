@@ -1,0 +1,17 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: "Edit Aircraft" %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= render 'breadcrumb' %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/airline_nav', airline: @aircraft.airline %>
+<% end %>
+
+<section class="panel area-main area-main--half">
+
+  <%= render 'form', aircraft: @aircraft %>
+
+</section>

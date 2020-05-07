@@ -1,0 +1,19 @@
+admin_permission:
+  profile: thales_servo_admin
+  permission: full_access
+
+activities_permission:
+  profile: technician
+  permission: activities_management
+
+# technician_airport_permission:
+#   profile: technician
+#   permission: airports_management
+
+# technician_station_permission:
+#   profile: technician
+#   permission: stations_management
+
+# technician_fault_permission:
+#   profile: technician
+#   permission: faults_management

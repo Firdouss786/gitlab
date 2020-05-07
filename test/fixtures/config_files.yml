@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fleet: one
+  file_type: MyString
+  user: one
+
+two:
+  fleet: two
+  file_type: MyString
+  user: two

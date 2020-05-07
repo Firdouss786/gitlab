@@ -1,0 +1,8 @@
+<%= link_to "Inspecting", station_stock_location_state_path(@stock_location.parent, @stock_location.parent, :inspecting), class: "nav__leaf #{'nav__leaf--active' if request.path.include?('/inspecting')}" %>
+<%= link_to "Serviceable", station_stock_location_state_path(@stock_location.parent, @stock_location.parent, :serviceable), class: "nav__leaf #{'nav__leaf--active' if request.path.include?('/serviceable')}" %>
+<%= link_to "Installed", station_stock_location_state_path(@stock_location.parent, @stock_location.parent, :installed), class: "nav__leaf #{'nav__leaf--active' if request.path.include?('/installed')}" %>
+<%= link_to "Removed", station_stock_location_state_path(@stock_location.parent, @stock_location.parent, :removed), class: "nav__leaf #{'nav__leaf--active' if request.path.include?('/removed')}" %>
+<%= link_to "Unserviceable", station_stock_location_state_path(@stock_location.parent, @stock_location.parent, :unserviceable), class: "nav__leaf #{'nav__leaf--active' if request.path.include?('/unserviceable')}" %>
+<%= link_to "Transiting", station_stock_location_state_path(@stock_location.parent, @stock_location.parent, :transiting), class: "nav__leaf #{'nav__leaf--active' if request.path.include?('/transiting')}" %>
+<%= link_to "Quarantined", station_stock_location_state_path(@stock_location.parent, @stock_location.parent, :quarantined), class: "nav__leaf #{'nav__leaf--active' if request.path.include?('/quarantined')}" %>
+<%= link_to "Scrapped", station_stock_location_state_path(@stock_location.parent, @stock_location.parent, :scrapped), class: "nav__leaf #{'nav__leaf--active' if request.path.include?('/scrapped')}" %>

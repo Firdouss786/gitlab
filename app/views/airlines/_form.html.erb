@@ -1,0 +1,61 @@
+<%= form_with(model: airline, local: true) do |form| %>
+  <%= render "shared/form_errors", obj: airline %>
+
+  <div class="form-grid">
+
+    <div class="field form-grid--left">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--right">
+      <%= form.label :callsign %>
+      <%= form.text_field :callsign, class: "form-input block w-full" %>
+    </div>
+
+    <div class="field form-grid--left">
+      <%= form.label :iata_code, 'IATA Code' %>
+      <%= form.text_field :iata_code, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--right">
+      <%= form.label :icao_code, 'ICAO Code' %>
+      <%= form.text_field :icao_code, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--left">
+      <%= form.label :country %>
+      <%= form.text_field :country, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--right">
+      <%= form.label :customer %><br />
+        <%= form.radio_button :customer, true, required: true, class: "form-radio h-5 w-5"  %>
+        <%= form.label :customer, "YES", class: "inline-block mt-2 mr-4"%>
+
+        <%= form.radio_button :customer, false, class: "form-radio h-5 w-5" %>
+        <%= form.label :customer, "NO", class: "inline-block mt-2" %>
+    </div>
+
+    <div class="field form-grid--span">
+      <%= form.label :description %>
+      <%= form.text_area :description, class: "form-input block w-full" %>
+    </div>
+
+    <div class="field form-grid--span">
+      <%= form.label :logo %>
+      <%= form.file_field :logo, class: "form-input block w-full" %>
+    </div>
+
+    <div class="form-grid--span">
+      <br>
+    </div>
+
+    <div class="flex justify-end content-center form-grid--right">
+      <%= link_to "Cancel", airlines_path, { class: "btn btn-secondary mr-4" } %>
+      <%= form.submit class: "btn" %>
+    </div>
+
+  </div>
+
+<% end %>

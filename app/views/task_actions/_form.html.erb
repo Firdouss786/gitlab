@@ -1,0 +1,30 @@
+<%= form_with(model: [activity, task_action], local: true) do |form| %>
+  <%= render "shared/form_errors", obj: task_action %>
+
+  <div class="field datepicker-container">
+    <%= form.label :completed_at %>
+    <%= form.text_field :completed_at, class: "form-input block w-full form_datetime", readonly: true, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_ids, "Performed_by" %>
+    <%= form.collection_select :user_ids, activity.station.users.unlocked, :id, :full_name, { include_hidden: false, selected: task_action.users.ids }, { multiple: true, class: "select-filter", required: true } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :completion_percentage, "Completion Percentage (%)" %>
+    <%= form.number_field :completion_percentage, id: :task_action_completion_percentage, required: true, class: "form-input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :logbook_text, "Action Taken" %>
+    <%= form.text_area :logbook_text, id: :task_action_logbook_text, class: "form-textarea" %>
+  </div>
+
+  <%= form.hidden_field :task_id, value: task_action.task_id || task.id %>
+
+  <div class="actions">
+    <%= form.submit class: "btn" %>
+  </div>
+
+<% end %>

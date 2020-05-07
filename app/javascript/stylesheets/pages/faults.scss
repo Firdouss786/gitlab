@@ -1,0 +1,180 @@
+.comments {
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+
+		h3 {
+			padding: 0;
+			margin: 1em 0 0 0;
+		}
+	}
+
+	&__button--add {
+		margin-top: 1.5em;
+	}
+
+	&__form {
+		display: none;
+		margin-top: 1.5em;
+	}
+
+	&__list {
+		margin-top: 2em;
+	}
+
+}
+.activity-grid--right
+{
+	.fault-rightpanel-top
+	{
+		height: 50px;
+		padding-right: 15px;
+
+		.fault-rightpanel-header {
+			li {
+				list-style: none;
+				float: right;
+				margin-left: 5px;
+				border: solid 1px #b7bfc6;
+				padding: 1%;
+				border-radius: 4px;
+				cursor: pointer;
+				margin-top: 11px;
+
+				a:hover
+				{
+					text-decoration: none;
+					color: #FFFFFF;
+				}
+			}
+
+			li:hover
+			{
+				background: #5dbfd4;
+
+				a {
+				color: #FFFFFF;
+			}
+		}
+		}
+		.hamburger-hidecontent
+		{
+			display: none;
+		}
+		.hamburger-showcontent
+		{
+			display: block;
+		}
+
+		.hamburger-content
+		{
+			float: right;
+			border:solid 1px #b7bfc6;
+			width: 40%;
+			margin-right: 0%;
+			margin-top: 5%;
+			border-radius: 4px;
+			background: #FFFFFF;
+			box-shadow: 5px 5px 9px -4px rgba(207,207,207,0.75);
+		}
+		.hamburger-inner-list
+		{
+			padding-left: 0;
+			li {
+			list-style: none;
+			padding-left: 5%;
+			margin-bottom: 5%;
+
+			a:hover
+				{
+					text-decoration: none;
+				}
+			}
+
+			li:hover
+			{
+				background: #5dbfd4;
+
+				a {
+				color: #FFFFFF;
+			}
+			}
+		}
+	}
+
+	.raisedpanel
+	{
+		padding: 2% 2% 2% 2%;
+		box-shadow: 0 2px 2px 2px #e0e6e8;
+		border-radius: 5px;
+	}
+
+	.raisedpanelnew
+	{
+		padding: 1% 0% 1% 0%;
+		box-shadow: 0 2px 2px 2px #e0e6e8;
+		border-radius: 5px;
+	}
+
+	.indented {
+		margin-left: 2.5em;
+	}
+
+	h4{
+		color: gray;
+	}
+	.fault-active
+	{
+		color: red;
+		font-weight: bold;
+	}
+
+	.create_fault {
+		float: right;
+		margin-bottom: 1.5em;
+	}
+}
+
+.back-button {
+	display: block;
+	border: solid 1px #b7bfc6;
+	border-radius: 4px;
+	margin: 10px;
+	padding: 1%;
+	float: left;
+}
+
+@media (min-width: 66em) {
+	.back-button {
+		display: none;
+	}
+
+	.activity-grid--right {
+
+		.fault-rightpanel-top {
+			display: flex;
+			flex-direction: column;
+
+			.fault-rightpanel-header li {
+				margin-top: 0%;
+			}
+
+			.hamburger-content {
+				justify-content: flex-end;
+				margin-left: 61%;
+				margin-top: -1.5%;
+			}
+		}
+	}
+}
+
+.seats_impacted_modal {
+	padding: 1em;
+
+	button {
+		margin: 0.5em 0;
+	}
+}

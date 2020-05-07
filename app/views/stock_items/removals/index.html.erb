@@ -1,0 +1,18 @@
+<%= render "shared/flash" %>
+
+<div class="">
+	<table class="table">
+		<tr>
+			<td class=""><input id="checkBox" type="checkbox"></td>
+			<td class="">Removal Date</td>
+			<td class="">Part Name</td>
+			<td class="">Installed PN</td>
+			<td class="">Installed SN</td>
+			<td class="">Removed PN</td>
+			<td class="">Removed SN</td>
+			<td class=""></td>
+		</tr>
+
+		<%= render partial: 'stock_item', collection: @stock_items, cached: true %>
+	</table>
+</div>

@@ -1,0 +1,17 @@
+<%= form_with(url: bom_uploads_path, local: true, multipart: true) do |form| %>
+
+  <div class="field form-grid--span">
+    <%= label_tag :file, 'Upload BOM' %>
+    <%= file_field_tag :file, class: "form-input block w-full" %>
+  </div>
+
+  <div class="form-grid--span">
+    <br>
+  </div>
+
+  <div class="flex justify-end content-center form-grid--right">
+    <%= link_to "Cancel", product_allotments_path(@fleet), { class: "btn btn-secondary mr-4" } %>
+    <%= form.submit 'Upload BOM', class: "btn" %>
+  </div>
+
+<% end %>

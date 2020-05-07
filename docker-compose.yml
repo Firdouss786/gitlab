@@ -1,0 +1,43 @@
+version: "3.7"
+
+services:
+  redis-server:
+    image: "redis:4.0"
+    container_name: redis-server
+    command: /bin/bash -c 'redis-server --appendonly yes'
+    volumes:
+      - "redis-server:/data"
+    ports:
+      - "6380:6379"
+
+  app:
+    build:
+      context: .
+      dockerfile: rails_app/Dockerfile
+      args:
+        CI_REGISTRY_IMAGE: $CI_REGISTRY_IMAGE
+        CI_COMMIT_SHA: $CI_COMMIT_SHA
+    depends_on:
+      - "redis-server"
+    ports:
+      - "3000:3000"
+    environment:
+      DB_USERNAME: iseBite
+      DB_PASSWORD: ise@BitE11#
+      DB_PORT: 3306
+      DB_HOST: 18.144.43.199
+
+  web:
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+    depends_on:
+      - app
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+       
+
+volumes:
+ redis-server:

@@ -1,0 +1,161 @@
+non_recurring:
+  created_by: chris
+  logbook_text: Level 2 check required
+  completion_percentage: 0
+  started_in_activity: standard
+  completed_in_activity: standard
+  completed_at: 2018-02-06 16:31:03
+  task_template: content_load
+  logbook_reference: N10998981
+  user: chris
+  aircraft: gstba
+  due_at: 2018-02-06 16:31:03
+  state: created
+  started_at: 2018-01-06 16:31:03
+
+recurring_with_completion:
+  created_by: chris
+  logbook_text: Level 2 check required
+  completion_percentage: 0
+  started_in_activity: standard
+  completed_in_activity: standard
+  completed_at: 2018-02-08 16:31:03
+  task_template: recurring_level_2
+  logbook_reference: N10998982
+  user: chris
+  aircraft: gstba
+  due_at: 2018-02-11
+  state: created
+  started_at: 2018-01-06 16:31:03
+
+recurring_without_completion:
+  created_by: albert
+  logbook_text: Level 2 check required
+  completion_percentage: 0
+  started_in_activity: standard
+  completed_in_activity: standard
+  task_template: two
+  logbook_reference: N10998983
+  user: albert
+  aircraft: gstba
+  due_at: <%= Time.now.utc.to_date + 3.days %>
+  started_at: 2019-01-06 16:31:03
+
+software_load_v_2_1:
+  created_by: albert
+  started_at: 2018-02-06 16:31:03
+  completed_at: 2018-02-06 16:31:03
+  logbook_text: V2.1 Software Load
+  completion_percentage: 30
+  state: active
+  started_in_activity: open_wp
+  completed_in_activity:
+  task_template: software_upload
+  logbook_reference: NF7553573
+  user: albert
+  aircraft: gstbc
+
+software_load_v_3:
+  created_by: albert
+  started_at:
+  due_at: 2018-01-01 16:31:03
+  completed_at:
+  logbook_text:
+  completion_percentage: 0
+  state: created
+  started_in_activity:
+  completed_in_activity:
+  task_template: campaign_with_one_config
+  logbook_reference:
+  user: albert
+  aircraft: gstbc
+
+completed:
+  created_by: chris
+  started_at: 2016-02-06 15:31:03
+  completed_at: 2016-02-06 16:31:03
+  logbook_text: MyText
+  completion_percentage: 100
+  started_in_activity: to_be_closed
+  completed_in_activity: to_be_closed
+  task_template: level_three
+  state: completed
+  logbook_reference: MyString
+  user: chris
+  aircraft: gstbb
+  due_at: 2018-02-06 16:31:03
+
+two:
+  created_by: two
+  started_at: 2018-02-06 16:31:03
+  completed_at: 2018-02-06 16:31:03
+  logbook_text: MyText
+  completion_percentage: 1
+  started_in_activity: two
+  completed_in_activity: two
+  task_template: two
+  state: active
+  logbook_reference: NF3675715
+  user: two
+  aircraft: two
+  due_at: 2018-02-06 16:31:03
+
+transit_check:
+  created_by: chris
+  started_at: <%= DateTime.now %>
+  completed_at:
+  logbook_text: Transit Check
+  completion_percentage: 10
+  started_in_activity: open_wp
+  completed_in_activity:
+  task_template: transit_check
+  state: active
+  logbook_reference: NF5436196
+  user: chris
+  aircraft: gstbc
+  due_at: 2020-02-06 16:31:03
+
+transit_check_no_actions:
+  created_by: chris
+  started_at: <%= DateTime.now %>
+  completed_at:
+  logbook_text: Transit Check
+  completion_percentage: 10
+  started_in_activity: open_wp
+  completed_in_activity:
+  task_template: transit_check
+  state: active
+  logbook_reference: NF5435196
+  user: chris
+  aircraft: gstbc
+  due_at: 2020-02-06 16:31:03
+
+level_three:
+  created_by:
+  started_at:
+  completed_at:
+  logbook_text:
+  completion_percentage: 0
+  started_in_activity:
+  completed_in_activity:
+  task_template: level_three
+  state: created
+  aircraft: gstbc
+  logbook_reference:
+  user:
+  due_at: 2018-02-06 16:31:03
+
+level_three_outside:
+  created_by: chris
+  started_at: 2018-01-01 16:31:03
+  completed_at:
+  logbook_text: Level 2 check required
+  completion_percentage: 30
+  started_in_activity: closed_wp
+  completed_in_activity:
+  task_template: two
+  state: active
+  aircraft: gstbc
+  logbook_reference: NF4562362
+  user: chris
+  due_at: 2018-06-06 16:31:03

@@ -1,0 +1,18 @@
+<label for="<%= fleet.id %>" class="table-body">
+
+  <div class="table-body__cell hidden"><input type="checkbox" id="<%= fleet.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+
+  <div class="table-body__cell"><%= fleet.name %></div>
+  <div class="table-body__cell"><%= fleet.install_type %></div>
+  <div class="table-body__cell"><%= fleet.aircraft_type.name %></div>
+  <div class="table-body__cell"><%= fleet.software_platform.name %></div>
+  <div class="table-body__cell"><%= fleet.aircrafts.count %></div>
+
+  <div class="table-body__cell flex justify-end">
+    <%= link_to((inline_svg :icon_fleet, class: "h-5 w-5 mr-4 text-thales-light-blue active:text-white"), aircrafts_path(fleet), title: 'Aircraft') %>
+    <%= link_to((inline_svg :icon_user_group, class: "h-5 w-5 mr-4 text-thales-light-blue active:text-white"), seats_path(fleet), title: 'LOPA') %>
+    <%= link_to((inline_svg :icon_clipboard, class: "h-5 w-5 mr-4 text-thales-light-blue active:text-white"), product_allotments_path(fleet), title: 'Bill of Materials') %>
+    <%= link_to((inline_svg :icon_edit_pencil, class: "h-5 w-5 text-thales-light-blue active:text-white"), edit_airline_fleet_path(fleet.airline, fleet), title: 'Edit fleet') %>
+  </div>
+
+</label>

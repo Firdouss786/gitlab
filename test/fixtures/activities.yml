@@ -1,0 +1,127 @@
+closed_wp:
+  started_at: <%= DateTime.now - 5.days %>
+  closed_at: <%= DateTime.now - 5.days %>
+  boarded_at: <%= DateTime.now - 5.days %>
+  unboarded_at: <%= DateTime.now - 5.days %>
+  station: lhr
+  is_open: false
+  inbound_flight_number:
+  inbound_airport:
+  outbound_airport:
+  outbound_flight_number:
+  aircraft: gstbc
+  state: complete
+  flight: 
+
+closed_wp_gstbe:
+  started_at: 2018-01-01 06:51:55
+  closed_at: 2018-11-01 06:51:55
+  boarded_at: 2018-01-01 06:51:55
+  unboarded_at: 2018-11-01 06:51:55
+  station: lhr
+  is_open: false
+  inbound_flight_number: 54321
+  inbound_airport: heathrow
+  outbound_airport: heathrow
+  outbound_flight_number: 12345
+  aircraft: gstbe
+  state: complete
+  flight:
+
+open_wp:
+  started_at: 2018-01-01 06:51:55
+  closed_at:
+  boarded_at: 2018-07-06 03:00:00
+  unboarded_at:
+  station: lhr
+  is_open: true
+  inbound_flight_number:
+  inbound_airport:
+  outbound_airport:
+  outbound_flight_number:
+  aircraft: gstbc
+  state: active
+  flight: on_ground_one
+
+standard:
+  started_at: 2018-07-06 06:51:55
+  closed_at:
+  boarded_at: 2018-07-06 03:00:00
+  unboarded_at:
+  station: lhr
+  is_open:
+  inbound_flight_number:
+  inbound_airport:
+  outbound_airport:
+  outbound_flight_number:
+  aircraft: gstba
+  state: active
+  flight:
+
+before_closed:
+  started_at: 2017-07-06 06:51:55
+  closed_at: 2017-07-06 07:06:09
+  boarded_at: 2017-07-06 03:00:00
+  unboarded_at: 2017-07-06 04:30:00
+  station: lhr
+  is_open:
+  inbound_flight_number: 222
+  inbound_airport: heathrow
+  outbound_airport: heathrow
+  outbound_flight_number: 333
+  aircraft: gstbb
+  state: complete
+  flight:
+
+to_be_closed:
+  started_at: 2017-01-01 06:51:55
+  closed_at: 2017-07-06 07:06:09
+  boarded_at: 2017-01-01 03:00:00
+  unboarded_at: 2017-07-06 04:30:00
+  station: lhr
+  is_open:
+  inbound_flight_number: 222
+  inbound_airport: heathrow
+  outbound_airport: heathrow
+  outbound_flight_number: 333
+  aircraft: gstbb
+  state: active
+  flight:
+
+created_empty:
+  started_at: 2017-01-01 06:51:55
+  closed_at: 2017-07-06 07:06:09
+  boarded_at: 2017-01-01 03:00:00
+  unboarded_at: 2017-07-06 04:30:00
+  station: lhr
+  aircraft: gstbb
+  state: created
+  flight:
+
+aal_wp:
+  started_at: 2017-01-01 06:51:55
+  closed_at: 2017-07-06 07:06:09
+  boarded_at: 2017-01-01 03:00:00
+  unboarded_at: 2017-07-06 04:30:00
+  station: lhr
+  is_open:
+  inbound_flight_number: 222
+  inbound_airport: heathrow
+  outbound_airport: heathrow
+  outbound_flight_number: 333
+  aircraft: N70020
+  state: active
+  flight:
+
+with_inbound_flight:
+  started_at:
+  boarded_at:
+  unboarded_at:
+  station: lhr
+  inbound_flight_number:
+  inbound_airport:
+  outbound_airport:
+  outbound_flight_number:
+  aircraft: gstbd
+  state: created
+  flight: tbd_inbound_to_lhr

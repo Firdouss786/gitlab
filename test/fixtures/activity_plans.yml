@@ -1,0 +1,15 @@
+created_activity_plan:
+  station: lhr
+  aircraft: gstba
+  flight: in_air_one
+  activity:
+  original_arrival_time: 2019-10-10 15:54:43
+  state: created
+
+started_activity_plan:
+  station: lhr
+  aircraft: gstbc
+  flight: in_air_one
+  activity: open_wp
+  original_arrival_time: 2019-10-10 15:54:43
+  state: created

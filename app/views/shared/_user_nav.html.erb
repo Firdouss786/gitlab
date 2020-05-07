@@ -1,0 +1,8 @@
+<%= link_to "Profile", edit_user_path(@user), class: leaf_active_if("edit") %>
+<%= link_to "Access", user_accesses_path(@user), class: leaf_active_if("accesses") %>
+<%= link_to "Qualifications", user_qualifications_path(@user), class: leaf_active_if("qualifications") %>
+<%= link_to "Security", user_security_path(@user), class: leaf_active_if("security") %>
+<%= link_to "Events", user_events_path(@user), class: leaf_active_if("events") %>
+<% if @user == Current.user %>
+  <%= link_to "Developer Settings", new_user_token_path(@user), class: leaf_active_if("token") %>
+<% end %>

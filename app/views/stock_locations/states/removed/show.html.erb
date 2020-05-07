@@ -1,0 +1,35 @@
+<% content_for :page_title, "#{@stock_location.name} To Removed" %>
+
+<% content_for :breadcrumb do %>
+  <%= render 'stock_locations/breadcrumb' %>
+  <span class="breadcrumb__leaf--active">Removed</span>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/stock_items_nav', station: @station %>
+<% end %>
+
+<section class="area-main">
+  <p id="notice"><%= notice %></p>
+
+  <div class="table" data-controller="table">
+    <div class="table-head">
+      <div class="table-head__checkbox-cell"><input type="checkbox" class="form-checkbox" data-action="change->table#toggleAllCheckboxes" data-target="table.tableCheckbox"></div>
+      <div class="table-head__cell">Stock Item ID</div>
+      <div class="table-head__cell">Part Name</div>
+      <div class="table-head__cell">Part Number</div>
+      <div class="table-head__cell">Serial Number</div>
+      <div class="table-head__cell">Revision</div>
+      <div class="table-head__cell">Mod</div>
+      <div class="table-head__cell">On The Shelf</div>
+      <div class="table-head__cell">Certificates</div>
+      <div class="table-head__cell">Actions</div>
+    </div>
+
+    <%= render(partial: "#{@state_view_path}/stock_item", collection: @stock_items, cached: true) %>
+
+  </div>
+
+</section>
+
+<% content_for :search_action, airports_path %>

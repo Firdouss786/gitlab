@@ -1,0 +1,342 @@
+<?xml version="1.0"?>
+<SeatLocation>
+	<MappingId>JB A321</MappingId>
+	<SoftwareVersion>1.0</SoftwareVersion>
+	<Description>JetBlue Airlines A321 Low Density</Description>
+	<Zone id="1" zebPort="2" seatProfile="Coach">
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="29" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="29" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="29" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="28" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="28" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="28" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="27" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="27" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="27" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="26" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="26" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="26" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="25" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="25" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="25" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="24" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="24" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="24" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="23" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="23" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="23" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="22" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="22" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="22" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="21" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="21" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="21" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="20" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="20" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="20" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="19" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="19" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="19" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="18" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="18" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="18" seatProfile="Coach"/>
+		</SeatBox>
+	</Zone>
+	<Zone id="2" zebPort="3" seatProfile="Coach">
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="29" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="29" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="29" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="28" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="28" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="28" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="27" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="27" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="27" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="26" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="26" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="26" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="25" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="25" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="25" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="24" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="24" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="24" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="23" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="23" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="23" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="22" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="22" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="22" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="21" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="21" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="21" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="20" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="20" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="20" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="19" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="19" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="19" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="18" seatProfile="Unused"/>
+			<Seat processorId="1" seatId="E" rowId="18" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="18" seatProfile="Coach"/>
+		</SeatBox>
+		</Zone>
+	<Zone id="3" zebPort="4" seatProfile="Coach">
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="17" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="17" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="17" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="16" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="16" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="16" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="15" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="15" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="15" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="14" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="14" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="14" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="13" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="13" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="13" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="12" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="12" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="12" seatProfile="Coach"/>
+		</SeatBox>
+		</Zone>
+	<Zone id="4" zebPort="5" seatProfile="Coach">
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="17" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="17" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="17" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="16" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="16" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="16" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="15" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="15" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="15" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="14" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="14" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="14" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="13" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="13" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="13" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="12" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="12" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="12" seatProfile="Coach"/>
+		</SeatBox>
+		</Zone>
+		<Zone id="5" zebPort="6" seatProfile="Coach">
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="11" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="11" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="11" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="10" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="10" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="10" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="9" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="9" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="9" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="8" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="8" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="8" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="7" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="B" rowId="7" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="A" rowId="7" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="C" rowId="6" seatProfile="InArm"/>
+			<Seat processorId="1" seatId="B" rowId="6" seatProfile="InArm"/>
+			<Seat processorId="2" seatId="A" rowId="6" seatProfile="InArm"/>
+		</SeatBox>
+	</Zone>
+	<Zone id="6" zebPort="7" seatProfile="Coach">
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="11" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="11" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="11" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="10" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="10" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="10" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="9" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="9" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="9" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="8" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="8" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="8" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="7" seatProfile="Coach"/>
+			<Seat processorId="1" seatId="E" rowId="7" seatProfile="Coach"/>
+			<Seat processorId="2" seatId="F" rowId="7" seatProfile="Coach"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="0" seatId="D" rowId="6" seatProfile="InArm"/>
+			<Seat processorId="1" seatId="E" rowId="6" seatProfile="InArm"/>
+			<Seat processorId="2" seatId="F" rowId="6" seatProfile="InArm"/>
+		</SeatBox>
+	</Zone>
+	<Zone id="7" zebPort="8" seatProfile="First Class">
+		<SeatBox>
+			<Seat processorId="2" seatId="Z" rowId="1" seatProfile="Unused"/>
+			<Seat processorId="1" seatId="Y" rowId="1" seatProfile="Unused"/>
+			<Seat processorId="0" seatId="C" rowId="1" seatProfile="FirstClass"/>
+		</SeatBox>	
+		<SeatBox>
+			<Seat processorId="2" seatId="X" rowId="1" seatProfile="Unused"/>
+			<Seat processorId="1" seatId="B" rowId="1" seatProfile="Unused"/>
+			<Seat processorId="0" seatId="A" rowId="1" seatProfile="FirstClass"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="2" seatId="X" rowId="2" seatProfile="Unused"/>
+			<Seat processorId="1" seatId="B" rowId="2" seatProfile="Unused"/>
+			<Seat processorId="0" seatId="A" rowId="2" seatProfile="FirstClass"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="2" seatId="Z" rowId="3" seatProfile="Unused"/>
+			<Seat processorId="1" seatId="Y" rowId="3" seatProfile="Unused"/>
+			<Seat processorId="0" seatId="C" rowId="3" seatProfile="FirstClass"/>
+		</SeatBox>	
+		<SeatBox>
+			<Seat processorId="2" seatId="X" rowId="3" seatProfile="Unused"/>
+			<Seat processorId="1" seatId="B" rowId="3" seatProfile="Unused"/>
+			<Seat processorId="0" seatId="A" rowId="3" seatProfile="FirstClass"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="2" seatId="X" rowId="4" seatProfile="Unused"/>
+			<Seat processorId="1" seatId="B" rowId="4" seatProfile="Unused"/>
+			<Seat processorId="0" seatId="A" rowId="4" seatProfile="FirstClass"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="2" seatId="Z" rowId="5" seatProfile="Unused"/>
+			<Seat processorId="1" seatId="Y" rowId="5" seatProfile="Unused"/>
+			<Seat processorId="0" seatId="C" rowId="5" seatProfile="FirstClass"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="2" seatId="X" rowId="5" seatProfile="Unused"/>
+			<Seat processorId="1" seatId="B" rowId="5" seatProfile="Unused"/>
+			<Seat processorId="0" seatId="A" rowId="5" seatProfile="FirstClass"/>
+		</SeatBox>
+	</Zone>
+	<Zone id="8" zebPort="9" seatProfile="First Class">
+		<SeatBox>
+			<Seat processorId="2" seatId="Z" rowId="1" seatProfile="Unused"/>
+			<Seat processorId="1" seatId="Y" rowId="1" seatProfile="Unused"/>
+			<Seat processorId="0" seatId="D" rowId="1" seatProfile="FirstClass"/>
+		</SeatBox>	
+		<SeatBox>
+			<Seat processorId="2" seatId="X" rowId="1" seatProfile="Unused"/>
+			<Seat processorId="1" seatId="E" rowId="1" seatProfile="Unused"/>
+			<Seat processorId="0" seatId="F" rowId="1" seatProfile="FirstClass"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="2" seatId="X" rowId="2" seatProfile="Unused"/>
+			<Seat processorId="1" seatId="E" rowId="2" seatProfile="Unused"/>
+			<Seat processorId="0" seatId="F" rowId="2" seatProfile="FirstClass"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="2" seatId="Z" rowId="3" seatProfile="Unused"/>
+			<Seat processorId="1" seatId="Y" rowId="3" seatProfile="Unused"/>
+			<Seat processorId="0" seatId="D" rowId="3" seatProfile="FirstClass"/>
+		</SeatBox>	
+		<SeatBox>
+			<Seat processorId="2" seatId="X" rowId="3" seatProfile="Unused"/>
+			<Seat processorId="1" seatId="E" rowId="3" seatProfile="Unused"/>
+			<Seat processorId="0" seatId="F" rowId="3" seatProfile="FirstClass"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="2" seatId="X" rowId="4" seatProfile="Unused"/>
+			<Seat processorId="1" seatId="E" rowId="4" seatProfile="Unused"/>
+			<Seat processorId="0" seatId="F" rowId="4" seatProfile="FirstClass"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="2" seatId="Z" rowId="5" seatProfile="Unused"/>
+			<Seat processorId="1" seatId="Y" rowId="5" seatProfile="Unused"/>
+			<Seat processorId="0" seatId="D" rowId="5" seatProfile="FirstClass"/>
+		</SeatBox>
+		<SeatBox>
+			<Seat processorId="2" seatId="X" rowId="5" seatProfile="Unused"/>
+			<Seat processorId="1" seatId="E" rowId="5" seatProfile="Unused"/>
+			<Seat processorId="0" seatId="F" rowId="5" seatProfile="FirstClass"/>
+		</SeatBox>
+	</Zone>
+</SeatLocation>

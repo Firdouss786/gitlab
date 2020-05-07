@@ -1,0 +1,39 @@
+chris_access_to_baw:
+  user: chris
+  status: enabled
+  accessible: baw (Airline)
+
+chris_access_to_aal:
+  user: chris
+  status: enabled
+  accessible: aal (Airline)
+
+enabled_access:
+  user: john
+  status: disabled
+  accessible: baw (Airline)
+
+chris_access_to_lhr:
+  user: chris
+  status: enabled
+  accessible: lhr (Station)
+
+john_access_to_lhr:
+  user: john
+  status: enabled
+  accessible: lhr (Station)
+
+george_access_to_lhr:
+  user: george
+  status: enabled
+  accessible: lhr (Station)
+
+kathrine_access_to_baw:
+  user: kathrine
+  status: enabled
+  accessible: baw (Airline)
+
+albert_access_to_lhr:
+  user: albert
+  status: enabled
+  accessible: lhr (Station)

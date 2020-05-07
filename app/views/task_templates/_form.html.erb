@@ -1,0 +1,75 @@
+<div class="" data-controller="task">
+  <%= form_with(model: [@airline, task_template], local: true) do |form| %>
+    <%= render "shared/form_errors", obj: task_template %>
+
+    <div class="form-grid">
+      <h2 class="header--underlined mb-0 form-grid--span">1. Name your task</h2>
+
+      <div class="field form-grid--span">
+        <%= form.label :name, 'Title' %>
+        <%= form.text_field :name, class: "form-input", required: true, autofocus: true %>
+      </div>
+
+      <h2 class="header--underlined mb-0 mt-6 form-grid--span">2. IS THIS A CAMPAIGN, OR RECURRING MAINTENANCE?</h2>
+
+      <div class="field form-grid--span">
+        <p class="mb-6 text-gray-700">Campaigns take place during a fixed period, such as a software or content rollout. Recurring tasks repeat on a regular schedule – each task is rebuilt after the last one is finished.</p>
+
+        <%= form.fields_for :campaign do |campaign_form| %>
+          <%= form.label :mode_campaign do %>
+            <%= form.radio_button :mode, "campaign", 'data-action': 'task#toggleCampaign', class: "form-radio h-5 w-5", required: true, checked: true %>
+            CAMPAIGN
+          <% end %>
+
+          <%= form.label :mode_recurring do %>
+            <%= form.radio_button :mode, "recurring", 'data-action': 'task#toggleCampaign', class: "form-radio h-5 w-5 ml-4", required: true %>
+            RECURRING MAINTENANCE
+          <% end %>
+
+          <div data-target="task.campaignDateContainer" class="field datepicker-container mt-4">
+            <%= campaign_form.label :scheduled_end, "Target Completion Date:", class: "form-check-label" %>
+            <%= campaign_form.text_field :scheduled_end, class: "form-input block w-full form_date", placeholder: "YYYY-MM-DD", 'data-target': "task.campaignDate", required: true %>
+          </div>
+        <% end %>
+
+        <div class="field hidden mt-4" data-target="task.repeatInteralContainer">
+          <%= form.label :repeat_interval, 'Repeat task every (days)' %>
+          <%= form.number_field :repeat_interval, id: :task_template_repeat_interval, class: "form-input", 'data-target': "task.repeatInteral" %>
+        </div>
+      </div>
+
+      <div class="field form-grid--span">
+        <h2 class="header--underlined mb-6 mt-6 form-grid--span">3. Which configurations should this apply to?</h2>
+
+        <div class="table" data-controller="table">
+          <div class="table-head">
+            <div class="table-head__checkbox-cell"><input type="checkbox" class="form-checkbox" data-action="change->table#toggleAllCheckboxes" data-target="table.tableCheckbox"></div>
+            <div class="table-head__cell">Name</div>
+            <div class="table-head__cell">Document (optional)</div>
+            <div class="table-head__cell">Content to apply (optional)</div>
+            <div class="table-head__cell">Software to apply (optional)</div>
+          </div>
+
+          <%= form.fields_for :config_applicabilities do |applicability_form| %>
+            <%= applicability_form.hidden_field :fleet_id, value: "#{applicability_form.object.fleet.id}" %>
+            <label for="<%= applicability_form.object.fleet.id %>" class="table-body">
+              <div class="table-body__cell"><%= applicability_form.check_box :selected, class: "form-checkbox", data: {target: "table.rowCheckbox"} %></div>
+              <div class="table-body__cell"><%= applicability_form.object.fleet.name %></div>
+              <div class="table-body__cell"><%= applicability_form.file_field :task_document %></div>
+              <div class="table-body__cell"><%= applicability_form.text_field :applicable_content, class: "form-input", placeholder: "Software Version", 'data-target': 'task.applicabilityField' %></div>
+              <div class="table-body__cell"><%= applicability_form.text_field :applicable_software, class: "form-input", placeholder: "Content Version", 'data-target': 'task.applicabilityField' %></div>
+            </label>
+          <% end %>
+        </div>
+
+      </div>
+
+      <div class="flex justify-end content-center form-grid--right">
+        <%= link_to "Cancel", airline_task_templates_path(task_template.airline), { class: "btn btn-secondary mr-4" } %>
+        <%= form.submit class: "btn" %>
+      </div>
+
+    </div>
+
+  <% end %>
+</div>

@@ -1,0 +1,54 @@
+screen_replacement:
+  on_wing_position: 22G
+  installed_stock_item: installed_screen
+  removed_stock_item: removed_screen
+  removal_reason: three
+  category: rotable
+  installed_product: screen
+  removed_product: screen
+  removed_model_numbers:
+  removed_revision:
+
+usb_replacement:
+  install_quantity: 2
+  installed_stock_item: consumable_with_no_history
+  removal_reason:
+  category: consumable
+  installed_product: single_usb
+  removed_product:
+  removed_model_numbers:
+  removed_revision:
+
+rotable_replacement:
+  category: rotable
+  on_wing_position: A24
+  removed_product: screen
+  removed_stock_item: installed_screen
+  installed_product: screen
+  installed_stock_item: serviceable_screen
+  removed_model_numbers: "1,3,4,16"
+  removed_revision: "R"
+  removal_reason: three
+
+replacement_rotable_two:
+  category: rotable
+  on_wing_position: A24
+  removed_product: screen
+  removed_stock_item: installed_screen
+  installed_product: screen
+  installed_stock_item: serviceable_screen
+  removed_model_numbers: "1,3,4,16"
+  removed_revision: "R"
+  removal_reason: three
+
+consumable_replacement:
+  install_quantity: 10
+  installed_stock_item: consumable_with_no_history
+  category: consumable
+  installed_product: single_usb
+
+replacement_consumable_two:
+  install_quantity: 10
+  installed_stock_item: consumable_with_no_history
+  category: consumable
+  installed_product: single_usb

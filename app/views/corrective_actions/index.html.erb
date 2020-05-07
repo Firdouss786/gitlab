@@ -1,0 +1,44 @@
+<section class="activity-grid--left hide-on-mobile panel">
+  <%= render "activities/items", activity: @activity %>
+</section>
+
+<section class="activity-grid--right panel">
+  <%= render "shared/flash" %>
+
+  <div class="fault-rightpanel-top">
+    <ul class="fault-rightpanel-header">
+      <li><%= link_to "Back", :back %></li>
+      <li><%= link_to 'New Corrective Action', new_activity_fault_corrective_action_path(@activity, @fault) %></li>
+    </ul>
+  </div>
+
+  <h4>Corrective Actions</h4>
+  <div class="raisedpanelnew">
+    <table>
+      <thead>
+        <tr>
+          <th>Job started at</th>
+          <th>Performed By</th>
+          <th>Maintenance action</th>
+          <th>Logbook text</th>
+          <th>Document reference</th>
+          <th>Logbook reference</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @corrective_actions.each do |corrective_action| %>
+        <tr>
+          <td><%= link_to corrective_action.job_started_at, activity_fault_corrective_action_path(@activity, @fault, corrective_action) %></td>
+          <td><%= corrective_action.performed_by.full_name %></td>
+          <td><%= corrective_action.maintenance_action.name %></td>
+          <td><%= corrective_action.logbook_text %></td>
+          <td><%= corrective_action.document_reference %></td>
+          <td><%= corrective_action.logbook_reference %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>

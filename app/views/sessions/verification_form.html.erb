@@ -1,0 +1,25 @@
+<section class="area-main">
+
+  <div class="text-sm mt-6 mb-6 text-gray-800 text-center w-full">
+    <h1 class="text-3xl sm:text-4xl">Enter Verification Code</h1>
+  </div>
+
+  <div class="login-form panel m-4 sm:py-10 sm:px-8">
+    <%= render "shared/flash" %>
+
+    <%= form_for(:session, url: verify_path) do |form| %>
+      <%= form.hidden_field :user_gid, value: @user_gid %>
+
+      <div class="field">
+        <%= form.label :verification_code, class: "field__label" %>
+        <%= form.number_field :verification_code, class: "form-input", required: true, autofocus: true %>
+      </div>
+
+      <%= form.submit "Submit Verification Code", class: "btn btn-lg text-center" %>
+    <% end %>
+  </div>
+
+  <div class="text-sm mt-4 text-gray-800 text-center w-full">
+    <%= link_to "Back to login screen", login_path %>
+  </div>
+</section>

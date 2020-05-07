@@ -1,0 +1,14 @@
+<div class="text-center text-gray-600 leading-loose p-10">
+  <div class="bg-thales-light-blue rounded-full inline-block p-4">
+    <%= inline_svg :icon_search, class: "h-6 w-6 float-right text-white" %>
+  </div>
+  <h2 class="text-xl font-bold"><%= msg %></h2>
+
+  <p>
+    <% if request.query_parameters[:q].present? %>
+      <%= link_to 'Clear Filters', url_for(request.query_parameters.except(:q)), class: 'underline text-thales-light-blue font-semibold' %> or 
+    <% end %>
+    <%= helper %>
+  </p>
+
+</div>

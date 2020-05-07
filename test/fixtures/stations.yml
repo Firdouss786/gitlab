@@ -1,0 +1,41 @@
+lhr:
+  airport: heathrow   # airport id (FK)
+  user:    chris      # user id (FK)
+  address: heathrow   # address id (FK)
+  name:    LHR        # Station name (not linked)
+
+jfk:
+  airport: jfk
+  user:    albert
+  address: jfk
+  name:    JFK
+
+cdg:
+  airport: cdg
+  user:    chris
+  address: cdg
+  name:    CDG
+
+lax:
+  airport: lax
+  user:    chris
+  address: lax
+  name:    LAX
+
+lga:
+  airport: lga
+  user:    albert
+  address: lga
+  name:    LGA
+
+khi:
+  airport: khi
+  user:    albert
+  address: lga
+  name:    KHI
+
+station_delete:
+  airport: yyz
+  user:    chris
+  address: lga
+  name:    TGZ

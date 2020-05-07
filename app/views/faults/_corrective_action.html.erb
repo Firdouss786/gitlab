@@ -1,0 +1,39 @@
+<% if corrective_action.deferral? %>
+
+  <%= link_to activity_fault_deferral_action_path(@activity, @fault, corrective_action) do %>
+    <div class="flex items-center border-b py-2 no-underline hover:bg-gray-100 text-gray-500">
+      <div class="text-sm">
+        <span class="block text-gray-800"><%= shortdate corrective_action.job_started_at %></span>
+        <span class="block"><%= corrective_action.performed_by.full_name %></span>
+      </div>
+
+      <div class="ml-2 pl-2 flex-grow flex items-center flex-wrap xl:flex-no-wrap">
+        <div class="flex-grow w-full xl:w-auto text-gray-700">Deferral - <%= corrective_action.logbook_text %></div>
+      </div>
+
+      <div>
+        <%= inline_svg :icon_chevron_right, class: "h-6 w-6 text-gray-400" %>
+      </div>
+    </div>
+  <% end %>
+
+<% else %>
+
+  <%= link_to activity_fault_corrective_action_path(@activity, @fault, corrective_action) do %>
+    <div class="flex items-center border-b py-2 no-underline hover:bg-gray-100 text-gray-500">
+      <div class="text-sm">
+        <span class="block text-gray-800"><%= shortdate corrective_action.job_started_at %></span>
+        <span class="block"><%= corrective_action.performed_by.full_name %></span>
+      </div>
+
+      <div class="ml-2 pl-2 flex-grow flex items-center flex-wrap xl:flex-no-wrap">
+        <div class="flex-grow w-full xl:w-auto text-gray-700">Action - <%= corrective_action.logbook_text %></div>
+      </div>
+
+      <div>
+        <%= inline_svg :icon_chevron_right, class: "h-6 w-6 text-gray-400" %>
+      </div>
+    </div>
+  <% end %>
+
+<% end %>

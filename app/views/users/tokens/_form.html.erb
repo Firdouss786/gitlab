@@ -1,0 +1,8 @@
+<%= form_tag(:user_tokens) do %>
+  <div class="field">
+    <%= label_tag :reason_for_token, "Reason for access"  %>
+    <%= text_area_tag :reason_for_token, "", class: "form-textarea block w-full", required: true, autofocus: true, maxlength: 255 %>
+  </div>
+
+  <%= submit_tag "Generate API Token", class: "btn" %>
+<% end %>

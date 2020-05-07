@@ -1,0 +1,84 @@
+<div class="white-80 tc">
+
+  <!-- Section -->
+  <div class="fl w-100 mb4">
+    <div class="dt dt--fixed w-70 ba b--white-20 br3 mv3 pv2 shadow-4 center">
+
+      <h3 class="dib v-top f4 fw3 white-90 tracked mb4">Part Information</h3>
+
+      <%= render 'stock_items/form', stock_item: @stock_item %>
+
+    </div>
+  </div>
+  <!-- Close Section -->
+
+
+  <!-- Section -->
+  <div class="fl w-100 mb4">
+    <div class="dt dt--fixed w-70 ba b--white-20 br3 mv3 pv2 shadow-4 center">
+      <h3 class="dib v-top f4 fw3 white-90 tracked mb4">Certificate</h3>
+      <!-- Form -->
+      <table class="center">
+        <tbody>
+          <tr>
+            <td class="f6 fw2 tracked tl white-60 v-top pt1">Reference Number</td>
+            <td class="pl4 tl pb4 v-top"><input type="text" name="" value=""></td>
+          </tr>
+          <tr>
+            <td class="f6 fw2 tracked tl white-60 v-top pt1">Governance</td>
+            <td class="pl4 tl pb4 v-top"><select class="" name="">
+
+            </select></td>
+          </tr>
+          <tr>
+            <td class="f6 fw2 tracked tl white-60 v-top pt1">File</td>
+            <td class="pl4 tl pb4 v-top">
+              <div class="ba b--dashed h3 br3 bw1">
+
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Close Form -->
+
+      <!-- Actions -->
+      <div class="actions tc mb2">
+        <!-- <div class="dib mh1">
+          <div class="dib underline">Skip</div> or
+        </div> -->
+        <div class="dib mh1">
+          <div class="green f5 tracked fw3 button-overide ph4 pv3 ba br1 b--aether-light-blue dib">Upload Certificate</div>
+        </div>
+      </div>
+      <!-- Close Actions -->
+
+    </div>
+  </div>
+  <!-- Close Section -->
+
+
+  <!-- Section -->
+  <div class="fl w-100 mb4">
+    <div class="dt dt--fixed w-70 ba b--white-20 br3 mv3 pv2 shadow-4 center">
+      <h3 class="db v-top f4 fw3 white-90 tracked mb4">Inspect</h3>
+
+      <input type="checkbox" class="mb3"> Go to next part after inspection
+
+      <!-- Actions -->
+      <div class="actions tc mb2">
+        <div class="dib mh1">
+          <div class="dib underline">Reject Part</div> or
+        </div>
+        <div class="dib mh1">
+          <div class="green f5 tracked fw3 button-overide ph4 pv3 ba br1 b--aether-light-blue dib">Accept and Print Tag</div>
+        </div>
+      </div>
+
+      <!-- Close Actions -->
+
+    </div>
+  </div>
+  <!-- Close Section -->
+
+</div>

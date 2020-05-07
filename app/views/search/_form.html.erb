@@ -1,0 +1,25 @@
+<%= form_with(model: search, url: :search_index, local: true) do |form| %>
+
+  <% if search.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(search.errors.count, "error") %> prohibited this search from being saved:</h2>
+
+      <ul>
+        <% search.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="search-bar">
+    <div class="search-bar__input">
+      <%= form.text_field :text, class: "form-input", autofocus: true, required: true %>
+    </div>
+
+    <div class="search-bar__submit">
+      <%= form.submit "Go", class: "btn btn-lg" %>
+    </div>
+  </div>
+
+<% end %>

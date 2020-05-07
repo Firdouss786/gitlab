@@ -1,0 +1,53 @@
+<div data-controller="fault-resolution">
+
+  <%= form_with(url: activity_fault_resolutions_path(fault_id: fault.id), scope: :fault_resolution, method: :patch, local: true) do |form| %>
+    <%= render "shared/form_errors", obj: fault %>
+
+    <div class="field" data-target="fault-resolution.resolved" data-resolved_state="<%= fault.state %>">
+      <%= form.label :state, 'Fault Resolved?', class: "text-lg" %> <br />
+
+      <div class="inline-block my-5">
+        <%= form.label :state, value: "true", class: "items-center rounded border-2 border-gray-300 p-4" do %>
+          <%= form.radio_button :state, true, data: { target: "fault-resolution.resolvedYesRadio", action: "click->fault-resolution#resolvedYes"}, class: "form-radio h-5 w-5 mr-1" %>
+          YES
+        <% end %>
+      </div>
+
+      <div class="inline-block my-5">
+        <%= form.label :state, value: "false", class: "items-center rounded border-2 border-gray-300 p-4" do %>
+          <%= form.radio_button :state, false, required: true, data: { action: "click->fault-resolution#resolvedNo" }, class: "form-radio h-5 w-5 mr-1" %>
+          NO
+        <% end %>
+      </div>
+
+    </div>
+
+    <% if fault.corrective_actions.no_defers.present? %>
+      <div class="field" data-target="fault-resolution.resolvingCA" data-resolving_ca_id="<%= fault.resolving_corrective_action_id %>">
+        <%= form.label :resolving_corrective_action_id, 'Which action resolved the fault?', class: "text-lg" %>
+        <%= form.collection_radio_buttons :resolving_corrective_action_id, fault.corrective_actions.no_defers.order(job_started_at: :desc), :id, :logbook_text, {checked: fault.resolving_corrective_action_id}, data: { target: "fault-resolution.resolvingCASelect" } do |b| %>
+          <div class='mt-2'>
+            <%= b.label(class: "flex items-center rounded border-2 border-gray-300 py-2 px-4") do %>
+              <%= b.radio_button(class: "form-radio h-5 w-5") %>
+              <div class="flex-grow ml-2">
+                <div class="text-gray-500"><%= b.object.performed_by.full_name %></div>
+                <div><%= b.text %></div>
+              </div>
+              <span class='whitespace-no-wrap rounded border-2 border-gray-300 py-2 px-4'><%= shortdate b.object.job_started_at %></span>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="items-center text-sm text-gray-600 rounded border-2 border-gray-300 mb-4 py-2 px-4" data-target="fault-resolution.resolvingCA">
+        No corrective actions found.
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= form.submit class: "btn" %>
+    </div>
+
+  <% end %>
+
+</div>

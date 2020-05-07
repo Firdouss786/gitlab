@@ -1,0 +1,29 @@
+.nav__leaf {
+  @apply text-center font-bold leading-none text-thales-light-blue py-2 px-2 border-thales-light-blue border-l border-t border-b flex-auto whitespace-no-wrap;
+}
+
+.nav__leaf:hover {
+  @apply bg-thales-dark-blue-gray;
+}
+
+.nav__leaf:focus {
+  @apply bg-thales-light-blue text-white;
+}
+
+.nav__leaf:first-child {
+  @apply rounded-l;
+}
+
+.nav__leaf:last-child {
+  @apply border-r rounded-r;
+}
+
+.nav__leaf--active {
+  @apply bg-thales-light-blue text-white;
+}
+
+@screen sm {
+  .nav__leaf {
+    @apply px-8 flex-none;
+  }
+}

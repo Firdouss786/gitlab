@@ -1,0 +1,37 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: @discrepancy_category.category %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= link_to 'Failure Modes', discrepancy_categories_path, class: "breadcrumb__leaf" %>
+  <span class="breadcrumb__leaf--active">Items</span>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/config_nav' %>
+<% end %>
+
+<section class="area-main area-main--half panel">
+  <%= render "shared/flash" %>
+
+  <div class="table" data-controller="table">
+    <div class="table-head">
+      <div class="table-head__checkbox-cell hidden"><input type="checkbox" class="form-checkbox" data-action="change->table#toggleAllCheckboxes" data-target="table.tableCheckbox"></div>
+      <div class="table-head__cell"><%= sortable 'name', 'name' %></div>
+      <div class="table-head__cell text-right"><%= "Actions" %></div>
+    </div>
+
+    <%= render(partial: :discrepancies, collection: @discrepancies, cached: true) if @discrepancies.present? %>
+
+  </div>
+
+  <%= render('shared/empty_table_state', msg: "Found no discrepancies for the category.", helper: "#{link_to 'Try adding new discrepancy', new_discrepancy_category_discrepancy_path(@discrepancy_category), class: 'underline text-thales-light-blue font-semibold'}".html_safe) if @discrepancies.blank? %>
+
+  <%= will_paginate @discrepancies, class: "pagination"%>
+</section>
+
+<% content_for :search_action, discrepancy_category_discrepancies_path %>
+
+<% content_for :buttons do %>
+  <%= render 'layouts/footer_button', icon: :icon_add_outline, label: "New Item", action: new_discrepancy_category_discrepancy_path(@discrepancy_category) %>
+<% end %>

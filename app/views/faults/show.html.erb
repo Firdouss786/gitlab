@@ -1,0 +1,119 @@
+<% content_for :breadcrumb do %>
+  <%= link_to "Stations", station_activities_path(@activity.station), class: "breadcrumb__leaf" %>
+  <%= link_to "Workload", activity_path(@activity), class: "breadcrumb__leaf" %>
+  <%= link_to "Fault", activity_fault_path(@activity, @fault), class: "breadcrumb__leaf" %>
+<% end %>
+
+<section class="activity-grid--left hidden md:block panel" id="activity_section">
+  <%= render "activities/items", activity: @activity %>
+</section>
+
+<section class="activity-grid--right panel" id="fault_section">
+  <%= render "shared/flash" %>
+
+  <div class="flex mb-6">
+    <div class="md:hidden">
+      <%= render "shared/back_link", link_text: "Back", link_route: @activity, truncate: false %>
+    </div>
+
+    <% if @activity.enabled_for_state(:editable) %>
+      <div class="flex-grow flex justify-end">
+        <%= link_to edit_activity_fault_resolutions_path(fault_id: @fault.id) do %>
+          <span class="ml-4 flex text-sm text-gray-600 font-semibold text-right items-center">
+            <%= inline_svg :icon_swap, class: "h-4 w-4 mr-1 text-gray-600" %>
+            <%= t :change_status %>
+          </span>
+        <% end %>
+
+        <%= link_to edit_activity_fault_path(@activity, @fault) do %>
+          <span class="ml-4 flex text-sm text-gray-600 font-semibold items-center">
+            <%= inline_svg :icon_edit_pencil, class: "h-4 w-4 mr-1 text-gray-600" %>
+            <%= t :edit %>
+          </span>
+        <% end %>
+
+        <%= link_to clone_activity_fault_path(@activity, @fault) do %>
+          <span class="ml-4 flex text-sm text-gray-600 font-semibold items-center">
+            <%= inline_svg :icon_duplicate, class: "h-4 w-4 mr-1 text-gray-600" %>
+            <%= t :clone %>
+          </span>
+        <% end %>
+      </div>
+    <% end %>
+
+  </div>
+
+  <div class="flex items-start">
+    <div class="align-text-top text-gray-800">
+      <span class="text-xl font-semibold block leading-none"><%= @fault.logbook_text %></span>
+      <span class="text-sm text-gray-500">Raised: <%= @fault.raised_at %></span>
+    </div>
+
+    <div class="pl-2 align-text-top flex-grow text-right">
+      <span class="text-sm whitespace-no-wrap"><%= @fault.logbook_reference %></span>
+      <span class="text-sm block leading-none text-gray-500 whitespace-no-wrap"><%= @fault.id %></span>
+    </div>
+  </div>
+
+  <div class="flex mt-2 items-center">
+    <div class=""><%= boolean_checkmark @fault.discovered == "IN FLIGHT" %></div>
+    <div class="ml-1 text-sm">In Flight</div>
+    <div class="ml-4"><%= boolean_checkmark @fault.discovered == "ON GROUND" %></div>
+    <div class="ml-1 text-sm">On Ground</div>
+  </div>
+
+  <table class="mt-6 w-full text-sm border-gray-200 border-b-2 border-t-2">
+    <tr class="border-none">
+      <td class="py-2 pr-6 text-gray-600"><%= t :seats_impacted %> (<%= @fault.impacted_seat_count %>):</td>
+      <td class="py-2 pr-6"><%= @fault.seats_impacted %></td>
+    </tr>
+    <tr class="border-none">
+      <td class="py-2 pr-6 text-gray-600"><%= t :mel_category %>:</td>
+      <td class="py-2 pr-6"><%= @fault.mel_cetegory || '-' %></td>
+    </tr>
+    <tr class="border-none">
+      <td class="py-2 pr-6 text-gray-600"><%= t :discrepancy %>:</td>
+      <td class="py-2 pr-6"><%= @fault.discrepancy.name %></td>
+    </tr>
+    <tr class="border-none">
+      <td class="py-2 pr-6 text-gray-600"><%= t :confirmed %>:</td>
+      <td class="py-2 pr-6"><%= boolean_checkmark @fault.confirmed %></td>
+    </tr>
+    <tr class="border-none">
+      <td class="py-2 pr-6 text-gray-600"><%= t :inbound_deferred %>:</td>
+      <td class="py-2 pr-6"><%= boolean_checkmark @fault.inbound_deferred %></td>
+    </tr>
+    <tr class="border-none">
+      <td class="py-2 pr-6 text-gray-600"><%= t :cid %>:</td>
+      <td class="py-2 pr-6"><%= boolean_checkmark @fault.cid %></td>
+    </tr>
+    <tr class="border-none">
+      <td class="py-2 pr-6 text-gray-600"><%= t :raised_in_work_pack %>:</td>
+      <% if @fault.activity %>
+        <td class="py-2 pr-6"><%= link_to @fault.activity.id, activity_path(@fault.activity), class: "underline text-blue-600" %></td>
+      <% else %>
+        <td class="py-2 pr-6">No Work Pack</td>
+      <% end %>
+    </tr>
+    <tr class="border-none">
+      <td class="py-2 pr-6 text-gray-600"><%= "Status" %>:</td>
+      <td class="py-2 pr-6"><%= fault_status @fault %></td>
+    </tr>
+  </table>
+
+  <div class="flex mt-8 mb-1 items-bottom">
+    <h2 class="font-semibold">Corrective Actions</h2>
+
+    <% if @activity.enabled_for_state(:editable) %>
+      <div class="flex-grow text-right">
+        <% if @fault.active? %>
+         <%= link_to 'Add Action', new_activity_fault_corrective_action_path(@activity, fault_id: @fault.id), class: "btn btn-sm" %>
+         <%= link_to 'Defer', new_activity_fault_deferral_action_path(@activity, @fault), class: "btn btn-secondary btn-sm" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= render partial: "corrective_action", collection: @fault.corrective_actions.chronilogical, cached: true %>
+
+</section>

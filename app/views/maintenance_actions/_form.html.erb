@@ -1,0 +1,26 @@
+<%= form_with(model: maintenance_action, local: true) do |form| %>
+  <%= render "shared/form_errors", obj: maintenance_action %>
+
+  <div class="form-grid">
+
+    <div class="field form-grid--span">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--span">
+      <%= form.label :description %>
+      <%= form.text_field :description, class: "form-input block w-full" %>
+    </div>
+
+    <div class="form-grid--span">
+      <br>
+    </div>
+
+    <div class="flex justify-end content-center form-grid--right">
+      <%= link_to "Cancel", maintenance_actions_path, { class: "btn btn-secondary mr-4" } %>
+      <%= form.submit class: "btn" %>
+    </div>
+
+  </div>
+<% end %>

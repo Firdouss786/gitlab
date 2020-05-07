@@ -1,0 +1,79 @@
+<%= render "shared/flash" %>
+
+<p>
+  <strong>State:</strong>
+  <%= @transfer.state %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @transfer.category %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @transfer.comment %>
+</p>
+
+<p>
+  <strong>Airway bill:</strong>
+  <%= @transfer.airway_bill %>
+</p>
+
+<p>
+  <strong>Sent by:</strong>
+  <%= @transfer.sent_by %>
+</p>
+
+<p>
+  <strong>Received by:</strong>
+  <%= @transfer.received_by %>
+</p>
+
+<p>
+  <strong>Stock item:</strong>
+  <%= @transfer.stock_item %>
+</p>
+
+<p>
+  <strong>Source stock location:</strong>
+  <%= @transfer.source_stock_location %>
+</p>
+
+<p>
+  <strong>Destination stock location:</strong>
+  <%= @transfer.destination_stock_location %>
+</p>
+
+<p>
+  <strong>Filename:</strong>
+  <%= @transfer.filename %>
+</p>
+
+<p>
+  <strong>Sent at:</strong>
+  <%= @transfer.sent_at %>
+</p>
+
+<p>
+  <strong>Received at:</strong>
+  <%= @transfer.received_at %>
+</p>
+
+<p>
+  <strong>Created by:</strong>
+  <%= @transfer.created_by %>
+</p>
+
+<p>
+  <strong>From state:</strong>
+  <%= @transfer.from_state %>
+</p>
+
+<p>
+  <strong>To state:</strong>
+  <%= @transfer.to_state %>
+</p>
+
+<%= link_to 'Edit', edit_transfer_path(@transfer) %> |
+<%= link_to 'Back', transfers_path %>

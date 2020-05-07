@@ -1,0 +1,88 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_logo, label: "Servo" %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <span class="breadcrumb__leaf--active">Servo</span>
+<% end %>
+
+<main class="area-main area-main--half panel">
+  <header>
+    <h2 class="header--underlined">Welcome, <%= Current.user.first_name %></h2>
+  </header>
+
+  <section id="dock" class="flex flex-wrap items-center">
+
+    <% if Current.user.default_airline %>
+      <%= link_to airline_flights_path(Current.user.default_airline), class:"flex-auto w-1/3 sm:w-auto mb-10" do %>
+        <div class="flex justify-center">
+          <div class="h-16 w-16 bg-thales-light-blue rounded-full flex items-center justify-center">
+            <%= inline_svg :icon_fleet, class: "h-8 w-8 text-white" %>
+          </div>
+        </div>
+        <div class="text-center mt-2 text-gray-700">
+          My Airline
+        </div>
+      <% end %>
+    <% end %>
+
+    <% if Current.user.home_station %>
+      <%= link_to station_activities_path(Current.user.home_station), class:"flex-auto w-1/3 sm:w-auto mb-10" do %>
+        <div class="flex justify-center">
+          <div class="h-16 w-16 bg-thales-light-blue rounded-full flex items-center justify-center">
+            <%= inline_svg :icon_aircraft, class: "h-8 w-8 text-white" %>
+          </div>
+        </div>
+        <div class="text-center mt-2 text-gray-700">
+          My Station
+        </div>
+      <% end %>
+    <% end %>
+
+    <%= link_to "#", class:"flex-auto w-1/3 sm:w-auto mb-10" do %>
+      <div class="flex justify-center">
+        <div class="h-16 w-16 bg-thales-light-blue rounded-full flex items-center justify-center">
+          <%= inline_svg :icon_chart, class: "h-8 w-8 text-white" %>
+        </div>
+      </div>
+      <div class="text-center mt-2 text-gray-700">
+        Reports
+      </div>
+    <% end %>
+
+    <%= link_to "#", class:"flex-auto w-1/3 sm:w-auto mb-10" do %>
+      <div class="flex justify-center">
+        <div class="h-16 w-16 bg-thales-light-blue rounded-full flex items-center justify-center">
+          <%= inline_svg :icon_upload, class: "h-8 w-8 text-white" %>
+        </div>
+      </div>
+      <div class="text-center mt-2 text-gray-700">
+        Data Upload
+      </div>
+    <% end %>
+
+    <%= link_to "https://thalesinflyt.zendesk.com/hc/en-us/requests/new", class:"flex-auto w-1/3 sm:w-auto mb-10", target: "_blank" do %>
+      <div class="flex justify-center">
+        <div class="h-16 w-16 bg-thales-light-blue rounded-full flex items-center justify-center">
+          <%= inline_svg :icon_information, class: "h-8 w-8 text-white" %>
+        </div>
+      </div>
+      <div class="text-center mt-2 text-gray-700">
+        Help & Support
+      </div>
+    <% end %>
+
+    <%= link_to airports_path, class:"flex-auto w-1/3 sm:w-auto mb-10" do %>
+      <div class="flex justify-center">
+        <div class="h-16 w-16 bg-thales-light-blue rounded-full flex items-center justify-center">
+          <%= inline_svg :icon_cog, class: "h-8 w-8 text-white" %>
+        </div>
+      </div>
+      <div class="text-center mt-2 text-gray-700">
+        Settings
+      </div>
+    <% end %>
+
+
+  </section>
+</main>

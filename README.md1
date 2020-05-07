@@ -1,0 +1,18 @@
+# Containerize the RoR application by writting Dockerfile
+
+command to build the dockerfile :
+
+|docker build -t firefly:1.0 . |
+
+>  The above command builds the Dockerfile and creates the Docker image with the name "firefly:1.0" and "." represents the dockerfile is in the current directory
+
+To combine the application, redis we are writting a compose file
+ | docker-compose up |
+ 
+> The above command allow both the containers to bind together and access each other via localhost.
+
+While containerizing the application the database configuration is added in application's database.yml since Database in hosted in AWS 
+host: <instance ip address>
+port: <port number where DB is exposed>
+username: <username of the Database>
+password: <Password>

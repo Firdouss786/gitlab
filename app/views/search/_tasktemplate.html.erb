@@ -1,0 +1,13 @@
+<% cache document do %>
+  <%= link_to airline_task_template_path(document.airline, document) do %>
+    <div class="search-result">
+      <div class="search-result__icon">
+        <%= image_tag "icons/address_icon.png" %>
+      </div>
+      <div class="search-result__content">
+        <span class="search-result__heading"><%= document.name %> (<%= document.mode.humanize %>)</span>
+        <span class="search-result__data"><%= document.airline.name %></span>
+      </div>
+    </div>
+  <% end %>
+<% end %>

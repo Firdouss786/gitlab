@@ -1,0 +1,39 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_fleet, label: @fleet.name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= render 'breadcrumb' %>
+<% end %>
+
+<% content_for :nav do %>
+  <%= link_to "Aircraft", aircrafts_path(@fleet), class: "nav__leaf #{'nav__leaf--active' if request.path.include?('aircrafts')}" %>
+  <%= link_to "LOPA", seats_path(@fleet), class: "nav__leaf #{'nav__leaf--active' if request.path.include?('seats')}" %>
+  <%= link_to "BOM", product_allotments_path(@fleet), class: "nav__leaf #{'nav__leaf--active' if request.path.include?('product_allotments')}" %>
+<% end %>
+
+<section class="area-main">
+
+  <%= render "shared/flash" %>
+
+  <div class="table" data-controller="table">
+    <div class="table-head">
+      <div class="table-head__checkbox-cell hidden"><input type="checkbox" class="form-checkbox" data-action="change->table#toggleAllCheckboxes" data-target="table.tableCheckbox"></div>
+      <div class="table-head__cell"><%= 'product' %></div>
+      <div class="table-head__cell"><%= 'part number' %></div>
+      <div class="table-head__cell"><%= 'quantity' %></div>
+      <div class="table-head__cell text-right"><%= "Actions" %></div>
+    </div>
+    <%= render(partial: :product_allotment, collection: @product_allotments, cached: true) if @product_allotments.present? %>
+  </div>
+
+  <%= render('shared/empty_table_state', msg: "Found no products on this BOM.", helper: "#{link_to 'Try uploading a BOM', new_bom_upload_path(@fleet), class: 'underline text-thales-light-blue font-semibold'}".html_safe) if @product_allotments.blank? %>
+
+  <%= will_paginate @product_allotments, class: "pagination"%>
+
+</section>
+
+<% content_for :buttons do %>
+  <%= render 'layouts/footer_button', icon: :icon_add_outline, label: "Upload BOM", action: new_bom_upload_path(@fleet) %>
+  <%= render 'layouts/footer_button', icon: :icon_add_outline, label: "Add Product To BOM", action: new_product_allotment_path(@fleet) %>
+<% end %>

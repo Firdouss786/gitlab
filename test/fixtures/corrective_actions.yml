@@ -1,0 +1,226 @@
+usb_replacement_ca:
+  job_started_at: 2018-07-06 03:00:00
+  user: chris
+  performed_by: chris
+  maintenance_action: replaced_consumable
+  logbook_text: USB REPLACED IAW CMM 44-21-00
+  document_reference: 44-21-00
+  fault: confirmed_on_ground
+  logbook_reference: BKNNA4479
+  replacement: usb_replacement
+  activity: standard
+
+screen_replacement_ca:
+  job_started_at: 2018-07-06 03:00:00
+  user: chris
+  performed_by: chris
+  maintenance_action: replaced_lru
+  logbook_text: SCREEN REPLACED IAW CMM 44-21-00
+  document_reference: 44-21-00
+  fault: requires_part_replacement
+  logbook_reference: NH009091
+  replacement: screen_replacement
+  activity: standard
+
+system_reset:
+  job_started_at: 2019-08-08 03:00:00
+  user: chris
+  performed_by: chris
+  maintenance_action: partial_system_reset
+  logbook_text: System needs reset
+  document_reference: 54321ABC
+  fault: erroneous_fault
+  logbook_reference: ABC123
+  activity: standard
+
+system_reset_resolved:
+  job_started_at: 2018-08-08 03:00:00
+  user: chris
+  performed_by: chris
+  maintenance_action: partial_system_reset
+  logbook_text: System needs reset
+  document_reference: HGEBBGHA
+  fault: requires_part_replacement_closed
+  logbook_reference: ABC123645
+  activity: to_be_closed
+
+consumable_replacement:
+  job_started_at: 2018-10-10 03:00:00
+  user: chris
+  performed_by: chris
+  maintenance_action: replaced_consumable
+  logbook_text: Needs consumable replaced
+  document_reference: ABC123
+  fault: erroneous_fault
+  logbook_reference: NH009123
+  replacement: consumable_replacement
+  activity: standard
+
+consumable_replacement_two:
+  job_started_at: 2018-10-10 03:00:00
+  user: chris
+  performed_by: chris
+  maintenance_action: replaced_consumable
+  logbook_text: Replaced USB module BN 104059
+  document_reference: 44-24-36
+  fault: fault_opened_in_wp
+  logbook_reference: NH009123
+  replacement: replacement_consumable_two
+  activity: open_wp
+
+rotable_replacement:
+  job_started_at: 2019-10-09 03:00:00
+  user: chris
+  performed_by: chris
+  maintenance_action: replaced_lru
+  logbook_text: Needs lru replaced
+  document_reference: ABC987
+  fault: erroneous_fault
+  logbook_reference: NH009123456
+  replacement: rotable_replacement
+  activity: standard
+
+rotable_replacement_two:
+  job_started_at: 2018-10-09 03:00:00
+  user: chris
+  performed_by: chris
+  maintenance_action: replaced_lru
+  logbook_text: SVDU replaced IAW 44-24-36 SN on A7787901 / SN off A77873211
+  document_reference: 44-24-36
+  fault: fault_opened_in_wp
+  logbook_reference: NF9974227
+  replacement: replacement_rotable_two
+  activity: open_wp
+
+ca_raised_in_activity:
+  job_started_at: <%= DateTime.now %>
+  user: chris
+  performed_by: chris
+  maintenance_action: reconnect
+  logbook_text: Reconnected cable in work pack
+  document_reference: 44-21-00
+  fault: confirmed_on_ground
+  logbook_reference: NF0090781
+  activity: closed_wp
+
+ca_actioned_and_raised_in_wp:
+  job_started_at: <%= DateTime.now %>
+  user: chris
+  performed_by: chris
+  maintenance_action: reconnect
+  logbook_text: Reconnected cable in work pack
+  document_reference: 44-21-00
+  fault: fault_actioned_and_raised_in_wp
+  logbook_reference: NF0090781
+  activity: open_wp
+
+ca_actioned_for_deferral:
+  job_started_at: 2019-01-01 03:00:00
+  user: chris
+  performed_by: chris
+  maintenance_action: reconnect
+  logbook_text: Tried reconnecting cable at seat 1A to no avail
+  document_reference: 44-21-00
+  fault: fault_deferral
+  logbook_reference: NF8972942
+  activity: open_wp
+
+ca_other_in_wp_deferral:
+  job_started_at: 2019-01-01 03:00:00
+  user: chris
+  performed_by: chris
+  maintenance_action: defer
+  defer_reason: insufficient_manpower
+  logbook_text: Run out of time to perform any further troubleshooting. Deferral raised
+  document_reference: 44-21-00
+  fault: fault_deferral
+  logbook_reference: NF8972942
+  activity: open_wp
+
+ca_deferral_two:
+  job_started_at: 2019-01-01 03:00:00
+  user: chris
+  performed_by: chris
+  maintenance_action: defer
+  defer_reason: insufficient_manpower
+  logbook_text: Not enough manpower to complete task, deferral raised IAW 44-24-36
+  document_reference: 44-21-00
+  fault: fault_deferral_two
+  logbook_reference: NF1968165
+  activity: closed_wp
+
+ca_deferral_three:
+  job_started_at: 2018-03-03 03:00:00
+  user: chris
+  performed_by: chris
+  maintenance_action: defer
+  defer_reason: insufficient_manpower
+  logbook_text: No tech available
+  document_reference: 4444-21-00
+  fault: fault_actioned_but_not_raised_in_wp
+  logbook_reference: ABC-NF0090784
+  activity: standard
+
+ca_deferral_four:
+  job_started_at: 2017-03-03 03:00:00
+  user: chris
+  performed_by: chris
+  maintenance_action: defer
+  defer_reason: insufficient_manpower
+  logbook_text: No tech available
+  document_reference: HGSH4444-21-00
+  fault: requires_part_replacement_deferred
+  logbook_reference: ABCHDSHSJU-NF90784
+  activity: before_closed
+
+ca_deferral_five:
+  job_started_at: 2017-03-04 03:00:00
+  user: chris
+  performed_by: chris
+  maintenance_action: defer
+  defer_reason: insufficient_manpower
+  logbook_text: No tech available
+  document_reference: ABCHGSH4444-21-00
+  fault: requires_part_replacement_deferred
+  logbook_reference: XYZ
+  activity: to_be_closed
+
+ca_deferral_six:
+  job_started_at: 2018-09-04 03:00:00
+  user: chris
+  performed_by: chris
+  maintenance_action: defer
+  defer_reason: insufficient_manpower
+  logbook_text: No tech available
+  document_reference: JHVTDF6654-00
+  fault: fault_deferral_three
+  logbook_reference: not enough staff available
+  activity: closed_wp_gstbe
+
+legacy_ca_with_orphaned_batch_replacement:
+  job_started_at: <%= Time.now %>
+  user: chris
+  performed_by: chris
+  maintenance_action: replaced_consumable
+  logbook_text: Replacing Consumable (Legacy CA)
+  document_reference: 44-02-40
+  fault: fault_deferral_three
+  logbook_reference: NFG889898
+  activity: closed_wp_gstbe
+  batch_number: "FAKEBATCHNUM"
+  product: dual_usb
+  batch_quantity: 3
+
+legacy_ca_with_batch_replacement:
+  job_started_at: <%= Time.now %>
+  user: chris
+  performed_by: chris
+  maintenance_action: replaced_consumable
+  logbook_text: Replacing Consumable (Legacy CA)
+  document_reference: 44-02-40
+  fault: fault_deferral_three
+  logbook_reference: NFG889458
+  activity: closed_wp_gstbe
+  batch_number: "BN 104059"
+  product: single_usb
+  batch_quantity: 2

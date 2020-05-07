@@ -1,0 +1,63 @@
+replaced_lru:
+  name: REPLACED LRU
+  description: Replaced LRU
+
+replaced_consumable:
+  name: REPLACED CONSUMABLE
+  description: Replaced Comsumable
+
+defer:
+  name: DEFER
+  description: DEFER
+
+reconnect:
+  name: RECONNECT
+  description: Reconnect / Rerack
+
+reload_media:
+  name: RELOAD MEDIA
+  description: Reload Media Content
+
+reload_software:
+  name: RELOAD SOFTWARE
+  description: Reload opperational Software
+
+reset_handset:
+  name: RESET HANDSET
+  description: Reset Handset
+
+reset_screen:
+  name: RESET SCREEN
+  description: Reset Screen
+
+reset_seatbox:
+  name: RESET SEATBOX
+  description: Reset seatbox
+
+reset_system:
+  name: RESET SYSTEM
+  description: Reset System
+
+secured_resecured:
+  name: SECURED / RESECURED
+  description: Secured / Resecured
+
+resolved_by_customer:
+  name: RESOLVED BY CUSTOMER
+  description: Fault cleared by customer - corrective action unkinown
+
+partial_system_reset:
+  name: PARTIAL SYSTEM RESET
+  description: SYSTEM RESET(ZONE/COLUMN/SEAT GROUP)
+
+unblocked_debris_removed:
+  name: UNBLOCKED/DEBRIS REMOVED
+  description: UNBLOCKED/DEBRIS REMOVED
+
+swap_position_for_troubleshooting_recovery:
+  name: SWAP POSITION FOR TROUBLESHOOTING/RECOVERY
+  description: SWAP Position for Troubleshooting/recovery
+
+reset_connectivity_system:
+  name: RESET CONNECTIVITY SYSTEM
+  description: Reset Connectivity button on FAP

@@ -1,0 +1,12 @@
+<% content_for :breadcrumb do %>
+  <%= render 'stations/breadcrumb' %>
+  <%= link_to "Deferrals", station_deferrals_path(@station), class: "breadcrumb__leaf" %>
+  <%= link_to "Fault", station_deferral_path(@station, @corrective_action.fault), class: "breadcrumb__leaf" %>
+  <%= link_to "Corrective Action", station_corrective_action_path(@station, @corrective_action), class: "breadcrumb__leaf" %>
+<% end %>
+
+<% if @corrective_action.deferral? %>
+  <%= render "deferrals/deferral", parent: @station %>
+<% else %>
+  <%= render "deferrals/corrective_action", parent: @station %>
+<% end %>

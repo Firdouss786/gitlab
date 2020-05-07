@@ -1,0 +1,13 @@
+<% cache document do %>
+  <%= link_to address_path(document) do %>
+    <div class="search-result">
+      <div class="search-result__icon">
+        <%= image_tag "icons/address_icon.png" %>
+      </div>
+      <div class="search-result__content">
+        <span class="search-result__heading"><%= document.street1 %></span>
+        <span class="search-result__data"><%= document.street2 %> <%= document.city %> <%= document.country %></span>
+      </div>
+    </div>
+  <% end %>
+<% end %>

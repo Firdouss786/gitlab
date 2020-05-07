@@ -1,0 +1,15 @@
+<h3>Consumable</h3>
+
+<%= form.fields_for :replacement do |replacement_form| %>
+  <%= replacement_form.hidden_field :category, value: "consumable" %>
+
+  <div class="field">
+    <%= replacement_form.label :install_quantity %>
+    <%= replacement_form.text_field :install_quantity %>
+  </div>
+
+  <div class="field">
+    <%= replacement_form.label :installed_stock_item_id %>
+    <%= replacement_form.collection_select :installed_stock_item_id, StockItem.consumable, :id, :batch_number %>
+  </div>
+<% end %>

@@ -1,0 +1,7 @@
+<% content_for :breadcrumb do %>
+  <%= render 'airlines/breadcrumb' %>
+  <%= link_to "Deferrals", airline_deferrals_path(@airline), class: "breadcrumb__leaf" %>
+  <%= link_to "Fault", airline_deferral_path(@airline, @deferral), class: "breadcrumb__leaf" %>
+<% end %>
+
+<%= render 'deferrals/show', parent: @airline %>

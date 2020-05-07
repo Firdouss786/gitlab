@@ -1,0 +1,57 @@
+<div class="flex flex-wrap">
+
+  <div class="flex-grow mt-4 p-4 mx-1 shadow-md xl:shadow rounded border-gray-700 border-t-8">
+    <div class="mt-2 flex items-center">
+      <svg class="h-6 w-6 fill-current text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+        <path d="M18 12v1H8v5l-6-6 6-6v5h8V2h2z"/>
+      </svg>
+      <h2 class="ml-2 font-semibold text-gray-700">Removed Part</h2>
+    </div>
+    <table class="mt-2 w-full text-sm">
+      <tr class="border-none">
+        <td class="py-2 pr-6 text-gray-600">Part Desc:</td>
+        <td class="py-2 pr-6"><%= replacement.removed_product.name %></td>
+      </tr>
+      <tr class="border-none">
+        <td class="py-2 pr-6 text-gray-600">Part Number:</td>
+        <td class="py-2 pr-6"><%= replacement.removed_product.part_number %></td>
+      </tr>
+      <tr class="border-none">
+        <td class="py-2 pr-6 text-gray-600">Serial Number:</td>
+        <td class="py-2 pr-6"><%= replacement.removed_stock_item.serial_number %></td>
+      </tr>
+      <tr class="border-t-2 border-gray-200">
+        <td class="py-2 pr-6 text-gray-600">Revision:</td>
+        <td class="py-2 pr-6"><%= replacement.removed_revision %></td>
+      </tr>
+      <tr class="border-none">
+        <td class="py-2 pr-6 text-gray-600">Model:</td>
+        <td class="py-2 pr-6"><%= replacement.removed_model_numbers %></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="flex-grow mt-4 p-4 mx-1 shadow-md xl:shadow rounded border-gray-700 border-t-8">
+    <div class="mt-2 flex items-center">
+      <svg class="h-6 w-6 fill-current text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+        <path d="M3.5 13H12v5l6-6-6-6v5H4V2H2v11z"/>
+      </svg>
+      <h2 class="ml-2 font-semibold text-gray-700">Installed Part</h2>
+    </div>
+    <table class="mt-2 w-full text-sm">
+      <tr class="border-none">
+        <td class="py-2 pr-6 text-gray-600">Part Desc:</td>
+        <td class="py-2 pr-6"><%= replacement.installed_product.name %></td>
+      </tr>
+      <tr class="border-none">
+        <td class="py-2 pr-6 text-gray-600">Part Number:</td>
+        <td class="py-2 pr-6"><%= replacement.installed_product.part_number %></td>
+      </tr>
+      <tr class="border-none">
+        <td class="py-2 pr-6 text-gray-600">Serial Number:</td>
+        <td class="py-2 pr-6"><%= replacement.installed_stock_item.serial_number %></td>
+      </tr>
+    </table>
+  </div>
+
+</div>

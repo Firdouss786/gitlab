@@ -1,0 +1,14 @@
+B777200:
+  name: B777-200
+  description:
+  manufacturer: boeing
+
+A380:
+  name: A380
+  description:
+  manufacturer: boeing
+
+A321:
+  name: A321
+  description:
+  manufacturer: airbus

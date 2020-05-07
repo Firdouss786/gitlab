@@ -1,0 +1,20 @@
+
+<div class="comment">
+
+  <div class="comment__description"> <%= comment.description %> </div>
+
+  <div class="comment__user" data-action="click->modal#expand">
+    <span class="text-link"> <%= comment.user.full_name %> </span>
+    <div class="modal contact-card hidden" data-target="modal.content">
+      <%= render "users/contact_card", user: comment.user %>
+    </div>
+  </div>
+
+  <div class="comment__date-time"> <%= comment.created_at.strftime("%b %d, %Y %T %Z") %> </div>
+
+  <div class="comment__actions i<%= comment.user.id %>">
+    <%= link_to 'Edit', edit_comment_path(comment) %> |
+    <%= link_to 'Delete', comment, method: :delete, data: { confirm: "Are you sure?" }, remote: true %>
+  </div>
+
+</div>

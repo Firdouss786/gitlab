@@ -1,0 +1,16 @@
+<section class="panel area-main">
+  <%= render "shared/flash" %>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @feature_flag.name %>
+  </p>
+
+  <p>
+    <strong>Enabled:</strong>
+    <%= @feature_flag.enabled %>
+  </p>
+
+  <%= link_to 'Edit', edit_feature_flag_path(@feature_flag) %> |
+  <%= link_to 'Back', feature_flags_path %>
+</section>

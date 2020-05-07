@@ -1,0 +1,31 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_fleet, label: "LHR" %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= render 'stations/breadcrumb' %>
+  <%= link_to "Stock Locations", station_stock_locations_path(@station), class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/station_nav', station: @station %>
+<% end %>
+
+<section class="area-main">
+  <%= render "shared/flash" %>
+
+  <div class="table" data-controller="table">
+    <div class="table-head">
+      <div class="table-head__checkbox-cell hidden"><input type="checkbox" class="form-checkbox" data-action="change->table#toggleAllCheckboxes" data-target="table.tableCheckbox"></div>
+      <div class="table-head__cell">Name</div>
+      <div class="table-head__cell">Category</div>
+      <div class="table-head__cell text-right"><%= "Actions" %></div>
+    </div>
+
+    <%= render(partial: :stock_location, collection: @stock_locations, cached: true) if @stock_locations.present? %>
+
+  </div>
+
+  <%= render('shared/empty_table_state', msg: "Found no stock locations.", helper: "#{link_to 'Try adding new airline', new_airline_path, class: 'underline text-thales-light-blue font-semibold'}".html_safe) if @stock_locations.blank? %>
+
+</section>

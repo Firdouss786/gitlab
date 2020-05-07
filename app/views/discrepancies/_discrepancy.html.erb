@@ -1,0 +1,13 @@
+<label for="<%= discrepancy.id %>" class="table-body">
+  <div class="table-body__cell hidden"><input type="checkbox" id="<%= discrepancy.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+  <div class="table-body__cell"><%= discrepancy.name %></div>
+  <div class="table-body__cell flex justify-end">
+	  <% if discrepancy.published? %>
+		  <%= link_to((inline_svg :icon_edit_pencil, class: "h-5 w-5 mr-2 text-thales-light-blue active:text-white"), edit_discrepancy_category_discrepancy_path(@discrepancy_category, discrepancy), class: "inline-block align-middle", title: 'Edit') %>
+      <%= link_to((inline_svg :icon_enabled, class: "h-6 w-6 text-thales-light-blue active:text-white"), discrepancy_category_discrepancy_path(@discrepancy_category, discrepancy, discrepancy: { disable: 'true' }), class: "inline-block align-middle", title: 'Disable Item', method: :put, data: { confirm: 'Are you sure ?' }) %>
+		<% else %>
+		  <%= link_to((inline_svg :icon_disabled, class: "h-6 w-6 text-gray-800 active:text-white"), discrepancy_category_discrepancy_path(@discrepancy_category, discrepancy, discrepancy: { disable: 'false' }), class: "inline-block align-middle", title: 'Enable Item', method: :put, data: { confirm: 'Are you sure?' }) %>
+		<% end %>
+  </div>
+
+</label>

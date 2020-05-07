@@ -1,0 +1,75 @@
+thales_servo_admin:
+  name: THALES SERVO ADMIN
+  description: Servo Admin with all permissions
+
+thales_engineering:
+  name: THALES ENGINEERING
+  description: This profile is for the in-service engineering group to see what Servo is, and pull any data. It is read-only.
+
+technician:
+  name: THALES LINE TECH
+  description: Line Maintenance Tech limited Logistics abilities
+
+manager:
+  name: THALES LINE MANAGER
+  description: Full Line Maintenance and Logistics functions and User Account Management capabilities.
+
+thales_line_logistics:
+  name: THALES LINE LOGISTICS
+  description: Line Logistics Tech limited Line Maintenance ability.
+
+thales_line_mcc:
+  name: THALES LINE MCC
+  description: This is purely for the DFW MCC
+
+thales_aoc_planning:
+  name: THALES AOC PLANNING
+  description: All these users are locked, it is the old Irvine AOC logsitcs planning dept
+
+thales_maintenance_reliability:
+  name: THALES MAINTENANCE RELIABILITY
+  description: The people that report into Allen Barr for the maintenance reliability reporting
+
+field_service_engineer:
+  name: FIELD SERVICE ENGINEER
+  description: View Maintenance, Extract Report, Upload Capabilties
+
+customer_maintenance_overview:
+  name: CUSTOMER MAINTENANCE OVERVIEW
+  description: Profile for the customers' maintenance
+
+station_director:
+  name: STATION DIRECTOR
+  description: A profile for station directors / head of operations
+
+thales_mcc_manager:
+  name: THALES MCC MANAGER
+  description: Line MCC and Line Manager permisions.
+
+thales_line_supervisor:
+  name: THALES LINE SUPERVISOR
+  description: Full Line Logistics and Line Tech. Similar to LMM but with no user account access.
+
+thales_aoc_mcc_ops:
+  name: THALES AOC / MCC OPS
+  description: View all maintenance at all sites on all programs. No create, delete, or edit functions.
+
+thales_aoc_mcc_manager:
+  name: THALES AOC / MCC MANAGER
+  description: AOC OPS permissions with user admin rights.
+
+thales_program_managment:
+  name: Thales Program Managment
+  description: Irvine Project Managers
+
+thales_logistics_manager:
+  name: THALES LOGISTICS MANAGER
+  description: Line Logistics with Manager permissions and shipset task permissions
+
+client_portal_profile:
+  name: CLIENT PORTAL PROFILE
+  description: CLIENT DASHBOARD - Open Deferrals, Closed Tasks, Closed Faults
+
+gfa_only_maintenance_overview:
+  name: GFA-ONLY MAINTENANCE OVERVIEW
+  description: Profile for GFA ONLY

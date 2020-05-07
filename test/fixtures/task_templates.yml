@@ -1,0 +1,60 @@
+recurring_level_2:
+  name: Level 2
+  description: Level 2 Check Long Description
+  repeat_interval: 10
+  airline: baw
+  mode: recurring
+
+archived:
+  name: Level 1 (Archived)
+  description: MyText
+  airline: baw
+  mode: recurring
+  archival: archived
+
+content_load:
+  name: May 18 Content Load
+  description: Task to load content to all aircraft
+  airline: baw
+  mode: campaign
+
+campaign_with_one_config:
+  name: April 18 Content Load
+  description: Task to load content to all aircraft
+  airline: baw
+  mode: campaign
+
+two:
+  name: Level 2
+  description: Level 2 check
+  repeat_interval: 3
+  airline: baw
+  mode: recurring
+
+level_three:
+  name: Level 3
+  description: Level 3 check
+  repeat_interval: 10
+  airline: baw
+  mode: recurring
+
+transit_check:
+  name: Transit Check
+  description: Crew Meet & Greet
+  repeat_interval: 3
+  airline: baw
+  mode: recurring
+
+software_upload:
+  name: V2.1 Software Load
+  description: Upload System Software
+  repeat_interval: 5
+  airline: baw
+  mode: recurring
+
+software_upload_aal:
+  name: Dec 2018 Content Load
+  description: Task to load content to selected aircraft
+  repeat_interval: 5
+  airline: aal
+  mode: recurring

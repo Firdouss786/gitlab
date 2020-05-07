@@ -1,0 +1,37 @@
+<%= render "shared/stock_location_nav", stock_location: @stock_location %>
+
+<section class="panel area-main">
+  <h1>Products for stock location <%= @stock_location.name %></h1>
+
+  <table>
+    <tr>
+      <th>Trx ID</th>
+      <th>Source</th>
+      <th>Time Sent</th>
+      <th>Stock Item ID</th>
+      <th>Part Name</th>
+      <th>Part Number</th>
+      <th>Serial Number</th>
+      <th>Qty</th>
+      <th>Mod</th>
+      <th>Revision</th>
+      <th>Actions</th>
+    </tr>
+    <% @transfers.each do |transfer| %>
+      <% cache transfer do %>
+        <tr>
+          <td><%= transfer.id %></td>
+          <td><%= transfer.source_stock_location.name %></td>
+          <td><%= transfer.sent_at %></td>
+          <td><%= transfer.stock_item.id %></td>
+          <td><%= transfer.stock_item.product.name %></td>
+          <td><%= transfer.stock_item.product.part_number %></td>
+          <td><%= transfer.stock_item.serial_number %></td>
+          <td><%= transfer.stock_item.quantity %></td>
+          <td><%= transfer.stock_item.model_numbers %></td>
+          <td><%= transfer.stock_item.revision %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</section>

@@ -1,0 +1,2289 @@
+1A:
+  name: 1A
+  col: A
+  row: 1
+  travel_class: 1
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+1E:
+  name: 1E
+  col: E
+  row: 1
+  travel_class: 1
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+1F:
+  name: 1F
+  col: F
+  row: 1
+  travel_class: 1
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+1K:
+  name: 1K
+  col: K
+  row: 1
+  travel_class: 1
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+2A:
+  name: 2A
+  col: A
+  row: 2
+  travel_class: 1
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+2E:
+  name: 2E
+  col: E
+  row: 2
+  travel_class: 1
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+2F:
+  name: 2F
+  col: F
+  row: 2
+  travel_class: 1
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+2K:
+  name: 2K
+  col: K
+  row: 2
+  travel_class: 1
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+3A:
+  name: 3A
+  col: A
+  row: 3
+  travel_class: 1
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+3K:
+  name: 3K
+  col: K
+  row: 3
+  travel_class: 1
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+4A:
+  name: 4A
+  col: A
+  row: 4
+  travel_class: 1
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+4E:
+  name: 4E
+  col: E
+  row: 4
+  travel_class: 1
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+4F:
+  name: 4F
+  col: F
+  row: 4
+  travel_class: 1
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+4K:
+  name: 4K
+  col: K
+  row: 4
+  travel_class: 1
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+10A:
+  name: 10A
+  col: A
+  row: 10
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+10B:
+  name: 10B
+  col: B
+  row: 10
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+10D:
+  name: 10D
+  col: D
+  row: 10
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+10E:
+  name: 10E
+  col: E
+  row: 10
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+10F:
+  name: 10F
+  col: F
+  row: 10
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+10G:
+  name: 10G
+  col: G
+  row: 10
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+10J:
+  name: 10J
+  col: J
+  row: 10
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+10K:
+  name: 10K
+  col: K
+  row: 10
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+11A:
+  name: 11A
+  col: A
+  row: 11
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+11B:
+  name: 11B
+  col: B
+  row: 11
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+11D:
+  name: 11D
+  col: D
+  row: 11
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+11E:
+  name: 11E
+  col: E
+  row: 11
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+11F:
+  name: 11F
+  col: F
+  row: 11
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+11G:
+  name: 11G
+  col: G
+  row: 11
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+11J:
+  name: 11J
+  col: J
+  row: 11
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+11K:
+  name: 11K
+  col: K
+  row: 11
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+12A:
+  name: 12A
+  col: A
+  row: 12
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+12B:
+  name: 12B
+  col: B
+  row: 12
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+12D:
+  name: 12D
+  col: D
+  row: 12
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+12E:
+  name: 12E
+  col: E
+  row: 12
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+12F:
+  name: 12F
+  col: F
+  row: 12
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+12G:
+  name: 12G
+  col: G
+  row: 12
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+12J:
+  name: 12J
+  col: J
+  row: 12
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+12K:
+  name: 12K
+  col: K
+  row: 12
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+13A:
+  name: 13A
+  col: A
+  row: 13
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+13B:
+  name: 13B
+  col: B
+  row: 13
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+13D:
+  name: 13D
+  col: D
+  row: 13
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+13E:
+  name: 13E
+  col: E
+  row: 13
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+13F:
+  name: 13F
+  col: F
+  row: 13
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+13G:
+  name: 13G
+  col: G
+  row: 13
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+13J:
+  name: 13J
+  col: J
+  row: 13
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+13K:
+  name: 13K
+  col: K
+  row: 13
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+14A:
+  name: 14A
+  col: A
+  row: 14
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+14B:
+  name: 14B
+  col: B
+  row: 14
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+14D:
+  name: 14D
+  col: D
+  row: 14
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+14E:
+  name: 14E
+  col: E
+  row: 14
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+14F:
+  name: 14F
+  col: F
+  row: 14
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+14G:
+  name: 14G
+  col: G
+  row: 14
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+14J:
+  name: 14J
+  col: J
+  row: 14
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+14K:
+  name: 14K
+  col: K
+  row: 14
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+15A:
+  name: 15A
+  col: A
+  row: 15
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+15B:
+  name: 15B
+  col: B
+  row: 15
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+15D:
+  name: 15D
+  col: D
+  row: 15
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+15E:
+  name: 15E
+  col: E
+  row: 15
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+15F:
+  name: 15F
+  col: F
+  row: 15
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+15G:
+  name: 15G
+  col: G
+  row: 15
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+15J:
+  name: 15J
+  col: J
+  row: 15
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+15K:
+  name: 15K
+  col: K
+  row: 15
+  travel_class: 2
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+21A:
+  name: 21A
+  col: A
+  row: 21
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+21B:
+  name: 21B
+  col: B
+  row: 21
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+21D:
+  name: 21D
+  col: D
+  row: 21
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+21E:
+  name: 21E
+  col: E
+  row: 21
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+21F:
+  name: 21F
+  col: F
+  row: 21
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+21G:
+  name: 21G
+  col: G
+  row: 21
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+21J:
+  name: 21J
+  col: J
+  row: 21
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+21K:
+  name: 21K
+  col: K
+  row: 21
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+22A:
+  name: 22A
+  col: A
+  row: 22
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+22B:
+  name: 22B
+  col: B
+  row: 22
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+22D:
+  name: 22D
+  col: D
+  row: 22
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+22E:
+  name: 22E
+  col: E
+  row: 22
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+22F:
+  name: 22F
+  col: F
+  row: 22
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+22G:
+  name: 22G
+  col: G
+  row: 22
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+22J:
+  name: 22J
+  col: J
+  row: 22
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+22K:
+  name: 22K
+  col: K
+  row: 22
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+23A:
+  name: 23A
+  col: A
+  row: 23
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+23B:
+  name: 23B
+  col: B
+  row: 23
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+23D:
+  name: 23D
+  col: D
+  row: 23
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+23E:
+  name: 23E
+  col: E
+  row: 23
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+23F:
+  name: 23F
+  col: F
+  row: 23
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+23G:
+  name: 23G
+  col: G
+  row: 23
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+23J:
+  name: 23J
+  col: J
+  row: 23
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+23K:
+  name: 23K
+  col: K
+  row: 23
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+24A:
+  name: 24A
+  col: A
+  row: 24
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+24B:
+  name: 24B
+  col: B
+  row: 24
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+24D:
+  name: 24D
+  col: D
+  row: 24
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+24E:
+  name: 24E
+  col: E
+  row: 24
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+24F:
+  name: 24F
+  col: F
+  row: 24
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+24G:
+  name: 24G
+  col: G
+  row: 24
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+24J:
+  name: 24J
+  col: J
+  row: 24
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+24K:
+  name: 24K
+  col: K
+  row: 24
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+25A:
+  name: 25A
+  col: A
+  row: 25
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+25B:
+  name: 25B
+  col: B
+  row: 25
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+25D:
+  name: 25D
+  col: D
+  row: 25
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+25E:
+  name: 25E
+  col: E
+  row: 25
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+25F:
+  name: 25F
+  col: F
+  row: 25
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+25G:
+  name: 25G
+  col: G
+  row: 25
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+25J:
+  name: 25J
+  col: J
+  row: 25
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+25K:
+  name: 25K
+  col: K
+  row: 25
+  travel_class: 3
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+26A:
+  name: 26A
+  col: A
+  row: 26
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+26B:
+  name: 26B
+  col: B
+  row: 26
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+26C:
+  name: 26C
+  col: C
+  row: 26
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+26D:
+  name: 26D
+  col: D
+  row: 26
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+26E:
+  name: 26E
+  col: E
+  row: 26
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+26F:
+  name: 26F
+  col: F
+  row: 26
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+26H:
+  name: 26H
+  col: H
+  row: 26
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+26J:
+  name: 26J
+  col: J
+  row: 26
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+26K:
+  name: 26K
+  col: K
+  row: 26
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+27A:
+  name: 27A
+  col: A
+  row: 27
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+27B:
+  name: 27B
+  col: B
+  row: 27
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+27C:
+  name: 27C
+  col: C
+  row: 27
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+27D:
+  name: 27D
+  col: D
+  row: 27
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+27E:
+  name: 27E
+  col: E
+  row: 27
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+27F:
+  name: 27F
+  col: F
+  row: 27
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+27H:
+  name: 27H
+  col: H
+  row: 27
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+27J:
+  name: 27J
+  col: J
+  row: 27
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+27K:
+  name: 27K
+  col: K
+  row: 27
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+28A:
+  name: 28A
+  col: A
+  row: 28
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+28B:
+  name: 28B
+  col: B
+  row: 28
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+28C:
+  name: 28C
+  col: C
+  row: 28
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+28D:
+  name: 28D
+  col: D
+  row: 28
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+28E:
+  name: 28E
+  col: E
+  row: 28
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+28F:
+  name: 28F
+  col: F
+  row: 28
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+28H:
+  name: 28H
+  col: H
+  row: 28
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+28J:
+  name: 28J
+  col: J
+  row: 28
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+28K:
+  name: 28K
+  col: K
+  row: 28
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+29A:
+  name: 29A
+  col: A
+  row: 29
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+29B:
+  name: 29B
+  col: B
+  row: 29
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+29C:
+  name: 29C
+  col: C
+  row: 29
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+29D:
+  name: 29D
+  col: D
+  row: 29
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+29E:
+  name: 29E
+  col: E
+  row: 29
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+29F:
+  name: 29F
+  col: F
+  row: 29
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+29H:
+  name: 29H
+  col: H
+  row: 29
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+29J:
+  name: 29J
+  col: J
+  row: 29
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+29K:
+  name: 29K
+  col: K
+  row: 29
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+30A:
+  name: 30A
+  col: A
+  row: 30
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+30B:
+  name: 30B
+  col: B
+  row: 30
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+30C:
+  name: 30C
+  col: C
+  row: 30
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+30D:
+  name: 30D
+  col: D
+  row: 30
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+30E:
+  name: 30E
+  col: E
+  row: 30
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+30F:
+  name: 30F
+  col: F
+  row: 30
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+30H:
+  name: 30H
+  col: H
+  row: 30
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+30J:
+  name: 30J
+  col: J
+  row: 30
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+30K:
+  name: 30K
+  col: K
+  row: 30
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+31A:
+  name: 31A
+  col: A
+  row: 31
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+31B:
+  name: 31B
+  col: B
+  row: 31
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+31C:
+  name: 31C
+  col: C
+  row: 31
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+31D:
+  name: 31D
+  col: D
+  row: 31
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+31E:
+  name: 31E
+  col: E
+  row: 31
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+31F:
+  name: 31F
+  col: F
+  row: 31
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+31H:
+  name: 31H
+  col: H
+  row: 31
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+31J:
+  name: 31J
+  col: J
+  row: 31
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+31K:
+  name: 31K
+  col: K
+  row: 31
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+32A:
+  name: 32A
+  col: A
+  row: 32
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+32B:
+  name: 32B
+  col: B
+  row: 32
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+32C:
+  name: 32C
+  col: C
+  row: 32
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+32D:
+  name: 32D
+  col: D
+  row: 32
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+32E:
+  name: 32E
+  col: E
+  row: 32
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+32F:
+  name: 32F
+  col: F
+  row: 32
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+32H:
+  name: 32H
+  col: H
+  row: 32
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+32J:
+  name: 32J
+  col: J
+  row: 32
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+32K:
+  name: 32K
+  col: K
+  row: 32
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+33A:
+  name: 33A
+  col: A
+  row: 33
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+33B:
+  name: 33B
+  col: B
+  row: 33
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+33C:
+  name: 33C
+  col: C
+  row: 33
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+33D:
+  name: 33D
+  col: D
+  row: 33
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+33E:
+  name: 33E
+  col: E
+  row: 33
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+33F:
+  name: 33F
+  col: F
+  row: 33
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+33H:
+  name: 33H
+  col: H
+  row: 33
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+33J:
+  name: 33J
+  col: J
+  row: 33
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+33K:
+  name: 33K
+  col: K
+  row: 33
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+34A:
+  name: 34A
+  col: A
+  row: 34
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+34B:
+  name: 34B
+  col: B
+  row: 34
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+34C:
+  name: 34C
+  col: C
+  row: 34
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+34D:
+  name: 34D
+  col: D
+  row: 34
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+34E:
+  name: 34E
+  col: E
+  row: 34
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+34F:
+  name: 34F
+  col: F
+  row: 34
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+34H:
+  name: 34H
+  col: H
+  row: 34
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+34J:
+  name: 34J
+  col: J
+  row: 34
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+34K:
+  name: 34K
+  col: K
+  row: 34
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+35A:
+  name: 35A
+  col: A
+  row: 35
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+35B:
+  name: 35B
+  col: B
+  row: 35
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+35C:
+  name: 35C
+  col: C
+  row: 35
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+35D:
+  name: 35D
+  col: D
+  row: 35
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+35E:
+  name: 35E
+  col: E
+  row: 35
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+35F:
+  name: 35F
+  col: F
+  row: 35
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+35H:
+  name: 35H
+  col: H
+  row: 35
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+35J:
+  name: 35J
+  col: J
+  row: 35
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+35K:
+  name: 35K
+  col: K
+  row: 35
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+36A:
+  name: 36A
+  col: A
+  row: 36
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+36B:
+  name: 36B
+  col: B
+  row: 36
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+36C:
+  name: 36C
+  col: C
+  row: 36
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+36D:
+  name: 36D
+  col: D
+  row: 36
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+36E:
+  name: 36E
+  col: E
+  row: 36
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+36F:
+  name: 36F
+  col: F
+  row: 36
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+36H:
+  name: 36H
+  col: H
+  row: 36
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+36J:
+  name: 36J
+  col: J
+  row: 36
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+36K:
+  name: 36K
+  col: K
+  row: 36
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+37A:
+  name: 37A
+  col: A
+  row: 37
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+37B:
+  name: 37B
+  col: B
+  row: 37
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+37C:
+  name: 37C
+  col: C
+  row: 37
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+37D:
+  name: 37D
+  col: D
+  row: 37
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+37E:
+  name: 37E
+  col: E
+  row: 37
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+37F:
+  name: 37F
+  col: F
+  row: 37
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+37H:
+  name: 37H
+  col: H
+  row: 37
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+37J:
+  name: 37J
+  col: J
+  row: 37
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+37K:
+  name: 37K
+  col: K
+  row: 37
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+38A:
+  name: 38A
+  col: A
+  row: 38
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+38B:
+  name: 38B
+  col: B
+  row: 38
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+38C:
+  name: 38C
+  col: C
+  row: 38
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+38D:
+  name: 38D
+  col: D
+  row: 38
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+38E:
+  name: 38E
+  col: E
+  row: 38
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+38F:
+  name: 38F
+  col: F
+  row: 38
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+38H:
+  name: 38H
+  col: H
+  row: 38
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+38J:
+  name: 38J
+  col: J
+  row: 38
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+38K:
+  name: 38K
+  col: K
+  row: 38
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+39A:
+  name: 39A
+  col: A
+  row: 39
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+39B:
+  name: 39B
+  col: B
+  row: 39
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+39D:
+  name: 39D
+  col: D
+  row: 39
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+39E:
+  name: 39E
+  col: E
+  row: 39
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+39F:
+  name: 39F
+  col: F
+  row: 39
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+39J:
+  name: 39J
+  col: J
+  row: 39
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+39K:
+  name: 39K
+  col: K
+  row: 39
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+40D:
+  name: 40D
+  col: D
+  row: 40
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+40E:
+  name: 40E
+  col: E
+  row: 40
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777
+
+40F:
+  name: 40F
+  col: F
+  row: 40
+  travel_class: 4
+  deck: 1
+  dsu_primary:
+  dsu_secondary:
+  fleet: B777

@@ -1,0 +1,19 @@
+<%= render "shared/flash" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @aircraft_type.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @aircraft_type.description %>
+</p>
+
+<p>
+  <strong>Manufacturer:</strong>
+  <%= @aircraft_type.manufacturer %>
+</p>
+
+<%= link_to 'Edit', edit_aircraft_type_path(@aircraft_type) %> |
+<%= link_to 'Back', aircraft_types_path %>

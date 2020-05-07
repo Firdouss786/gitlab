@@ -1,0 +1,3 @@
+<%= link_to "Stations", station_activities_path(@activity.station), class: "breadcrumb__leaf" %>
+<%= link_to "Workload", activity_path(@activity), class: "breadcrumb__leaf" %>
+<%= link_to "Fault", activity_fault_path(@activity, @fault), class: "breadcrumb__leaf" %>

@@ -1,0 +1,48 @@
+
+.comment {
+	width: 100%;
+	padding: 1em;
+	background: #fafafa;
+	border: 1px solid #c1c1c1;
+	border-radius: 0.3em;
+	margin-bottom: 1em;
+
+	&__description {
+		font-weight: bold;
+		font-size: 1.1em;
+		margin-bottom: 0.8em;
+	}
+
+	&__user {
+		display: inline-block;
+	}
+
+	&__date-time {
+		color: grey;
+	}
+
+	&__actions {
+		display: none;
+	}
+
+	&__form {
+
+		form input[type="submit"] {
+			background: #5dbfd4;
+			border-radius: 1em;
+			border: none;
+			font-weight: bold;
+			color: white;
+			padding: 0.5em 1.2em;
+			transition: 0.2s;
+
+			&:hover {
+				background: #465562;
+			}
+		}
+	}
+}
+
+.back-button {
+	margin-top: 2em;
+}

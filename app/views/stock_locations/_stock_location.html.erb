@@ -1,0 +1,8 @@
+<label for="<%= stock_location.id %>" class="table-body">
+  <div class="table-body__cell hidden"><input type="checkbox" id="<%= stock_location.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+  <div class="table-body__cell"><%= stock_location.name %></div>
+  <div class="table-body__cell"><%= stock_location.category %></div>
+  <div class="table-body__cell flex justify-end">
+    <%= link_to((inline_svg :icon_aircraft, class: "h-5 w-5 mr-4 text-thales-light-blue active:text-white"), station_stock_location_state_path(@station, stock_location, :inspecting), title: 'Stock Location') %>
+  </div>
+</label>

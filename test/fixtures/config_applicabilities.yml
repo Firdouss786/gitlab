@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  applicable_content: 1.2
+  applicable_software: 2.1
+  fleet: B777
+  task_template: campaign_with_one_config
+
+two:
+  applicable_content:
+  applicable_software:
+  fleet: B777
+  task_template: software_upload
+
+three:
+  applicable_content:
+  applicable_software:
+  fleet: B777
+  task_template: transit_check
+
+four:
+  applicable_content:
+  applicable_software:
+  fleet: B777
+  task_template: two
+
+five:
+  applicable_content:
+  applicable_software:
+  fleet: B777
+  task_template: level_three
+
+six:
+  applicable_content:
+  applicable_software:
+  fleet: B777
+  task_template: content_load
+
+seven:
+  applicable_content:
+  applicable_software:
+  fleet: B777
+  task_template: recurring_level_2

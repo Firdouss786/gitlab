@@ -1,0 +1,23 @@
+<% content_for :breadcrumb do %>
+  <%= link_to "Stations", station_activity_plans_path(Current.user.home_station), class: "breadcrumb__leaf" %>
+  <%= link_to "Workload", activity_path(@activity), class: "breadcrumb__leaf" %>
+  <%= link_to "Fault", activity_fault_path(@activity, @fault), class: "breadcrumb__leaf" %>
+  <%= link_to "Defer Fault", new_activity_deferral_path(@activity, fault_id: @fault.id), class: "breadcrumb__leaf" %>
+<% end %>
+
+<section class="activity-grid--left hide-on-mobile panel">
+  <%= render "activities/items", activity: @activity %>
+</section>
+
+<section class="activity-grid--right panel">
+  <%= render "shared/flash" %>
+
+  <div class="flex mb-6">
+    <div>
+      <%= render "shared/back_link", link_text: "Back", link_route: [@activity, @fault], truncate: false %>
+    </div>
+  </div>
+
+  <%= render 'form', deferral: @deferral, activity: @activity, fault: @fault %>
+
+</section>

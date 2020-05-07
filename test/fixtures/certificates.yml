@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  expired: false
+  filename: MyString
+  reference: MyString
+  governance: GACA
+  stock_item: unserviceable
+  hdfs_filename: MyString
+  expired_at: 2017-09-19 17:54:53
+
+valid:
+  expired: false
+  filename: MyString
+  reference: 10900901A
+  governance: FAA
+  stock_item: inspecting
+  hdfs_filename: MyString
+  expired_at: 2017-09-19 17:54:53
+
+valid_two:
+  expired: false
+  filename: MyString
+  reference: MyString
+  governance: GACA
+  stock_item: unserviceable
+  hdfs_filename: MyString
+  expired_at: 2017-09-19 17:54:53
+
+invalid:
+  expired: true
+  filename: MyString
+  reference: MyString
+  governance: GACA
+  stock_item: inspecting_without_cert
+  hdfs_filename: MyString
+  expired_at: 2017-09-19 17:54:53

@@ -1,0 +1,13 @@
+<table class="table">
+	<tr class="">
+		<th class=""><input id="checkBox" type="checkbox"></th>
+		<th class="">Shelved At</th>
+		<th class="">Part Name</th>
+		<th class="">Part Number</th>
+		<th class="">Serial Number</th>
+		<th class="">Mod</th>
+		<th class="">Rev</th>
+		<th class=""></th>
+	</tr>
+	<%= render partial: 'stock_item', collection: @stock_items, cached: true %>
+</table>

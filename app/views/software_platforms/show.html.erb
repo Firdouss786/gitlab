@@ -1,0 +1,32 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: @software_platform.name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+
+  <%= link_to "Software Platforms", software_platforms_path, class: "breadcrumb__leaf" %>
+  <%= link_to @software_platform.name, software_platforms_path, class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/config_nav' %>
+<% end %>
+
+<section class="panel area-main area-main--half">
+
+  <%= render "shared/flash" %>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @software_platform.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @software_platform.description %>
+  </p>
+
+  <%= link_to 'Edit', edit_software_platform_path(@software_platform) %> |
+  <%= link_to 'Back', software_platforms_path %>
+
+</section>

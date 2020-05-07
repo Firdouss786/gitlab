@@ -1,0 +1,34 @@
+full_access:
+  name: Admin Access
+  description: Administrator access for site admins.
+  subject_class: all
+  action: manage
+  subject_id:
+
+activities_management:
+  name: Activities Management
+  description: Can manage activities and nested actions
+  subject_class: activity, sign_off, task, task_action, fault, fault_resolution, corrective_action, deferral_action
+  action: manage
+  subject_id:
+
+airports_management:
+  name: Airports Management
+  description: Can add/update airports.
+  subject_class: airport
+  action: create, update
+  subject_id:
+
+stations_management:
+  name: Stations Management
+  description: Can add/update stations.
+  subject_class: station
+  action: create, update
+  subject_id:
+
+users_management_edit:
+  name: Users Management (Edit only)
+  description: Can edit users and update their profiles.
+  subject_class: user
+  action: update
+  subject_id:

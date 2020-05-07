@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product: dual_usb
+  quantity: 1
+  fleet: B777
+
+two:
+  product: screen
+  quantity: 1
+  fleet: B777
+
+three:
+  product: single_usb
+  quantity: 1
+  fleet: B777
+
+four:
+  product: screen_two
+  quantity: 1
+  fleet: B777

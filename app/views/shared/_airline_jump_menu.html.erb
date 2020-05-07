@@ -1,0 +1,7 @@
+<div class="jump-menu" data-target="breadcrumbs.jumpMenu">
+  <% Current.user.airlines.each do |airline| %>
+    <%= jump_to_airline airline.name, airline %>
+  <% end %>
+
+  <span class="jump-menu__item"><%= link_to('All Airlines', airlines_path) %></span>
+</div>

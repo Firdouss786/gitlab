@@ -1,0 +1,38 @@
+<%= breadcrumb do %><% end %>
+
+<section class="panel area-main">
+  <%= render "shared/flash" %>
+
+  <h1 class="header">
+    <span class="header__name">My Notifications</span>
+  </h1>
+
+  <!-- <div class="pending-approvals">
+    <h3>Pending Access Requests</h3>
+    <ul>
+      <% @user.approvals.pending.each do |approval| %>
+        <% if approval.approvable %>
+          <li class="pending-approvals__item"><%= approval.requestee.full_name %> requests access to <%= approval.approvable.approvable_resource_name %></li>
+
+          <%= button_to "Approve", approval_path(approval), method: :patch %>
+          <%= button_to "Reject", approval_path(approval), method: :delete %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div> -->
+
+  <hr>
+
+  <div class="archived-approvals">
+    <h3>Archived</h3>
+    <ul>
+      <% @user.approvals.approved.each do |approval| %>
+        <% if approval.approvable %>
+          <li class="pending-approvals__item">You granted <%= approval.requestee.full_name %> access to <%= approval.approvable.approvable_resource_name %></li>
+
+          <%= button_to "Revoke", approval_path(approval), method: :delete %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</section>

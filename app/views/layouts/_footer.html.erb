@@ -1,0 +1,33 @@
+<footer class="sticky bottom-0 left-0 w-full bg-thales-carbon-3 hidden sm:flex items-center" data-controller="turbolinks">
+
+  <% if content_for?(:search_action) %>
+    <div class="flex-1" data-controller="footer">
+      <button class="ml-6 p-4 flex items-center justify-center hover:bg-thales-dark-blue-gray focus:bg-thales-light-blue" data-action="click->footer#revealSearchField" data-target="footer.searchButton">
+        <%= inline_svg :icon_search, class: "h-6 w-6 text-thales-light-blue" %>
+        <span class="ml-4 text-white">Filter List</span>
+      </button>
+
+      <%= form_tag((yield :search_action), method: :get, remote: true, name: "search_form") do %>
+        <%= text_field_tag :q, params[:q], placeholder: "Enter search text ...", data: { target: "footer.searchField" }, class: "my-2 hidden w-8/12 ml-6 h-10 text-sm form-input rounded-full border-3 border-thales-light-blue" %>
+        <%= hidden_field_tag :direction, params[:direction] %>
+        <%= hidden_field_tag :sort, params[:sort] %>
+        <%= submit_tag "Search", name: nil, data: { action: "turbolinks#changed" }, class: 'hidden' %>
+      <% end %>
+    </div>
+    <% else %>
+    <div class="flex-1 py-4 invisible">&zwnj;</div>
+  <% end %>
+
+  <div class="text-center text-gray-500 text-sm">
+    <%= link_to "Firefly Version #{Firefly::VERSION}", changelog_path %> | <%= link_to "API Documentation", apidocs_path %>
+  </div>
+
+  <% if content_for?(:buttons) %>
+    <div class="flex-1 flex justify-end mr-6">
+      <%= yield :buttons %>
+    </div>
+  <% else %>
+    <div class="flex-1 py-4 invisible">&zwnj;</div>
+  <% end %>
+
+</footer>

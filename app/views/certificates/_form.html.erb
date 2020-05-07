@@ -1,0 +1,52 @@
+<%= form_with(model: certificate, local: true) do |form| %>
+  <% if certificate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(certificate.errors.count, "error") %> prohibited this certificate from being saved:</h2>
+
+      <ul>
+      <% certificate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :expired %>
+    <%= form.check_box :expired, id: :certificate_expired %>
+  </div>
+
+  <div class="field">
+    <%= form.label :filename %>
+    <%= form.text_field :filename, id: :certificate_filename %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reference %>
+    <%= form.text_field :reference, id: :certificate_reference %>
+  </div>
+
+  <div class="field">
+    <%= form.label :governance %>
+    <%= form.text_field :governance, id: :certificate_governance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stock_item_id %>
+    <%= form.text_field :stock_item_id, id: :certificate_stock_item_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hdfs_filename %>
+    <%= form.text_field :hdfs_filename, id: :certificate_hdfs_filename %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expired_at %>
+    <%= form.datetime_select :expired_at, id: :certificate_expired_at %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

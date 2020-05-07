@@ -1,0 +1,22 @@
+<% content_for :breadcrumb do %>
+  <%= link_to "Stations", station_activities_path(@activity.station), class: "breadcrumb__leaf" %>
+  <%= link_to "Workload", activity_path(@activity), class: "breadcrumb__leaf" %>
+  <%= link_to "Fault", activity_fault_path(@activity, @fault), class: "breadcrumb__leaf" %>
+  <%= link_to "Fault Resolution", edit_activity_fault_resolutions_path(@activity, fault_id: @fault.id), class: "breadcrumb__leaf" %>
+<% end %>
+
+<section class="activity-grid--left hidden md:block panel">
+  <%= render "activities/items", activity: @activity %>
+</section>
+
+<section class="activity-grid--right panel">
+  <%= render "shared/flash" %>
+
+  <div class="flex mb-6">
+    <div>
+      <%= render "shared/back_link", link_text: "Fault: #{@fault.logbook_text}", link_route: [@activity, @fault.becomes(Fault)], truncate: true %>
+    </div>
+  </div>
+
+  <%= render 'form', fault: @fault %>
+</section>

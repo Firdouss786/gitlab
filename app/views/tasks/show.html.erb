@@ -1,0 +1,84 @@
+<% content_for :breadcrumb do %>
+  <%= link_to "Stations", station_activities_path(@activity.station), class: "breadcrumb__leaf" %>
+  <%= link_to "Workload", activity_path(@activity), class: "breadcrumb__leaf" %>
+  <%= link_to "Task", activity_task_path(@activity, @task), class: "breadcrumb__leaf" %>
+<% end %>
+
+<section class="activity-grid--left hidden md:block panel">
+  <%= render "activities/items", activity: @activity %>
+</section>
+
+<section class="activity-grid--right panel">
+  <%= render "shared/flash" %>
+
+  <div class="flex mb-6">
+    <div class="md:hidden">
+      <%= render "shared/back_link", link_text: "Back", link_route: @activity, truncate: false %>
+    </div>
+
+    <div class="flex-grow flex justify-end">
+      <%= link_to edit_activity_task_path(@activity, @task) do %>
+        <span data-test-id="edit" class="ml-4 flex text-sm text-gray-600 font-semibold items-center">
+          <svg class="h-4 w-4 mr-1 fill-current text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+            <path d="M12.3 3.7l4 4L4 20H0v-4L12.3 3.7zm1.4-1.4L16 0l4 4-2.3 2.3-4-4z"/>
+          </svg>
+          <%= t :edit %>
+        </span>
+      <% end %>
+
+      <% if @task.task_actions.blank? %>
+        <%= link_to activity_task_path(@activity, @task), method: :delete, data: { confirm: 'This cannot be undone. Are you sure you wish to delete this task?' }, remote: true do %>
+          <span data-test-id="delete" class="ml-4 flex text-sm text-gray-600 font-semibold items-center">
+            <svg class="h-4 w-4 mr-1 fill-current text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path d="M6 2l2-2h4l2 2h4v2H2V2h4zM3 6h14l-1 14H4L3 6zm5 2v10h1V8H8zm3 0v10h1V8h-1z"/>
+            </svg>
+            <%= t :delete %>
+          </span>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="flex items-start">
+    <div class="align-text-top text-gray-800">
+      <span class="text-xl font-semibold block leading-none"><%= @task.task_template.name %></span>
+      <span class="text-sm text-gray-500"><%= @task.started_at %></span>
+    </div>
+
+    <div class="pl-2 align-text-top flex-grow text-right">
+      <span class="text-sm whitespace-no-wrap"><%= @task.logbook_reference %></span>
+      <span class="text-sm block leading-none text-gray-500 whitespace-no-wrap"><%= @task.id %></span>
+    </div>
+  </div>
+
+  <table class="mt-6 w-full text-sm border-gray-200 border-b-2 border-t-2">
+    <tr class="border-none">
+      <td class="py-2 pr-6 text-gray-600"><%= t :logbook_text %>:</td>
+      <td class="py-2 pr-6" data-test-id="task-logbook-text"><%= @task.logbook_text %></td>
+    </tr>
+    <tr class="border-none">
+      <td class="py-2 pr-6 text-gray-600">Task Progress:</td>
+      <td class="py-2 pr-6"><%= number_to_percentage(@task.completion_percentage, precision: 0, format: "%n %")  %></td>
+    </tr>
+    <tr class="border-none">
+      <td class="py-2 pr-6 text-gray-600"><%= t :attachment %>:</td>
+      <td class="py-2 pr-6"><%= @attachment.attached? ? (link_to @attachment.filename, rails_blob_path(@attachment, disposition: "attachment"), class: "underline text-blue-600") : "-" %></td>
+    </tr>
+    <tr class="border-none">
+      <td class="py-2 pr-6 text-gray-600"><%= t :raised_in_work_pack %>:</td>
+      <td class="py-2 pr-6" data-test-id="task-activity"><%= link_to @task.started_in_activity.id, @task.started_in_activity, class: "underline text-blue-600" %></td>
+    </tr>
+  </table>
+
+  <div class="flex pt-8 items-bottom">
+    <h2 class="font-semibold">Task Actions</h2>
+    <div class="flex-grow text-right">
+      <% unless @task.completed? %>
+        <%= link_to 'Add Action', new_activity_task_action_path(@activity, task_id: @task.id), class: "btn btn-sm" %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= render partial: "task_action", collection: @task.task_actions.chronilogical, cached: true %>
+
+</section>

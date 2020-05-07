@@ -1,0 +1,8 @@
+<label for="<%= software_platform.id %>" class="table-body">
+  <div class="table-body__cell hidden"><input type="checkbox" id="<%= software_platform.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+  <div class="table-body__cell"><%= software_platform.name %></div>
+  <div class="table-body__cell"><%= software_platform.description %></div>
+  <div class="table-body__cell">
+    <%= link_to((inline_svg :icon_edit_pencil, class: "h-5 w-5 float-right text-thales-light-blue active:text-white"), edit_software_platform_path(software_platform), title: 'Edit') %>
+  </div>
+</label>

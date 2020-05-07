@@ -1,0 +1,265 @@
+consumable:
+  product: single_usb
+  category: consumable
+  serial_number:
+  model_numbers: "1,4,6"
+  revision: A
+  batch_number: BN 104058
+  quantity: 10
+  stock_location: lhr
+  shelf_life_expiration:
+  shelved_at:
+  user: chris
+  state: serviceable
+
+consumable_with_no_history:
+  product: single_usb
+  category: consumable
+  serial_number:
+  model_numbers: "1,4,6"
+  revision: A
+  batch_number: BN 104059
+  quantity: 50
+  stock_location: lhr
+  shelf_life_expiration:
+  shelved_at:
+  user: chris
+  state: serviceable
+
+installed_screen:
+  product: screen
+  category: rotable
+  serial_number: A1240974
+  model_numbers: "1,4,6"
+  revision: B
+  batch_number:
+  quantity: 1
+  stock_location: gstba
+  shelf_life_expiration:
+  shelved_at:
+  user: chris
+  state: installed
+
+removed_screen:
+  product: screen
+  category: rotable
+  serial_number: A6678719
+  model_numbers: "1,4,6"
+  revision: C
+  batch_number:
+  quantity: 1
+  stock_location: lhr
+  shelf_life_expiration:
+  shelved_at:
+  user: chris
+  state: removed
+
+serviceable_screen:
+  product: screen
+  category: rotable
+  serial_number: A7787901
+  model_numbers: "1,4,6"
+  revision: C
+  batch_number:
+  quantity: 1
+  stock_location: lhr
+  shelf_life_expiration:
+  shelved_at:
+  user: chris
+  state: serviceable
+
+serviceable_screen_two:
+  product: screen_two
+  category: rotable
+  serial_number: JBAEA00969
+  model_numbers: "1,4,6,7"
+  revision: C
+  batch_number:
+  quantity: 1
+  stock_location: lhr
+  shelf_life_expiration:
+  shelved_at:
+  user: chris
+  state: serviceable
+
+serviceable_screen_three:
+  product: screen_two
+  category: rotable
+  serial_number: JBAEA00967
+  model_numbers: "1,4,6,7"
+  revision: C
+  batch_number:
+  quantity: 1
+  stock_location: lhr
+  shelf_life_expiration:
+  shelved_at:
+  user: chris
+  state: serviceable
+
+installed_screen:
+  product: screen
+  category: rotable
+  serial_number: A77873211
+  model_numbers: "1,4,6"
+  revision: C
+  batch_number:
+  quantity: 1
+  stock_location: gstba
+  shelf_life_expiration:
+  shelved_at:
+  user: chris
+  state: installed
+
+installed_screen_two:
+  product: screen_two
+  category: rotable
+  serial_number: JBAEA00970
+  model_numbers: "1,4,6,7"
+  revision: D
+  batch_number:
+  quantity: 1
+  stock_location: lhr
+  shelf_life_expiration:
+  shelved_at:
+  user: chris
+  state: installed
+
+installed_screen_three:
+  product: screen_two
+  category: rotable
+  serial_number: JBAEA00968
+  model_numbers: "1,4,6,7"
+  revision: D
+  batch_number:
+  quantity: 1
+  stock_location: lhr
+  shelf_life_expiration:
+  shelved_at:
+  user: chris
+  state: installed
+
+transiting:
+  product: dual_usb
+  category: rotable
+  serial_number: A2
+  model_numbers: "1,4,6"
+  revision: C
+  batch_number:
+  quantity: 1
+  stock_location: one
+  shelf_life_expiration: 2017-09-19 17:11:41
+  shelved_at: 2017-09-19 17:11:41
+  user: chris
+  state: transiting
+
+inspecting:
+  product: dual_usb
+  category: rotable
+  serial_number: A3
+  model_numbers: "1,4,6"
+  revision: C
+  batch_number:
+  quantity: 1
+  stock_location: lhr
+  shelf_life_expiration: 2017-09-19 17:11:41
+  shelved_at: 2017-09-19 17:11:41
+  user: chris
+  state: inspecting
+
+inspecting_without_cert:
+  product: dual_usb
+  category: rotable
+  serial_number: A4
+  model_numbers: "1,4,6"
+  revision: C
+  batch_number:
+  quantity: 1
+  stock_location: one
+  shelf_life_expiration: 2017-09-19 17:11:41
+  shelved_at: 2017-09-19 17:11:41
+  user: chris
+  state: inspecting
+
+serviceable:
+  product: dual_usb
+  category: rotable
+  serial_number: A5
+  model_numbers: "1,4,6"
+  revision: C
+  batch_number:
+  quantity: 1
+  stock_location: lhr
+  shelf_life_expiration: 2017-09-19 17:11:41
+  shelved_at: 2017-09-19 17:11:41
+  user: chris
+  state: serviceable
+
+unserviceable:
+  product: dual_usb
+  category: rotable
+  serial_number: A6
+  model_numbers: "1,2,3"
+  revision: A
+  batch_number:
+  quantity: 1
+  stock_location: lhr
+  shelf_life_expiration: 2017-09-19 17:11:41
+  shelved_at: 2017-09-19 17:11:41
+  user: chris
+  state: unserviceable
+
+quarantined:
+  product: dual_usb
+  category: rotable
+  serial_number: A7
+  model_numbers: "1,4,6"
+  revision: C
+  batch_number:
+  quantity: 1
+  stock_location: lhr
+  shelf_life_expiration: 2017-09-19 17:11:41
+  shelved_at: 2017-09-19 17:11:41
+  user: chris
+  state: quarantined
+
+scrapped:
+  product: dual_usb
+  category: rotable
+  serial_number: A10
+  model_numbers: 2,5,6
+  revision: C
+  batch_number:
+  quantity: 2
+  stock_location: lhr
+  shelf_life_expiration: 2017-09-19 17:11:41
+  shelved_at: 2017-09-19 17:11:41
+  user: chris
+  state: scrapped
+
+removed:
+  product: dual_usb
+  category: rotable
+  serial_number: A1011
+  model_numbers: 2,5,6
+  revision: C
+  batch_number:
+  quantity: 2
+  stock_location: lhr
+  shelf_life_expiration: 2017-09-19 17:11:41
+  shelved_at: 2017-09-19 17:11:41
+  user: chris
+  state: removed
+
+installed:
+  product: dual_usb
+  category: rotable
+  serial_number: A1012
+  model_numbers: 2,5,6
+  revision: C
+  batch_number:
+  quantity: 2
+  stock_location: lhr
+  shelf_life_expiration: 2017-09-19 17:11:41
+  shelved_at: 2017-09-19 17:11:41
+  user: chris
+  state: installed    

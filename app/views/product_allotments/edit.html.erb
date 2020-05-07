@@ -1,0 +1,16 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: "Edit Product Allotment" %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= render 'breadcrumb' %>
+  <%= link_to @product_allotment.product.name, edit_product_allotment_path(@product_allotment), class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/airline_nav', airline: @product_allotment.fleet.airline %>
+<% end %>
+
+<section class="panel area-main area-main--half">
+  <%= render 'form', product_allotment: @product_allotment %>
+</section>

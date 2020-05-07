@@ -1,0 +1,77 @@
+<%= render "shared/flash" %>
+
+<!-- Page Title -->
+<div class="tc pa3 mt4">
+	<span class="dib v-top ttu f7 fw1 mv1 white-40">Logistics /</span>
+	<span class="dib v-top ttu f3 fw5 white-90 tracked">LHR Line</span>
+</div>
+<!-- End Page Title -->
+
+<!-- Logistics State Navigation -->
+<div class="fl w-100 mb4 tc">
+	<div class="dib mr2">
+		<span class="bg-dark-blue ph3 pv2 mv2 br2 f7 fw4 ttu tracked white-70 tc db dib">Inbound</span>
+	</div>
+
+	<div class="dib mr2">
+		<span class="bg-dark-blue ph3 pv2 mv2 br2 f7 fw4 ttu tracked white-70 tc db dib">Inspect</span>
+	</div>
+
+	<div class="dib mr2">
+		<span class="bg-dark-blue ph3 pv2 mv2 br2 f7 fw4 ttu tracked white-70 tc db dib">Serviceable</span>
+	</div>
+
+	<div class="dib mr2">
+		<span class="bg-blue ph3 pv2 mv2 br2 f7 fw4 ttu tracked white-90 tc db dib">Turn In</span>
+	</div>
+
+	<div class="dib mr2">
+		<span class="bg-dark-blue ph3 pv2 mv2 br2 f7 fw4 ttu tracked white-70 tc db dib">Unserviceable</span>
+	</div>
+
+	<div class="dib mr2">
+		<span class="bg-dark-blue ph3 pv2 mv2 br2 f7 fw4 ttu tracked white-70 tc db dib">Outbound</span>
+	</div>
+
+	<div class="dib mr2">
+		<span class="bg-dark-blue ph3 pv2 mv2 br2 f7 fw4 ttu tracked white-70 tc db dib">Scrap</span>
+	</div>
+
+	<div class="dib mr2">
+		<span class="bg-dark-blue ph3 pv2 mv2 br2 f7 fw4 ttu tracked white-70 tc db dib">Quarantine</span>
+	</div>
+</div>
+<!-- End logistics State Navigation -->
+
+
+
+<!-- Logistics Other Section -->
+<div class="fl w-100">
+
+  <!-- Logistics Actions -->
+	<div class="dib mb2">
+		<span class="ba b--green bg-green white ph3 br2 pv1 f7 fw4 ttu tracked tc db dib">Turn In 1 Part</span>
+		<span class="ba b--green white ph3 br2 pv1 f7 fw4 ttu tracked tc db dib">Scan Parts</span>
+	</div>
+  <!-- End Logistics Actions -->
+
+  <!-- Table -->
+	<table class="collapse w-100">
+		<tr>
+			<td class="f7 tracked tl white-70 pa2"><input id="checkBox" type="checkbox"></td>
+			<td class="f7 tracked tl white-70 pa2">Removal Date</td>
+			<td class="f7 tracked tl white-70 pa2">Part Name</td>
+			<td class="f7 tracked tl white-70 pa2">Installed PN</td>
+			<td class="f7 tracked tl white-70 pa2">Installed SN</td>
+			<td class="f7 tracked tl white-70 pa2">Removed PN</td>
+			<td class="f7 tracked tl white-70 pa2">Removed SN</td>
+			<td class="f7 tracked tl white-70 pa2"></td>
+		</tr>
+
+		<%= render partial: 'stock_item', collection: @stock_items, cached: true %>
+
+	</table>
+  <!-- End Table -->
+
+</div>
+<!-- Logistics Body -->

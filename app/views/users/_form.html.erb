@@ -1,0 +1,67 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <%= render "shared/form_errors", obj: user %>
+
+  <div class="form-grid">
+    <div class="form-grid--span">
+      <h2 class="header--underlined mb-0">Personal</h2>
+    </div>
+
+    <div class="field form-grid--left">
+      <%= form.label :first_name %>
+      <%= form.text_field :first_name, id: :user_first_name, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--right">
+      <%= form.label :last_name %>
+      <%= form.text_field :last_name, id: :user_last_name, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--left">
+      <%= form.label :job_title %>
+      <%= form.text_field :job_title, id: :user_job_title, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--right">
+      <%= form.label :email %>
+      <%= form.email_field :email, value: user.email || params[:email], id: :user_email, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--right">
+      <%= form.label :secondary_email, "Verification Code Email" %>
+      <%= form.email_field :secondary_email, value: user.secondary_email || params[:email], class: "form-input block w-full", id: :user_secondary_email, required: true %>
+    </div>
+
+    <div class="form-grid--span">
+      <h2 class="header--underlined mb-0 mt-4">Access Role</h2>
+    </div>
+
+    <div class="form-grid--span--left">
+      <%= form.label :profile_id %>
+      <%= form.collection_select :profile_id, Profile.all, :id, :name, {}, { class: "form-select select-filter" }   %>
+    </div>
+
+    <div class="form-grid--span">
+      <h2 class="header--underlined mb-0 mt-4">Contact</h2>
+    </div>
+
+    <div class="field form-grid--left">
+      <%= form.label :country_code %>
+      <%= form.collection_select :country_code, Country.all, :ident, :ident_with_calling, {} ,{class: "form-select select-filter"} %>
+    </div>
+
+    <div class="field form-grid--right">
+      <%= form.label :phone_number %>
+      <%= form.text_field :phone_number, id: :user_phone_number,class: "form-input block w-full" %>
+    </div>
+
+    <div class="form-grid--span">
+      <br>
+    </div>
+
+    <div class="actions form-grid--span">
+      <%= form.submit "Save Settings", class: "btn" %>
+    </div>
+  </div>
+
+
+<% end %>

@@ -1,0 +1,16 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: "New Task Template" %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= render 'airlines/breadcrumb' %>
+  <%= link_to "Tasks" , airline_task_templates_path(@airline), class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/airline_nav', airline: @task_template.airline %>
+<% end %>
+
+<section class="area-main panel area-main--half">
+  <%= render 'form', task_template: @task_template %>
+</section>

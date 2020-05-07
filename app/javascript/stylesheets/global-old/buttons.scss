@@ -1,0 +1,18 @@
+.default-button {
+  border: none;
+  border-radius: 4px;
+  background-color: $thales-light-blue;
+  color: $light-grey-3;
+}
+
+.default-button:hover {
+  border: none;
+  border-radius: 4px;
+  background-color: $thales-blue-grey;
+  color: $light-grey-3;
+}
+
+.expand-to-fit {
+  height: 100%;
+  width: 100%;
+}

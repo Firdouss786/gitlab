@@ -1,0 +1,52 @@
+<div data-controller="corrective-action">
+  <%= form_with(model: [@activity, @fault, @corrective_action], local: true) do |form| %>
+    <%= render "shared/form_errors", obj: corrective_action %>
+
+    <div class="form-grid">
+
+      <div class="field datepicker-container">
+        <%= form.label :job_started_at %>
+        <%= form.text_field :job_started_at, {required: true, class: "form-input form_datetime", readonly: true} %>
+      </div>
+
+      <div class="field">
+        <%= form.label :performed_by_id, "Performed By" %>
+        <%= form.collection_select :performed_by_id, activity.station.users.unlocked, :id, :full_name, {prompt: '', selected: Current.user.id}, {required: true, class: "form-select select-filter"} %>
+      </div>
+
+      <div class="field">
+        <%= form.label :logbook_reference %>
+        <%= form.text_field :logbook_reference, value: corrective_action.try(:logbook_reference) || fault.logbook_reference, required: true, class: "form-input" %>
+      </div>
+
+      <div class="field form-grid--span">
+        <%= form.label :logbook_text %>
+        <%= form.text_area :logbook_text, required: true, class: "form-textarea" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :document_reference %>
+        <%= form.text_field :document_reference, required: true, class: "form-input" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :maintenance_action_id %>
+        <%= form.collection_select :maintenance_action_id, MaintenanceAction.where.not(name: "defer".upcase), :id, :name, {prompt: '-- Maintenance Action --'}, {required: true, data: {target: "corrective-action.maintenanceActionSelect", action: "corrective-action#maintenanceActionSelectChange"}, class: "form-select select-filter" }%>
+      </div>
+
+      <%= form.fields_for :replacement do |replacement_form| %>
+        <%= render "consumable_replacement_form", replacement_form: replacement_form, activity: @activity, fault: @fault, corrective_action: @corrective_action %>
+        <%= render "rotable_replacement_form", replacement_form: replacement_form, activity: @activity, fault: @fault, corrective_action: @corrective_action %>
+      <% end %>
+
+      <div class="form-grid--span text-right">
+        <%= form.hidden_field :fault_id, value: corrective_action.fault_id || fault.id %>
+        <%= form.submit class: "btn" %>
+      </div>
+
+    </div>
+
+
+
+  <% end %>
+</div>

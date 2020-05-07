@@ -1,0 +1,30 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: @user.full_name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= link_to "Stations", "#", class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/user_nav' %>
+<% end %>
+
+<section class="area-main area-main--half panel">
+  <%= form_with(model: @user, url: user_security_path, local: true) do |form| %>
+    <%= render "shared/form_errors", obj: @user %>
+
+    <div class="field">
+      <%= form.label :requires_verification %>
+      <%= form.check_box :requires_verification,{class: "form-checkbox h-5 w-5 mr-2"} %>
+    </div>
+
+    <div class="field">
+      <%= form.label :locked %>
+      <%= form.check_box :locked, id: :user_locked,class: "form-checkbox h-5 w-5 mr-2"%>
+    </div>
+
+    <%= form.submit "Update Security Settings", class: "btn" %>
+  <% end %>
+
+</section>

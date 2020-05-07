@@ -1,0 +1,31 @@
+<%= render "shared/flash" %>
+
+<h1>Aircraft Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Manufacturer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aircraft_types.each do |aircraft_type| %>
+      <tr>
+        <td><%= aircraft_type.name %></td>
+        <td><%= aircraft_type.description %></td>
+        <td><%= aircraft_type.manufacturer %></td>
+        <td><%= link_to 'Show', aircraft_type %></td>
+        <td><%= link_to 'Edit', edit_aircraft_type_path(aircraft_type) %></td>
+        <td><%= link_to 'Destroy', aircraft_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Aircraft Type', new_aircraft_type_path %>

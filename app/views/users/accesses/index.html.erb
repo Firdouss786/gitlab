@@ -1,0 +1,67 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: @user.full_name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= link_to "Stations", "#", class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/user_nav' %>
+<% end %>
+
+<section class="area-main area-main--half panel" data-controller="access">
+  <%= render "shared/flash" %>
+  <p id="error"><%= flash[:error] %></p>
+
+  <%= form_with(model: @user, url: user_accesses_path, local: true) do |form| %>
+    <%= render "shared/form_errors", obj: @user %>
+
+    <h3>Airline Access</h3>
+    <div class="form-grid--span mb-2">
+      <%= form.collection_check_boxes(:all_airline_ids, Airline.customers, :id, :icao_code) do |b| %>
+        <p class="inline-block">
+        <%= b.check_box(class: "form-checkbox h-5 w-5 m-2", data: {action: "access#updateAirlineSelectDropdown", option_value: b.text}) %>
+        <%= b.label %>
+        </p>
+      <% end %>
+    </div>
+
+    <h3>Default Airline Access</h3>
+    <div class="form-grid--span mb-5">
+      <%= form.select :default_airline_id, {}, {}, {class: "form-select select-filter", data: {target: "access.airlineSelect"} } do %>
+        <% if @airline_accesses.any? %>
+          <% @airline_accesses.each do |access| %>
+              <%= content_tag :option, access.accessible.icao_code, value: access.accessible_id, id: "default_airline_access_#{access.accessible_id}", selected: (@user.default_airline_id ==  access.accessible.id) %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <h3>Station Access</h3>
+    <div class="form-grid--span mb-2">
+      <%= form.collection_check_boxes(:all_station_ids, Station.all, :id, :name) do |b| %>
+        <p class="inline-block">
+        <%= b.check_box(class: "form-checkbox h-5 w-5 m-2", data: {action: "access#updateStationSelectDropdown", option_value: b.text}) %>
+        <%= b.label %>
+        </p>
+      <% end %>
+    </div>
+
+    <h3>Default Station Access</h3>
+    <div class="form-grid--span mb-5">
+      <%= form.select :home_station_id, {}, {}, {class: "form-select select-filter", data: {target: "access.stationSelect"} } do %>
+        <% if @station_accesses.any? %>
+          <% @station_accesses.each do |access| %>
+              <%= content_tag :option, access.accessible.name, value: access.accessible_id, id: "default_station_access_#{access.accessible_id}", selected: (@user.home_station_id ==  access.accessible.id) %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Update Access", class: "btn" %>
+    </div>
+  <% end %>
+
+</section>

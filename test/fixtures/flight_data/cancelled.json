@@ -1,0 +1,31 @@
+{
+  "long_desc": "American Airlines #380/N954NN (B738) flight on 18-Sep-2018 from Chicago O'Hare Intl (ORD) to LaGuardia (LGA) has been cancelled",
+  "short_desc": "AAL380/N954NN (B738) flight on 09/18 to KLGA has been cancelled",
+  "summary": "AAL380/N954NN flight to LGA has been cancelled",
+  "eventcode": "cancelled",
+  "alert_id": 27070167,
+  "flight": {
+    "ident": "AAL380",
+    "aircrafttype": "B738",
+    "origin": "KORD",
+    "destination": "KLGA",
+    "filed_ete": "01:45:00",
+    "route": "MOBLE ADIME GERBS J146 ETG MIP4",
+    "faFlightID": "AAL380-1537075548-airline-0157",
+    "reg": "N954NN",
+    "filed_altitude": 390,
+    "filed_airspeed_kts": 445,
+    "filed_time": 1537075548,
+    "filed_departuretime": 1537299600,
+    "estimatedarrivaltime": 1537305900,
+    "actualarrivaltime": 0,
+    "actualdeparturetime": 0,
+    "estimated_blockin_time": 1537306500,
+    "filed_blockin_time": 1537306800,
+    "actual_blockin_time": 0,
+    "estimated_blockout_time": 1537299000,
+    "filed_blockout_time": 1537299000,
+    "actual_blockout_time": 0,
+    "filed_arrivaltime": 1537305900
+  }
+}

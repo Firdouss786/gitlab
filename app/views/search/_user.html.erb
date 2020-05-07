@@ -1,0 +1,14 @@
+<% cache document do %>
+  <%= link_to edit_user_path(document) do %>
+    <div class="search-result">
+      <div class="search-result__icon">
+        <%= image_tag "icons/person_icon.png" %>
+      </div>
+      <div class="search-result__content">
+        <span class="search-result__heading"><%= document.full_name %></span>
+        <span class="search-result__data"><%= document.job_title %></span>
+        <span class="search-result__data"><%= document.email %></span>
+      </div>
+    </div>
+  <% end %>
+<% end %>

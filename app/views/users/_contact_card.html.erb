@@ -1,0 +1,32 @@
+<% cache user do %>
+  <div class="user__profile-card">
+    <div class="flex rounded-full h-16 w-16 items-center justify-center text-white font-bold my-3 mx-auto tracking-tighter user__card-avatar">
+      <span class="text-3xl text-center" data-test-id="user-initials"><%= user.initials%></span>
+    </div>
+    <div class="text-2xl font-semibold text-gray-700" data-test-id="user-name"><%= user.full_name %></div>
+    <div class="text-gray-600" data-test-id="user-designation"><%= user.job_title %></div>
+    <div class="flex text-gray-700 mt-8 mx-auto p-2 leading-tight">
+      <div class="flex-1">
+        <%= link_to("mailto:#{user.email}", class: "fa-3x") do %>
+          <%= fa_icon('envelope-square') %>
+          <span class="block text-base font-bold">Email</span>
+        <% end %>
+      </div>
+      <% if user.phone_number.present? %>
+        <div class="flex-1" data-test-id="user-phone">
+          <%= link_to("tel:#{user.full_phone_number}", class: "fa-3x") do %>
+            <%= fa_icon('phone-square') %>
+            <span class="block text-base font-bold">Mobile</span>
+          <% end %>
+        </div>
+      <% end %>
+      <div class="flex-1">
+        <%= link_to(edit_user_path(user), class: "fa-3x") do %>
+          <%= fa_icon('pen-square') %>
+          <span class="block text-base font-bold">Settings</span>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+<% end %>

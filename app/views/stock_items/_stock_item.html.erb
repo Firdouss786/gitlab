@@ -1,0 +1,17 @@
+<% cache stock_item do %>
+  <tr>
+    <td class="f7 tracked tl white-70 pa2"><input id="checkBox" type="checkbox"></td>
+    <td class="f7 tracked tl white-70 pa2">2017-09-12</td>
+    <td class="f7 tracked tl white-70 pa2"><%= stock_item.product.name %></td>
+    <td class="f7 tracked tl white-70 pa2"><%= stock_item.product.part_number %></td>
+    <td class="f7 tracked tl white-70 pa2">
+      <div class="ba b--dotted bw1 br4 dib v-mid b--red" style="width: 20px; height: 20px;"></div>
+      <span class="dib v-mid ml1"><%= stock_item.serial_number %></span>
+    </td>
+    <td class="f7 tracked tl white-70 pa2"></td>
+    <td class="f7 tracked tl white-70 pa2">
+      <div class="ba b--dotted bw1 br4 dib v-mid b--red" style="width: 20px; height: 20px;"></div>
+      <span class="dib v-mid ml1"><%= stock_item.serial_number %></span>
+    </td>
+  </tr>
+<% end %>

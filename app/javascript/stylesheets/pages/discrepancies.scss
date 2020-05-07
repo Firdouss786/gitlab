@@ -1,0 +1,58 @@
+.discrepancies {
+  &__category--header,
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    h3 {
+      padding: 0;
+      margin: 1em 0 0;
+    }
+
+    h4 {
+      padding: 0;
+      margin: 0.5em 0 0;
+      color: orange;
+    }
+  }
+
+  h5 {
+    padding: 0;
+    margin: 1.5em 0 0.5em;
+  }
+
+  &__item {
+    padding: 5px;
+  }
+
+  &__button {
+    margin-top: 1.5em;
+  }
+
+  &__category--edit {
+    margin-top: 0.5em;
+  }
+
+  &__category {
+    font-size: 20px;
+  }
+
+  &__form {
+    display: none;
+    margin-top: 1.5em;
+  }
+
+  &__list {
+    margin-top: 1.5em;
+  }
+
+  &__links {
+    float: right;
+  }
+
+  &__enable-item a {
+    color: grey;
+  }
+}

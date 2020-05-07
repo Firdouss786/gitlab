@@ -1,0 +1,21 @@
+<%= form_with(model: manufacturer, local: true) do |form| %>
+  <%= render "shared/form_errors", obj: manufacturer %>
+
+  <div class="form-grid">
+
+    <div class="field form-grid--span">
+      <%= form.label :name %>
+      <%= form.text_field :name, id: :manufacturer_name, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--span">
+      <%= form.label :description %>
+      <%= form.text_area :description, id: :manufacturer_description, rows: "3", class: "form-input block w-full" %>
+    </div>
+
+    <div class="flex justify-end content-center form-grid--right">
+      <%= link_to "Cancel", manufacturers_path, { class: "btn btn-secondary mr-4" } %>
+      <%= form.submit class: "btn" %>
+    </div>
+  </div>
+<% end %>

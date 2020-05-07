@@ -1,0 +1,10 @@
+<% cache stock_item do %>
+  <tr>
+    <td class="f7 tracked tl white-70 pa2"><input id="checkBox" type="checkbox"></td>
+    <td class="f7 tracked tl white-70 pa2"><%= stock_item.transfers.last.sent_at %></td>
+    <td class="f7 tracked tl white-70 pa2"><%= stock_item.product.name %></td>
+    <td class="f7 tracked tl white-70 pa2"><%= stock_item.product.part_number %></td>
+    <td class="f7 tracked tl white-70 pa2"><%= stock_item.serial_number %></td>
+    <td class="f7 tracked tl white-70 pa2"><%= stock_item.transfers.last.comment %></td>
+  </tr>
+<% end %>

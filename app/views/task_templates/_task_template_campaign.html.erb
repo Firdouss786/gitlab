@@ -1,0 +1,10 @@
+<label for="<%= task_template_campaign.id %>" class="table-body">
+  <div class="table-body__cell hidden"><input type="checkbox" id="<%= task_template_campaign.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+  <div class="table-body__cell"><%= task_template_campaign.name %></div>
+  <div class="table-body__cell"><%= date task_template_campaign.campaign.created_at %></div>
+  <div class="table-body__cell"><%= date task_template_campaign.campaign.scheduled_end %></div>
+  <div class="table-body__cell"><%= link_to "Go To Tracker", airline_campaign_path(@airline, task_template_campaign.campaign), class: "btn btn-light tracker-button" %></div>
+  <div class="table-body__cell">
+    <%= link_to((inline_svg :icon_search, class: "h-5 w-5 float-right text-thales-light-blue active:text-white"), airline_task_template_path(@airline, task_template_campaign), title: 'Show') %>
+  </div>
+</label>

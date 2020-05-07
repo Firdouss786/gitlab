@@ -1,0 +1,62 @@
+<%= form_with(model: airport, local: true) do |form| %>
+  <%= render "shared/form_errors", obj: airport %>
+
+  <div class="form-grid">
+
+    <div class="field form-grid--span">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--left">
+      <%= form.label :iata_code, 'IATA Code' %>
+      <%= form.text_field :iata_code, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--right">
+      <%= form.label :icao_code, 'ICAO Code' %>
+      <%= form.text_field :icao_code, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--left">
+      <%= form.label :country %>
+      <%= form.text_field :country, class: "form-input block w-full" %>
+    </div>
+
+    <div class="field form-grid--right">
+      <%= form.label :city %>
+      <%= form.text_field :city, class: "form-input block w-full" %>
+    </div>
+
+    <div class="field form-grid--left">
+      <%= form.label :latitude %>
+      <%= form.text_field :latitude, class: "form-input block w-full" %>
+    </div>
+
+    <div class="field form-grid--right">
+      <%= form.label :longitude %>
+      <%= form.text_field :longitude, class: "form-input block w-full" %>
+    </div>
+
+    <div class="field form-grid--left">
+      <%= form.label :dst %>
+      <%= form.text_field :dst, class: "form-input block w-full" %>
+    </div>
+
+    <div class="field form-grid--right">
+      <%= form.label :timezone %>
+      <%= form.text_field :timezone, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="form-grid--span">
+      <br>
+    </div>
+
+    <div class="flex justify-end content-center form-grid--right">
+      <%= link_to "Cancel", airports_path, { class: "btn btn-secondary mr-4" } %>
+      <%= form.submit class: "btn" %>
+    </div>
+
+  </div>
+
+<% end %>

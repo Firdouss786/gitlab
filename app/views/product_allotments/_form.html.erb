@@ -1,0 +1,26 @@
+<%= form_with(model: product_allotment, local: true) do |form| %>
+  <%= render "shared/form_errors", obj: product_allotment %>
+
+  <div class="form-grid">
+
+    <div class="field form-grid--left">
+      <%= form.label :product_id %>
+      <%= form.collection_select :product_id, Product.all, :id, :part_number, { prompt: '-- Select product --' }, { class: "form-select select-filter", required: true } %>
+    </div>
+
+    <div class="field form-grid--right">
+      <%= form.label :quantity %>
+      <%= form.number_field :quantity, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="form-grid--span">
+      <br>
+    </div>
+
+    <div class="flex justify-end content-center form-grid--right">
+      <%= link_to "Cancel", product_allotments_path(@product_allotment.fleet), { class: "btn btn-secondary mr-4" } %>
+      <%= form.submit class: "btn" %>
+    </div>
+
+  </div>
+<% end %>

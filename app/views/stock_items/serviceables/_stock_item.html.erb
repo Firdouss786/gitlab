@@ -1,0 +1,12 @@
+<% cache stock_item do %>
+  <tr>
+    <td class=""><input id="checkBox" type="checkbox"></td>
+    <td class=""></td>
+    <td class=""><%= stock_item.product.name %></td>
+    <td class=""><%= stock_item.product.part_number %></td>
+    <td class=""><%= stock_item.serial_number %></td>
+    <td class=""><%= stock_item.model_numbers %></td>
+    <td class=""><%= stock_item.revision %></td>
+    <td class=""></td>
+  </tr>
+<% end %>

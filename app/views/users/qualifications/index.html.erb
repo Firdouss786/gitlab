@@ -1,0 +1,25 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: @user.full_name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= link_to "Stations", "#", class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/user_nav' %>
+<% end %>
+
+<section class="area-main area-main--half panel">
+  <%= form_with(model: @user, url: user_qualifications_path, local: true) do |form| %>
+    <%= render "shared/form_errors", obj: @user %>
+
+    <div class="field">
+      <%= form.label :user_src_number, "Safety Regulatory Compliance Number" %>
+      <%= form.text_field :user_src_number,class: "form-input block w-full" %>
+    </div>
+
+    <%= form.submit "Update Qualifications", class: "btn" %>
+  <% end %>
+
+</section>

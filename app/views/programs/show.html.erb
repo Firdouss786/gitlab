@@ -1,0 +1,39 @@
+<%= render "shared/flash" %>
+
+<p>
+  <strong>Airline:</strong>
+  <%= @program.airline %>
+</p>
+
+<p>
+  <strong>Mcc email:</strong>
+  <%= @program.mcc_email %>
+</p>
+
+<p>
+  <strong>Repair order note:</strong>
+  <%= @program.repair_order_note %>
+</p>
+
+<p>
+  <strong>Airport:</strong>
+  <%= @program.airport %>
+</p>
+
+<p>
+  <strong>Mailing group 1:</strong>
+  <%= @program.mailing_group_1 %>
+</p>
+
+<p>
+  <strong>Mailing group 2:</strong>
+  <%= @program.mailing_group_2 %>
+</p>
+
+<p>
+  <strong>Mailing group 3:</strong>
+  <%= @program.mailing_group_3 %>
+</p>
+
+<%= link_to 'Edit', edit_program_path(@program) %> |
+<%= link_to 'Back', programs_path %>

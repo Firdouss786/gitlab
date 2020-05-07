@@ -1,0 +1,70 @@
+<div id="rWingPosition" class="field" data-target="corrective-action.onWingPosition">
+  <%= replacement_form.label :on_wing_position %>
+  <%= replacement_form.text_field :on_wing_position, data: { target: "corrective-action.onWingPositionText" }, class: "form-input" %>
+</div>
+
+<div class="flex flex-wrap form-grid--span" data-target="corrective-action.rotableContainer">
+
+  <div class="min-w-md mr-2 flex-1 mt-4 p-4 shadow-md xl:shadow rounded border-gray-700 border-t-8">
+    <div class="mt-2 flex items-center">
+      <svg class="h-6 w-6 fill-current text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+        <path d="M18 12v1H8v5l-6-6 6-6v5h8V2h2z"/>
+      </svg>
+      <h2 class="ml-2 font-semibold text-gray-700">Removed Part</h2>
+    </div>
+
+    <div id="rRemovedProduct" class="field" data-target="corrective-action.lruPartOff"
+      data-url="<%= rotable_part_off_activity_fault_corrective_actions_path(activity, fault) %>"
+      data-rotable_product_id="<%= corrective_action.replacement.removed_product_id %>">
+      <%= replacement_form.label :removed_product_id, 'PN Off' %>
+      <%= replacement_form.select :removed_product_id, options_for_select([]), {prompt: '-- Laoding Part Numbers --'}, data: { target: "corrective-action.lruPartOffSelect", action: "corrective-action#rotablePnOffSelectChange" }, class: "form-input select-filter" %>
+    </div>
+
+    <div id="rRemovedStockItem" class="field" data-target="corrective-action.serialNumberOff"
+      data-rotable_removed_stock_id="<%= corrective_action.replacement.removed_stock_item.try(:serial_number) || corrective_action.replacement.removed_stock_item %>">
+      <%= replacement_form.label :removed_stock_item_id, 'SN Off' %>
+      <%= replacement_form.text_field :removed_stock_item_id, data: { target: "corrective-action.serialNumberOffText" }, class: "form-input" %>
+    </div>
+
+    <div id="rRemovedModel" class="field" data-target="corrective-action.modOff" data-model_off="<%= corrective_action.replacement.removed_model_numbers %>">
+      <%= replacement_form.label :removed_model_numbers, 'MOD Off' %>
+      <div class="grid-container">
+        <%= replacement_form.collection_check_boxes :removed_model_numbers, (1..16).to_a, :itself, :itself, {}, data: { target: "corrective-action.modOffSelect" } do |r| %>
+          <%= r.label { r.check_box(class: "form-checkbox h-5 w-5") } %>
+        <% end %>
+      </div>
+    </div>
+
+    <div id="rRemovedRevision" class="field" data-target="corrective-action.revisionOff"
+      data-revision_off="<%= corrective_action.replacement.removed_revision %>">
+      <%= replacement_form.label :removed_revision, 'REV Off' %>
+      <%= replacement_form.select :removed_revision, options_for_select( ("A".."Z").map { |i| [i, i] }), {prompt: '-- Select Revision --'}, data: { target: "corrective-action.revisionOffSelect" }, class: "form-input select-filter" %>
+    </div>
+
+  </div>
+
+  <div class="min-w-md mr-2 flex-1 mt-4 p-4 shadow-md xl:shadow rounded border-gray-700 border-t-8">
+    <div class="mt-2 flex items-center">
+      <svg class="h-6 w-6 fill-current text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+        <path d="M3.5 13H12v5l6-6-6-6v5H4V2H2v11z"/>
+      </svg>
+      <h2 class="ml-2 font-semibold text-gray-700">Installed Part</h2>
+    </div>
+
+    <div id="rInstalledProduct" class="field" data-target="corrective-action.lruPartOn"
+      data-url="<%= rotable_part_on_activity_fault_corrective_actions_path(activity, fault) %>"
+      data-rotable_product_id="<%= corrective_action.replacement.installed_product_id %>">
+      <%= replacement_form.label :installed_product_id, 'PN On' %>
+      <%= replacement_form.select :installed_product_id, options_for_select([]), {prompt: '-- Loading Part Number --'}, data: { target: "corrective-action.lruPartOnSelect", action: "corrective-action#rotablePnOnSelectChange" }, class: "form-input select-filter" %>
+    </div>
+
+    <div id="rInstalledStockItem" class="field" data-target="corrective-action.serialNumberOn"
+      data-url="<%= rotable_serial_on_activity_fault_corrective_actions_path(activity, fault) %>"
+      data-rotable_installed_stock_id="<%= corrective_action.replacement.installed_stock_item_id %>">
+      <%= replacement_form.label :installed_stock_item_id, 'SN On' %>
+      <%= replacement_form.select :installed_stock_item_id, options_for_select([]), {prompt: '-- Loading Serial Numbers --'}, data: { target: "corrective-action.serialNumberOnSelect" }, class: "form-input select-filter" %>
+    </div>
+
+  </div>
+
+</div>

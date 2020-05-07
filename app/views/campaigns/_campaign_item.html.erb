@@ -1,0 +1,11 @@
+<% cache [ campaign, campaign.task_template ] do %>
+
+  <%= link_to [parent, campaign], class: "table-body" do %>
+    <div class="table-body__cell hidden"><input type="checkbox" id="<%= campaign.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+    <div class="table-body__cell"><%= campaign.task_template.name %></div>
+    <div class="table-body__cell"><%= campaign.task_template.airline.icao_code %></div>
+    <div class="table-body__cell"><%= date campaign.created_at %></div>
+    <div class="table-body__cell"><%= date campaign.scheduled_end %></div>
+  <% end %>
+
+<% end %>

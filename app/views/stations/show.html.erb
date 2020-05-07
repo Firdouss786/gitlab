@@ -1,0 +1,37 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_aircraft, label: @station.name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= link_to "Settings", stations_path, class: "breadcrumb__leaf" %>
+  <%= link_to "Airports", stations_path, class: "breadcrumb__leaf" %>
+  <%= link_to @station.name, station_path, class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/config_nav' %>
+<% end %>
+
+<section class="panel area-main area-main--half">
+
+  <%= render "shared/flash" %>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @station.name %>
+  </p>
+
+  <p>
+    <strong>Airport:</strong>
+    <%= @station.airport.name %>
+  </p>
+
+  <p>
+    <strong>Address:</strong>
+    <%= @station.address.street1 %>
+  </p>
+
+  <%= link_to 'Edit', edit_station_path(@station) %> |
+  <%= link_to 'Back', stations_path %>
+
+</section>

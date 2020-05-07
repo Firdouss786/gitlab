@@ -1,0 +1,9 @@
+<label for="<%= station.id %>" class="table-body">
+  <div class="table-body__cell hidden"><input type="checkbox" id="<%= station.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+  <div class="table-body__cell"><%= station.name %></div>
+  <div class="table-body__cell"><%= station.airport.name %></div>
+  <div class="table-body__cell"><%= station.address.street1 %></div>
+  <div class="table-body__cell">
+    <%= link_to((inline_svg :icon_edit_pencil, class: "h-5 w-5 float-right text-thales-light-blue active:text-white"), edit_station_path(station), title: 'Edit') %>
+  </div>
+</label>

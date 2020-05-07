@@ -1,0 +1,14 @@
+<label for="<%= profile.id %>" class="table-body">
+  <div class="table-body__cell hidden"><input type="checkbox" id="<%= profile.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+  <div class="table-body__cell"><%= profile.name %></div>
+  <div class="table-body__cell hidden lg:table-cell"><%= profile.description %></div>
+  <div class="table-body__cell hidden lg:table-cell"><%= profile.users.count %></div>
+  <div class="table-body__cell flex justify-end">
+    <% if profile.users.empty? %>
+      <%= link_to((inline_svg :icon_close_outline, class: "h-5 w-5 mr-4 text-thales-light-blue active:text-white"), profile_path(profile), method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete profile') %>
+    <% end %>
+    <%= link_to((inline_svg :icon_information, class: "h-5 w-5 mr-4 text-thales-light-blue active:text-white"), profile_path(profile), title: 'Show') %>
+    <%= link_to((inline_svg :icon_edit_pencil, class: "h-5 w-5 text-thales-light-blue active:text-white"), edit_profile_path(profile), title: 'Edit') %>
+  </div>
+
+</label>

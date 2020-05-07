@@ -1,0 +1,177 @@
+in_air_one:
+  vendor_id: BAW1
+  flight_number: BAW184
+  origin_airport_code: KEWR
+  destination_airport_code: EGLL
+  aircraft: gstba
+  airline: baw
+  origin_airport: jfk
+  destination_airport: heathrow
+  filed_departure_time: <%= Time.parse("10:30") %>
+  actual_departure_time: <%= Time.parse("10:30") %>
+  estimated_arrival_time: <%= Time.parse("13:00") %>
+  actual_arrival_time:
+
+in_air_two:
+  vendor_id: BAW2
+  flight_number: BAW247
+  origin_airport_code: LFPG
+  destination_airport_code: EGLL
+  aircraft: gstbb
+  airline: baw
+  origin_airport: cdg
+  destination_airport: heathrow
+  filed_departure_time: <%= Time.parse("10:30") %>
+  actual_departure_time: <%= Time.parse("10:30") %>
+  estimated_arrival_time: <%= Time.parse("13:00") %>
+  actual_arrival_time:
+
+on_ground_one:
+  vendor_id: BAW3
+  flight_number: BAW184
+  origin_airport_code: KEWR
+  destination_airport_code: EGLL
+  aircraft: gstbc
+  airline: baw
+  origin_airport: jfk
+  destination_airport: heathrow
+  filed_departure_time: <%= Time.parse("10:30") %>
+  actual_departure_time: <%= Time.parse("10:30") %>
+  estimated_arrival_time: <%= Time.parse("13:00") %>
+  actual_arrival_time: <%= Time.parse("13:00") %>
+
+on_ground_two:
+  vendor_id: BAW3
+  flight_number: BAW179
+  origin_airport_code: KJFK
+  destination_airport_code: EGLL
+  aircraft: gstbe
+  airline: baw
+  origin_airport: jfk
+  destination_airport: heathrow
+  filed_departure_time: <%= Time.parse("10:30") %>
+  actual_departure_time: <%= Time.parse("10:30", 1.day.ago) %>
+  estimated_arrival_time: <%= Time.parse("13:00") %>
+  actual_arrival_time: <%= Time.parse("1:00") %>
+
+on_ground_three:
+  vendor_id: BAW8
+  flight_number: BAW122
+  origin_airport_code: LFPG
+  destination_airport_code: EGLL
+  aircraft: gstbe
+  airline: baw
+  origin_airport: cdg
+  destination_airport: heathrow
+  filed_departure_time: <%= Time.parse("10:30") %>
+  actual_departure_time: <%= Time.parse("10:30") %>
+  estimated_arrival_time: <%= Time.parse("1:00") %>
+  actual_arrival_time: <%= Time.parse("1:00") %>
+
+on_ground_four:
+  vendor_id: BAW8
+  flight_number: BAW137
+  origin_airport_code: KLGA
+  destination_airport_code: EGLL
+  aircraft: gstbe
+  airline: baw
+  origin_airport: lga
+  destination_airport: heathrow
+  filed_departure_time: <%= Time.parse("00:30") %>
+  actual_departure_time: <%= Time.parse("00:30") %>
+  estimated_arrival_time: <%= Time.parse("23:00") %>
+  actual_arrival_time: <%= Time.parse("23:00") %>
+
+on_ground_five:
+  vendor_id: BAW11
+  flight_number: BAW120
+  origin_airport_code: KLGA
+  destination_airport_code: KJFK
+  aircraft: gstbe
+  airline: baw
+  origin_airport: lga
+  destination_airport: jfk
+  filed_departure_time: <%= Time.parse("02:30") %>
+  actual_departure_time: <%= Time.parse("02:30") %>
+  estimated_arrival_time: <%= Time.parse("20:00") %>
+  actual_arrival_time: <%= Time.parse("20:00") %>
+
+on_ground_six:
+  vendor_id: BLU78
+  flight_number: BLU120
+  origin_airport_code: KLGA
+  destination_airport_code: KJFK
+  aircraft: N903JB
+  airline: jbu
+  origin_airport: lga
+  destination_airport: jfk
+  filed_departure_time: <%= Time.parse("02:30") %>
+  actual_departure_time: <%= Time.parse("02:30") %>
+  estimated_arrival_time: <%= Time.parse("20:00") %>
+  actual_arrival_time: <%= Time.parse("20:00") %>
+
+on_ground_seven:
+  vendor_id: BLU78
+  flight_number: BLU120
+  origin_airport_code: KLGA
+  destination_airport_code: EGLL
+  aircraft: N903JB
+  airline: jbu
+  origin_airport: lga
+  destination_airport: heathrow
+  filed_departure_time: <%= Time.parse("02:30") %>
+  actual_departure_time: <%= Time.parse("02:30") %>
+  estimated_arrival_time: <%= Time.parse("20:00") %>
+  actual_arrival_time: <%= Time.parse("20:00") %>
+
+scheduled_one:
+  vendor_id: BAW5
+  flight_number: BAW183
+  aircraft: gstba
+  airline: baw
+  origin_airport: heathrow
+  destination_airport: cdg
+  filed_departure_time: <%= Time.parse("14:00") %>
+  actual_departure_time:
+  estimated_arrival_time:
+  actual_arrival_time:
+
+flight_to_unmanned_airport:
+  vendor_id: BAW578
+  flight_number: BAW901
+  aircraft: gstba
+  airline: baw
+  origin_airport: heathrow
+  destination_airport: rov
+  filed_departure_time: <%= 5.hours.ago %>
+  actual_departure_time: <%= 5.hours.ago %>
+  estimated_arrival_time: <%= Time.now + 2.hours %>
+  actual_arrival_time:
+
+tbd_inbound_to_lhr:
+  vendor_id: BAW116-1581831954-airline-0468
+  flight_number: BAW116
+  origin_airport_code: KJFK
+  destination_airport_code: EGLL
+  aircraft: gstbd
+  airline: baw
+  origin_airport: jfk
+  destination_airport: heathrow
+  filed_departure_time: <%= 5.hours.ago %>
+  actual_departure_time: <%= 5.hours.ago %>
+  estimated_arrival_time: <%= Time.now + 2.hours %>
+  actual_arrival_time:
+
+tbd_outbound_from_lhr:
+  vendor_id: BAW117-1581831954-airline-0468
+  flight_number: BAW117
+  origin_airport_code: EGLL
+  destination_airport_code: KJFK
+  aircraft: gstbd
+  airline: baw
+  origin_airport: heathrow
+  destination_airport: jfk
+  filed_departure_time: <%= Time.now + 10.hours %>
+  actual_departure_time:
+  estimated_arrival_time: <%= Time.now + 20.hours %>
+  actual_arrival_time:

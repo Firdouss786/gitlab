@@ -1,0 +1,14 @@
+<section class="area-main">
+
+  <div class="text-center text-gray-600 leading-loose p-10">
+    <div class="inline-block">
+      <div class="h-12 w-12 bg-thales-light-blue rounded-full flex items-center justify-center">
+        <%= inline_svg :icon_close, class: "h-6 w-6 text-white" %>
+      </div>
+    </div>
+
+    <h2 class="text-xl font-bold">You do not have access to <%= @resource_name %></h2>
+    <p class="">You can request access by asking your manager, or emailing <%= mail_to Firefly::SUPPORT_EMAIL %></p>
+  </div>
+
+</section>

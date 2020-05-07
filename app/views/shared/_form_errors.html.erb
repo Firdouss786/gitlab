@@ -1,0 +1,15 @@
+<% if obj.errors.any? %>
+  <div class="px-4 py-3 border border-orange-300 rounded">
+    <h2 class="text-gray-600 text-sm mb-1"><span class="font-semibold text-orange-700 text-xl mr-1">Sorry!</span> We found <%= pluralize(obj.errors.count, "error") %> here</h2>
+
+    <% obj.errors.full_messages.each do |message| %>
+      <div class="flex items-center">
+        <svg class="h-6 w-6 mr-2 fill-current text-orange-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zM11.4 10l2.83-2.83-1.41-1.41L10 8.59 7.17 5.76 5.76 7.17 8.59 10l-2.83 2.83 1.41 1.41L10 11.41l2.83 2.83 1.41-1.41L11.41 10z"/>
+        </svg>
+        <span data-test-id="error_explanation" class="text-orange-600"><%= message %></span>
+      </div>
+    <% end %>
+
+  </div>
+<% end %>

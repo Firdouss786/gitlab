@@ -1,0 +1,19 @@
+<%= render "shared/flash" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @removal_reason.name %>
+</p>
+
+<p>
+  <strong>Product category:</strong>
+  <%= @removal_reason.product_category %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @removal_reason.description %>
+</p>
+
+<%= link_to 'Edit', edit_removal_reason_path(@removal_reason) %> |
+<%= link_to 'Back', removal_reasons_path %>

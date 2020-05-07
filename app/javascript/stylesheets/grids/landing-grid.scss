@@ -1,0 +1,11 @@
+@screen sm {
+  .landing-grid {
+    display: grid;
+    grid-template-columns: 1fr 27em 1fr;
+    grid-template-rows: 10em 1fr 1fr;
+    grid-template-areas:
+    "header header header"
+    ". main ."
+    "footer footer footer";
+  }
+}

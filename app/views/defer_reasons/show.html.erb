@@ -1,0 +1,32 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: @defer_reason.name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+
+  <%= link_to "Defer Reasons", defer_reasons_path, class: "breadcrumb__leaf" %>
+  <%= link_to @defer_reason.name, defer_reason_path, class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/config_nav' %>
+<% end %>
+
+<section class="panel area-main area-main--half">
+
+  <%= render "shared/flash" %>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @defer_reason.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @defer_reason.description %>
+  </p>
+
+  <%= link_to 'Edit', edit_defer_reason_path(@defer_reason) %> |
+  <%= link_to 'Back', defer_reasons_path %>
+
+</section>

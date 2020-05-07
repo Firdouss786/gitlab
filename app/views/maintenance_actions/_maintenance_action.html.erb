@@ -1,0 +1,8 @@
+<label for="<%= maintenance_action.id %>" class="table-body">
+  <div class="table-body__cell hidden"><input type="checkbox" id="<%= maintenance_action.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+  <div class="table-body__cell"><%= maintenance_action.name %></div>
+  <div class="table-body__cell"><%= maintenance_action.description %></div>
+  <div class="table-body__cell">
+    <%= link_to((inline_svg :icon_edit_pencil, class: "h-5 w-5 float-right text-thales-light-blue active:text-white"), edit_maintenance_action_path(maintenance_action), title: 'Edit') %>
+  </div>
+</label>

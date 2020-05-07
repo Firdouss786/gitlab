@@ -1,0 +1,27 @@
+<%= render "shared/flash" %>
+
+<p>
+  <strong>Originator:</strong>
+  <%= @fault.user.full_name %>
+</p>
+
+
+<p>
+  <strong>State:</strong>
+  <%= @fault.approval_state %>
+</p>
+
+<p>
+  <strong>Aircraft:</strong>
+  <%= @fault.aircraft.registration %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @fault.mcc_description %>
+</p>
+
+<p>
+  <strong>Seats impacted:</strong>
+  <%= @fault.seats_impacted %>
+</p>

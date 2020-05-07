@@ -1,0 +1,31 @@
+{
+  "long_desc": "American Airlines #85 flight information has changed\n  Departure Gate is now B10\n\nFlight Status: Scheduled\n\nDeparture:\n  Charlotte/Douglas Intl (CLT)\n  Tue 18-Sep-2018 04:47PM EDT\n  Gate B10\n\nArrival:\n  Miami Intl (MIA)\n  Tue 18-Sep-2018 06:20PM EDT\n  Gate D46\n\n",
+  "short_desc": "American Airlines #85 flight information has changed\n  Departure Gate is now B10\n\n",
+  "summary": "AAL85 flight information has changed",
+  "eventcode": "change",
+  "alert_id": 27070146,
+  "flight": {
+    "ident": "AAL85",
+    "aircrafttype": "B738",
+    "origin": "KCLT",
+    "destination": "KMIA",
+    "filed_ete": "01:33:00",
+    "route": "ICONS3 NOOKS SAV J103 OMN HILEY7",
+    "faFlightID": "AAL85-1537075554-airline-0053",
+    "reg": "N944NN",
+    "filed_altitude": 380,
+    "filed_airspeed_kts": 445,
+    "filed_time": 1537075554,
+    "filed_departuretime": 1537302600,
+    "estimatedarrivaltime": 1537309200,
+    "actualarrivaltime": 0,
+    "actualdeparturetime": 0,
+    "estimated_blockin_time": 0,
+    "filed_blockin_time": 1537310160,
+    "actual_blockin_time": 0,
+    "estimated_blockout_time": 0,
+    "filed_blockout_time": 1537302000,
+    "actual_blockout_time": 0,
+    "filed_arrivaltime": 1537308180
+  }
+}

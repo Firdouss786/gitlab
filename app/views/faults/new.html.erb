@@ -1,0 +1,16 @@
+<% content_for :breadcrumb do %>
+  <%= link_to "Stations", station_activities_path(@activity.station), class: "breadcrumb__leaf" %>
+  <%= link_to "Workload", activity_path(@activity), class: "breadcrumb__leaf" %>
+  <%= link_to "New Fault", new_activity_fault_path(@activity), class: "breadcrumb__leaf" %>
+<% end %>
+
+<section class="activity-grid--left hidden md:block panel">
+  <%= render "activities/items", activity: @activity %>
+</section>
+
+<section class="activity-grid--right panel">
+  <%= render "shared/flash" %>
+
+  <%= render 'form', fault: @fault %>
+
+</section>

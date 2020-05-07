@@ -1,0 +1,40 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cog, label: "Settings" %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+
+  <span class="breadcrumb__leaf--active">Stations</span>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/config_nav' %>
+<% end %>
+
+<section class="area-main">
+  <%= render "shared/flash" %>
+
+  <div class="table" data-controller="table">
+    <div class="table-head">
+      <div class="table-head__checkbox-cell hidden"><input type="checkbox" class="form-checkbox" data-action="change->table#toggleAllCheckboxes" data-target="table.tableCheckbox"></div>
+      <div class="table-head__cell"><%= sortable 'name' %></div>
+      <div class="table-head__cell"><%= 'airport' %></div>
+      <div class="table-head__cell"><%= 'address' %></div>
+      <div class="table-head__cell text-right"><%= "Actions" %></div>
+    </div>
+
+    <%= render(partial: :station, collection: @stations, cached: true) if @stations.present? %>
+
+  </div>
+
+  <%= render('shared/empty_table_state', msg: "Found no stations.", helper: "#{link_to 'Try adding new station', new_station_path, class: 'underline text-thales-light-blue font-semibold'}".html_safe) if @stations.blank? %>
+
+  <%= will_paginate @stations, class: "pagination float-right mt-6 mr-4"%>
+
+</section>
+
+<% content_for :search_action, stations_path %>
+
+<% content_for :buttons do %>
+  <%= render 'layouts/footer_button', icon: :icon_add_outline, label: "New Station", action: new_station_path %>
+<% end %>

@@ -1,0 +1,117 @@
+<%= form_with(model: stock_item, local: true) do |form| %>
+  <% if stock_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stock_item.errors.count, "error") %> prohibited this stock_item from being saved:</h2>
+
+      <ul>
+      <% stock_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table class="center">
+    <tbody>
+      <tr>
+        <td class="f6 fw2 tracked tl white-60 v-top pt1">
+          <%= form.label :revision, class: "" %>
+        </td>
+        <td class="pl4 tl pb4 v-top">
+          <%= form.text_field :revision, id: :stock_item_revision, class: "" %>
+        </td>
+      </tr>
+      <tr>
+        <td class="f6 fw2 tracked tl white-60 v-top pt1">
+          <%= form.label :model_numbers %>
+        </td>
+        <td class="pl4 tl pb4 v-top">
+          <%= form.text_field :model_numbers, id: :stock_item_model_numbers %>
+
+          <ul class="pa0 ma0 mb2">
+            <li class="mod_select_item f5 fw3 ph1 pv1 mr1 ba br1 dib no-underline gray green">01</li>
+            <li class="mod_select_item f5 fw3 ph1 pv1 mr1 ba br1 dib no-underline gray green">02</li>
+            <li class="mod_select_item f5 fw3 ph1 pv1 mr1 ba br1 dib no-underline gray green">03</li>
+            <li class="mod_select_item f5 fw3 ph1 pv1 mr1 ba br1 dib no-underline gray green">04</li>
+            <li class="mod_select_item f5 fw3 ph1 pv1 mr1 ba br1 dib no-underline gray">05</li>
+            <li class="mod_select_item f5 fw3 ph1 pv1 mr1 ba br1 dib no-underline gray">06</li>
+            <li class="mod_select_item f5 fw3 ph1 pv1 mr1 ba br1 dib no-underline gray green">07</li>
+            <li class="mod_select_item f5 fw3 ph1 pv1 mr1 ba br1 dib no-underline gray">08</li>
+          </ul>
+          <ul class="pa0 ma0">
+            <li class="mod_select_item f5 fw3 ph1 pv1 mr1 ba br1 dib no-underline gray">09</li>
+            <li class="mod_select_item f5 fw3 ph1 pv1 mr1 ba br1 dib no-underline gray">10</li>
+            <li class="mod_select_item f5 fw3 ph1 pv1 mr1 ba br1 dib no-underline gray">11</li>
+            <li class="mod_select_item f5 fw3 ph1 pv1 mr1 ba br1 dib no-underline gray">12</li>
+            <li class="mod_select_item f5 fw3 ph1 pv1 mr1 ba br1 dib no-underline gray">13</li>
+            <li class="mod_select_item f5 fw3 ph1 pv1 mr1 ba br1 dib no-underline gray">14</li>
+            <li class="mod_select_item f5 fw3 ph1 pv1 mr1 ba br1 dib no-underline gray">15</li>
+            <li class="mod_select_item f5 fw3 ph1 pv1 mr1 ba br1 dib no-underline gray">16</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <div class="field">
+    <%= form.label :product_id %>
+    <%= form.text_field :product_id, id: :stock_item_product_id %>
+  </div> -->
+
+  <!-- <div class="field">
+    <%= form.label :serial_number %>
+    <%= form.text_field :serial_number, id: :stock_item_serial_number %>
+  </div> -->
+
+
+  <!-- <div class="field">
+    <%= form.label :batch_number %>
+    <%= form.text_field :batch_number, id: :stock_item_batch_number %>
+  </div> -->
+
+  <!-- <div class="field">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity, id: :stock_item_quantity %>
+  </div> -->
+
+  <!-- <div class="field">
+    <%= form.label :lastest_transfer_id %>
+    <%= form.text_field :lastest_transfer_id, id: :stock_item_lastest_transfer_id %>
+  </div> -->
+
+  <!-- <div class="field">
+    <%= form.label :stock_location_id %>
+    <%= form.text_field :stock_location_id, id: :stock_item_stock_location_id %>
+  </div> -->
+
+  <!-- <div class="field">
+    <%= form.label :shelf_life_expiration %>
+    <%= form.datetime_select :shelf_life_expiration, id: :stock_item_shelf_life_expiration %>
+  </div> -->
+
+  <!-- <div class="field">
+    <%= form.label :shelved_at %>
+    <%= form.datetime_select :shelved_at, id: :stock_item_shelved_at %>
+  </div> -->
+
+  <!-- <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :stock_item_user_id %>
+  </div> -->
+
+  <!-- <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state, id: :stock_item_state %>
+  </div> -->
+
+  <!-- Actions -->
+  <div class="actions tc mb2">
+    <!-- <div class="dib mh1">
+      <div class="dib underline">Skip</div> or
+    </div> -->
+    <div class="dib mh1">
+      <%= form.submit "Update Part", class: "green f5 tracked fw3 button-overide ph4 pv3 ba br1 b--aether-light-blue dib" %>
+    </div>
+  </div>
+  <!-- Close Actions -->
+<% end %>

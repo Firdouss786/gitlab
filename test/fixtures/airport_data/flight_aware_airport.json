@@ -1,0 +1,9 @@
+{
+  "AirportInfoResult": {
+    "name": "Dallas-Fort Worth Intl",
+    "location": "Dallas-Fort Worth, TX",
+    "longitude": -97.0376949,
+    "latitude": 32.8972316,
+    "timezone": ":America/Chicago"
+  }
+}

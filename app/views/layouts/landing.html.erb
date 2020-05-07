@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Firefly</title>
+    <%= csrf_meta_tags %>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google" content="notranslate">
+
+    <%= stylesheet_pack_tag     'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag     'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag  'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="landing-grid">
+    <%= yield %>
+  </body>
+
+  <footer class="mt-2 text-center text-gray-500 text-sm">
+    <p>Firefly Version <%= Firefly::VERSION %></p>
+  </footer>
+
+</html>

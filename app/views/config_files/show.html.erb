@@ -1,0 +1,28 @@
+<section class="panel area-main">
+  <%= render "shared/flash" %>
+
+  <p>
+    <strong>File Name:</strong>
+    <% if @fleet_file.config_file_payload %>
+      <%= link_to @fleet_file.config_file_payload.filename, rails_blob_path(@fleet_file.config_file_payload, disposition: 'attachment') %>
+    <% end %>
+  </p>
+
+  <p>
+    <strong>File type:</strong>
+    <%= @fleet_file.file_type %>
+  </p>
+
+  <p>
+    <strong>Uploaded By:</strong>
+    <%= @fleet_file.user.full_name %>
+  </p>
+
+  <p>
+    <strong>Uploaded On:</strong>
+    <%= @fleet_file.created_at %>
+  </p>
+
+  <%= link_to 'Delete LOPA file', config_file_path(@fleet_file), method: :delete, data: { confirm: 'Are you sure?'} %> |
+  <%= link_to 'Back', fleet_path(@fleet_file.fleet) %>
+</section>

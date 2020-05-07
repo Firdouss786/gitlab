@@ -1,0 +1,11 @@
+<% cache [ campaign ] do %>
+
+  <label for="<%= campaign.id %>" class="table-body">
+    <div class="table-body__cell hidden"><input type="checkbox" id="<%= campaign.id %>" class="form-checkbox" data-target="table.rowCheckbox"></div>
+    <div class="table-body__cell"><%= campaign.aircraft.tail %></div>
+    <div class="table-body__cell"><%= campaign.state.humanize %></div>
+    <div class="table-body__cell"><%= date campaign.completed_at %></div>
+  	<div class="table-body__cell"><%= campaign.user.full_name %></div>
+  </label>
+
+<% end %>

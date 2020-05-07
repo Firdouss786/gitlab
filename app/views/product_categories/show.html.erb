@@ -1,0 +1,37 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: @product_category.name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+
+<%= link_to "Product Categories", product_categories_path, class: "breadcrumb__leaf" %>
+<%= link_to @product_category.name, product_category_path(@product_category), class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+<% render 'shared/config_nav' %>
+<% end %>
+
+<section class="panel area-main area-main--half">
+
+  <%= render "shared/flash" %>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @product_category.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @product_category.description %>
+  </p>
+
+  <p>
+    <strong>Product Type:</strong>
+    <%= @product_category.product_type %>
+  </p>
+
+  <%= link_to 'Edit', edit_product_category_path(@product_category) %> |
+  <%= link_to 'Back', product_categories_path %>
+
+</section>

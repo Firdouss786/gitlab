@@ -1,0 +1,70 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+
+$fa-font-path : "~@fortawesome/fontawesome-free/webfonts";
+@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "@fortawesome/fontawesome-free/scss/solid.scss";
+
+html {
+  font-size: 14px;
+  @apply antialiased;
+}
+
+button:focus { outline:0; }
+
+// GLOBAL
+@import "global/panel";
+@import "global/colors";
+@import "global/select2";
+@import "global/breadcrumb";
+@import "global/nav";
+@import "global/typography";
+@import "global/forms";
+@import "global/tables";
+@import "global/buttons";
+@import "global/datepicker";
+@import "global/pagination";
+
+
+// GRIDS
+@import "grids/default-grid";
+@import "grids/activity-grid";
+@import "grids/form-grid";
+@import "grids/mod_plate-grid";
+@import "grids/landing-grid";
+
+
+// OLD STYLES TO BE REMOVED
+// @import "global-old/reset";
+@import "global-old/colors";
+@import "global-old/typography";
+@import "global-old/global";
+// @import "global-old/layout";
+@import "global-old/header";
+@import "global-old/navigation";
+// @import "global-old/forms";
+@import "global-old/pills";
+@import "global-old/tiles";
+@import "global-old/cards";
+@import "global-old/modal";
+@import "global-old/contact_card";
+// @import "global-old/buttons";
+
+@import "pages/activities";
+@import "pages/comments";
+@import "pages/discrepancies";
+// @import "pages/faults";
+@import "pages/flights";
+@import "pages/issues";
+@import "pages/search";
+@import "pages/seats";
+@import "pages/stations";
+@import "pages/task_templates";
+@import "pages/users";
+// @import "pages/workpack";
+
+
+
+@import "tailwindcss/utilities";
+
+@import "select2/dist/css/select2.css";

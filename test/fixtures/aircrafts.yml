@@ -1,0 +1,103 @@
+gstba:
+  tail: G-STBA
+  msn: N89881
+  fin: G-STBA
+  registration: G-STBA
+  eis: 2017-09-25 23:52:43
+  tot: 2017-09-25 23:52:43
+  description: BAW Aircraft G-STBA
+  fleet: B777
+  airline: baw
+  locked: false
+  active: true
+
+gstbb:
+  tail: G-STBB
+  msn: N89881
+  fin: G-STBB
+  registration: G-STBB
+  eis: 2017-09-25 23:52:43
+  tot: 2017-09-25 23:52:43
+  description: BAW Aircraft G-STBB
+  fleet: B777
+  airline: baw
+  locked: false
+  active: true
+
+gstbc:
+  tail: G-STBC
+  msn: N89881
+  fin: G-STBC
+  registration: G-STBC
+  eis: 2017-09-25 23:52:43
+  tot: 2017-09-25 23:52:43
+  description: BAW Aircraft G-STBC
+  fleet: B777
+  airline: baw
+  locked: false
+  active: true
+
+gstbd:
+  tail: G-STBD
+  msn: N89881
+  fin: G-STBD
+  registration: G-STBD
+  eis: 2017-09-25 23:52:43
+  tot: 2017-09-25 23:52:43
+  description: BAW Aircraft G-STBD
+  fleet: B777
+  airline: baw
+  locked: false
+  active: true
+
+gstbe:
+  tail: G-STBE
+  msn: N89981
+  fin: G-STBE
+  registration: G-STBE
+  eis: 2017-09-25 23:52:43
+  tot: 2017-09-25 23:52:43
+  description: BAW Aircraft G-STBE
+  fleet: B777
+  airline: baw
+  locked: false
+  active: true
+
+graes:
+  tail: G-RAES
+  msn: G-RAES
+  fin: G-RAES
+  registration: G-RAES
+  eis: 2017-09-25 23:52:43
+  tot: 2017-09-25 23:52:43
+  description: BAW Aircraft G-RAES
+  fleet: B777B
+  airline: baw
+  locked: false
+  active: true
+
+N70020:
+  tail: N70020
+  msn: N70020
+  fin: N70020
+  registration: N70020
+  eis: 2017-09-25 23:52:43
+  tot: 2017-09-25 23:52:43
+  description: N70020
+  fleet: B777
+  airline: aal
+  locked: false
+  active: true
+
+N903JB:
+  tail: N903JB
+  msn: N903JB
+  fin: N903JB
+  registration: N903JB
+  eis: 2017-09-25 23:52:43
+  tot: 2017-09-25 23:52:43
+  description: N903JB
+  fleet: JBA321
+  airline: jbu
+  locked: false
+  active: true

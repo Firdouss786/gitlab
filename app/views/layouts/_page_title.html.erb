@@ -1,0 +1,14 @@
+<div id="title__home-button" class="pr-2">
+  <div class="sm:hidden">
+    <%= link_to docks_path, class: "sm:flex items-center justify-center w-10 h-10 hover:bg-thales-carbon-3 focus:bg-thales-light-blue" do %>
+      <%= inline_svg icon, class: "h-6 w-6 text-white" %>
+    <% end %>
+  </div>
+  <div class="hidden sm:block">
+    <div class="h-10 w-10 bg-thales-light-blue rounded-full flex items-center justify-center">
+      <%= inline_svg icon, class: "h-6 w-6 text-white" %>
+    </div>
+  </div>
+</div>
+
+<h1 class="text-2xl font-bold ml-1 text-white"><%= label %></h1>

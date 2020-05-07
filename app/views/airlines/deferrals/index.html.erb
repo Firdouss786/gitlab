@@ -1,0 +1,23 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cog, label: "#{@airline.name} Deferrals" %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= render 'airlines/breadcrumb' %>
+  <span class="breadcrumb__leaf">Deferrals</span>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/airline_nav', airline: @airline %>
+<% end %>
+
+<section class="area-main" data-controller="deferral-report" data-test-id="station_deferrals_report">
+  <%= render "shared/flash" %>
+
+  <div id="table-container">
+    <%= render 'deferrals/index', deferrals: @deferrals, parent: @airline %>
+  </div>
+
+</section>
+
+<% content_for :search_action, "#{airline_deferrals_path(@airline)}" %>

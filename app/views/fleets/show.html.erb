@@ -1,0 +1,74 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_fleet, label: @fleet.name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= link_to "Airlines", airlines_path, class: "breadcrumb__leaf" %>
+  <%= link_to @airline.name, airline_fleets_path(@airline), class: "breadcrumb__leaf" %>
+  <%= link_to @fleet.name, airline_fleet_path(@airline, @fleet), class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/airline_nav', airline: @airline %>
+<% end %>
+
+<section class="panel area-main area-main--half">
+
+  <%= render "shared/flash" %>
+
+    <p>
+      <strong>Name:</strong>
+      <%= @fleet.name %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= @fleet.description %>
+    </p>
+
+    <p>
+      <strong>Install type:</strong>
+      <%= @fleet.install_type %>
+    </p>
+
+    <p>
+      <strong>First class seat count:</strong>
+      <%= @fleet.first_class_seat_count %>
+    </p>
+
+    <p>
+      <strong>Business class seat count:</strong>
+      <%= @fleet.business_class_seat_count %>
+    </p>
+
+    <p>
+      <strong>Premium class seat count:</strong>
+      <%= @fleet.premium_class_seat_count %>
+    </p>
+
+    <p>
+      <strong>Economy class seat count:</strong>
+      <%= @fleet.economy_class_seat_count %>
+    </p>
+
+    <p>
+      <strong>Aircraft type:</strong>
+      <%= @fleet.aircraft_type.name %>
+    </p>
+
+    <p>
+      <strong>Software platform:</strong>
+      <%= @fleet.software_platform.name %>
+    </p>
+
+    <p>
+      <strong>Airline:</strong>
+      <%= @airline.name %>
+    </p>
+
+
+
+    <%= link_to 'Edit', edit_airline_fleet_path(@airline, @fleet) %> |
+    <%= link_to 'Back', airline_fleets_path(@airline) %>
+
+</section>

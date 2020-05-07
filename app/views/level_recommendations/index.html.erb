@@ -1,0 +1,31 @@
+<%= render "shared/flash" %>
+
+<h1>Level Recommendations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Recommended quantity</th>
+      <th>Stock location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @level_recommendations.each do |level_recommendation| %>
+      <tr>
+        <td><%= level_recommendation.product %></td>
+        <td><%= level_recommendation.recommended_quantity %></td>
+        <td><%= level_recommendation.stock_location %></td>
+        <td><%= link_to 'Show', level_recommendation %></td>
+        <td><%= link_to 'Edit', edit_level_recommendation_path(level_recommendation) %></td>
+        <td><%= link_to 'Destroy', level_recommendation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Level Recommendation', new_level_recommendation_path %>

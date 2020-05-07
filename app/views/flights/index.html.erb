@@ -1,0 +1,25 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_fleet, label: @airline.name %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%= render 'airlines/breadcrumb' %>
+  <%= link_to "Flights" , airline_flights_path(@airline), class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/airline_nav', airline: @airline%>
+<% end %>
+
+<section class="area-main area-main--half">
+  <%= render "shared/flash" %>
+
+  <div class="" data-controller='flight time turbolinks'>
+    <div class="field align-right">
+      <input type="checkbox" id="time_toggle" data-target="time.state" data-time-state="" data-action="click->time#toggle_timezones">
+      <%= label_tag :time_toggle, "My Time Zone" %>
+    </div>
+
+    <%= render(partial: :flight, collection: @flights, cached: true) if @flights.present? %>
+  </div>
+</section>

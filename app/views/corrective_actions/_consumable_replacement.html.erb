@@ -1,0 +1,26 @@
+<div class="mt-4 mx-4 p-4 shadow-lg rounded border-indigo-800 border-t-8">
+  <div class="mt-2 flex items-center">
+    <svg class="h-6 w-6 fill-current text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+      <path d="M3.5 13H12v5l6-6-6-6v5H4V2H2v11z"/>
+    </svg>
+    <h2 class="ml-2 font-semibold text-gray-700">Consumed Batch</h2>
+  </div>
+  <table class="mt-2 w-full text-sm">
+    <tr class="border-none">
+      <td class="py-2 pr-6 text-gray-600">Part Desc:</td>
+      <td class="py-2 pr-6"><%= replacement.installed_product.name %></td>
+    </tr>
+    <tr class="border-none">
+      <td class="py-2 pr-6 text-gray-600">Part Number:</td>
+      <td class="py-2 pr-6"><%= replacement.installed_product.part_number %></td>
+    </tr>
+    <tr class="border-none">
+      <td class="py-2 pr-6 text-gray-600">Batch Number:</td>
+      <td class="py-2 pr-6"><%= replacement.installed_stock_item.batch_number %></td>
+    </tr>
+    <tr class="border-none">
+      <td class="py-2 pr-6 text-gray-600">Quantity:</td>
+      <td class="py-2 pr-6"><%= replacement.install_quantity %></td>
+    </tr>
+  </table>
+</div>

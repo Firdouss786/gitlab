@@ -1,0 +1,14 @@
+lhr:
+  name: LHR
+  category: LINE
+  parent: lhr (Station)
+
+cdg:
+  name: CDG
+  category: LINE
+  parent: cdg (Station)
+
+gstba:
+  name: BAW_G-STBA
+  category:
+  parent: gstba (Aircraft)

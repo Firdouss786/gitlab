@@ -1,0 +1,27 @@
+<div style="font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif; max-width: 800px; background-color: #f8f7fc; padding: 40px;">
+
+  <h4 style="text-align: center; font-size: 32px; color: #2ab27b; margin: 0;">Servo</h4>
+
+  <h1 style="color: #2ab27b; line-height: 26px; margin-bottom: 12px;">Hi <%= @user.first_name %>,</h1>
+
+  <p style="color: #5e5e5e; font-size:17px; line-height:24px;">A new Servo account has been created for you!</p>
+
+  <p style="color: #5e5e5e; font-size:17px; line-height:24px;">To log in, please click the button bellow. You will be asked to set a new password.</p>
+
+  <br>
+
+  <%= link_to "Log In", edit_password_reset_url(id: @password_token), style: "
+      padding: 10px 15px;
+      background-color: #2ab27b;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      text-align: center;
+      border: 2px solid #4ac698;
+      border-radius: 4px;
+      font-size: 16px;
+  "%>
+
+  <p style="color: #929292; font-size: 12px; margin-top: 15px;">This link will expire in 2 days</p>
+
+</div>

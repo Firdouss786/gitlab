@@ -1,0 +1,18 @@
+.panel {
+}
+
+.panel--micro {
+}
+
+.panel {
+  @apply p-2;
+  @apply bg-white;
+}
+
+@screen md {
+  .panel {
+    @apply rounded;
+    @apply shadow;
+    @apply p-6;
+  }
+}

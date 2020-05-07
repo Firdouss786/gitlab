@@ -1,0 +1,22 @@
+<%= form_with(model: defer_reason, local: true) do |form| %>
+
+  <%= render "shared/form_errors", obj: defer_reason %>
+
+  <div class="form-grid">
+
+    <div class="field form-grid--span">
+      <%= form.label :name %>
+      <%= form.text_field :name, id: :defer_reason_name, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--span">
+      <%= form.label :description %>
+      <%= form.text_area :description, id: :defer_reason_description, rows: "3", class: "form-input block w-full" %>
+    </div>
+
+    <div class="flex justify-end content-center form-grid--right">
+      <%= link_to "Cancel", defer_reasons_path, { class: "btn btn-secondary mr-4" } %>
+      <%= form.submit class: "btn" %>
+    </div>
+  </div>
+<% end %>

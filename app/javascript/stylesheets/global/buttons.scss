@@ -1,0 +1,44 @@
+.btn {
+  @apply py-2 px-8 cursor-pointer rounded font-bold text-sm;
+  @apply bg-thales-light-blue text-white;
+}
+
+.btn:hover {
+  @apply bg-thales-blue-gray text-white;
+}
+
+.btn:active {
+  @apply bg-gray-700 text-white;
+}
+
+.btn-secondary {
+  @apply bg-gray-300 text-gray-800;
+}
+
+.btn-secondary:hover {
+  @apply bg-gray-400 text-gray-800;
+}
+
+.btn-secondary:active {
+  @apply bg-thales-light-blue text-white;
+}
+
+.btn-warn {
+  @apply bg-red-500 text-white;
+}
+
+.btn-warn:hover {
+  @apply bg-red-600 text-white;
+}
+
+.btn-warn:active {
+  @apply bg-red-700 text-white;
+}
+
+.btn-lg {
+  @apply py-3 px-10;
+}
+
+.btn-sm {
+  @apply py-1 px-3;
+}

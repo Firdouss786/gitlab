@@ -1,0 +1,41 @@
+.pill-group {
+  margin-bottom: 14px;
+
+  .group-lable {
+    font-weight: bold;
+  }
+}
+
+.pill {
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+  border-radius: 20px;
+  margin-bottom: 6px;
+  background-color: $default-fill;
+  color: $default-text;
+
+  &.success {
+    background-color: $success-fill;
+    color: $success-text;
+  }
+
+  &.warn {
+    background-color: $warn-fill;
+    color: $warn-text;
+  }
+
+  &.error {
+    background-color: $error-fill;
+    color: $error-text;
+  }
+
+  &.campaign_task_created {
+    border: 1px solid #d0d0d0;
+    color: white;
+  }
+
+  &.campaign_task_completed {
+    background-color: #7dca8a;
+    color: white;
+  }
+}

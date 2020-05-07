@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Firefly</title>
+    <%= csrf_meta_tags %>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <%= stylesheet_pack_tag     'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag     'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag  'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <header>
+    <%= render partial: 'layouts/main_nav', cached: true %>
+
+    <!-- Logistics State Navigation -->
+    <div id="logistics_menu" class="">
+      <ul>
+        <li class=""><%= link_to "Inbound", :stock_location_stock_items_inbounds %></li>
+        <li class=""><%= link_to "Inspecting", :stock_location_stock_items_inspections %></li>
+        <li class=""><%= link_to "Serviceable", :stock_location_stock_items_serviceables %></li>
+        <li class=""><%= link_to "Turn In", :stock_location_stock_items_removals %></li>
+        <li class=""><%= link_to "Unserviceable", :stock_location_stock_items_unserviceables %></li>
+        <li class=""><%= link_to "Outbound", :stock_location_stock_items_outbounds %></li>
+        <li class=""><%= link_to "Quarantine", :stock_location_stock_items_quarantines %></li>
+        <li class=""><%= link_to "Scrap", :stock_location_stock_items_scraps %></li>
+      </ul>
+    <!-- End logistics State Navigation -->
+  </header>
+
+  <body class="container">
+    <%= yield %>
+  </body>
+</html>

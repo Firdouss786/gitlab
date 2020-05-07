@@ -1,0 +1,47 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <%= render "shared/form_errors", obj: product %>
+
+  <div class="form-grid">
+
+    <div class="field form-grid--span">
+      <%= form.label :product_category_id %>
+      <%= form.collection_select :product_category_id, ProductCategory.all, :id, :name, { prompt: 'Select Product Category ...' }, { required: true, class: "form-select select-filter" } %>
+    </div>
+
+    <div class="field form-grid--left">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--right">
+      <%= form.label :part_number %>
+      <%= form.text_field :part_number, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--left">
+      <%= form.label :price %>
+      <%= form.number_field :price, class: "form-input block w-full", required: true %>
+    </div>
+
+    <div class="field form-grid--right">
+      <%= form.label :shelf_life %>
+      <%= form.number_field :shelf_life, class: "form-input block w-full" %>
+    </div>
+
+    <div class="field form-grid--span">
+      <%= form.label :description %>
+      <%= form.text_area :description, class: "form-input block w-full" %>
+    </div>
+
+    <div class="form-grid--span">
+      <br>
+    </div>
+
+    <div class="flex justify-end content-center form-grid--right">
+      <%= link_to "Cancel", products_path, { class: "btn btn-secondary mr-4" } %>
+      <%= form.submit class: "btn" %>
+    </div>
+
+  </div>
+
+<% end %>

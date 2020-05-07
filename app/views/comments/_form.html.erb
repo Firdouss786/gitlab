@@ -1,0 +1,13 @@
+<div class="comment__form">
+  <%= form_with model: comment, url: (comment.new_record? ? [commentable, comment] : comment) do |form| %>
+
+    <div class="field">
+      <%= form.text_area :description, placeholder: "Write a comment...", required: true  %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Comment" %>
+    </div>
+
+  <% end %>
+</div>

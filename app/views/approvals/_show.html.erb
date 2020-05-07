@@ -1,0 +1,3 @@
+<% if approval.approvable %>
+  <li><%= approval.requestee.full_name %> has requested access to <%= approval.approvable.approvable_resource_name %>. This request was sent to <strong><%= approval.users.pluck(:email).join(", ") %></strong></li>
+<% end %>

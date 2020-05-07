@@ -1,0 +1,27 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: "Search" %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <span class="breadcrumb__leaf--active">Search</span>
+<% end %>
+
+<style>
+  html, body {
+    background-color: #394a57;
+  }
+</style>
+
+<section class="search area-main">
+  <%= render "shared/flash" %>
+
+  <%= render 'form', search: @search %>
+
+  <% if @results %>
+    <div class="search-results-grid">
+      <% @results.each do |result| %>
+        <%= render result.document_name.downcase, document: result.document %>
+      <% end %>
+    </div>
+  <% end %>
+</section>

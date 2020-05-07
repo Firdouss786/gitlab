@@ -1,0 +1,52 @@
+<% cache [fleet,fleet.seats.empty?] do %>
+  <% if fleet.seats.any? %>
+
+  <div data-controller="lopa" width="100%" class="lopa_center">
+      <textarea data-target="lopa.lopa_selected_seats" rows="6" id="lopa_selected_seats" cols="80"
+          placeholder="Selected Seats..." disabled="disabled" class="hidden"></textarea>
+
+      <span><button class="btn mb-2" data-action="click->lopa#select_all_seats" id="select_all_seats">Select All Seats</button></span>
+      <span><button class="btn mb-2" data-action="click->lopa#deselect_all_seats" id="deselect_all_seats">Deselect All Seats</button></span>
+
+      <div id="lopa_container">
+          <div class="lopa_deck" id="deck1">
+              <span>Deck 1</span>
+              <div class="lopa" style="
+              grid-template-columns: <%= to_css_grid fleet.seats.column_characters %>;
+              grid-template-rows: repeat(<%= fleet.seats.first_deck.number_of_rows %>,
+              auto);
+            ">
+                  <% fleet.seats.first_deck.each do |seat| %>
+                  <span class="lopa__seat"
+                      style="grid-column-start: <%= seat.col.downcase %>; grid-row-start: <%= seat.row %>;"
+                      id="<%=seat.name%>" data-action="click->lopa#select_seats"
+                      data-target="lopa.seats"><%= seat.name %></span>
+                  <% end %>
+              </div>
+          </div>
+
+          <% if fleet.seats.second_deck.any? %>
+          <div class="lopa_deck" id="deck2">
+              <span>Deck 2</span>
+              <div class="lopa" style="
+              grid-template-columns: <%= to_css_grid fleet.seats.column_characters %>;
+              grid-template-rows: repeat(<%= fleet.seats.second_deck.number_of_rows %>,
+              auto);
+            ">
+                  <% fleet.seats.second_deck.each do |seat| %>
+                  <span class="lopa__seat"
+                      style="grid-column-start: <%= seat.col.downcase %>; grid-row-start: <%= seat.row - fleet.seats.second_deck.offseted_row_start %>;"
+                      id="<%=seat.name%>" data-action="click->lopa#select_seats"
+                      data-target="lopa.seats"><%= seat.name %></span>
+                  <% end %>
+              </div>
+          </div>
+          <% end %>
+      </div>
+  </div>
+
+  <% else %>
+    <%= render('shared/empty_table_state', msg: "Found no LOPA.", helper: "#{link_to 'Try uploading LOPA', new_seat_path(fleet), class: 'underline text-thales-light-blue font-semibold'}".html_safe) %>
+  <% end %>
+
+<% end %>

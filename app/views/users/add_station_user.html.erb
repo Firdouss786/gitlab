@@ -1,0 +1,21 @@
+<section class="panel area-main">
+
+  <%= render "shared/flash" %>
+
+  <h1>Add User</h1>
+
+  <%= form_with url: user_exists_station_users_path do |form| %>
+
+      <%= form.label :email %>
+      <%= form.email_field :email, required: true %>
+
+      <%= form.submit "Next" %>
+
+  <% end %>
+
+  <div class="cancel_button">
+    <%= link_to 'Cancel', station_users_path(:station_id => Current.user.home_station) %>
+  </div>
+
+
+</section>

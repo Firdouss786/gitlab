@@ -1,0 +1,28 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  aircraft: "Aircraft"
+  flight_status: "Status"
+  in_flight: "In Flight"
+  arrived: "Arrived"
+  flight: "Flight"
+  origin: "Origin"
+  destination: "Destination"
+  ground_time: "Ground Time"
+  gate: "Gate"
+  departing_to: "Departing To"
+  departing_at: "Departing At"
+  departing_flight: "Departing Flight"
+  src: "Safety Regulatory Compliance Number"
+  cid: "Cust. Induced Damage"
+  raised_on_flight: During Flight
+  discovered: "In-Flight / On-Ground"
+  activity: "Work Package"
+  confirmed: "Confirmed By Tech"

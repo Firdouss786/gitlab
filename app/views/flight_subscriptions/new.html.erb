@@ -1,0 +1,22 @@
+<section class="panel area-main">
+  <%= render "shared/flash" %>
+
+  <h1 class="header">
+    <span class="header__name">Subscribe Airline to Flight Service</span>
+  </h1>
+
+  <%= form_tag(flight_subscriptions_url, local: true) do %>
+
+    <div class="field">
+      <%= label_tag :aircraft_id %>
+      <%= collection_select(:subscription, :aircraft_id, Aircraft.all, :id, :name ) %>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag %>
+    </div>
+  <% end %>
+
+
+  <%= link_to 'Back', flight_subscriptions_path %>
+</section>

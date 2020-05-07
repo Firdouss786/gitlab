@@ -1,0 +1,19 @@
+<% content_for :page_title do %>
+  <%= render 'layouts/page_title', icon: :icon_cloud, label: "New Software Platform" %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+
+  <%= link_to "Software Platforms", software_platforms_path, class: "breadcrumb__leaf" %>
+  <%= link_to "New Software Platform", new_software_platform_path, class: "breadcrumb__leaf" %>
+<% end %>
+
+<% content_for :nav do %>
+  <% render 'shared/config_nav' %>
+<% end %>
+
+<section class="panel area-main area-main--half">
+
+  <%= render 'form', software_platform: @software_platform %>
+
+</section>
